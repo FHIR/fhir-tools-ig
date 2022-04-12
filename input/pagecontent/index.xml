@@ -3,28 +3,13 @@
   <a name="intro"> </a>
   <h3>Introduction</h3>
 	<p>
-    What is this IG about (in patient/non-expert friendly terms).
+    This IG defines the extensions used internally by the FHIR tools.
+    These extensions should never appear in implementations unless they
+    are concerned with code generation from the FHIR packages.
   </p>
 	<a name="technical"> </a>
 	<h3>Technical Overview</h3>
 	<p>
-    Additional detail/context setting for those who have significant background in the domain.  (Try to make as understandable as you can, but
-    set important context).
+  These are maintained by the tool authors.
   </p>
-  <a name="walkthrough"> </a>
-  <p>
-    The main sections of this IG are:
-  </p>
-  <ul>
-    <li>
-      <a href="background.html">Background</a> - provides business context for the implementation guide and information that implementers should be
-      familiar with before reading the remainder of the IG.  There could be multiple pages for this.
-    </li>
-    <li>
-      <a href="spec.html">Detailed Specification</a> - The actual stuff implementers are expected to do.  (Could be multiple pages for this.)
-    </li>
-    <li>
-      <a href="downloads.html">Downloads</a> - Allows downloading a copy of this implementation guide and other useful information
-    </li>
-  </ul>
 </div>

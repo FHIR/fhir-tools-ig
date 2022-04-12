@@ -6,7 +6,12 @@
   <title value="Additional Binding Purpose"/>
   <status value="active"/>
   <description value="Additional Binding Purpose"/>
-  <caseSensitive value="true"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  <caseSensitive value="true"/>
   <content value="complete"/>
   <concept>
     <code value="maximum"/>

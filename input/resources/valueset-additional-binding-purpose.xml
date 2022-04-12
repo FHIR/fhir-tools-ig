@@ -7,9 +7,14 @@
   <status value="active"/>
   <experimental value="true"/>
   <description value="Additional Binding Purpose"/>
-  <compose>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  <compose>
     <include>
-      <system value="http://hl7.org/fhir/uv/tools/CodeSystem/additional-binding-purpose"/>
+      <system value="http://hl7.org/fhir/tools/CodeSystem/additional-binding-purpose"/>
     </include>
   </compose>
 </ValueSet>

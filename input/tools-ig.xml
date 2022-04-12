@@ -18,6 +18,12 @@
     </telecom>
   </contact>
   <description value="This IG defines the extensions that the tools use internally. Some of these extensions are content that are being evaluated for elevation into the main spec, and others are tooling concerns"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
   <packageId value="hl7.fhir.uv.tools"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>

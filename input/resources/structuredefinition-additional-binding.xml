@@ -15,9 +15,19 @@
     </telecom>
   </contact>
   <description value="Extension definition for Additional Binding"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  
   <fhirVersion value="4.0.1"/>
-  <kind value="resource"/>
+  <kind value="complex-type"/>
   <abstract value="false"/>
+  <context>
+    <type value="element"/>
+    <expression value="ElementDefinition.binding"/>
+  </context>
   <type value="Extension"/>
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
   <derivation value="constraint"/>
@@ -59,7 +69,7 @@
       </type> 
       <binding>
         <strength value="required"/>
-        <valueSet value="http://hl7.org/fhir/uv/tools/ValueSet/additional-binding-purpose"/>
+        <valueSet value="http://hl7.org/fhir/tools/ValueSet/additional-binding-purpose"/>
       </binding>
     </element> 
 
@@ -89,6 +99,7 @@
       <min value="1"/> 
       <type> 
         <code value="canonical"/> 
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ValueSet"/>
       </type> 
     </element> 
 
@@ -118,7 +129,6 @@
       <min value="1"/> 
       <type> 
         <code value="markdown"/> 
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ValueSet"/>
       </type> 
     </element> 
 
@@ -184,7 +194,7 @@
 
     <element id="Extension.url">
       <path value="Extension.url"/> 
-      <fixedUri value="http://hl7.org/fhir/uv/tools/StructureDefinition/additional-binding"/> 
+      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/additional-binding"/> 
     </element> 
     <element id="Extension.value[x]">
       <path value="Extension.value[x]"/> 
