@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="additional-binding"/>
-  <url value="http://hl7.org/fhir/uv/tools/StructureDefinition/additional-binding"/>
+  <url value="http://hl7.org/fhir/tools/StructureDefinition/additional-binding"/>
   <name value="AdditionalBinding"/>
   <title value="Additional Binding Extension"/>
   <status value="draft"/>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Start by finding all references to "myig" and updating to appropriate text for your IG, including changing realm -->
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R4/fhir-single.xsd">
-  <id value="hl7.fhir.uv.tools"/>
-  <url value="http://hl7.org/fhir/uv/tools/ImplementationGuide/hl7.fhir.uv.tools"/>
+  <id value="hl7.fhir.tools"/>
+  <url value="http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools"/>
   <!-- This version will propagate to all artifacts unless the "propagate-version" extension is overridden -->
   <version value="0.1.0"/>
   <name value="FHIRToolExtensionsIG"/>
@@ -18,12 +18,6 @@
     </telecom>
   </contact>
   <description value="This IG defines the extensions that the tools use internally. Some of these extensions are content that are being evaluated for elevation into the main spec, and others are tooling concerns"/>
-  <jurisdiction>
-    <coding>
-      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
-      <code value="001"/>
-    </coding>
-  </jurisdiction>
   <packageId value="hl7.fhir.uv.tools"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
