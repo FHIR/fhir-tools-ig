@@ -1,0 +1,13 @@
+{
+ "package-id" : "hl7.fhir.uv.tools",
+ "title" : "HL7 Tools Extension IG", 
+ "canonical" : "http://hl7.org/fhir/uv/tools", 
+ "introduction" : "This implementation guide defines resources used by the FHIR tooling internally",
+ "list" : [{
+  "version" : "current",
+  "desc" : "Continuous Integration Build (latest in version control)",
+  "path" : "http://hl7.org/fhir/ig/FHIR/fhir-tools-ig",
+  "status" : "ci-build",
+  "current" : true
+ }]
+}

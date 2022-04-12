@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="additional-binding-purpose"/>
+  <url value="http://hl7.org/fhir/uv/tools/ValueSet/additional-binding-purpose"/>
+  <name value="AdditionalBindingPurpose"/>
+  <title value="Additional Binding Purpose"/>
+  <status value="active"/>
+  <experimental value="true"/>
+  <description value="Additional Binding Purpose"/>
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/uv/tools/CodeSystem/additional-binding-purpose"/>
+    </include>
+  </compose>
+</ValueSet>
