@@ -56,5 +56,17 @@
       <code value="showsource"/>
       <value value="true"/>
     </parameter>
+    <parameter>
+      <code value="generate-version"/>
+      <value value="r3"/>
+    </parameter>
+    <parameter>
+      <code value="generate-version"/>
+      <value value="r4"/>
+    </parameter>
+    <parameter>
+      <code value="generate-version"/>
+      <value value="r5"/>
+    </parameter>    
   </definition>
 </ImplementationGuide>
