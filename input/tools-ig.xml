@@ -33,6 +33,11 @@
         <reference value="StructureDefinition/additional-binding"/>
       </reference>
     </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/obligation"/>
+      </reference>
+    </resource>
     <page>
       <nameUrl value="index.html"/>
       <title value="Home Page"/>
