@@ -1,0 +1,1138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="ig-parameters"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/codesystem-use-markdown">
+    <valueBoolean value="true"/>
+  </extension>
+  <url value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+  <name value="IgParameters"/>
+  <title value="Ig Parameter Codes"/>
+  <status value="active"/>
+  <description value="Ig Parameter Codes Defined by the FHIR Tooling"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <property>
+    <code value="repeats"/>
+    <description value="Whether the parameter can repeat more than once"/>
+    <type value="boolean"/>
+  </property>
+  <property>
+    <code value="type"/>
+    <description value="Description of the value domain for the values of the parameter"/>
+    <type value="string"/>
+  </property>  
+  <property>
+    <code value="missing"/>
+    <description value="What it means if the parameter is not provided"/>
+    <type value="string"/>
+  </property>  
+
+  <concept>
+    <code value="logging"/>
+    <display value="logging"/>
+    <definition value="Which kinds of log output messages to produce - the value is a code, from this list:&#10;&#10;* ```init```: Messages describing the start up process (for debugging)&#10;* ```progress```: Overall progress messages&#10;* ```tx```: Messages describing the use of the terminology server (for debugging)&#10;* ```generate```: Log when producing an individual resource  (troubleshooting only - leave off)&#10;* ```html```: Log when validating an html page (troubleshooting only - leave off)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="code"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="no logging"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="generate"/>
+    <display value="generate"/>
+    <definition value="Fine grained control over generation of resources:&#10;&#10;* ```example-narratives```: generate narrative in examples if they don't have any (as opposed to conformance resources, which are always generated)&#10;* ```genExamples```: produce extra examples (todo: document this)&#10;&#10;Except: you can't turn example-narratives off. Todo: decide why this exists. But you can suppress - see next item"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="code"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="no extra narrative"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="no-narrative"/>
+    <display value="no-narrative"/>
+    <definition value="A resource to suppress narrative generation for (and Resource.text will be removed if found). Format is ```(type)/(id)``` e.g. ```Patient/example```, or type or id may be ```*``` e.g. ```Task/*``` - do not generate narrative for any Task resource.&#10;&#10;Narrative Generation should never be suppressed for any canonical resource&#10;&#10;Note for HL7 users: the FMG will review which resources have narrative suppressed and why when publication approval is sought"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="pattern"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="n/a"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="no-validate"/>
+    <display value="no-validate"/>
+    <definition value="A resource not to validate. Format is ```(type)/(id)``` e.g. ```Patient/example```, or type or id may be ```*``` e.g. ```Task/*``` - do not validate any Task resource.&#10;&#10;Suppressing validation is generally a bad idea. There's two contexts where it might be useful: validation of really big resources that takes a long time, and examples that are purposefully wrong to demonstrate what not to do. But while it sounds good - don't bother me with problems I mean to introduce, it's too easy for other unintended problems to accumulate. So it's better to keep validation on.&#10;&#10;ote for HL7 users: the FMG will review which resources have validation suppressed and why when publication approval is sought. FMG would generally prefer to see explicit errors for resources that are wrong intentionally, and will OK publication in this case. **It's going to reviewed either way.**"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="pattern"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="na"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="path-resource"/>
+    <display value="path-resource"/>
+    <definition value="Relative path to a location in the IG repository from which to load resources."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="path"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="\resources"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="path-binary"/>
+    <display value="path-binary"/>
+    <definition value="Relative path to a location in the IG repository in which to look for binary adjunct files (see below)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="path"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="n/a"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="autoload-resources"/>
+    <display value="autoload-resources"/>
+    <definition value="If true, scan the locations in which resources might be found (above) looking for resources, and auto-loading them. Else, only load what is in the IG."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="codesystem-property"/>
+    <display value="codesystem-property"/>
+    <definition value="A code system property to show when rendering code systems (code system property definitions with a 'rendered-value' extension are always shown, as is any property in the uri space ```http://hl7.org/fhir/concept-properties```"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="uri"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="n/a"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="path-pages"/>
+    <display value="path-pages"/>
+    <definition value="A relative path in which pages can be found."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="path"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="\pages"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="path-qa"/>
+    <display value="path-qa"/>
+    <definition value="The relative path to the qa folder (generated fragments to check rendering in browser)."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="path"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="no qa is produced"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="path-tx-cache"/>
+    <display value="path-tx-cache"/>
+    <definition value="The relative path to the terminology cache."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="path"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="no value - txCache not in version control (slower builds)"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="path-liquid"/>
+    <display value="path-liquid"/>
+    <definition value="A relative path that contains liquid templates for generating narrative"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="path"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="n/a"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="path-temp"/>
+    <display value="path-temp"/>
+    <definition value="The relative path to use for jekyll processing."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="path"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="temp"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="path-output"/>
+    <display value="path-output"/>
+    <definition value="The relative path where the output is generated."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="path"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="output (which must be the case for the ci-build scripts)"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="path-history"/>
+    <display value="path-history"/>
+    <definition value="The url where the history file is found (usually ```(canonical)/history.html```). Used when checking links"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="url"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="n/a"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="path-expansion-params"/>
+    <display value="path-expansion-params"/>
+    <definition value="The relative path to a parameters resource that contains expansion parameters used when the IG publisher expands a value set"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="path"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="No expansion parameters"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="path-suppressed-warnings"/>
+    <display value="path-suppressed-warnings"/>
+    <definition value="A file to load suppressed error messages from (one msg per line). Suppressed errors don't chose up in the qa.ini (but will be checked anyway if publishing through HL7 processes)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="path"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="No suppressed warnings"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="html-exempt"/>
+    <display value="html-exempt"/>
+    <definition value="A mask that identifies specific HTML files exempt from having header / footer etc.&#10;&#10;Discuss with FHIR Product Manager before using in any HL7 IG"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="string"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="No exempt files"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="extension-domain"/>
+    <display value="extension-domain"/>
+    <definition value="An external domain fro which extensions are allowed to come (else they'll be flagged as invalid when validating).  ```http://example.org``` is always allowed"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="url"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="n/a"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="active-tables"/>
+    <display value="active-tables"/>
+    <definition value="Whether to generate active tables in the generated fragments (tables that will expand and contract). Note that turning this on requires that this entry be found somewhere in the header of the generated html pages: ```&lt;script src='fhir-table-scripts.js'&gt;&lt;/script&gt;```"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="special-url"/>
+    <display value="special-url"/>
+    <definition value="If a canonical resource in the IG should actually have a URL that isn't the one implied by the canonical URL for the IG itself, it must be listed here explicitly (as well as defined in the resource itself). It must be listed here to stop it accidentally being different. Each canonical url must be listed in full as present on the resource; it is not possible to specify a pattern."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="url"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="n/a"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="template-openapi"/>
+    <display value="template-openapi"/>
+    <definition value="A relative path to the template openapi file to use when generating openapi files (e.g. populate openAPI security details)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="path"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="no template"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="template-html"/>
+    <display value="template-html"/>
+    <definition value="A relative path to the template to use when rendering html pages"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="path"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="?"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="template-md"/>
+    <display value="template-md"/>
+    <definition value="A relative path to the template to use when rendering markdown pages"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="path"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="?"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="apply-contact"/>
+    <display value="apply-contact"/>
+    <definition value="if true, overwrite all canonical resource contact details with that found in the IG.&#10;&#10;(Note: the ig-template-base template, on which almost all IG templates are based, sets this to parameter to true unless it has been explicitly set.)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="default-contact"/>
+    <display value="default-contact"/>
+    <definition value="if true, populate all canonical resources that don't specify their own contact details with that found in the IG. Ignored if apply-contact is true."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+
+  <concept>
+    <code value="apply-context"/>
+    <display value="apply-context"/>
+    <definition value="if true, overwrite all canonical resource context details with that found in the IG.&#10;&#10;(Note: the ig-template-base template, on which almost all IG templates are based, sets this to parameter to true unless it has been explicitly set.)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="default-context"/>
+    <display value="default-context"/>
+    <definition value="if true, populate all canonical resources that don't specify their own context details with that found in the IG. Ignored if apply-context is true."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="apply-copyright"/>
+    <display value="apply-copyright"/>
+    <definition value="if true, overwrite all canonical resource copyright details with that found in the IG.&#10;&#10;(Note: the ig-template-base template, on which almost all IG templates are based, sets this to parameter to true unless it has been explicitly set.)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="default-copyright"/>
+    <display value="default-copyright"/>
+    <definition value="if true, populate all canonical resources that don't specify their own copyright details with that found in the IG. Ignored if apply-copyright is true."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="apply-jurisdiction"/>
+    <display value="apply-jurisdiction"/>
+    <definition value="if true, overwrite all canonical resource jurisdiction details with that found in the IG.&#10;&#10;(Note: the ig-template-base template, on which almost all IG templates are based, sets this to parameter to true unless it has been explicitly set.)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="default-jurisdiction"/>
+    <display value="default-jurisdiction"/>
+    <definition value="if true, populate all canonical resources that don't specify their own jurisdiction details with that found in the IG. Ignored if apply-jurisdiction is true."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="apply-license"/>
+    <display value="apply-license"/>
+    <definition value="if true, overwrite all canonical resource license details with that found in the IG.&#10;&#10;(Note: the ig-template-base template, on which almost all IG templates are based, sets this to parameter to true unless it has been explicitly set.)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="default-license"/>
+    <display value="default-license"/>
+    <definition value="if true, populate all canonical resources that don't specify their own license details with that found in the IG. Ignored if apply-license is true."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="apply-publisher"/>
+    <display value="apply-publisher"/>
+    <definition value="if true, overwrite all canonical resource publisher details with that found in the IG.&#10;&#10;(Note: the ig-template-base template, on which almost all IG templates are based, sets this to parameter to true unless it has been explicitly set.)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="default-publisher"/>
+    <display value="default-publisher"/>
+    <definition value="if true, populate all canonical resources that don't specify their own publisher details with that found in the IG. Ignored if apply-publisher is true."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+
+  <concept>
+    <code value="apply-version"/>
+    <display value="apply-version"/>
+    <definition value="if true, overwrite all canonical resource version details with that found in the IG.&#10;&#10;(Note: the ig-template-base template, on which almost all IG templates are based, sets this to parameter to true unless it has been explicitly set.)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="default-version"/>
+    <display value="default-version"/>
+    <definition value="if true, populate all canonical resources that don't specify their own version details with that found in the IG. Ignored if apply-version is true."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+
+  <concept>
+    <code value="propagate-status"/>
+    <display value="propagate-status"/>
+    <definition value="If true, indicates that the FMM and Standards Status declarations from top-level artifacts should be propagated to any dependencies that don't declare their own values.  If different statuses or maturity level would propagate to a dependency from different artifacts, the 'highest' FMM or most mature standards status will apply (Normative or Informative, then STU, then Draft).  Information does not propagate to artifacts marked as examples or as experimental.&#10;Propagation is based on references.  E.g. the IG references everything (so its status will propagate everywhere by default).  If there are higher statuses on certain CapabilityStatements, Operations or Profiles, those status will propagate to the artifacts they reference, such as other profiles, ValueSets or CodeSystems.&#10;Propagation only happens within the context of an IG.  There is no propagation across artifacts present in other IG packages listed as dependencies."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="validation"/>
+    <display value="validation"/>
+    <definition value="Fine grained control over validation flags when validating resources / IGs:&#10;&#10;* ```check-must-support```: Does nothing! (for now?)&#10;* ```allow-any-extensions```: Allow any extensions at all (and therefore miss accidental broken extension references)&#10;* ```check-aggregation```: check that aggregation is correct (in IGs, bundles are often broken up for publishing / documentation purposes)&#10;* ```no-broken-links```: don't report broken links in HTML pages (note: never turn this off for HL7 guides. Stay on top of fixing broken links; it's a chore, but if you leave it till later, you won't have time, and your IG won't be approved for publishing)&#10;* ```show-reference-messages```: when validating, instead of showing a summary of issues from validating the target of references, just show all the validation messages in detail"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="code"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="none of the options"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="show-inherited-invariants"/>
+    <display value="show-inherited-invariants"/>
+    <definition value="faIf true, render inherited constraints in the full details and invariants viewlse"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="true"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="allow-extensible-warnings"/>
+    <display value="allow-extensible-warnings"/>
+    <definition value="if true, show the warning when codes are not in extensible bindings"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="usage-stats-opt-out"/>
+    <display value="usage-stats-opt-out"/>
+    <definition value="If true, usage stats (information about extensions, value sets, and invariants being used) is not sent to fhir.org (see e.g. ```http://clinfhir.com/igAnalysis.html```)."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="generate-version"/>
+    <display value="generate-version"/>
+    <definition value="Request that the IG publisher generate packages for additional versions than the stated version e.g. the IG might be for authored against version 4.0, but also produce an R3 version.&#10;&#10;For each occurence of this parameter, the IG publisher will produce an extra package, with the filename id.ver.tgz where id is the main id of the ig, and ver is the parameter value. (note that this is different to the main package which is always called package.tgz). &#10;&#10;This parameter can have one one of following values:&#10;&#10;* r2&#10;* r2b&#10;* r3&#10;* r4&#10;* r5&#10;&#10;This parameter should be used with great care, and only after consulting the FHIR Product director to consider all of it's ramifications. It's generally only appropriate for terminology resources.&#10; It's not an error to generate the same version as the IG itself - this is typically done for consistency of use across versions"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="code"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="n/a"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="releaselabel"/>
+    <display value="releaselabel"/>
+    <definition value="The release label at the top of the page - values:&#10;&#10;* ```ci-build``` - the continuous integration build release (not stable)&#10;* ```draft``` - draft version&#10;* ```qa-preview``` - frozen snapshot for non-ballot feedback&#10;* ```ballot``` - frozen snapshot for ballot&#10;* ```trial-use``` - official release with 'trial use' status&#10;* ```release``` - official release for use&#10;* ```update``` - official release with 'trial use' status - posted as an un-ballotedSTU update&#10;* ```normative+trial-use``` - official release with mixture of trial use and normative content"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="code"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="?"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="excludexml"/>
+    <display value="excludexml"/>
+    <definition value="Cause the publisher to exclude the generation of the xml format and to exclude the xml tab from the implementation guide pages."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="excludejson"/>
+    <display value="excludejson"/>
+    <definition value="Cause the publisher to exclude the generation of the json format and to exclude the json tab from the implementation guide pages."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="excludettl"/>
+    <display value="excludettl"/>
+    <definition value="Cause the publisher to exclude the generation of the ttl format and to exclude the ttl tab from the implementation guide pages."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="excludemap"/>
+    <display value="excludemap"/>
+    <definition value="If true, causes the mapping tab to be excluded from all StructureDefinition artifact pages"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="excludelogbinaryformat"/>
+    <display value="excludelogbinaryformat"/>
+    <definition value="If true, causes the xml, json and ttl tabs to be excluded for Binary resources when they're examples of logical models"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="true"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="shownav"/>
+    <display value="shownav"/>
+    <definition value="Determines whether the next/previous navigation tabs are shown in the header and footer"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="true"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="copyrightyear"/>
+    <display value="copyrightyear"/>
+    <definition value="The copyright year text to include in the implementation guide footer"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="string"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="?"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="fmm-definition"/>
+    <display value="fmm-definition"/>
+    <definition value="Indicates the URL that provides a definition for the maturity levels declared in the current IG."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="url"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="maturity levels will not be rendered"/>
+    </property>
+  </concept>
+  
+  <concept>
+    <code value="version-comparison"/>
+    <display value="version-comparison"/>
+    <definition value="Control how the IG publisher does a comparison with a previously published version (see qa.html). Possible values:&#10;&#10;* ```{last}``` - compare with the last published version (whatever it's status) - this is the default if the parameter doesn't appear&#10;* ```{current}``` - compare with the last full published version &#10;* ```n/a``` - don't do any comparison&#10;* ```[v]``` - a previous version where [v] is the version"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="code"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="last version with same status"/>
+    </property>
+  </concept>
+  
+  <concept>
+    <code value="ipa-comparison"/>
+    <display value="ipa-comparison"/>
+    <definition value="Control how the IG publisher does a comparison with a IPA (see qa.html). Possible values:&#10;&#10;* ```{last}``` - compare with the last published version (whatever it's status) - this is the default if the parameter doesn't appear&#10;* ```{current}``` - compare with the last full published version &#10;* ```n/a``` - don't do any comparison&#10;* ```[v]``` - a previous version where [v] is the version"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="code"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="don't compare"/>
+    </property>
+  </concept>
+  
+  <concept>
+    <code value="bundle-references-resolve"/>
+    <display value="bundle-references-resolve"/>
+    <definition value="Whether to require that references in bundles resolve. ```true``` means references must resolve within implementation guides or an error is created."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="true"/>
+    </property>
+  </concept>
+  
+  <concept>
+    <code value="format-date"/>
+    <display value="format-date"/>
+    <definition value="String format to use when rendering date values from resources in the implementation guide."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="string"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="yyyy-MM-dd"/>
+    </property>
+  </concept>
+  
+  <concept>
+    <code value="format-datetime"/>
+    <display value="format-datetime"/>
+    <definition value="String format to use when rendering date/time values from resources in the implementation guide.&#10;&#10;Note: see [Patterns for Formatting and Parsing](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html) for Java String formats"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="string"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="yyyy-MM-dd hh:mm:ssZZZ"/>
+    </property>
+  </concept>
+  
+  <concept>
+    <code value="no-modifiers"/>
+    <display value="no-modifiers"/>
+    <definition value="If set to ```true```, it means that all profiles created within the implementation guide will have their differential modified to set maxOccurs=0 on all ```isModifier``` elements that are not explicitly mentioned in the original source differential."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+  
+  <concept>
+    <code value="jekyll-timeout"/>
+    <display value="jekyll-timeout"/>
+    <definition value="How long to let Jekyll run before giving up on it (seconds)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="seconds"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="300"/>
+    </property>
+  </concept>
+  
+  <concept>
+    <code value="suppressed-ids"/>
+    <display value="suppressed-ids"/>
+    <definition value="A comma separated list of resource ids to suppress ids when they are rendered in the Implementation Guide.&#10;&#10;This is useful because the IG publication process requires all resources to have ids, so they can be handled. But in some Implementation Guides, some examples should not have ids .e.g showing an example of posting a new resource. If the resource is listed here, the id will be removed in the publication (but not the package, where the resources must have ids).&#10;The format is either type/id, or just id. Repeating parameters just add more to the list. If the parameter is present with the special value $examples, then all examples will have ids suppressed&#10;If the parameter is not present, then all resources will have ids."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="string"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="don't suppress ids"/>
+    </property>
+  </concept>
+  
+  
+</CodeSystem>
