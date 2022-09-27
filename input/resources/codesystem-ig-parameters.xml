@@ -1134,5 +1134,22 @@
     </property>
   </concept>
   
+  <concept>
+    <code value="tabbed-snapshots"/>
+    <display value="tabbed-snapshots"/>
+    <definition value="A boolean that indicates that the implementation guide leverages tabs to include alternate dictionary views and that tabs for differential, key and/or must-support tables should link to anchors specific to those tables rather than only to the default 'snapshot' keys."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="Generate all table links to point to the 'snapshot' anchors"/>
+    </property>
+  </concept>
   
 </CodeSystem>
