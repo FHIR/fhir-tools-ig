@@ -741,7 +741,7 @@
   <concept>
     <code value="validation"/>
     <display value="validation"/>
-    <definition value="Fine grained control over validation flags when validating resources / IGs:&#10;&#10;* ```check-must-support```: Does nothing! (for now?)&#10;* ```allow-any-extensions```: Allow any extensions at all (and therefore miss accidental broken extension references)&#10;* ```check-aggregation```: check that aggregation is correct (in IGs, bundles are often broken up for publishing / documentation purposes)&#10;* ```no-broken-links```: don't report broken links in HTML pages (note: never turn this off for HL7 guides. Stay on top of fixing broken links; it's a chore, but if you leave it till later, you won't have time, and your IG won't be approved for publishing)&#10;* ```show-reference-messages```: when validating, instead of showing a summary of issues from validating the target of references, just show all the validation messages in detail"/>
+    <definition value="Fine grained control over validation flags when validating resources / IGs:&#10;&#10;* ```check-must-support```: Does nothing! (for now?)&#10;* ```allow-any-extensions```: Allow any extensions at all (and therefore miss accidental broken extension references)&#10;* ```check-aggregation```: check that aggregation is correct (in IGs, bundles are often broken up for publishing / documentation purposes)&#10;* ```no-broken-links```: forbid broken links in HTML pages - stop the build if any are found&#10;* ```show-reference-messages```: when validating, instead of showing a summary of issues from validating the target of references, just show all the validation messages in detail"/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="true"/>
