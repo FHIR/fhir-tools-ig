@@ -1151,5 +1151,23 @@
       <valueString value="Generate all table links to point to the 'snapshot' anchors"/>
     </property>
   </concept>
+
+  <concept>
+    <code value="jira-code"/>
+    <display value="jira-code"/>
+    <definition value="If your IG is published via HL7 and should your package ID diverge from the file name in the JIRA-Spec-Artifacts repository, this parameter will help point to the right file."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="string"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="use package ID for locating spec file in JIRA-Spec-Artifacts"/>
+    </property>
+  </concept>
   
 </CodeSystem>
