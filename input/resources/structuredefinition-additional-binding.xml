@@ -136,11 +136,41 @@
       </type> 
     </element> 
 
+    <element id="Extension.extension:shortDoco">
+      <path value="Extension.extension"/> 
+      <sliceName value="shortDoco"/> 
+      <short value="Short doco for this binding - used in dense table views"/> 
+      <min value="0"/> 
+      <max value="1"/> 
+      <type> 
+        <code value="Extension"/> 
+      </type> 
+    </element> 
+    <element id="Extension.extension:shortDoco.extension">
+      <path value="Extension.extension.extension"/> 
+      <max value="0"/> 
+    </element> 
+    <element id="Extension.extension:shortDoco.url">
+      <path value="Extension.extension.url"/> 
+      <type> 
+        <code value="uri"/> 
+      </type> 
+      <fixedUri value="shortDoco"/> 
+    </element> 
+    <element id="Extension.extension:shortDoco.value[x]">
+      <path value="Extension.extension.value[x]"/> 
+      <min value="1"/> 
+      <type> 
+        <code value="string"/> 
+      </type> 
+    </element> 
+
     <element id="Extension.extension:usage">
       <path value="Extension.extension"/> 
       <sliceName value="usage"/> 
-      <short value="User-facing authorization management entry point"/> 
-      <definition value="The user-facing authorization management workflow entry point for this FHIR server."/> 
+      <short value="Definition of a context in which this binding applies"/> 
+      <definition value="Definition of a context in which this binding applies. This SHOULD be present for purpose=conformance to limit the scope of the conformance claim."/> 
+      <comments value="Usage context might be a jurisdiction, or some other clearly defined context of operation. Note that if the context is not clear, then implementers will not be able to determinate whether the binding applies."/>
       <min value="0"/> 
       <max value="1"/> 
       <type> 

@@ -26,7 +26,12 @@
   <concept>
     <code value="conformance"/>
     <display value="Conformance Binding"/>
-    <definition value="This value set replaces the overall conformance value set in a particular usage context"/>
+    <definition value="This value set is used as a validation criteria (in addition to the base binding, usually in a particular usage context)"/>
+  </concept>
+  <concept>
+    <code value="candidate"/>
+    <display value="Candidate Binding"/>
+    <definition value="This value set is a candidate to substitute for the overall conformance value set in some situations; usually these are defined in the documentation"/>
   </concept>
   <concept>
     <code value="current"/>
