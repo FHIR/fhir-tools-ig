@@ -38,6 +38,36 @@
         <reference value="StructureDefinition/obligation"/>
       </reference>
     </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/json-property-key"/>
+      </reference>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/CDSHooksServices"/>
+      </reference>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/CDSHooksRequest"/>
+      </reference>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/CDSHooksResponse"/>
+      </reference>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/CDSHookContext"/>
+      </reference>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/CDSHookPatientContext"/>
+      </reference>
+    </resource>
     <page>
       <nameUrl value="index.html"/>
       <title value="Home Page"/>
