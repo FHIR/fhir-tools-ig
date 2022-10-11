@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="type-specifier"/>
+  <url value="http://hl7.org/fhir/tools/StructureDefinition/type-specifier"/>
+  <name value="type-specifier"/>
+  <title value="type-specifier Extension"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="HL7 International / FHIR Infrastructure"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/Special/committees/fhir-i"/>
+    </telecom>
+  </contact>
+  <description value="In some logical models, the type of content at one location depends on the value of some other element, and the type is otherwise not explicit in the instance. In such cases, the type of the element is assigned an abstract ancestor type, and this extension specifies how to determine what type is actually used"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  
+  <fhirVersion value="4.0.1"/>
+  <kind value="complex-type"/>
+  <abstract value="false"/>
+  <context>
+    <type value="element"/>
+    <expression value="ElementDefinition.type"/>
+  </context>
+  <type value="Extension"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+  <derivation value="constraint"/>
+  <differential>
+   <element id="Extension">
+      <path value="Extension"/> 
+      <short value="Indicates that this repeating element is represented as an object in json and the named one of the two sub-elements is the key for the other one"/> 
+      <definition value="type-specifiers applied to bindable elements."/> 
+      <min value="0"/> 
+      <max value="*"/> 
+    </element> 
+
+    <element id="Extension.extension">
+      <path value="Extension.extension"/> 
+      <slicing> 
+        <discriminator> 
+          <type value="value"/> 
+          <path value="url"/> 
+        </discriminator> 
+        <description value="Extensions are sliced by url"/> 
+        <rules value="closed"/> 
+      </slicing> 
+      <min value="2"/> 
+      <max value="2"/> 
+    </element> 
+
+   <element id="Extension.extension:condition">
+      <path value="Extension.extension"/> 
+      <sliceName value="condition"/> 
+      <short value="Condition for this type (FHIRPath)"/> 
+      <definition value="The FHIRPath expression for this type to be true."/> 
+      <min value="1"/> 
+      <max value="1"/> 
+      <type> 
+        <code value="Extension"/> 
+      </type> 
+    </element> 
+    <element id="Extension.extension:condition.extension">
+      <path value="Extension.extension.extension"/> 
+      <max value="0"/> 
+    </element> 
+    <element id="Extension.extension:condition.url">
+      <path value="Extension.extension.url"/> 
+      <type> 
+        <code value="uri"/> 
+      </type> 
+      <fixedUri value="condition"/> 
+    </element> 
+    <element id="Extension.extension:condition.value[x]">
+      <path value="Extension.extension.value[x]"/> 
+      <min value="1"/> 
+      <type> 
+        <code value="string"/> 
+      </type> 
+    </element> 
+    <element id="Extension.extension:type">
+      <path value="Extension.extension"/> 
+      <sliceName value="type"/> 
+      <short value="The type (uri - usually full URI of logical model type_"/> 
+      <min value="1"/> 
+      <max value="1"/> 
+      <type> 
+        <code value="Extension"/> 
+      </type> 
+    </element> 
+    <element id="Extension.extension:type.extension">
+      <path value="Extension.extension.extension"/> 
+      <max value="0"/> 
+    </element> 
+    <element id="Extension.extension:type.url">
+      <path value="Extension.extension.url"/> 
+      <type> 
+        <code value="uri"/> 
+      </type> 
+      <fixedUri value="type"/> 
+    </element> 
+    <element id="Extension.extension:type.value[x]">
+      <path value="Extension.extension.value[x]"/> 
+      <min value="1"/> 
+      <type> 
+        <code value="code"/> 
+      </type> 
+    </element>
+
+    <element id="Extension.url">
+      <path value="Extension.url"/> 
+      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/type-specifier"/> 
+    </element> 
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]"/> 
+      <max value="0"/>
+    </element> 
+  </differential>
+</StructureDefinition>

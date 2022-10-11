@@ -108,7 +108,19 @@
         "short" : "Hook-specific contextual data that the CDS service will need",
         "min" : 1,
         "max" : "1",
-        "type" : [{ "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookContext"}]
+        "type" : [{
+           "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookContext",
+           "extension" : [{
+              "url" : "http://hl7.org/fhir/tools/StructureDefinition/type-specifier",
+              "extension" : [{
+                "url" : "condition",
+                "valueString" : "$resource.hook = 'patient-view'"
+              },{
+                "url" : "type",
+                "valueString" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookPatientContext"
+              }]
+           }]
+        }]
       },
       {
         "path" : "CDSHooksRequest.prefetch",

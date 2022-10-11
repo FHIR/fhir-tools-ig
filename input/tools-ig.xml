@@ -45,6 +45,11 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/type-specifier"/>
+      </reference>
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/CDSHooksServices"/>
       </reference>
     </resource>
