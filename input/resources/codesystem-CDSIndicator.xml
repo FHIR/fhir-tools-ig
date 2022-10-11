@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="CDSIndicator"/>
+  <url value="http://hl7.org/fhir/tools/CodeSystem/CDSIndicator"/>
+  <name value="CDSIndicatorCodes"/>
+  <title value="CDSIndicator Codes"/>
+  <status value="active"/>
+  <description value="Codes that describe application CDSIndicators"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <property>
+    <code value="should-shall"/>
+    <description value="Codes with this property true must have shall or should appended in the grammar"/>
+    <type value="boolean"/>
+  </property>
+  <property>
+    <code value="expression"/>
+    <description value="Expression that expresses aggregate codes using the grammar"/>
+    <type value="string"/>
+  </property>
+  <concept>
+    <code value="info"/>
+    <display value="info"/>
+  </concept>
+  <concept>
+    <code value="warning"/>
+    <display value="warning"/>
+  </concept>
+  <concept>
+    <code value="error"/>
+    <display value="error"/>
+  </concept>
+</CodeSystem>

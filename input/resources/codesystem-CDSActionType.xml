@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="CDSActionType"/>
+  <url value="http://hl7.org/fhir/tools/CodeSystem/CDSActionType"/>
+  <name value="CDSActionTypeCodes"/>
+  <title value="CDSActionType Codes"/>
+  <status value="active"/>
+  <description value="Codes that describe application CDSActionTypes"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <property>
+    <code value="should-shall"/>
+    <description value="Codes with this property true must have shall or should appended in the grammar"/>
+    <type value="boolean"/>
+  </property>
+  <property>
+    <code value="expression"/>
+    <description value="Expression that expresses aggregate codes using the grammar"/>
+    <type value="string"/>
+  </property>
+  <concept>
+    <code value="create"/>
+    <display value="create"/>
+  </concept>
+  <concept>
+    <code value="update"/>
+    <display value="update"/>
+  </concept>
+  <concept>
+    <code value="delete"/>
+    <display value="delete"/>
+  </concept>
+</CodeSystem>

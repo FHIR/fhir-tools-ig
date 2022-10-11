@@ -1,0 +1,23 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "CDSHookContext",
+  "url" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookContext",
+  "version" : "0.0.1",
+  "name" : "CDSHookContext",
+  "title" : "Logical Definition for CDS Hook Specific Context",
+  "status" : "draft",
+  "kind" : "logical",
+  "fhirVersion" : "4.0.1",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Base",
+  "derivation" : "specialization",
+  "abstract"  : true,
+  "type" : "CDSHookContext",
+  "differential" : {
+    "element" : [
+      {
+        "path" : "CDSHookContext",
+        "short" : "The context (hook specific)"
+      }
+    ]
+  }
+}

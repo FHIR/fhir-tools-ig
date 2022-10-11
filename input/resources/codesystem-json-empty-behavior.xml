@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="json-empty-behavior"/>
+  <url value="http://hl7.org/fhir/tools/CodeSystem/json-empty-behavior"/>
+  <name value="json-empty-behaviorCodes"/>
+  <title value="json-empty-behavior Codes"/>
+  <status value="active"/>
+  <description value="Codes that describe application json-empty-behaviors"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <property>
+    <code value="should-shall"/>
+    <description value="Codes with this property true must have shall or should appended in the grammar"/>
+    <type value="boolean"/>
+  </property>
+  <property>
+    <code value="expression"/>
+    <description value="Expression that expresses aggregate codes using the grammar"/>
+    <type value="string"/>
+  </property>
+  <concept>
+    <code value="absent"/>
+    <display value="absent"/>
+    <definition value="When there's no items, the json property for the array must be missing"/>
+  </concept>
+  <concept>
+    <code value="present"/>
+    <display value="present"/>
+    <definition value="When there's no items, the json property for the array must be present and empty"/>
+  </concept>
+  <concept>
+    <code value="either"/>
+    <display value="either"/>
+    <definition value="When there's no items, the json property for the array may be present and empty, or absent"/>
+  </concept>
+
+</CodeSystem>
