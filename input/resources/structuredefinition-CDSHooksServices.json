@@ -40,6 +40,14 @@
         "type" : [{ "code" : "string"}]
       },
       {
+        "path" : "CDSHooksServices.services.id",
+        "short" : "The URL to this service which is available at: {baseUrl}/cds-services/{id}",
+        "definition" : "The {id} portion of the URL to this service which is available at ```{baseUrl}/cds-services/{id}```",
+        "min" : 1,
+        "max" : "1",
+        "type" : [{ "code" : "code"}]
+      },
+      {
         "path" : "CDSHooksServices.services.description",
         "short" : "The description of this Services",
         "min" : 1,
