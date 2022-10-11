@@ -57,7 +57,7 @@
       {
         "path" : "CDSHooksServices.services.usageRequirements",
         "short" : "Human-friendly description of any preconditions for the use of this CDS Services",
-        "min" : 1,
+        "min" : 0,
         "max" : "1",
         "type" : [{ "code" : "string"}]
       },
