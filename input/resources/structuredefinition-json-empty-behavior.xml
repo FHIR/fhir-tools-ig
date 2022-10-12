@@ -2,8 +2,8 @@
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="json-empty-behavior"/>
   <url value="http://hl7.org/fhir/tools/StructureDefinition/json-empty-behavior"/>
-  <name value="json-empty-behavior"/>
-  <title value="json-empty-behavior Extension"/>
+  <name value="JsonEmptyBehavior"/>
+  <title value="Json Empty Behavior Extension"/>
   <status value="draft"/>
   <experimental value="true"/>
   <publisher value="HL7 International / FHIR Infrastructure"/>
@@ -13,7 +13,7 @@
       <value value="http://hl7.org/Special/committees/fhir-i"/>
     </telecom>
   </contact>
-  <description value="empty-behaviour: what should be in JSON when a repeating elements has no items. Can be absent, present, or either"/>
+  <description value="empty-behaviour: what should be in JSON when a repeating elements has no items? Can be absent, present, or either"/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -58,7 +58,7 @@
       <type>
         <code value="code"/>
       </type>
-      <meaningIfMissing value="default is that the array should not be present"/>
+      <meaningWhenMissing value="default is that the array should not be present"/>
       <binding>
         <strength value="required"/>
         <valueSet value="http://hl7.org/fhir/tools/ValueSet/json-empty-behavior"/>

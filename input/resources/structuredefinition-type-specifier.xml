@@ -2,8 +2,8 @@
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="type-specifier"/>
   <url value="http://hl7.org/fhir/tools/StructureDefinition/type-specifier"/>
-  <name value="type-specifier"/>
-  <title value="type-specifier Extension"/>
+  <name value="TypeSpecifier"/>
+  <title value="Type Specifier Extension"/>
   <status value="draft"/>
   <experimental value="true"/>
   <publisher value="HL7 International / FHIR Infrastructure"/>

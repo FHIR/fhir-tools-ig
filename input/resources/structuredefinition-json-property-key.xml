@@ -2,8 +2,8 @@
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="json-property-key"/>
   <url value="http://hl7.org/fhir/tools/StructureDefinition/json-property-key"/>
-  <name value="json-property-key"/>
-  <title value="json-property-key Extension"/>
+  <name value="JsonPropertyKey"/>
+  <title value="Json Property Key Extension"/>
   <status value="draft"/>
   <experimental value="true"/>
   <publisher value="HL7 International / FHIR Infrastructure"/>

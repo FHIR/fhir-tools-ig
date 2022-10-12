@@ -4,8 +4,9 @@
   "url" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksServices",
   "version" : "0.0.1",
   "name" : "CDSHooksServices",
-  "title" : "Logical Definition for CDSHooks Services Request",
+  "title" : "CDSHooks Services Request (Logical Definition)",
   "status" : "draft",
+  "description" : "This structure is defined to allow the FHIR Validator to validate a CDSHooks Services response body",
   "kind" : "logical",
   "fhirVersion" : "4.0.1",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Base",
@@ -16,18 +17,22 @@
     "element" : [
       {
         "path" : "CDSHooksServices",
-        "short" : "The response to the discovery endpoint"
+        "short" : "The response to the discovery endpoint",
+        "definition" : "The response to the discovery endpoint"
       },
       {
         "path" : "CDSHooksServices.services",
         "short" : "A list of CDS services",
+        "definition" : "A list of CDS services",
         "comment" : "If the CDS server hosts no CDS services, the discovery endpoint should return a 200 HTTP response with an empty array of services",
         "min" : 0,
-        "max" : "*"
+        "max" : "*",
+        "type" : [{ "code" : "Base"}]
       },
       {
         "path" : "CDSHooksServices.services.hook",
         "short" : "The hook this Services should be invoked on",
+        "definition" : "The hook this Services should be invoked on",
         "min" : 1,
         "max" : "1",
         "type" : [{ "code" : "string"}]
@@ -35,6 +40,7 @@
       {
         "path" : "CDSHooksServices.services.title",
         "short" : "The human-friendly name of this Services (Recommended)",
+        "definition" : "The human-friendly name of this Services (Recommended)",
         "min" : 0,
         "max" : "1",
         "type" : [{ "code" : "string"}]
@@ -50,6 +56,7 @@
       {
         "path" : "CDSHooksServices.services.description",
         "short" : "The description of this Services",
+        "definition" : "The description of this Services",
         "min" : 1,
         "max" : "1",
         "type" : [{ "code" : "string"}]
@@ -57,6 +64,7 @@
       {
         "path" : "CDSHooksServices.services.usageRequirements",
         "short" : "Human-friendly description of any preconditions for the use of this CDS Services",
+        "definition" : "Human-friendly description of any preconditions for the use of this CDS Services",
         "min" : 0,
         "max" : "1",
         "type" : [{ "code" : "string"}]
@@ -64,9 +72,10 @@
       {
         "path" : "CDSHooksServices.services.prefetch",
         "short" : "Key/value pairs of FHIR queries the CDS Client provides on each call",
-        "description" : "An object containing key/value pairs of FHIR queries that this Services is requesting the CDS Client to perform and provide on each Services call. The key is a string that describes the type of data being requested and the value is a string representing the FHIR query",
+        "definition" : "An object containing key/value pairs of FHIR queries that this Services is requesting the CDS Client to perform and provide on each Services call. The key is a string that describes the type of data being requested and the value is a string representing the FHIR query",
         "min" : 0,
         "max" : "*",
+        "type" : [{ "code" : "Base"}],
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-property-key",
           "valueCode" : "key"
@@ -75,6 +84,7 @@
       {
         "path" : "CDSHooksServices.services.prefetch.key",
         "short" : "Key of FHIR query - name for client to use when sending to Services",
+        "definition" : "Key of FHIR query - name for client to use when sending to Services",
         "min" : 1,
         "max" : "1",
         "type" : [{ "code" : "code"}]
@@ -82,6 +92,7 @@
       {
         "path" : "CDSHooksServices.services.prefetch.value",
         "short" : "Value of FHIR query - FHIR Query for client to perform",
+        "definition" : "Value of FHIR query - FHIR Query for client to perform",
         "min" : 1,
         "max" : "1",
         "type" : [{ "code" : "string"}]

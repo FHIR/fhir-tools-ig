@@ -5,9 +5,10 @@
     <valueBoolean value="true"/>
   </extension>
   <url value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
-  <name value="IgParameters"/>
-  <title value="Ig Parameter Codes"/>
+  <name value="IGParameters"/>
+  <title value="IG Parameter Codes"/>
   <status value="active"/>
+  <experimental value="true"/>
   <description value="Ig Parameter Codes Defined by the FHIR Tooling"/>
   <jurisdiction>
     <coding>

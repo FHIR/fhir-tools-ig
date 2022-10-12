@@ -2,8 +2,8 @@
 <ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="CDSActionType"/>
   <url value="http://hl7.org/fhir/tools/ValueSet/CDSActionType"/>
-  <name value="CDSActionTypeCodes"/>
-  <title value="CDSActionType Codes"/>
+  <name value="CDSActionTypeCodesVS"/>
+  <title value="CDSActionType Codes ValueSet"/>
   <status value="active"/>
   <experimental value="true"/>
   <description value="CDSActionType Codes"/>

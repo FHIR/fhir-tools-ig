@@ -170,7 +170,7 @@
       <sliceName value="usage"/> 
       <short value="Definition of a context in which this binding applies"/> 
       <definition value="Definition of a context in which this binding applies. This SHOULD be present for purpose=conformance to limit the scope of the conformance claim."/> 
-      <comments value="Usage context might be a jurisdiction, or some other clearly defined context of operation. Note that if the context is not clear, then implementers will not be able to determinate whether the binding applies."/>
+      <comment value="Usage context might be a jurisdiction, or some other clearly defined context of operation. Note that if the context is not clear, then implementers will not be able to determinate whether the binding applies."/>
       <min value="0"/> 
       <max value="1"/> 
       <type> 

@@ -5,6 +5,7 @@
   <name value="CDSSelectionBehaviorCodes"/>
   <title value="CDSSelectionBehavior Codes"/>
   <status value="active"/>
+  <experimental value="true"/>
   <description value="Codes that describe application CDSSelectionBehaviors"/>
   <jurisdiction>
     <coding>

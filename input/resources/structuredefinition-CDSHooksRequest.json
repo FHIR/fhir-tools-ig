@@ -4,8 +4,9 @@
   "url" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest",
   "version" : "0.0.1",
   "name" : "CDSHooksRequest",
-  "title" : "Logical Definition for CDSHooks Request",
+  "title" : "CDSHooks Request (Logical Definition)",
   "status" : "draft",
+  "description" : "This structure is defined to allow the FHIR Validator to validate a CDSHooks Request Body",
   "kind" : "logical",
   "fhirVersion" : "4.0.1",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Base",
@@ -17,6 +18,7 @@
       {
         "path" : "CDSHooksRequest",
         "short" : "The response to the discovery endpoint",
+        "definition" : "The response to the discovery endpoint",
         "constraint" : [{
           "key" : "cds-r-1",
           "severity" : "error",
@@ -27,6 +29,7 @@
       {
         "path" : "CDSHooksRequest.hook",
         "short" : "The hook that triggered this CDS Service call",
+        "definition" : "The hook that triggered this CDS Service call",
         "min" : 1,
         "max" : "1",
         "type" : [{ "code" : "code"}]
@@ -35,7 +38,7 @@
         "path" : "CDSHooksRequest.hookInstance",
         "short" : "A universally unique identifier (UUID) for this particular hook call",
         "definition" : "While working in the CDS Client, a user can perform multiple actions in series or in parallel. For example, a clinician might prescribe two drugs in a row; each prescription action would be assigned a unique hookInstance. This allows a CDS Service to uniquely identify each hook invocation",
-        "comments" : "Note: the hookInstance is globally unique and should contain enough entropy to be un-guessable.",
+        "comment" : "Note: the hookInstance is globally unique and should contain enough entropy to be un-guessable.",
         "min" : 1,
         "max" : "1",
         "type" : [{ "code" : "uuid"}]
@@ -43,7 +46,7 @@
       {
         "path" : "CDSHooksRequest.fhirServer",
         "short" : "The base URL of the CDS Client's FHIR server",
-        "description" : "The base URL of the CDS Client's FHIR server. If fhirAuthorization is provided, this field is REQUIRED. The scheme MUST be https when production data is exchanged",
+        "definition" : "The base URL of the CDS Client's FHIR server. If fhirAuthorization is provided, this field is REQUIRED. The scheme MUST be https when production data is exchanged",
         "min" : 0,
         "max" : "1",
         "type" : [{ "code" : "url"}]
@@ -51,8 +54,10 @@
       {
         "path" : "CDSHooksRequest.fhirAuthorization",
         "short" : "A structure holding an OAuth 2.0 bearer access token granting the CDS Service access to FHIR resources, along with supplemental information relating to the token",
+        "definition" : "A structure holding an OAuth 2.0 bearer access token granting the CDS Service access to FHIR resources, along with supplemental information relating to the token",
         "min" : 0,
         "max" : "1",
+        "type" : [{ "code" : "Base"}],
         "constraint" : [{
           "key" : "cds-r-2",
           "severity" : "error",
@@ -63,6 +68,7 @@
       {
         "path" : "CDSHooksRequest.fhirAuthorization.access_token",
         "short" : "This is the OAuth 2.0 access token that provides access to the FHIR server",
+        "definition" : "This is the OAuth 2.0 access token that provides access to the FHIR server",
         "min" : 1,
         "max" : "1",
         "type" : [{ "code" : "string"}]
@@ -70,6 +76,7 @@
       {
         "path" : "CDSHooksRequest.fhirAuthorization.token_type",
         "short" : "Fixed value: Bearer",
+        "definition" : "Fixed value: Bearer",
         "min" : 1,
         "max" : "1",
         "fixedCode" : "Bearer",
@@ -78,6 +85,7 @@
       {
         "path" : "CDSHooksRequest.fhirAuthorization.expires_in",
         "short" : "The lifetime in seconds of the access token.",
+        "definition" : "The lifetime in seconds of the access token.",
         "min" : 1,
         "max" : "1",
         "type" : [{ "code" : "integer"}]
@@ -85,6 +93,7 @@
       {
         "path" : "CDSHooksRequest.fhirAuthorization.scope",
         "short" : "The scopes the access token grants the CDS Service",
+        "definition" : "The scopes the access token grants the CDS Service",
         "min" : 1,
         "max" : "1",
         "type" : [{ "code" : "string"}]
@@ -92,13 +101,15 @@
       {
         "path" : "CDSHooksRequest.fhirAuthorization.subject",
         "short" : "The OAuth 2.0 client identifier of the CDS Service, as registered with the CDS Client's authorization server",
+        "definition" : "The OAuth 2.0 client identifier of the CDS Service, as registered with the CDS Client's authorization server",
         "min" : 1,
         "max" : "1",
         "type" : [{ "code" : "string"}]
       },
       {
         "path" : "CDSHooksRequest.fhirAuthorization.patient",
-        "short" : "If the access token is restricted to a specific patient, the FHIR id of that patient.",
+        "short" : "The OAuth 2.0 client identifier of the CDS Service, as registered with the CDS Client's authorization server",
+        "definition" : "The OAuth 2.0 client identifier of the CDS Service, as registered with the CDS Client's authorization server",
         "min" : 0,
         "max" : "1",
         "type" : [{ "code" : "id"}]
@@ -106,6 +117,7 @@
       {
         "path" : "CDSHooksRequest.context",
         "short" : "Hook-specific contextual data that the CDS service will need",
+        "definition" : "Hook-specific contextual data that the CDS service will need",
         "min" : 1,
         "max" : "1",
         "type" : [{ "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookContext" }],
@@ -116,16 +128,17 @@
              "valueString" : "$resource.hook = 'patient-view'"
            },{
              "url" : "type",
-             "valueString" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookPatientContext"
+             "valueCode" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookPatientContext"
            }]
         }]
       },
       {
         "path" : "CDSHooksRequest.prefetch",
         "short" : "Key/value pairs of FHIR queries the CDS Client provides on each call",
-        "description" : "An object containing key/value pairs of FHIR queries that this Request is requesting the CDS Client to perform and provide on each Request call. The key is a string that describes the type of data being requested and the value is a string representing the FHIR query",
+        "definition" : "An object containing key/value pairs of FHIR queries that this Request is requesting the CDS Client to perform and provide on each Request call. The key is a string that describes the type of data being requested and the value is a string representing the FHIR query",
         "min" : 0,
         "max" : "*",
+        "type" : [{ "code" : "Base"}],
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-property-key",
           "valueCode" : "key"
@@ -134,6 +147,7 @@
       {
         "path" : "CDSHooksRequest.prefetch.key",
         "short" : "Key of FHIR query - name for client to use when sending to Request",
+        "definition" : "Key of FHIR query - name for client to use when sending to Request",
         "min" : 1,
         "max" : "1",
         "type" : [{ "code" : "code"}]
@@ -141,6 +155,7 @@
       {
         "path" : "CDSHooksRequest.prefetch.value",
         "short" : "Value of FHIR query - FHIR Query for client to perform",
+        "definition" : "Value of FHIR query - FHIR Query for client to perform",
         "min" : 1,
         "max" : "1",
         "type" : [{ "code" : "Resource"}]
