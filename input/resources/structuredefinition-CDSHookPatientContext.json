@@ -11,7 +11,7 @@
   "fhirVersion" : "4.0.1",
   "baseDefinition" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookContext",
   "derivation" : "specialization",
-  "abstract"  : true,
+  "abstract"  : false,
   "type" : "CDSHookPatientContext",
   "differential" : {
     "element" : [
