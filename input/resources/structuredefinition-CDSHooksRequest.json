@@ -41,7 +41,12 @@
         "comment" : "Note: the hookInstance is globally unique and should contain enough entropy to be un-guessable.",
         "min" : 1,
         "max" : "1",
-        "type" : [{ "code" : "uuid"}]
+        "type" : [{ "code" : "uuid", 
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/implied-string-prefix",
+            "valueString" : "urn:uuid:"
+          }]
+        }]
       },
       {
         "path" : "CDSHooksRequest.fhirServer",
