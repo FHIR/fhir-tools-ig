@@ -45,12 +45,11 @@
         "definition" : "Unique identifier of the card. MAY be used for auditing and logging cards and SHALL be included in any subsequent calls to the CDS service's feedback endpoint.",
         "min" : 0,
         "max" : "1",
-        "type" : [{ "code" : "uuid", 
+        "type" : [{ "code" : "uuid"}], 
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/implied-string-prefix",
           "valueString" : "urn:uuid:"
           }]
-        }]
       },
       {
         "path" : "CDSHooksResponse.cards.summary",
@@ -146,11 +145,10 @@
         "definition" : "Unique identifier, used for auditing and logging suggestions",
         "min" : 0,
         "max" : "1",
-        "type" : [{ "code" : "uuid", 
-          "extension" : [{
-            "url" : "http://hl7.org/fhir/tools/StructureDefinition/implied-string-prefix",
-            "valueString" : "urn:uuid:"
-          }]
+        "type" : [{ "code" : "uuid"}], 
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/implied-string-prefix",
+          "valueString" : "urn:uuid:"
         }]
       },
       {
