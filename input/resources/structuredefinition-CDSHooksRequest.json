@@ -125,7 +125,7 @@
            "url" : "http://hl7.org/fhir/tools/StructureDefinition/type-specifier",
            "extension" : [{
              "url" : "condition",
-             "valueString" : "$resource.hook = 'patient-view'"
+             "valueString" : "%resource.hook = 'patient-view'"
            },{
              "url" : "type",
              "valueCode" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookPatientContext"
