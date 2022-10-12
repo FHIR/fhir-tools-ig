@@ -32,7 +32,7 @@
           "key" : "cds-resp-1",
           "severity" : "error",
           "human" : "only one action can be suggested if selectionBehavior = at-most-one",
-          "expression" : "(selectionBehavior = 'at-most-one') implies suggestions.where(isRecommended).size() <= 1"
+          "expression" : "(selectionBehavior = 'at-most-one') implies suggestions.where(isRecommended).count() <= 1"
         }],
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-empty-behavior",
