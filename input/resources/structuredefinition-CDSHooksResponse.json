@@ -118,7 +118,7 @@
         "short" : "Describes the content of the card - can be useful for filtering, searching or ordered display",
         "definition" : "A topic describes the content of the card by providing a high-level categorization that can be useful for filtering, searching or ordered display of related cards in the CDS client's UI. This specification does not prescribe a standard set of topics",
         "comment" : "This specification does not prescribe a standard set of topics",
-        "min" : 1,
+        "min" : 0,
         "max" : "1",
         "type" : [{ "code" : "Coding"}]
       },
