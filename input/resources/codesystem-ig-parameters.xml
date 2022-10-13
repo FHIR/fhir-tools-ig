@@ -1171,4 +1171,41 @@
     </property>
   </concept>
   
+
+  <concept>
+    <code value="r4-exclusion"/>
+    <display value="r4-exclusion"/>
+    <definition value="For an R4B IG, ignore this profile when considering conversion to R4, or for an R4 IG, omit this when generating the R4 specific package. Value is either '{type}/{id}' or '{url}'"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="url"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="don't ignore any profiles"/>
+    </property>
+  </concept>
+    
+
+  <concept>
+    <code value="r4b-exclusion"/>
+    <display value="r4b-exclusion"/>
+    <definition value="For an R4 IG, ignore this profile when considering conversion to R4B, or for an R4B IG, omit this when generating the R4B specific package. Value is either '{type}/{id}' or '{url}'"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="url"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="don't ignore any profiles"/>
+    </property>
+  </concept>    
 </CodeSystem>
