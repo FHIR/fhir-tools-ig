@@ -1,0 +1,70 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+  <!-- The spaces between the open and close "a" tag are mandatory.  (Cuz HTML renderers are dumb...) -->
+  <a name="intro"> </a>
+  <h3>Binary Support</h3>
+	<p>
+    The IG publisher supports providing binaries as raw content 
+    instead of as a binary resource. 
+  </p>
+  <p>
+    This means that instead of providing a binary resource like this:
+  </p>
+  <pre class="json">
+{
+  "resourceType" : "Binary",
+  "id" : "CDSHookServices",
+  "contentType" : "application/json",
+  "data" : "ewogICJzZXJ2aWNlcyI6IFsKICAgIHsKICAgICAgImhvb2siOiAicGF0aWVudC12aWV3IiwKICAgICAgInRpdGxlIjogIlN0YXRpYyBDRFMgU2VydmljZSBFeGFtcGxlIiwKICAgICAgImRlc2NyaXB0aW9uIjogIkFuIGV4YW1wbGUgb2YgYSBDRFMgU2VydmljZSB0aGF0IHJldHVybnMgYSBzdGF0aWMgc2V0IG9mIGNhcmRzIiwKICAgICAgImlkIjogInN0YXRpYy1wYXRpZW50LWdyZWV0ZXIiLAogICAgICAicHJlZmV0Y2giOiB7CiAgICAgICAgInBhdGllbnRUb0dyZWV0IjogIlBhdGllbnQve3tjb250ZXh0LnBhdGllbnRJZH19IgogICAgICB9CiAgICB9LAogICAgewogICAgICAiaG9vayI6ICJvcmRlci1zZWxlY3QiLAogICAgICAidGl0bGUiOiAiT3JkZXIgRWNobyBDRFMgU2VydmljZSIsCiAgICAgICJkZXNjcmlwdGlvbiI6ICJBbiBleGFtcGxlIG9mIGEgQ0RTIFNlcnZpY2UgdGhhdCBzaW1wbHkgZWNob2VzIHRoZSBvcmRlcihzKSBiZWluZyBwbGFjZWQiLAogICAgICAiaWQiOiAib3JkZXItZWNobyIsCiAgICAgICJwcmVmZXRjaCI6IHsKICAgICAgICAicGF0aWVudCI6ICJQYXRpZW50L3t7Y29udGV4dC5wYXRpZW50SWR9fSIsCiAgICAgICAgIm1lZGljYXRpb25zIjogIk1lZGljYXRpb25SZXF1ZXN0P3BhdGllbnQ9e3tjb250ZXh0LnBhdGllbnRJZH19IgogICAgICB9CiAgICB9LAogICAgewogICAgICAiaG9vayI6ICJvcmRlci1zaWduIiwKICAgICAgInRpdGxlIjogIlBoYXJtYWNvZ2Vub21pY3MgQ0RTIFNlcnZpY2UiLAogICAgICAiZGVzY3JpcHRpb24iOiAiQW4gZXhhbXBsZSBvZiBhIG1vcmUgYWR2YW5jZWQsIHByZWNpc2lvbiBtZWRpY2luZSBDRFMgU2VydmljZSIsCiAgICAgICJpZCI6ICJwZ3gtb24tb3JkZXItc2lnbiIsCiAgICAgICJ1c2FnZVJlcXVpcmVtZW50cyI6ICJOb3RlOiBmdW5jdGlvbmFsaXR5IG9mIHRoaXMgQ0RTIFNlcnZpY2UgaXMgZGVncmFkZWQgd2l0aG91dCBhY2Nlc3MgdG8gYSBGSElSIFJlc3RmdWwgQVBJIGFzIHBhcnQgb2YgQ0RTIHJlY29tbWVuZGF0aW9uIGdlbmVyYXRpb24uIgogICAgfQogIF0KfQ=="
+}  
+  </pre>
+  <p>
+    The editor provides a raw json file like this:
+  </p>
+  <pre class="json">
+{
+  "services": [
+  ...
+  ]
+}    
+  </pre>
+  <p>
+  Note that the format doesn't have to be JSON - it can be any content at all - images, text, json, xml, cql, etc.
+  Any content that's useful.
+  </p>
+  <h4>How to make this work</h4>
+  <p>
+  Instructions: 
+  </p>
+  <ul>
+   <li>You can't leave binary resources like this to be picked up automatically - they'll be ignored by the loader when it scans the folders (if autoloading is on)</li>
+   <li>You have to create an entry in the IG resource for the resource:
+     <pre class="xml">
+    &lt;resource&gt;
+      &lt;reference&gt;
+        &lt;reference value=&quot;Binary/Example&quot;/&gt;
+      &lt;/reference&gt;
+      &lt;description value=&quot;An example of a binary resource&quot;/&gt;
+    &lt;/resource&gt;  
+     </pre>
+     (doesn't have to be XML, and the description is optional)
+   </li>
+   <li>The file will be called something like binary-example.xxx where xxx is whatever works for the edit, and the filename follows usual file name conventions for the IG publisher</li>
+   <li>Then add an extension to the resource element in the IG resource that provides the mime type for the binary resource:
+     <pre class="xml">
+    &lt;resource&gt;
+      &lt;extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format"&gt;
+        &lt;valueCode value="text/plain"/>&gt;
+      &lt;/extension&gt;
+      &lt;reference&gt;
+      ...
+    &lt;/resource&gt;  
+     </pre>
+     or whatever the appropriate media type is.
+   </li>
+   <li>That's it - it should be processed into a binary as loaded, the package will contain a binary, and the 
+     IG publisher will do it's best attempt at rendering the content usefully in the HTML pages for the 
+     implementation guide</li>
+
+  </ul>
+
+</div>

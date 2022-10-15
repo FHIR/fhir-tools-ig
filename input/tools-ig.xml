@@ -78,10 +78,27 @@
         <reference value="StructureDefinition/CDSHookPatientContext"/>
       </reference>
     </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format">
+        <valueCode value="application/json"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical">
+        <valueUrl value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksServices"/>
+      </extension>
+      <reference>
+        <reference value="Binary/CDSHookServices"/>
+      </reference>
+      <description value="An example a CDS Hooks Service Request"/>
+    </resource>
     <page>
       <nameUrl value="index.html"/>
       <title value="Home Page"/>
       <generation value="html"/>
+      <page>
+        <nameUrl value="binary.html"/>
+        <title value="Binary Support"/>
+        <generation value="html"/>
+      </page>
     </page>
     <!-- copyright year is a mandatory parameter -->
     <parameter>
@@ -94,8 +111,12 @@
       <value value="Working Copy"/>
     </parameter>
     <parameter>
-      <code value="path-liquid"/>
-      <value value="templates\liquid"/>
+      <code value="releaselabel"/>
+      <value value="Working Copy"/>
+    </parameter>
+    <parameter>
+      <code value="path-binary"/>
+      <value value="input/cdshooks"/>
     </parameter>
     <parameter>
       <code value="showsource"/>

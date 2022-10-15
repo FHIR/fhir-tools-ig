@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../schema/fhir-single.xsd">
+	<id value="implementationguide-resource-format"/>
+	<url value="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format"/>
+	<identifier>
+    <system value="urn:ietf:rfc:3986"/>
+    <value value="urn:oid:2.16.840.1.113883.4.642.5.1372"/>
+  </identifier>
+  <version value="5.0.0"/>
+	<name value="BinaryResourceFormat"/>
+	<title value="Binary Resource Format"/>
+	<status value="draft"/>
+	<date value="2015-03-02"/>
+	<publisher value="Health Level Seven, Inc. - FHIR-I WG"/>
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://hl7.org/special/committees/fiwg"/>
+		</telecom>
+	</contact>
+	<description value="This extension specifies the format (= mime type) of a binary resource, when the binary resource is provided to the IG publisher as raw content (rather than as a FHIR binary resource with base64 content)."/>
+	<fhirVersion value="4.0.1"/>
+	<kind value="complex-type"/>
+	<abstract value="false"/>
+	<context>
+		<type value="element"/>
+		<expression value="ImplementationGuide.definition.resource"/>
+	</context>
+	<type value="Extension"/>
+	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="Extension">
+			<path value="Extension"/>
+			<short value="Mime Type for a binary provided in raw format"/>
+			<definition value="the format (= mime type) of a binary resource, when the binary resource is provided to the IG publisher as raw content (rather than as a FHIR binary resource with base64 content)."/>
+		</element>
+		<element id="Extension.extension">
+			<path value="Extension.extension"/>
+			<max value="0"/>
+		</element>
+		<element id="Extension.url">
+			<path value="Extension.url"/>
+			<fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format"/>
+		</element>
+		<element id="Extension.value[x]">
+			<path value="Extension.value[x]"/>
+			<min value="1"/>
+			<type>
+			  <code value="code"/>
+			</type>
+		</element>
+	</differential>
+</StructureDefinition>

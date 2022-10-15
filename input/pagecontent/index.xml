@@ -7,9 +7,9 @@
     These extensions should never appear in implementations unless they
     are concerned with code generation from the FHIR packages.
   </p>
-	<a name="technical"> </a>
-	<h3>Technical Overview</h3>
-	<p>
-  These are maintained by the tool authors.
-  </p>
+	<a name="topics"> </a>
+	<h3>Additional Documentation</h3>
+	<ul>
+    <li><a href="binary.html">Providing Binary files in native formats</a></li>
+  </ul>
 </div>
