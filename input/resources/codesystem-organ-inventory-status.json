@@ -18,8 +18,15 @@
     "concept" : [{
       "code" : "transplanted-in",
       "display" : "transplanted-in"
+    },{
+      "code" : "reconstructed",
+      "display" : "reconstructed"
     }]
   },{
+    "code" : "implant",
+    "display" : "implant",
+    "definition" : "The organ has been removed, and replaced with an implant that provides partial replacement (typically, but not necessarily, non-functional)"
+  }, {
     "code" : "absent",
     "display" : "absent",
     "concept" : [{
