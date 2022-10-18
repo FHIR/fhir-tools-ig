@@ -1,0 +1,78 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "organ-inventory",
+  "url" : "http://hl7.org/fhir/tools/StructureDefinition/organ-inventory",
+  "name" : "OrganInventoryProfile",
+  "title" : "Organ Inventory Profile",
+  "status" : "active",
+  "date" : "2022-10-18",
+  "publisher" : "Grahame Grieve",
+  "description" : "A candidate profile for an organ inventory status",
+  "fhirVersion" : "4.0.1",
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Observation",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "path" : "Observation.status",
+        "fixedCode" : "final"
+      },
+      {
+        "path" : "Observation.category",
+        "patternCodeableConcept" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code" : "organ-inventory"
+          }]
+        }
+      },
+      {
+        "path" : "Observation.code",
+        "patternCodeableConcept" : {
+          "coding" : [{
+            "system": "http://loinc.org",
+            "code": "XXXXX-Y",
+            "display": "Organ Presence and status"
+          }]
+        }
+      },
+      {
+        "path" : "Observation.subject",
+        "min" : 1
+      },
+      {
+        "path" : "Observation.effective[x]",
+        "definition" : "Must be a point in time observation",
+        "type" : [{
+            "code" : "dateTime"
+        }]
+      },
+      {
+        "path" : "Observation.value[x]",
+        "definition" : "Must be a CodeableConcept",
+        "type" : [{
+            "code" : "CodeableConcept"
+        }]
+      },
+      {
+        "path" : "Observation.valueCodeableConcept",
+        "definition" : "The status of the organ.",
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "http://hl7.org/fhir/tools/ValueSet/organ-inventory-status"
+        }
+      },
+      {
+        "path" : "Observation.bodySite",
+        "definition" : "The organ in question.",
+        "binding" : {
+          "strength" : "required",
+          "valueSet" : "http://hl7.org/fhir/tools/ValueSet/organ-inventory-list"
+        }
+      }
+    ]
+  }
+}

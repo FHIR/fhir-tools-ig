@@ -1,0 +1,38 @@
+{
+  "resourceType": "Observation",
+  "id": "inventory-example",
+  "status": "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "organ-inventory"
+    }]
+  }],
+  "code": {
+    "coding": [{
+      "system": "http://loinc.org",
+      "code": "XXXXX-Y",
+      "display": "Organ Presence and status"
+  }]
+  },
+  "subject": {
+    "reference": "Patient/f001"
+  },
+  "effectiveDateTime": "2022-10-18T09:30:10+01:00",
+  "performer": [{
+      "reference": "Practitioner/f005"
+  }],
+  "valueCodeableConcept": {
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/tools/CodeSystem/organ-status",
+      "code" : "excised"
+    }]
+  },
+  "bodySite": {
+    "coding": [{
+      "system": "http://snomed.info/sct",
+      "code": "71854001",
+      "display": "Colon structure"
+    }]
+  }
+}

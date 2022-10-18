@@ -1,0 +1,33 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "organ-inventory-status",
+  "url": "http://hl7.org/fhir/tools/CodeSystem/organ-inventory-status",
+  "name": "OrganStatus",
+  "title": "Organ Status",
+  "status": "draft",
+  "experimental" : false,
+  "date": "2022-10-18",
+  "publisher": "Grahame Grieve",
+  "description": "Organ Inventory Status",
+  "content" : "complete",
+  "caseSensitive" : true,
+  "hierarchyMeaning" : "is-a",
+  "concept": [{
+    "code" : "present",
+    "display" : "present",
+    "concept" : [{
+      "code" : "transplanted-in",
+      "display" : "transplanted-in"
+    }]
+  },{
+    "code" : "absent",
+    "display" : "absent",
+    "concept" : [{
+      "code" : "excised",
+      "display" : "excised"
+    },{
+      "code" : "congenitally-absent",
+      "display" : "congenitally-absent"
+    }]
+  }]
+}

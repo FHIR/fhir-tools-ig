@@ -1,0 +1,17 @@
+{
+  "resourceType": "ValueSet",
+  "id": "organ-inventory-status",
+  "url": "http://hl7.org/fhir/tools/ValueSet/organ-inventory-status",
+  "name": "OrganStatus",
+  "title": "Organ Status",
+  "status": "draft",
+  "experimental" : false,
+  "date": "2022-10-18",
+  "publisher": "Grahame Grieve",
+  "description": "Organ Inventory Status",
+  "compose": {
+    "include": [{
+      "system": "http://hl7.org/fhir/tools/CodeSystem/organ-inventory-status"
+    }]
+  }
+}
