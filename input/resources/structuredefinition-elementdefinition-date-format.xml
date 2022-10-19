@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="elementdefinition-date-format"/>
+  <url value="http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-date-format"/>
+  <name value="DateFormat"/>
+  <title value="Date Format String"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="HL7 International / FHIR Infrastructure"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/Special/committees/fhir-i"/>
+    </telecom>
+  </contact>
+  <description value="The date format, as a Java date/time format (todo: extract a common subset from FHIRPath? Java? DotNet? Windows API?)"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  
+  <fhirVersion value="4.0.1"/>
+  <kind value="complex-type"/>
+  <abstract value="false"/>
+  <context>
+    <type value="element"/>
+    <expression value="ElementDefinition"/>
+  </context>
+  <type value="Extension"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+  <derivation value="constraint"/>
+  <differential>
+   <element id="Extension">
+      <path value="Extension"/> 
+      <short value="Date/Time format for the element"/> 
+      <definition value="The date format, as a Java date/time format (todo: extract a common subset from FHIRPath? Java? DotNet? Windows API?)"/> 
+      <min value="0"/> 
+      <max value="*"/> 
+    </element> 
+
+    <element id="Extension.extension">
+      <path value="Extension.extension"/> 
+      <max value="0"/> 
+    </element> 
+
+    <element id="Extension.url">
+      <path value="Extension.url"/> 
+      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-date-format"/> 
+    </element> 
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]"/> 
+      <min value="1"/> 
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+    </element> 
+  </differential>
+</StructureDefinition>

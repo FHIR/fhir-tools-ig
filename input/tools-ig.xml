@@ -53,6 +53,12 @@
         <reference value="StructureDefinition/type-specifier"/>
       </reference>
     </resource>
+   <resource>
+      <reference>
+        <reference value="StructureDefinition/implementationguide-resource-logical"/>
+      </reference>
+    </resource>
+
     <resource>
       <reference>
         <reference value="StructureDefinition/CDSHooksServices"/>
@@ -80,33 +86,6 @@
     </resource>
 
     <resource>
-      <reference>
-        <reference value="CodeSystem/organ-inventory-status"/>
-      </reference>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/organ-inventory-status"/>
-      </reference>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/organ-inventory-list"/>
-      </reference>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/organ-inventory"/>
-      </reference>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="Observation/inventory-example"/>
-      </reference>
-      <exampleCanonical value="http://hl7.org/fhir/tools/StructureDefinition/organ-inventory"/>
-    </resource>
-
-    <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format">
         <valueCode value="application/json"/>
       </extension>
@@ -118,12 +97,12 @@
       </reference>
       <description value="An example a CDS Hooks Service Request"/>
     </resource>
-    <!--
+    
     <resource>
       <reference>
         <reference value="ActorDefinition/server"/>
       </reference>
-    </re-->
+    </resource>
     <page>
       <nameUrl value="index.html"/>
       <title value="Home Page"/>

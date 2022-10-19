@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="binding-style"/>
+  <url value="http://hl7.org/fhir/tools/CodeSystem/binding-style"/>
+  <name value="VocabBindingStyles"/>
+  <title value="Vocab Binding Style Codes"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <description value="How the data type is bound to vocabulary"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <concept>
+    <code value="FHIR"/>
+    <display value="FHIR"/>
+    <definition value="Binding uses system(uri)+version+code+display (or just code or for Quantity, system+code+unit). This is the default for the FHIR Tools"/>
+  </concept>
+  <concept>
+    <code value="RIM"/>
+    <display value="RIM"/>
+    <definition value="Binding uses codeSystem(oid)+codeSystemName+codeSystemVersion+valueSet+valueSetVersion+code+displayName"/>
+  </concept>
+  <concept>
+    <code value="CDA"/>
+    <display value="CDA"/>
+    <definition value="Binding uses codeSystem(oid)+codeSystemName+codeSystemVersion+sdtcValueSet+sdtcValueSetVersion+code+displayName"/>
+  </concept>
+  <concept>
+    <code value="V2"/>
+    <display value="v2"/>
+    <definition value="tbd"/>
+  </concept>
+
+</CodeSystem>
