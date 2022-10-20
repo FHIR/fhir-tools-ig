@@ -1,9 +1,9 @@
 {
   "resourceType" : "StructureDefinition",
-  "id" : "CDSHookPatientContext",
-  "url" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookPatientContext",
+  "id" : "CDSHookPatientViewContext",
+  "url" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookPatientViewContext",
   "version" : "0.0.1",
-  "name" : "CDSHookPatientContext",
+  "name" : "CDSHookPatientViewContext",
   "title" : "CDS Hook Specific Context for patient-view (Logical Definition)",
   "status" : "draft",
   "description" : "This structure is defined to allow the FHIR Validator to validate a CDSHooks Patient-View context",
@@ -12,15 +12,15 @@
   "baseDefinition" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookContext",
   "derivation" : "specialization",
   "abstract"  : false,
-  "type" : "CDSHookPatientContext",
+  "type" : "CDSHookPatientViewContext",
   "differential" : {
     "element" : [
       {
-        "path" : "CDSHookPatientContext",
+        "path" : "CDSHookPatientViewContext",
         "short" : "The context for the patient-view hook"
       },
       {
-        "path" : "CDSHookPatientContext.userId",
+        "path" : "CDSHookPatientViewContext.userId",
         "short" : "The id of the current user. Must be in the format [ResourceType]/[id].",
         "definition" : "For this hook, the user is expected to be of type Practitioner, PractitionerRole, Patient, or RelatedPerson. Patient or RelatedPerson are appropriate when a patient or their proxy are viewing the record. For example, Practitioner/abc or Patient/123.",
         "min" : 1,
@@ -28,7 +28,7 @@
         "type" : [{ "code" : "url"}]        
       },
       {
-        "path" : "CDSHookPatientContext.patientId",
+        "path" : "CDSHookPatientViewContext.patientId",
         "short" : "The FHIR Patient.id of the current patient in context",
         "definition" : "The FHIR Patient.id of the current patient in context",
         "min" : 1,
@@ -36,7 +36,7 @@
         "type" : [{ "code" : "id"}]        
       },
       {
-        "path" : "CDSHookPatientContext.encounterId",
+        "path" : "CDSHookPatientViewContext.encounterId",
         "short" : "The FHIR Encounter.id of the current encounter in context",
         "definition" : "The FHIR Encounter.id of the current encounter in context",
         "min" : 0,
