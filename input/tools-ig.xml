@@ -81,7 +81,12 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/CDSHookPatientContext"/>
+        <reference value="StructureDefinition/CDSHookPatientViewContext"/>
+      </reference>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/CDSHookOrderSignContext"/>
       </reference>
     </resource>
 
@@ -97,13 +102,13 @@
       </reference>
       <description value="An example a CDS Hooks Service Request"/>
     </resource>
-    <!--
+    
     <resource>
       <reference>
         <reference value="ActorDefinition/server"/>
       </reference>
     </resource>
-    -->
+    
     <page>
       <nameUrl value="index.html"/>
       <title value="Home Page"/>
