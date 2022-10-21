@@ -53,7 +53,7 @@
           "key" : "ord-1",
           "severity" : "error",
           "human" : "Must be in the format {type}/{id}",
-          "expression" : "value.matches('^[\\\\d\\\\w]+\\\\/[\\\\d\\\\w]+$')"
+          "expression" : "value.matches('^[\\\\d\\\\w]+\\\\/[\\\\d\\\\w-.]+$')"
         }],
         "type" : [{ "code" : "uri"}]      
       },
