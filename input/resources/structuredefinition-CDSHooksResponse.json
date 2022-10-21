@@ -172,7 +172,7 @@
           "key" : "cds-resp-2",
           "severity" : "warning",
           "human" : "A resourceId not a resource must be provided when type = delete",
-          "expression" : "(type = 'delete') implies (resourceId.exists() && resource.empty())"
+          "expression" : "(type = 'delete') implies (resourceId.exists() and resource.empty())"
         }]
       },
       {
