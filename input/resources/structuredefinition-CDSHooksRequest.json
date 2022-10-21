@@ -175,6 +175,9 @@
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-nullable",
           "valueBoolean" : "true"
+        },{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/id-expectation",
+          "valueCode" : "optional"
         }]
       }
     ]

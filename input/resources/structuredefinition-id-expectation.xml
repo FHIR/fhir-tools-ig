@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="id-expectation"/>
+  <url value="http://hl7.org/fhir/tools/StructureDefinition/id-expectation"/>
+  <name value="IdExpectationExt"/>
+  <title value="Id Expectation Extension"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="HL7 International / FHIR Infrastructure"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/Special/committees/fhir-i"/>
+    </telecom>
+  </contact>
+  <description value="Specifies whether a particular element or resource is expected to have an id or not. Note that this can be done in a profile on the element, but it is sometimes useful to say this e.g. on an abstract element in a logical model"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  
+  <fhirVersion value="4.0.1"/>
+  <kind value="complex-type"/>
+  <abstract value="false"/>
+  <context>
+    <type value="element"/>
+    <expression value="ElementDefinition"/>
+  </context>
+  <context>
+    <type value="element"/>
+    <expression value="ElementDefinition.type"/>
+  </context>
+  <type value="Extension"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+  <derivation value="constraint"/>
+  <differential>
+   <element id="Extension">
+      <path value="Extension"/> 
+      <short value="Whether a resource or an element should have an id"/> 
+      <min value="0"/> 
+      <max value="*"/> 
+    </element> 
+
+    <element id="Extension.extension">
+      <path value="Extension.extension"/> 
+      <max value="0"/> 
+    </element> 
+
+    <element id="Extension.url">
+      <path value="Extension.url"/> 
+      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/id-expectation"/> 
+    </element> 
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]"/> 
+      <min value="1"/> 
+      <max value="1"/>
+      <type>
+        <code value="code"/>
+      </type>
+      <meaningWhenMissing value="Whether a resource or an element should have an id"/>
+      <binding>
+        <strength value="required"/>
+        <valueSet value="http://hl7.org/fhir/tools/ValueSet/id-expectation"/>
+      </binding>
+    </element> 
+  </differential>
+</StructureDefinition>

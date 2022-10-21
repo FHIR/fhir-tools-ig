@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="id-expectation"/>
+  <url value="http://hl7.org/fhir/tools/CodeSystem/id-expectation"/>
+  <name value="IdExpectationCodes"/>
+  <title value="Id Expectation Codes"/>
+  <status value="active"/>
+  <experimental value="true"/>
+  <description value="Specifies whether a particular element or resource is expected to have an id or not"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <concept>
+    <code value="optional"/>
+    <display value="optional"/>
+    <definition value="Id may or not be present (this is the default for elements but not resources)"/>
+  </concept>
+  <concept>
+    <code value="required"/>
+    <display value="required"/>
+    <definition value="Id is required to be present (this is the default for resources but not elements)"/>
+  </concept>
+  <concept>
+    <code value="prohibited"/>
+    <display value="prohibited"/>
+    <definition value="An ID is not allowed in this context"/>
+  </concept>
+
+</CodeSystem>
