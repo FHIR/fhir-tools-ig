@@ -31,6 +31,7 @@
   Note that the format doesn't have to be JSON - it can be any content at all - images, text, json, xml, cql, etc.
   Any content that's useful.
   </p>
+  <a name="howto"> </a>
   <h4>How to make this work</h4>
   <p>
   Instructions: 
@@ -66,5 +67,33 @@
      implementation guide</li>
 
   </ul>
+  <a name="Validation"> </a>
+  <h4>Validation</h4>
 
+  <p>If you want, you can validate the binary content against a logical model. You add another extension 
+  to do that:</p>
+
+     <pre class="xml">
+    &lt;resource&gt;
+      &lt;extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format"&gt;
+        &lt;valueCode value="text/plain"/>&gt;
+      &lt;/extension&gt;
+      &lt;extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical"&gt;
+        &lt;valueUrl value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksServices"/>&gt;
+      &lt;/extension&gt;
+      &lt;reference&gt;
+      ...
+    &lt;/resource&gt;  
+     </pre>
+
+  <p>
+  The content will be validatd against the specificied logical model. You must define the logical model 
+  referred to here, or depend on an IG unless it's declared in the tooling IG. The following logical models 
+  are defined in the tooling IG:
+  </p>
+  <ul>
+   <li><a href="http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/StructureDefinition-CDSHooksServices.html">http://hl7.org/fhir/tools/StructureDefinition/CDSHooksServices</a>: Definition for the CDS Hooks Service description Json content</li>
+   <li><a href="http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/StructureDefinition-CDSHooksRequest.html">http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest</a>:  Definition for the CDS Hooks Request Json content</li>
+   <li><a href="http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/StructureDefinition-CDSHooksResponse.html">http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse</a>:  Definition for the CDS Hooks Response Json content</li>
+  </ul>
 </div>

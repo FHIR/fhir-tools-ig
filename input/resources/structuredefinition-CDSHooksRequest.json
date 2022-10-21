@@ -143,7 +143,16 @@
             "url" : "type",
             "valueCode" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookOrderSignContext"
           }]
-       }]
+       },{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/type-specifier",
+        "extension" : [{
+          "url" : "condition",
+          "valueString" : "%resource.hook = 'order-select'"
+        },{
+          "url" : "type",
+          "valueCode" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookOrderSelectContext"
+        }]
+     }]
       },
       {
         "path" : "CDSHooksRequest.prefetch",
