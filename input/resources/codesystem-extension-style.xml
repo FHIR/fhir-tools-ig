@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="extension-style"/>
+  <url value="http://hl7.org/fhir/tools/CodeSystem/extension-style"/>
+  <name value="ExtensionStyles"/>
+  <title value="Extension Style Codes"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <description value="How the type can be extended. Note that all FHIR types that inherit from ```Element``` have extension-style = fhir-extensions"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <concept>
+    <code value="none"/>
+    <display value="none"/>
+    <definition value="No extensions"/>
+  </concept>
+  <concept>
+    <code value="fhir-extensions"/>
+    <display value="fhir-extensions"/>
+    <definition value="FHIR extension style: the element defines 'extension' which can be constrained by profiles"/>
+  </concept>
+  <concept>
+    <code value="named-elements"/>
+    <display value="named-elements"/>
+    <definition value="The type can be extended by having additional named elements, where the name is from the elementdefinition-xml-name or elementdefinition-json-name for xml and json respectively"/>
+  </concept>
+  <!-- to add: CDA and V2 style extensions -->
+</CodeSystem>

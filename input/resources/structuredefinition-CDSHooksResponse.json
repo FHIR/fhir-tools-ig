@@ -27,7 +27,7 @@
         "comment": "The CDS Client decides how to display cards, but this specification recommends displaying suggestions using buttons, and links using underlined text.",
         "min" : 0,
         "max" : "*",
-        "type" : [{ "code" : "Base"}],
+        "type" : [{ "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"}],
         "constraint" : [{
           "key" : "cds-resp-1",
           "severity" : "error",
@@ -86,7 +86,7 @@
         "definition" : "The source should be the primary source of guidance for the decision support the card represents.",
         "min" : 1,
         "max" : "1",
-        "type" : [{ "code" : "Base"}]
+        "type" : [{ "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"}]
       },
       {
         "path" : "CDSHooksResponse.cards.source.label",
@@ -128,7 +128,7 @@
         "definition" : "Allows a service to suggest a set of changes in the context of the current activity (e.g. changing the dose of a medication currently being prescribed, for the order-sign activity).",
         "min" : 0,
         "max" : "*",
-        "type" : [{ "code" : "Base"}]
+        "type" : [{ "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"}]
       },
       {
         "path" : "CDSHooksResponse.cards.suggestions.label",
@@ -167,7 +167,7 @@
         "comment" : "When a suggestion contains multiple actions, the actions SHOULD be processed as per FHIR's rules for processing transactions with the CDS Client's fhirServer as the base url for the inferred full URL of the transaction bundle entries. (Specifically, deletes happen first, then creates, then updates).",
         "min" : 0,
         "max" : "*",
-        "type" : [{ "code" : "Base"}],
+        "type" : [{ "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"}],
         "constraint" : [{
           "key" : "cds-resp-2",
           "severity" : "warning",
@@ -251,7 +251,7 @@
         "definition" : "Allows a service to suggest a link to an app that the user might want to run for additional information or to help guide a decision.",
         "min" : 0,
         "max" : "*",
-        "type" : [{ "code" : "Base"}],
+        "type" : [{ "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"}],
         "constraint" : [{
           "key" : "cds-resp-3",
           "severity" : "error",

@@ -1,0 +1,20 @@
+{
+  "resourceType": "Practitioner",
+  "id": "grahame",
+  "active": true,
+  "name": [
+    {
+      "family": "Grieve",
+      "given": [
+        "Grahame"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "email",
+      "value": "grahameg@gmail.com",
+      "use": "work"
+    }
+  ]
+}

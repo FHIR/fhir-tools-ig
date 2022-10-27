@@ -118,6 +118,11 @@
         <title value="Binary Support"/>
         <generation value="html"/>
       </page>
+      <page>
+        <nameUrl value="format-extensions.html"/>
+        <title value="Format Extensions"/>
+        <generation value="markdown"/>
+      </page>
     </page>
     <!-- copyright year is a mandatory parameter -->
     <parameter>

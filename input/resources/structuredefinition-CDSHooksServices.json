@@ -27,7 +27,7 @@
         "comment" : "If the CDS server hosts no CDS services, the discovery endpoint should return a 200 HTTP response with an empty array of services",
         "min" : 0,
         "max" : "*",
-        "type" : [{ "code" : "Base"}]
+        "type" : [{ "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"}]
       },
       {
         "path" : "CDSHooksServices.services.hook",
@@ -75,7 +75,7 @@
         "definition" : "An object containing key/value pairs of FHIR queries that this Services is requesting the CDS Client to perform and provide on each Services call. The key is a string that describes the type of data being requested and the value is a string representing the FHIR query",
         "min" : 0,
         "max" : "*",
-        "type" : [{ "code" : "Base"}],
+        "type" : [{ "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"}],
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-property-key",
           "valueCode" : "key"

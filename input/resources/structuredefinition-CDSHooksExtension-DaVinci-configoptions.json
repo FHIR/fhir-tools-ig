@@ -1,0 +1,70 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "CDSHooksExtension-DaVinci-configoptions",
+  "url" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksExtension-DaVinci-configoptions",
+  "version" : "0.0.1",
+  "name" : "CDSHooksExtensionDaVinciConfigOptionsTest",
+  "title" : "CDS Hook Extension Definition for DaVinci Configuration Options (Test)",
+  "status" : "draft",
+  "description" : "This structure is defines the CRD Configuration Options (Test only)",
+  "kind" : "logical",
+  "fhirVersion" : "4.0.1",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Base",
+  "derivation" : "specialization",
+  "abstract"  : false,
+  "type" : "DaVinciConfigOptions",
+  "differential" : {
+    "element" : [
+      {
+        "path" : "DaVinciConfigOptions",
+        "short" : "The context for the patient-view hook",
+        "min" : 0, 
+        "max" : "*",
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-json-name",
+          "valueString" : "davinci-crd.configuration-options-test"
+        }]
+      },
+      {
+        "path" : "DaVinciConfigOptions.code",
+        "short" : "Identifies the setting configuration when hook is invoked",
+        "definition" : "A code that will be used when setting configuration during hook invocation, and has an (extensible) binding to the CRD Card Types ValueSet.",
+        "min" : 1,
+        "max" : "1",
+        "type" : [{ "code" : "code"}]        
+      },
+      {
+        "path" : "DaVinciConfigOptions.type",
+        "short" : "boolean | integer (JSON types)",
+        "definition" : "A data type for the parameter. At present, allowed values are “boolean” and “integer”",
+        "min" : 1,
+        "max" : "1",
+        "type" : [{ "code" : "code"}]        
+      },
+      {
+        "path" : "DaVinciConfigOptions.name",
+        "short" : "A display name for the configuration option",
+        "definition" : "A display name for the configuration option to appear in the client’s user interface when performing configuration",
+        "min" : 1,
+        "max" : "1",
+        "type" : [{ "code" : "string"}]        
+      },
+      {
+        "path" : "DaVinciConfigOptions.description",
+        "short" : "1-2 sentences - the effect of the configuration option",
+        "definition" : "A description providing a 1-2 sentence description of the effect of the configuration option",
+        "min" : 1,
+        "max" : "1",
+        "type" : [{ "code" : "string"}]        
+      },
+      {
+        "path" : "DaVinciConfigOptions.default",
+        "short" : "Shows users what to expect when an override is not specified",
+        "definition" : "A default value SHOULD also be provided to show users what to expect when an override is not specified",
+        "min" : 0,
+        "max" : "1",
+        "type" : [{ "code" : "integer"},{ "code" : "boolean"}]
+      }
+    ]
+  }
+}
