@@ -9,7 +9,7 @@
   "description" : "This structure is defined to allow the FHIR Validator to validate a CDSHooks Services response body",
   "kind" : "logical",
   "fhirVersion" : "4.0.1",
-  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Base",
+  "baseDefinition" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement",
   "derivation" : "specialization",
   "abstract"  : false,
   "type" : "CDSHooksServices",
@@ -75,7 +75,7 @@
         "definition" : "An object containing key/value pairs of FHIR queries that this Services is requesting the CDS Client to perform and provide on each Services call. The key is a string that describes the type of data being requested and the value is a string representing the FHIR query",
         "min" : 0,
         "max" : "*",
-        "type" : [{ "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"}],
+        "type" : [{ "code" : "Base"}],
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-property-key",
           "valueCode" : "key"

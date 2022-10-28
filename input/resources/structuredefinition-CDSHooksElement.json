@@ -18,11 +18,7 @@
       {
         "path" : "CDSHooksElement",
         "short" : "Base Element - defines CDSHooks Extension",
-        "definition" : "Base element for all CDSHooks Element - defines the extension element on all CDSHooks objects",
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-extension-style",
-          "valueCode" : "named-elements"
-        }]
+        "definition" : "Base element for all CDSHooks Element - defines the extension element on all CDSHooks objects"
       },
       {
         "path" : "CDSHooksElement.extension",
@@ -31,7 +27,11 @@
         "comment" : "Extension structures SHOULD use a strategy for naming that ensures global uniqueness, such as reverse-domain-name notation, e.g. com.cds-hooks.sandbox.myextension-practitionerspecialty",
         "min" : 0,
         "max" : "1",
-        "type" : [{ "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"}]
+        "type" : [{ "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"}],
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-extension-style",
+          "valueCode" : "named-elements"
+        }]
       }
     ]
   }
