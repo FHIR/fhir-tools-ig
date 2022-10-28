@@ -11,7 +11,7 @@
   "fhirVersion" : "4.0.1",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Base",
   "derivation" : "specialization",
-  "abstract"  : false,
+  "abstract"  : true,
   "type" : "CDSHooksElement",
   "differential" : {
     "element" : [
