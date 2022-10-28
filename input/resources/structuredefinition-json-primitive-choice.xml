@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="json-primitive-choice"/>
+  <url value="http://hl7.org/fhir/tools/StructureDefinition/json-primitive-choice"/>
+  <name value="JsonPrimitiveChoiceExt"/>
+  <title value="Json Primitive Choice Extension"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <publisher value="HL7 International / FHIR Infrastructure"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/Special/committees/fhir-i"/>
+    </telecom>
+  </contact>
+  <description value="Marks an element as a choice of types where the type is implied by the JSON type. The only valid types at string, integer, decimal, and boolean"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  
+  <fhirVersion value="4.0.1"/>
+  <kind value="complex-type"/>
+  <abstract value="false"/>
+  <context>
+    <type value="element"/>
+    <expression value="ElementDefinition"/>
+  </context>
+  <context>
+    <type value="element"/>
+    <expression value="ElementDefinition.type"/>
+  </context>
+  <type value="Extension"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+  <derivation value="constraint"/>
+  <differential>
+   <element id="Extension">
+      <path value="Extension"/> 
+      <short value="Marks an element as a choice of types where the type is implied by the JSON type. The only valid types at string, integer, decimal, and boolean"/> 
+      <min value="0"/> 
+      <max value="*"/> 
+    </element> 
+
+    <element id="Extension.extension">
+      <path value="Extension.extension"/> 
+      <max value="0"/> 
+    </element> 
+
+    <element id="Extension.url">
+      <path value="Extension.url"/> 
+      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/json-primitive-choice"/> 
+    </element> 
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]"/> 
+      <min value="1"/> 
+      <max value="1"/>
+      <type>
+        <code value="boolean"/>
+      </type>
+      <meaningWhenMissing value="If this is not present, it's assumed that it works like any other element"/>
+    </element> 
+  </differential>
+</StructureDefinition>

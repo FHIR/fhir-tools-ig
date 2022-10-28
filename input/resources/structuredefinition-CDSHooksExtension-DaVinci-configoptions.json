@@ -63,7 +63,11 @@
         "definition" : "A default value SHOULD also be provided to show users what to expect when an override is not specified",
         "min" : 0,
         "max" : "1",
-        "type" : [{ "code" : "integer"},{ "code" : "boolean"}]
+        "type" : [{ "code" : "integer"},{ "code" : "boolean"}],
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-primitive-choice",
+          "valueBoolean" : true
+        }]
       }
     ]
   }
