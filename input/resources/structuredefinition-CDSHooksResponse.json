@@ -9,7 +9,7 @@
   "description" : "This structure is defined to allow the FHIR Validator to validate a CDSHooks Response body",
   "kind" : "logical",
   "fhirVersion" : "4.0.1",
-  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Base",
+  "baseDefinition" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement",
   "derivation" : "specialization",
   "abstract"  : false,
   "type" : "CDSHooksResponse",
