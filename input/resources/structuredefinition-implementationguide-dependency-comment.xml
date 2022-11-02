@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../schema/fhir-single.xsd">
+	<id value="implementationguide-dependency-comment"/>
+	<url value="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"/>
+  <version value="5.0.0"/>
+	<name value="IGDependencyComment"/>
+	<title value="IG Dependency Comment"/>
+	<status value="draft"/>
+	<date value="2015-03-02"/>
+	<publisher value="Health Level Seven, Inc. - FHIR-I WG"/>
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://hl7.org/special/committees/fiwg"/>
+		</telecom>
+	</contact>
+	<description value="This extension provides a comment explaining the why an IG depends on another IG."/>
+	<fhirVersion value="4.0.1"/>
+	<kind value="complex-type"/>
+	<abstract value="false"/>
+	<context>
+		<type value="element"/>
+		<expression value="ImplementationGuide.dependsOn"/>
+	</context>
+	<type value="Extension"/>
+	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+	<derivation value="constraint"/>
+	<differential>
+		<element id="Extension">
+			<path value="Extension"/>
+			<short value="Logical Model to use to validate binary contents"/>
+			<definition value="The logical model to use to validate the binary content"/>
+		</element>
+		<element id="Extension.extension">
+			<path value="Extension.extension"/>
+			<max value="0"/>
+		</element>
+		<element id="Extension.url">
+			<path value="Extension.url"/>
+			<fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"/>
+		</element>
+		<element id="Extension.value[x]">
+			<path value="Extension.value[x]"/>
+			<min value="1"/>
+			<type>
+			  <code value="markdown"/>
+			</type>
+		</element>
+	</differential>
+</StructureDefinition>
