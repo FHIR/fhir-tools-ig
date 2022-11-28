@@ -12,7 +12,7 @@
   "baseDefinition" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement",
   "derivation" : "specialization",
   "abstract"  : false,
-  "type" : "CDSHooksRequest",
+  "type" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksRequest",
   "differential" : {
     "element" : [
       {
@@ -70,29 +70,41 @@
         }]
       },
       {
-        "path" : "CDSHooksRequest.fhirAuthorization.access_token",
+        "path" : "CDSHooksRequest.fhirAuthorization.accessToken",
         "short" : "This is the OAuth 2.0 access token that provides access to the FHIR server",
         "definition" : "This is the OAuth 2.0 access token that provides access to the FHIR server",
         "min" : 1,
         "max" : "1",
-        "type" : [{ "code" : "string"}]
+        "type" : [{ "code" : "string"}],
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-json-name",
+          "valueString": "access_token"
+        }]
       },
       {
-        "path" : "CDSHooksRequest.fhirAuthorization.token_type",
+        "path" : "CDSHooksRequest.fhirAuthorization.tokenType",
         "short" : "Fixed value: Bearer",
         "definition" : "Fixed value: Bearer",
         "min" : 1,
         "max" : "1",
         "fixedCode" : "Bearer",
-        "type" : [{ "code" : "code"}]
+        "type" : [{ "code" : "code"}],
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-json-name",
+          "valueString": "token_type"
+        }]
       },
       {
-        "path" : "CDSHooksRequest.fhirAuthorization.expires_in",
+        "path" : "CDSHooksRequest.fhirAuthorization.expiresIn",
         "short" : "The lifetime in seconds of the access token.",
         "definition" : "The lifetime in seconds of the access token.",
         "min" : 1,
         "max" : "1",
-        "type" : [{ "code" : "integer"}]
+        "type" : [{ "code" : "integer"}],
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-json-name",
+          "valueString": "expires_in"
+        }]
       },
       {
         "path" : "CDSHooksRequest.fhirAuthorization.scope",
@@ -183,7 +195,7 @@
         "type" : [{ "code" : "Resource"}],
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-nullable",
-          "valueBoolean" : "true"
+          "valueBoolean" : true
         },{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/id-expectation",
           "valueCode" : "optional"

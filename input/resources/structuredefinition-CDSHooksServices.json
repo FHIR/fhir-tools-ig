@@ -12,7 +12,7 @@
   "baseDefinition" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement",
   "derivation" : "specialization",
   "abstract"  : false,
-  "type" : "CDSHooksServices",
+  "type" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksServices",
   "differential" : {
     "element" : [
       {

@@ -12,7 +12,7 @@
   "baseDefinition" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookContext",
   "derivation" : "specialization",
   "abstract"  : false,
-  "type" : "CDSHookPatientViewContext",
+  "type" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookPatientViewContext",
   "differential" : {
     "element" : [
       {

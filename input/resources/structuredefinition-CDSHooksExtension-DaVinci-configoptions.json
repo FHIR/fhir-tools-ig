@@ -12,12 +12,13 @@
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Base",
   "derivation" : "specialization",
   "abstract"  : false,
-  "type" : "DaVinciConfigOptions",
+  "type" : "http://hl7.org/fhir/tools/StructureDefinition/DaVinciConfigOptions",
   "differential" : {
     "element" : [
       {
         "path" : "DaVinciConfigOptions",
         "short" : "The context for the patient-view hook",
+        "definition" : "The context for the patient-view hook",
         "min" : 0, 
         "max" : "*",
         "extension" : [{

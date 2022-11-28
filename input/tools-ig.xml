@@ -100,6 +100,7 @@
       <reference>
         <reference value="Binary/CDSHookServices"/>
       </reference>
+      <name value="CDSHookServices Example"/>
       <description value="An example a CDS Hooks Service Request"/>
     </resource>
     
@@ -109,6 +110,21 @@
       </reference>
     </resource>
     
+    <resource>
+      <reference>
+        <reference value="Requirements/example"/>
+      </reference>
+      <description value="An example of how to to include requirements in an IG"/>
+    </resource>
+
+    <resource>
+      <reference>
+        <reference value="Practitioner/grahame"/>
+      </reference>
+      <name value="Supporting Practitioner"/>
+      <description value="Supporting practitioner for requirements resource"/>
+    </resource>
+
     <page>
       <nameUrl value="index.html"/>
       <title value="Home Page"/>
@@ -121,6 +137,11 @@
       <page>
         <nameUrl value="format-extensions.html"/>
         <title value="Format Extensions"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <nameUrl value="other.html"/>
+        <title value="Other Information"/>
         <generation value="markdown"/>
       </page>
     </page>

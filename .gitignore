@@ -28,3 +28,14 @@ input-cache/schemas/R4/
 input-cache/schemas/R5/
 
 input-cache/txcache/
+input-cache
+_gencontinuous.bat
+_gencontinuous.bat
+_gencontinuous.sh
+_gencontinuous.sh
+_updatePublisher.bat
+_updatePublisher.bat
+_updatePublisher.sh
+_updatePublisher.sh
+_updatePublisher.sh
+_genonce.sh

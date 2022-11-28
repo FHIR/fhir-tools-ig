@@ -1,7 +1,9 @@
+// This is an example that indicates the source of a set of requirements
 {
   "resourceType": "Practitioner",
   "id": "grahame",
   "active": true,
+  // only name and email address
   "name": [
     {
       "family": "Grieve",
@@ -13,7 +15,7 @@
   "telecom": [
     {
       "system": "email",
-      "value": "grahameg@gmail.com",
+      "value": "grahameg@gmail.com"
       "use": "work"
     }
   ]

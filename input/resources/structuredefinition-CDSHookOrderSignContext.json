@@ -12,7 +12,7 @@
   "baseDefinition" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookContext",
   "derivation" : "specialization",
   "abstract"  : false,
-  "type" : "CDSHookOrderSignContext",
+  "type" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookOrderSignContext",
   "differential" : {
     "element" : [
       {
