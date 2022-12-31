@@ -16,15 +16,16 @@
 <artifact id="ValueSet/additional-binding-purpose" key="ValueSet-additional-binding-purpose" name="Additional Binding Purpose ValueSet"/>
 <artifact id="StructureDefinition/implementationguide-resource-format" key="StructureDefinition-implementationguide-resource-format" name="Binary Resource Format"/>
 <artifact id="StructureDefinition/implementationguide-resource-logical" key="StructureDefinition-implementationguide-resource-logical" name="Binary Resource Logical"/>
-<artifact id="StructureDefinition/CDSHooksExtension-DaVinci-config" key="StructureDefinition-CDSHooksExtension-DaVinci-config" name="CDS Hook Extension Definition for DaVinci Configuration  (Test)"/>
+<artifact deprecated="true" id="OperationDefinition/care-gaps" key="OperationDefinition-care-gaps" name="Care Gaps Operation"/>
+<artifact id="CodeSystem/CDSActionType" key="CodeSystem-CDSActionType" name="CDSActionType Codes"/>
+<artifact id="ValueSet/CDSActionType" key="ValueSet-CDSActionType" name="CDSActionType Codes ValueSet"/>
+<artifact id="StructureDefinition/CDSHooksExtension-DaVinci-config" key="StructureDefinition-CDSHooksExtension-DaVinci-config" name="CDS Hook Extension Definition for DaVinci Configuration (Test)"/>
 <artifact id="StructureDefinition/CDSHooksExtension-DaVinci-configoptions" key="StructureDefinition-CDSHooksExtension-DaVinci-configoptions" name="CDS Hook Extension Definition for DaVinci Configuration Options (Test)"/>
+<artifact id="Binary/CDSHookServices" key="Binary-CDSHookServices" name="CDSHookServices Example"/>
 <artifact id="StructureDefinition/CDSHookContext" key="StructureDefinition-CDSHookContext" name="CDS Hook Specific Context (Logical Definition)"/>
 <artifact id="StructureDefinition/CDSHookOrderSelectContext" key="StructureDefinition-CDSHookOrderSelectContext" name="CDS Hook Specific Context for order-select (Logical Definition)"/>
 <artifact id="StructureDefinition/CDSHookOrderSignContext" key="StructureDefinition-CDSHookOrderSignContext" name="CDS Hook Specific Context for order-sign (Logical Definition)"/>
 <artifact id="StructureDefinition/CDSHookPatientViewContext" key="StructureDefinition-CDSHookPatientViewContext" name="CDS Hook Specific Context for patient-view (Logical Definition)"/>
-<artifact id="CodeSystem/CDSActionType" key="CodeSystem-CDSActionType" name="CDSActionType Codes"/>
-<artifact id="ValueSet/CDSActionType" key="ValueSet-CDSActionType" name="CDSActionType Codes ValueSet"/>
-<artifact id="Binary/CDSHookServices" key="Binary-CDSHookServices" name="CDSHookServices Example"/>
 <artifact id="StructureDefinition/CDSHooksRequest" key="StructureDefinition-CDSHooksRequest" name="CDSHooks Request (Logical Definition)"/>
 <artifact id="StructureDefinition/CDSHooksResponse" key="StructureDefinition-CDSHooksResponse" name="CDSHooks Response (Logical Definition)"/>
 <artifact id="StructureDefinition/CDSHooksElement" key="StructureDefinition-CDSHooksElement" name="CDSHooks Services Base Extensible Element"/>
@@ -35,18 +36,20 @@
 <artifact id="ValueSet/CDSLinkType" key="ValueSet-CDSLinkType" name="CDSLinkType Codes ValueSet"/>
 <artifact id="CodeSystem/CDSSelectionBehavior" key="CodeSystem-CDSSelectionBehavior" name="CDSSelectionBehavior Codes"/>
 <artifact id="ValueSet/CDSSelectionBehavior" key="ValueSet-CDSSelectionBehavior" name="CDSSelectionBehavior Codes ValueSet"/>
-<artifact deprecated="true" id="OperationDefinition/care-gaps" key="OperationDefinition-care-gaps" name="Care Gaps Operation"/>
 <artifact deprecated="true" id="Parameters/col-submit-collect-obs" key="Parameters-col-submit-collect-obs" name="Col Submit Collect Obs"/>
 <artifact deprecated="true" id="CapabilityStatement/consumer-client" key="CapabilityStatement-consumer-client" name="Consumer Client CapabilityStatement"/>
 <artifact deprecated="true" id="CapabilityStatement/consumer-server" key="CapabilityStatement-consumer-server" name="Consumer Server CapabilityStatement"/>
 <artifact deprecated="true" id="Coverage/coverage01" key="Coverage-coverage01" name="Coverage01"/>
 <artifact deprecated="true" id="Coverage/coverage02" key="Coverage-coverage02" name="Coverage02"/>
 <artifact deprecated="true" id="Coverage/coverage03" key="Coverage-coverage03" name="Coverage03"/>
+<artifact deprecated="true" id="MeasureReport/datax-measurereport01" key="MeasureReport-datax-measurereport01" name="Datax Measurereport01"/>
+<artifact deprecated="true" id="MeasureReport/datax-measurereport02" key="MeasureReport-datax-measurereport02" name="Datax Measurereport02"/>
+<artifact deprecated="true" id="MeasureReport/datax-measurereport03" key="MeasureReport-datax-measurereport03" name="Datax Measurereport03"/>
+<artifact id="StructureDefinition/elementdefinition-date-format" key="StructureDefinition-elementdefinition-date-format" name="Date Format String"/>
 <artifact deprecated="true" id="StructureDefinition/extension-alternateScoreType" key="StructureDefinition-extension-alternateScoreType" name="DEQM Alternate Score Type Extension"/>
 <artifact deprecated="true" id="StructureDefinition/extension-certificationIdentifier" key="StructureDefinition-extension-certificationIdentifier" name="DEQM Certification Identifier Extension"/>
 <artifact deprecated="true" id="StructureDefinition/coverage-deqm" key="StructureDefinition-coverage-deqm" name="DEQM Coverage Profile"/>
 <artifact deprecated="true" id="StructureDefinition/datax-measurereport-deqm" key="StructureDefinition-datax-measurereport-deqm" name="DEQM Data Exchange MeasureReport Profile"/>
-<artifact deprecated="true" id="StructureDefinition/extension-gapStatus" key="StructureDefinition-extension-gapStatus" name="DEQM Gap Status Modifier Extension"/>
 <artifact deprecated="true" id="StructureDefinition/gaps-bundle-deqm" key="StructureDefinition-gaps-bundle-deqm" name="DEQM Gaps In Care Bundle Profile"/>
 <artifact deprecated="true" id="StructureDefinition/gaps-composition-deqm" key="StructureDefinition-gaps-composition-deqm" name="DEQM Gaps In Care Composition Profile"/>
 <artifact deprecated="true" id="StructureDefinition/gaps-detectedissue-deqm" key="StructureDefinition-gaps-detectedissue-deqm" name="DEQM Gaps In Care Detected Issue Profile"/>
@@ -55,6 +58,7 @@
 <artifact deprecated="true" id="ValueSet/gaps-status" key="ValueSet-gaps-status" name="DEQM Gaps In Care Gap Status Value Set"/>
 <artifact deprecated="true" id="StructureDefinition/gaps-group-deqm" key="StructureDefinition-gaps-group-deqm" name="DEQM Gaps In Care Group Profile"/>
 <artifact deprecated="true" id="StructureDefinition/gaps-indv-measurereport-deqm" key="StructureDefinition-gaps-indv-measurereport-deqm" name="DEQM Gaps In Care Individual MeasureReport Profile"/>
+<artifact deprecated="true" id="StructureDefinition/extension-gapStatus" key="StructureDefinition-extension-gapStatus" name="DEQM Gap Status Modifier Extension"/>
 <artifact deprecated="true" id="StructureDefinition/indv-measurereport-deqm" key="StructureDefinition-indv-measurereport-deqm" name="DEQM Individual MeasureReport Profile"/>
 <artifact deprecated="true" id="StructureDefinition/extension-measureScoring" key="StructureDefinition-extension-measureScoring" name="DEQM Measure Scoring Extension"/>
 <artifact deprecated="true" id="MedicationAdministration/medicationadministration01" key="MedicationAdministration-medicationadministration01" name="DEQM MedicationAdministration Example"/>
@@ -70,10 +74,6 @@
 <artifact deprecated="true" id="CodeSystem/update-type" key="CodeSystem-update-type" name="DEQM Update Type Code System"/>
 <artifact deprecated="true" id="ValueSet/update-type" key="ValueSet-update-type" name="DEQM Update Type Value Set"/>
 <artifact deprecated="true" id="Observation/DNA-occultblood" key="Observation-DNA-occultblood" name="DNA Occult Blood"/>
-<artifact deprecated="true" id="MeasureReport/datax-measurereport01" key="MeasureReport-datax-measurereport01" name="Datax Measurereport01"/>
-<artifact deprecated="true" id="MeasureReport/datax-measurereport02" key="MeasureReport-datax-measurereport02" name="Datax Measurereport02"/>
-<artifact deprecated="true" id="MeasureReport/datax-measurereport03" key="MeasureReport-datax-measurereport03" name="Datax Measurereport03"/>
-<artifact id="StructureDefinition/elementdefinition-date-format" key="StructureDefinition-elementdefinition-date-format" name="Date Format String"/>
 <artifact deprecated="true" id="Encounter/encounter01" key="Encounter-encounter01" name="Encounter01"/>
 <artifact deprecated="true" id="Encounter/encounter02" key="Encounter-encounter02" name="Encounter02"/>
 <artifact deprecated="true" id="Encounter/encounter03" key="Encounter-encounter03" name="Encounter03"/>
@@ -114,12 +114,11 @@
 <artifact deprecated="true" id="Procedure/gaps-procedure02" key="Procedure-gaps-procedure02" name="Gaps Procedure02"/>
 <artifact deprecated="true" id="Organization/gaps-organization-reportingvendor" key="Organization-gaps-organization-reportingvendor" name="Gaps Reporting Vendor Organization"/>
 <artifact deprecated="true" id="Group/group01" key="Group-group01" name="Group01"/>
-<artifact id="StructureDefinition/implementationguide-dependency-comment" key="StructureDefinition-implementationguide-dependency-comment" name="IG Dependency Comment"/>
-<artifact id="CodeSystem/ig-parameters" key="CodeSystem-ig-parameters" name="IG Parameter Codes"/>
-<artifact id="CodeSystem/id-expectation2" key="CodeSystem-id-expectation2" name="Id Expectation Codes"/>
 <artifact id="CodeSystem/id-expectation" key="CodeSystem-id-expectation" name="Id Expectation Codes"/>
 <artifact id="StructureDefinition/id-expectation" key="StructureDefinition-id-expectation" name="Id Expectation Extension"/>
 <artifact id="ValueSet/id-expectation" key="ValueSet-id-expectation" name="Id Expectation Set"/>
+<artifact id="StructureDefinition/implementationguide-dependency-comment" key="StructureDefinition-implementationguide-dependency-comment" name="IG Dependency Comment"/>
+<artifact id="CodeSystem/ig-parameters" key="CodeSystem-ig-parameters" name="IG Parameter Codes"/>
 <artifact id="StructureDefinition/implied-string-prefix" key="StructureDefinition-implied-string-prefix" name="Implied String Prefix"/>
 <artifact deprecated="true" id="MeasureReport/indv-measurereport01" key="MeasureReport-indv-measurereport01" name="Indv Measurereport01"/>
 <artifact deprecated="true" id="MeasureReport/indv-measurereport02" key="MeasureReport-indv-measurereport02" name="Indv Measurereport02"/>
@@ -177,10 +176,10 @@
 <artifact deprecated="true" id="Bundle/single-indv-mrp-task-report" key="Bundle-single-indv-mrp-task-report" name="Single Indv Mrp Task Report"/>
 <artifact deprecated="true" id="Bundle/single-indv-vte-report-option1" key="Bundle-single-indv-vte-report-option1" name="Single Indv Vte Report Option 1"/>
 <artifact deprecated="true" id="Bundle/single-indv-vte-report-option7" key="Bundle-single-indv-vte-report-option7" name="Single Indv Vte Report Option 7"/>
+<artifact deprecated="true" id="MeasureReport/date-of-last-power-outage" key="MeasureReport-date-of-last-power-outage" name="Summary MeasureReport Date of Last Power Outage"/>
 <artifact deprecated="true" id="MeasureReport/summ-measurereport01" key="MeasureReport-summ-measurereport01" name="Summ Measurereport01"/>
 <artifact deprecated="true" id="MeasureReport/summ-measurereport02" key="MeasureReport-summ-measurereport02" name="Summ Measurereport02"/>
 <artifact deprecated="true" id="MeasureReport/summ-medicare-stratification-example" key="MeasureReport-summ-medicare-stratification-example" name="Summ Medicare Stratification Example"/>
-<artifact deprecated="true" id="MeasureReport/date-of-last-power-outage" key="MeasureReport-date-of-last-power-outage" name="Summary MeasureReport Date of Last Power Outage"/>
 <artifact id="Practitioner/grahame" key="Practitioner-grahame" name="Supporting Practitioner"/>
 <artifact deprecated="true" id="Task/task01" key="Task-task01" name="Task01"/>
 <artifact deprecated="true" id="Task/task02" key="Task-task02" name="Task02"/>
@@ -189,8 +188,8 @@
 <artifact id="CodeSystem/binding-style" key="CodeSystem-binding-style" name="Vocab Binding Style Codes"/>
 <artifact id="StructureDefinition/binding-style" key="StructureDefinition-binding-style" name="Vocab Binding Style Extension"/>
 <artifact id="ValueSet/binding-style" key="ValueSet-binding-style" name="Vocab Binding Style ValueSet"/>
-<page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
+<page key="NA" name="(NA)"/>
 <page deprecated="true" key="all-examples" name="All Examples"/>
 <page key="artifacts" name="Artifacts Summary"/>
 <page key="binary" name="Binary Support"/>
@@ -205,6 +204,7 @@
 <page deprecated="true" key="gaps-examples" name="Gaps in Care Example Use Cases"/>
 <page deprecated="true" key="gaps-in-care-reporting" name="Gaps in Care Reporting"/>
 <page deprecated="true" key="guidance" name="General Guidance"/>
+<page deprecated="true" key="history" name="history"/>
 <page key="index" name="Home Page"/>
 <page deprecated="true" key="indv-reporting" name="Individual Reporting"/>
 <page deprecated="true" key="mrp" name="Medication Reconciliation Post-Discharge (MRP)"/>
@@ -215,5 +215,4 @@
 <page key="toc" name="Table of Contents"/>
 <page deprecated="true" key="terminology" name="Terminology"/>
 <page deprecated="true" key="vte1" name="Venous Thromboembolism Prophylaxis (VTE-1)"/>
-<page deprecated="true" key="history" name="history"/>
 </specification>
