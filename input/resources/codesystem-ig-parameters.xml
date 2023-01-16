@@ -1208,24 +1208,4 @@
       <valueString value="don't ignore any profiles"/>
     </property>
   </concept>  
-
-
-  <concept>
-    <code value="all-profiles-xlsx "/>
-    <display value="all-profiles-xlsx "/>
-    <definition value="Whether to produce a single excel file containing all the profiles. Note that for big IGs, this file may take considerable time to produce (e.g. ~1hr)"/>
-    <property>
-      <code value="repeats"/>
-      <valueBoolean value="false"/>
-    </property>
-    <property>
-      <code value="type"/>
-      <valueString value="boolean"/>
-    </property>
-    <property>
-      <code value="missing"/>
-      <valueString value="don't produce all-profiles.xlsx"/>
-    </property>
-  </concept>  
-   
 </CodeSystem>
