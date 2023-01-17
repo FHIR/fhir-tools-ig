@@ -1208,4 +1208,25 @@
       <valueString value="don't ignore any profiles"/>
     </property>
   </concept>  
+
+  <concept>
+    <code value="produce-jekyll-data"/>
+    <display value="produce-jekyll-data"/>
+    <definition value="Produce the resources as .json in the jekyll _data folder. Note that Jekyll will fail if any of the resources contain non-ascii characters"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="don't produce data files for Jekyll"/>
+    </property>
+  </concept>  
+
+  
+
 </CodeSystem>
