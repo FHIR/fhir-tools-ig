@@ -107,9 +107,27 @@
   </concept>
 
   <concept>
+    <code value="no-check-usage"/>
+    <display value="no-check-usage"/>
+    <definition value="Do not check usage for extensions and data types - for IGs where they are being defined for use elsewhere"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="do check usage"/>
+    </property>
+  </concept>
+
+  <concept>
     <code value="path-resource"/>
     <display value="path-resource"/>
-    <definition value="Relative path to a location in the IG repository from which to load resources."/>
+    <definition value="Relative path to a location in the IG repository from which to load resources. If the path ends in /*, then that means all sub-folders"/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="true"/>
@@ -401,6 +419,23 @@
     <property>
       <code value="repeats"/>
       <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="url"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="n/a"/>
+    </property>
+  </concept>
+  <concept>
+    <code value="special-url-base"/>
+    <display value="special-url-base"/>
+    <definition value="A common alternative base URL for multiple canonical resources in the IG"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
     </property>
     <property>
       <code value="type"/>
