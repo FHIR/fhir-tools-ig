@@ -209,6 +209,7 @@
 <page deprecated="true" key="mrp" name="Medication Reconciliation Post-Discharge (MRP)"/>
 <page deprecated="true" key="operations" name="Operations"/>
 <page key="other" name="Other Information"/>
+<page key="page-factories" name="Page Factories"/>
 <page deprecated="true" key="profiles" name="Profiles and Extensions"/>
 <page deprecated="true" key="summary-reporting" name="Summary Reporting"/>
 <page key="toc" name="Table of Contents"/>

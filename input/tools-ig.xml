@@ -140,6 +140,11 @@
         <generation value="markdown"/>
       </page>
       <page>
+        <nameUrl value="page-factories.html"/>
+        <title value="Page Factories"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
         <nameUrl value="other.html"/>
         <title value="Other Information"/>
         <generation value="markdown"/>
