@@ -95,7 +95,7 @@
         <valueCode value="application/json"/>
       </extension>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-logical">
-        <valueUrl value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksServices"/>
+        <valueCanonical value="http://hl7.org/fhir/tools/StructureDefinition/CDSHooksServices"/>
       </extension>
       <reference>
         <reference value="Binary/CDSHookServices"/>
