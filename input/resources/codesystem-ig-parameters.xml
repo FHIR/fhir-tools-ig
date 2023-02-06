@@ -1281,6 +1281,23 @@
     </property>
   </concept>  
 
+  <concept>
+    <code value="globals-in-artifacts"/>
+    <display value="globals-in-artifacts"/>
+    <definition value="If true, causes the list of global profiles to appear at the top of the Artifacts Summary page"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="don't put the globals fragment in the artifact summary"/>
+    </property>
+  </concept>  
   
 
 </CodeSystem>
