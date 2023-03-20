@@ -147,6 +147,7 @@
 <artifact deprecated="true" id="Bundle/multiple-indv-mrp-obs-report" key="Bundle-multiple-indv-mrp-obs-report" name="Multiple Indv Mrp Obs Report"/>
 <artifact deprecated="true" id="Bundle/multiple-indv-mrp-task-report" key="Bundle-multiple-indv-mrp-task-report" name="Multiple Indv Mrp Task Report"/>
 <artifact deprecated="true" id="Bundle/multiple-summ-report" key="Bundle-multiple-summ-report" name="Multiple Summ Report"/>
+<artifact id="StructureDefinition/no-binding" key="StructureDefinition-no-binding" name="No Binding Extension"/>
 <artifact id="CodeSystem/obligation" key="CodeSystem-obligation" name="Obligation Codes"/>
 <artifact id="ValueSet/obligation" key="ValueSet-obligation" name="Obligation Codes ValueSet"/>
 <artifact id="StructureDefinition/obligation" key="StructureDefinition-obligation" name="Obligation Extension"/>
@@ -168,6 +169,8 @@
 <artifact deprecated="true" id="CapabilityStatement/producer-client" key="CapabilityStatement-producer-client" name="Producer Client CapabilityStatement"/>
 <artifact deprecated="true" id="CapabilityStatement/producer-server" key="CapabilityStatement-producer-server" name="Producer Server CapabilityStatement"/>
 <artifact id="StructureDefinition/profile-mapping" key="StructureDefinition-profile-mapping" name="Profile Mapping Extension"/>
+<artifact id="StructureDefinition/profile-summary" key="StructureDefinition-profile-summary" name="ProfileSummary"/>
+<artifact id="StructureDefinition/binding-definition" key="StructureDefinition-binding-definition" name="ProfileSummary"/>
 <artifact deprecated="true" id="CapabilityStatement/receiver-server" key="CapabilityStatement-receiver-server" name="Receiver Server CapabilityStatement"/>
 <artifact deprecated="true" id="CapabilityStatement/reporter-client" key="CapabilityStatement-reporter-client" name="Reporter Client CapabilityStatement"/>
 <artifact id="ActorDefinition/server" key="ActorDefinition-server" name="Server Actor 1"/>

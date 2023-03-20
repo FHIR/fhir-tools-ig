@@ -211,7 +211,7 @@
       <type> 
         <code value="uri"/> 
       </type> 
-      <fixedUri value="filter"/> 
+      <fixedUri value="filter-desc"/> 
     </element> 
     <element id="Extension.extension:filter-desc.value[x]">
       <path value="Extension.extension.value[x]"/> 

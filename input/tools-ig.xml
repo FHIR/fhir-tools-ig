@@ -89,6 +89,21 @@
         <reference value="StructureDefinition/CDSHookOrderSignContext"/>
       </reference>
     </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/no-binding"/>
+      </reference>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/profile-summary"/>
+      </reference>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/binding-definition"/>
+      </reference>
+    </resource>
 
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format">

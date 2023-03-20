@@ -214,6 +214,25 @@
     </property>
   </concept>
 
+
+  <concept>
+    <code value="path-data"/>
+    <display value="path-data"/>
+    <definition value="A relative path in which data files can be found (will go in _data for Jekyll)."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="path"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="no data files copied"/>
+    </property>
+  </concept>
+
   <concept>
     <code value="path-qa"/>
     <display value="path-qa"/>
@@ -1300,4 +1319,21 @@
   </concept>  
   
 
+  <concept>
+    <code value="conversion-version"/>
+    <display value="conversion-version"/>
+    <definition value="Defines an additional version of the FHIR definitions to load for version conversion maps. Value is either RX or V.V (e.g. R4 or 4.0). Additional versions are loaded with modified URLs (e.g. R4 is loaded to http://hl7.org.fhir/4.0)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="string"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="No other versions are loaded to support version conversion maps"/>
+    </property>
+  </concept>  
 </CodeSystem>

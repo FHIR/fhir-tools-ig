@@ -42,6 +42,7 @@ the value of a string to replace in the content of the source file. Any occurren
 * **datatypes**: a list of all datatypes defined in FHIR
 * **canonicals**: a list of all canonical resources defined in FHIR
 * **versions**: A list of all the official release versions
+* **manual**: A list of strings as provided in the json property **items** (an array of strings)
 
 ## Variables
 
