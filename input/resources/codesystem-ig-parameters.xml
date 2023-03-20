@@ -1318,6 +1318,41 @@
     </property>
   </concept>  
   
+  <concept>
+    <code value="noRootToc"/>
+    <display value="No root table-of-contents"/>
+    <definition value="If true, causes the ig to not inject a root 'toc' page if that's not already the root (only functions in templates that do this by default)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="Insert a table-of-contents page as the root of the IG (if the template supports doing that)"/>
+    </property>
+  </concept>  
+  
+  <concept>
+    <code value="artifactsOnRoot"/>
+    <display value="Artifacts on root"/>
+    <definition value="If true, causes artifact pages to be created as children of the IG's 'root' page rather than the 'artifacts' page (if the template supports doing that)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="Place artifact pages as children of the IG's 'root' page rather than 'artifacts' page (if the template supports doing that)"/>
+    </property>
+  </concept>  
 
   <concept>
     <code value="conversion-version"/>
