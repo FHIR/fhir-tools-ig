@@ -175,6 +175,7 @@
 <artifact id="StructureDefinition/binding-definition" key="StructureDefinition-binding-definition" name="ProfileSummary"/>
 <artifact deprecated="true" id="CapabilityStatement/receiver-server" key="CapabilityStatement-receiver-server" name="Receiver Server CapabilityStatement"/>
 <artifact deprecated="true" id="CapabilityStatement/reporter-client" key="CapabilityStatement-reporter-client" name="Reporter Client CapabilityStatement"/>
+<artifact id="StructureDefinition/select-by-map" key="StructureDefinition-select-by-map" name="Select By Map"/>
 <artifact id="ActorDefinition/server" key="ActorDefinition-server" name="Server Actor 1"/>
 <artifact deprecated="true" id="Bundle/single-indv-col-obs-report" key="Bundle-single-indv-col-obs-report" name="Single Indv Col Obs Report"/>
 <artifact deprecated="true" id="Bundle/single-indv-mrp-obs-report" key="Bundle-single-indv-mrp-obs-report" name="Single Indv Mrp Obs Report"/>

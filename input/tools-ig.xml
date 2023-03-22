@@ -114,6 +114,11 @@
         <reference value="StructureDefinition/ig-page-name"/>
       </reference>
     </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/select-by-map"/>
+      </reference>
+    </resource>
 
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format">
