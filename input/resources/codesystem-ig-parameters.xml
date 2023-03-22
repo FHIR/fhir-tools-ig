@@ -1389,4 +1389,25 @@
       <valueString value="Lloyd to define"/>
     </property>
   </concept>  
+
+  <concept>
+    <code value="no-usage-check"/>
+    <display value="no-usage-check"/>
+    <definition value="No Warning in QA if there are extensions/profiles that are not used in this IG"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="Usage check appliese"/>
+    </property>
+  </concept>  
+
+  
+
 </CodeSystem>
