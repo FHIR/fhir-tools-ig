@@ -1373,24 +1373,6 @@
   </concept>  
 
   <concept>
-    <code value="showsource"/>
-    <display value="showsource"/>
-    <definition value="Lloyd to provide definition"/>
-    <property>
-      <code value="repeats"/>
-      <valueBoolean value="false"/>
-    </property>
-    <property>
-      <code value="type"/>
-      <valueString value="string"/>
-    </property>
-    <property>
-      <code value="missing"/>
-      <valueString value="Lloyd to define"/>
-    </property>
-  </concept>  
-
-  <concept>
     <code value="defaultVersion"/>
     <display value="defaultVersion"/>
     <definition value="Lloyd to provide definition"/>

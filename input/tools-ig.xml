@@ -199,10 +199,6 @@
       <value value="input/cdshooks"/>
     </parameter>
     <parameter>
-      <code value="showsource"/>
-      <value value="true"/>
-    </parameter>
-    <parameter>
       <code value="generate-version"/>
       <value value="r3"/>
     </parameter>
