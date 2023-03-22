@@ -115,6 +115,8 @@
 <artifact deprecated="true" id="Organization/gaps-organization-reportingvendor" key="Organization-gaps-organization-reportingvendor" name="Gaps Reporting Vendor Organization"/>
 <artifact deprecated="true" id="Group/group01" key="Group-group01" name="Group01"/>
 <artifact id="StructureDefinition/implementationguide-dependency-comment" key="StructureDefinition-implementationguide-dependency-comment" name="IG Dependency Comment"/>
+<artifact id="StructureDefinition/ig-page-name" key="StructureDefinition-ig-page-name" name="IG Page Name"/>
+<artifact id="StructureDefinition/ig-parameter" key="StructureDefinition-ig-parameter" name="IG Parameter"/>
 <artifact id="CodeSystem/ig-parameters" key="CodeSystem-ig-parameters" name="IG Parameter Codes"/>
 <artifact id="CodeSystem/id-expectation" key="CodeSystem-id-expectation" name="Id Expectation Codes"/>
 <artifact id="StructureDefinition/id-expectation" key="StructureDefinition-id-expectation" name="Id Expectation Extension"/>
@@ -191,6 +193,7 @@
 <artifact id="CodeSystem/binding-style" key="CodeSystem-binding-style" name="Vocab Binding Style Codes"/>
 <artifact id="StructureDefinition/binding-style" key="StructureDefinition-binding-style" name="Vocab Binding Style Extension"/>
 <artifact id="ValueSet/binding-style" key="ValueSet-binding-style" name="Vocab Binding Style ValueSet"/>
+<artifact id="ValueSet/ig-parameters" key="ValueSet-ig-parameters" name="ig-parameters Codes ValueSet"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page deprecated="true" key="all-examples" name="All Examples"/>

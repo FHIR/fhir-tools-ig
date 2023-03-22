@@ -40,6 +40,11 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/ig-parameter"/>
+      </reference>
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/json-property-key"/>
       </reference>
     </resource>
@@ -102,6 +107,11 @@
     <resource>
       <reference>
         <reference value="StructureDefinition/binding-definition"/>
+      </reference>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ig-page-name"/>
       </reference>
     </resource>
 
