@@ -16,6 +16,7 @@
 <artifact id="ValueSet/additional-binding-purpose" key="ValueSet-additional-binding-purpose" name="Additional Binding Purpose ValueSet"/>
 <artifact id="StructureDefinition/implementationguide-resource-format" key="StructureDefinition-implementationguide-resource-format" name="Binary Resource Format"/>
 <artifact id="StructureDefinition/implementationguide-resource-logical" key="StructureDefinition-implementationguide-resource-logical" name="Binary Resource Logical"/>
+<artifact id="StructureDefinition/binding-definition" key="StructureDefinition-binding-definition" name="Binding Definition"/>
 <artifact id="StructureDefinition/CDSHooksExtension-DaVinci-config" key="StructureDefinition-CDSHooksExtension-DaVinci-config" name="CDS Hook Extension Definition for DaVinci Configuration (Test)"/>
 <artifact id="StructureDefinition/CDSHooksExtension-DaVinci-configoptions" key="StructureDefinition-CDSHooksExtension-DaVinci-configoptions" name="CDS Hook Extension Definition for DaVinci Configuration Options (Test)"/>
 <artifact id="StructureDefinition/CDSHookContext" key="StructureDefinition-CDSHookContext" name="CDS Hook Specific Context (Logical Definition)"/>
@@ -172,7 +173,6 @@
 <artifact deprecated="true" id="CapabilityStatement/producer-server" key="CapabilityStatement-producer-server" name="Producer Server CapabilityStatement"/>
 <artifact id="StructureDefinition/profile-mapping" key="StructureDefinition-profile-mapping" name="Profile Mapping Extension"/>
 <artifact id="StructureDefinition/profile-summary" key="StructureDefinition-profile-summary" name="ProfileSummary"/>
-<artifact id="StructureDefinition/binding-definition" key="StructureDefinition-binding-definition" name="ProfileSummary"/>
 <artifact deprecated="true" id="CapabilityStatement/receiver-server" key="CapabilityStatement-receiver-server" name="Receiver Server CapabilityStatement"/>
 <artifact deprecated="true" id="CapabilityStatement/reporter-client" key="CapabilityStatement-reporter-client" name="Reporter Client CapabilityStatement"/>
 <artifact id="StructureDefinition/select-by-map" key="StructureDefinition-select-by-map" name="Select By Map"/>
