@@ -39,7 +39,7 @@
       <path value="Extension"/> 
       <short value="Specifies if an element can have a null value in the json (instead of just being missing)"/> 
       <min value="0"/> 
-      <max value="*"/> 
+      <max value="1"/> 
     </element> 
 
     <element id="Extension.extension">
