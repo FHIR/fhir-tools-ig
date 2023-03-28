@@ -38,6 +38,7 @@
 <artifact id="ValueSet/CDSSelectionBehavior" key="ValueSet-CDSSelectionBehavior" name="CDSSelectionBehavior Codes ValueSet"/>
 <artifact deprecated="true" id="OperationDefinition/care-gaps" key="OperationDefinition-care-gaps" name="Care Gaps Operation"/>
 <artifact deprecated="true" id="Parameters/col-submit-collect-obs" key="Parameters-col-submit-collect-obs" name="Col Submit Collect Obs"/>
+<artifact id="CodeSystem/r4-equivalence" key="CodeSystem-r4-equivalence" name="ConceptMapEquivalence"/>
 <artifact deprecated="true" id="CapabilityStatement/consumer-client" key="CapabilityStatement-consumer-client" name="Consumer Client CapabilityStatement"/>
 <artifact deprecated="true" id="CapabilityStatement/consumer-server" key="CapabilityStatement-consumer-server" name="Consumer Server CapabilityStatement"/>
 <artifact deprecated="true" id="Coverage/coverage01" key="Coverage-coverage01" name="Coverage01"/>
@@ -176,6 +177,7 @@
 <artifact deprecated="true" id="CapabilityStatement/receiver-server" key="CapabilityStatement-receiver-server" name="Receiver Server CapabilityStatement"/>
 <artifact deprecated="true" id="CapabilityStatement/reporter-client" key="CapabilityStatement-reporter-client" name="Reporter Client CapabilityStatement"/>
 <artifact id="StructureDefinition/select-by-map" key="StructureDefinition-select-by-map" name="Select By Map"/>
+<artifact id="ValueSet/select-by-map-filter" key="ValueSet-select-by-map-filter" name="SelectByMap Filter Codes (VS)"/>
 <artifact id="ActorDefinition/server" key="ActorDefinition-server" name="Server Actor 1"/>
 <artifact deprecated="true" id="Bundle/single-indv-col-obs-report" key="Bundle-single-indv-col-obs-report" name="Single Indv Col Obs Report"/>
 <artifact deprecated="true" id="Bundle/single-indv-mrp-obs-report" key="Bundle-single-indv-mrp-obs-report" name="Single Indv Mrp Obs Report"/>
@@ -199,24 +201,25 @@
 <page key="many" name="(many)"/>
 <page deprecated="true" key="all-examples" name="All Examples"/>
 <page key="artifacts" name="Artifacts Summary"/>
-<page key="binary" name="Binary Support"/>
+<page key="" name="Binary Support"/>
 <page deprecated="true" key="capstatements" name="Capability Statements"/>
 <page deprecated="true" key="change-notes" name="Change Notes"/>
 <page deprecated="true" key="col" name="Colorectal Cancer Screening (COL)"/>
 <page deprecated="true" key="datax" name="Data Exchange"/>
 <page deprecated="true" key="downloads" name="Downloads"/>
 <page deprecated="true" key="usecases" name="Example Use Cases"/>
-<page key="format-extensions" name="Format Extensions"/>
+<page key="" name="Format Extensions"/>
 <page deprecated="true" key="framework" name="Framework"/>
 <page deprecated="true" key="gaps-examples" name="Gaps in Care Example Use Cases"/>
 <page deprecated="true" key="gaps-in-care-reporting" name="Gaps in Care Reporting"/>
 <page deprecated="true" key="guidance" name="General Guidance"/>
-<page key="index" name="Home Page"/>
+<page deprecated="true" key="index" name="Home"/>
+<page key="" name="Home Page"/>
 <page deprecated="true" key="indv-reporting" name="Individual Reporting"/>
 <page deprecated="true" key="mrp" name="Medication Reconciliation Post-Discharge (MRP)"/>
 <page deprecated="true" key="operations" name="Operations"/>
-<page key="other" name="Other Information"/>
-<page key="page-factories" name="Page Factories"/>
+<page key="" name="Other Information"/>
+<page key="" name="Page Factories"/>
 <page deprecated="true" key="profiles" name="Profiles and Extensions"/>
 <page deprecated="true" key="summary-reporting" name="Summary Reporting"/>
 <page key="toc" name="Table of Contents"/>

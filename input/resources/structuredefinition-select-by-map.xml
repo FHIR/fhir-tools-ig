@@ -13,7 +13,7 @@
       <value value="http://hl7.org/Special/committees/fhir-i"/>
     </telecom>
   </contact>
-  <description value="This extension indicates that in addition to the concepts directly included in the include/exclude statement, any source codes that are mapped  by the nominated ConceptMap to target codes that are included/excluded (target) codes are also selected. The compose brings in all the concepts selected are any codes where the source is equivalent to a target code selected in this include/exclude."/>
+  <description value="This extension indicates that in addition to the concepts directly selected (either included or excluded) in the include/exclude statement, any source codes that are mapped to target codes that are selected by the nominated ConceptMapare also selected. The filter property can be used to restrict which types of relationships are included."/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -37,15 +37,73 @@
   <differential>
    <element id="Extension">
       <path value="Extension"/> 
-      <short value="This extension indicates that in addition to the concepts directly included in the include/exclude statement, any codes that are mapped to the selected codes by the nominated map are also selected. The compose brings in all the concepts selected are any codes where the source is equivalent to a target code selected in this include/exclude."/> 
-      <min value="0"/> 
-      <max value="*"/> 
+      <short value="Add ConceptMap to selection"/> 
+      <definition value="This extension indicates that in addition to the concepts directly selected (either included or excluded) in the include/exclude statement, any source codes that are mapped to target codes that are selected by the nominated ConceptMapare also selected. The filter property can be used to restrict which types of relationships are included."/> 
     </element> 
 
-    <element id="Extension.extension">
+    <element id="Extension.extension:map">
       <path value="Extension.extension"/> 
+      <sliceName value="map"/> 
+      <short value="The canonical URL for the ConceptMap"/> 
+      <min value="1"/> 
+      <max value="1"/> 
+      <type> 
+        <code value="Extension"/> 
+      </type> 
+    </element> 
+    <element id="Extension.extension:map.extension">
+      <path value="Extension.extension.extension"/> 
       <max value="0"/> 
     </element> 
+    <element id="Extension.extension:map.url">
+      <path value="Extension.extension.url"/> 
+      <type> 
+        <code value="uri"/> 
+      </type> 
+      <fixedUri value="map"/> 
+    </element> 
+    <element id="Extension.extension:map.value[x]">
+      <path value="Extension.extension.value[x]"/> 
+      <min value="1"/> 
+      <type> 
+        <code value="canonical"/> 
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ConceptMap"/> 
+      </type> 
+    </element> 
+
+    <element id="Extension.extension:filter">
+      <path value="Extension.extension"/> 
+      <sliceName value="filter"/> 
+      <short value="Include targets with this relationship in the selection"/> 
+      <min value="0"/> 
+      <max value="*"/> 
+      <type> 
+        <code value="Extension"/> 
+      </type> 
+    </element> 
+    <element id="Extension.extension:filter.extension">
+      <path value="Extension.extension.extension"/> 
+      <max value="0"/> 
+    </element> 
+    <element id="Extension.extension:filter.url">
+      <path value="Extension.extension.url"/> 
+      <type> 
+        <code value="uri"/> 
+      </type> 
+      <fixedUri value="filter"/> 
+    </element> 
+    <element id="Extension.extension:filter.value[x]">
+      <path value="Extension.extension.value[x]"/> 
+      <min value="1"/> 
+      <type> 
+        <code value="code"/> 
+      </type> 
+      <binding> 
+        <strength value="required"/> 
+        <description value="The relationship between concepts."/> 
+        <valueSet value="http://hl7.org/fhir/tools/ValueSet/select-by-map-filter"/> 
+      </binding> 
+    </element>
 
     <element id="Extension.url">
       <path value="Extension.url"/> 
@@ -53,12 +111,8 @@
     </element> 
     <element id="Extension.value[x]">
       <path value="Extension.value[x]"/> 
-      <min value="1"/> 
-      <max value="1"/>
-      <type>
-        <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ConceptMap"/>
-      </type>
+      <min value="0"/> 
+      <max value="0"/>
     </element> 
   </differential>
 </StructureDefinition>

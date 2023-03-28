@@ -26,7 +26,7 @@
   </jurisdiction>
   <packageId value="hl7.fhir.uv.tools"/>
   <license value="CC0-1.0"/>
-  <fhirVersion value="4.0.1"/>
+  <fhirVersion value="5.0.0"/>
   <definition>
     <resource>
       <reference>
@@ -156,58 +156,72 @@
     </resource>
 
     <page>
-      <nameUrl value="index.html"/>
+      <name value="index.html"/>
       <title value="Home Page"/>
       <generation value="html"/>
       <page>
-        <nameUrl value="binary.html"/>
+        <name value="binary.html"/>
         <title value="Binary Support"/>
         <generation value="html"/>
       </page>
       <page>
-        <nameUrl value="format-extensions.html"/>
+        <name value="format-extensions.html"/>
         <title value="Format Extensions"/>
         <generation value="markdown"/>
       </page>
       <page>
-        <nameUrl value="page-factories.html"/>
+        <name value="page-factories.html"/>
         <title value="Page Factories"/>
         <generation value="markdown"/>
       </page>
       <page>
-        <nameUrl value="other.html"/>
+        <name value="other.html"/>
         <title value="Other Information"/>
         <generation value="markdown"/>
       </page>
     </page>
     <!-- copyright year is a mandatory parameter -->
     <parameter>
-      <code value="copyrightyear"/>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="copyrightyear"/>
+      </code>    
       <value value="2022+"/>
     </parameter>
     <!-- releaselabel should be the ballot status for HL7-published IGs. -->
     <parameter>
-      <code value="releaselabel"/>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="releaselabel"/>
+      </code>    
       <value value="Working Copy"/>
     </parameter>
     <parameter>
-      <code value="releaselabel"/>
-      <value value="Working Copy"/>
-    </parameter>
-    <parameter>
-      <code value="path-binary"/>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="path-binary"/>
+      </code>    
       <value value="input/cdshooks"/>
     </parameter>
     <parameter>
-      <code value="generate-version"/>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="generate-version"/>
+      </code>    
       <value value="r3"/>
     </parameter>
     <parameter>
-      <code value="generate-version"/>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="generate-version"/>
+      </code>    
       <value value="r4"/>
     </parameter>
     <parameter>
-      <code value="generate-version"/>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="generate-version"/>
+      </code>    
       <value value="r5"/>
     </parameter>    
   </definition>
