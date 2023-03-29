@@ -1408,6 +1408,41 @@
     </property>
   </concept>  
 
+  <concept>
+    <code value="i18n-default-lang"/>
+    <display value="i18n-default-lang"/>
+    <definition value="The default language (e.g. [[[Resource.language]]]) to assume in the IG when the resource and/or the element context doesn't specify a language"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="string"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="No default language - Multi-language services are not enabled"/>
+    </property>
+  </concept>  
+
+ <concept>
+    <code value="i18n-lang"/>
+    <display value="i18n-lang"/>
+    <definition value="A language to translate the IG into. note that i18n-default-lang is automatically a language, and doesn't need to be restated"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="string"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="No additional languages"/>
+    </property>
+  </concept>  
   
 
 </CodeSystem>

@@ -45,6 +45,11 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/ig-internal-dependency"/>
+      </reference>
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/json-property-key"/>
       </reference>
     </resource>
@@ -223,6 +228,20 @@
         <code value="generate-version"/>
       </code>    
       <value value="r5"/>
+    </parameter>   
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="i18n-default-lang"/>
+      </code>    
+      <value value="en"/>
+    </parameter>    
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="i18n-lang"/>
+      </code>    
+      <value value="es"/>
     </parameter>    
   </definition>
 </ImplementationGuide>
