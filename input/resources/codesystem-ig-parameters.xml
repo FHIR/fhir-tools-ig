@@ -1444,5 +1444,23 @@
     </property>
   </concept>  
   
+  <concept>
+    <code value="translation-supplements"/>
+    <display value="translation-supplements"/>
+    <definition value="A folder in which to look for translation supplements - .po or .xliff or .json"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="string"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="No translation supplements"/>
+    </property>
+  </concept>  
+  
 
 </CodeSystem>
