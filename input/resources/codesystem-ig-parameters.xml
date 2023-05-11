@@ -1462,5 +1462,22 @@
     </property>
   </concept>  
   
-
+  <concept>
+    <code value="display-warnings"/>
+    <display value="display-warnings"/>
+    <definition value="Instruct the terminology layer that wrong displays result in a warning not an error"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="Wrong displays cause errors"/>
+    </property>
+  </concept>  
+  
 </CodeSystem>
