@@ -121,6 +121,7 @@
 <artifact id="StructureDefinition/ig-page-name" key="StructureDefinition-ig-page-name" name="IG Page Name"/>
 <artifact id="StructureDefinition/ig-parameter" key="StructureDefinition-ig-parameter" name="IG Parameter"/>
 <artifact id="CodeSystem/ig-parameters" key="CodeSystem-ig-parameters" name="IG Parameter Codes"/>
+<artifact id="StructureDefinition/igpublisher-bundle" key="StructureDefinition-igpublisher-bundle" name="IG Publisher Bundle"/>
 <artifact id="CodeSystem/id-expectation" key="CodeSystem-id-expectation" name="Id Expectation Codes"/>
 <artifact id="StructureDefinition/id-expectation" key="StructureDefinition-id-expectation" name="Id Expectation Extension"/>
 <artifact id="ValueSet/id-expectation" key="ValueSet-id-expectation" name="Id Expectation Set"/>
