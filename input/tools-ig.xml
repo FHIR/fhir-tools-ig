@@ -121,6 +121,16 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/obligation-profile"/>
+      </reference>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/inherit-obligations"/>
+      </reference>
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/select-by-map"/>
       </reference>
     </resource>
