@@ -25,11 +25,7 @@
   <abstract value="false"/>
   <context>
     <type value="element"/>
-    <expression value="ElementDefinition"/>
-  </context>
-  <context>
-    <type value="element"/>
-    <expression value="ElementDefinition.type"/>
+    <expression value="StructureDefinition"/>
   </context>
   <type value="Extension"/>
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
