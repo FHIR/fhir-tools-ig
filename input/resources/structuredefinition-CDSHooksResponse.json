@@ -242,7 +242,7 @@
           "key" : "cds-resp-4",
           "severity" : "error",
           "human" : "the CDS Service MUST populate a display value for each reason's Coding",
-          "expression" : "overrideReasons.all(display.exists())"
+          "expression" : "all(display.exists())"
         }]
       },
       {

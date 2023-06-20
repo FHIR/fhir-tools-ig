@@ -23,7 +23,7 @@
       ],
       "requirement": "The server *SHALL* support expanding value sets",
       "satisfiedBy": [
-        "http://hl7.org/fhir/r4/terminology-service.html#expand"
+        "http://hl7.org/fhir/R5/terminology-service.html#expand"
       ],
       "source": [
         {

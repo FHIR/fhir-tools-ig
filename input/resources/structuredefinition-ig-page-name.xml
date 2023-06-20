@@ -33,7 +33,7 @@
   <differential>
    <element id="Extension">
       <path value="Extension"/> 
-      <short value="Page Name (for R4 or earlier - part of R5)  "/> 
+      <short value="Page Name (for R4 or earlier - part of R5)"/> 
       <min value="0"/> 
       <max value="*"/> 
     </element> 

@@ -40,6 +40,7 @@
       <short value="Defines what should happen if a repeating element has no items"/> 
       <min value="0"/> 
       <max value="*"/> 
+      <meaningWhenMissing value="default is that the array should not be present"/>
     </element> 
 
     <element id="Extension.extension">
@@ -58,7 +59,6 @@
       <type>
         <code value="code"/>
       </type>
-      <meaningWhenMissing value="default is that the array should not be present"/>
       <binding>
         <strength value="required"/>
         <valueSet value="http://hl7.org/fhir/tools/ValueSet/json-empty-behavior"/>
