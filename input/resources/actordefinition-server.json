@@ -17,8 +17,8 @@
         "url" : "lang",
         "valueCode" : "es"
       },{
-        "url" : "value",
-        "valueCode" : "Servidora Actor 1"
+        "url" : "content",
+        "valueString" : "Servidora Actor 1"
       }]
     }]
   },

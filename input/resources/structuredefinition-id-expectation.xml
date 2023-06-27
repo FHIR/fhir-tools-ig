@@ -58,7 +58,6 @@
       <type>
         <code value="code"/>
       </type>
-      <meaningWhenMissing value="Whether a resource or an element should have an id"/>
       <binding>
         <strength value="required"/>
         <valueSet value="http://hl7.org/fhir/tools/ValueSet/id-expectation"/>

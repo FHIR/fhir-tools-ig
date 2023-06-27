@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="igpublisher-bundle"/>
   <url value="http://hl7.org/fhir/tools/StructureDefinition/igpublisher-bundle"/>
-  <name value="IG Publisher Bundle"/>
+  <name value="IGPublisherBundle"/>
   <title value="IG Publisher Bundle"/>
   <status value="draft"/>
   <experimental value="true"/>
@@ -33,7 +33,7 @@
   <differential>
    <element id="Extension">
       <path value="Extension"/> 
-      <short value="Page Name (for R4 or earlier - part of R5)  "/> 
+      <short value="Page Name (for R4 or earlier - part of R5)"/> 
       <min value="0"/> 
       <max value="*"/> 
     </element> 
