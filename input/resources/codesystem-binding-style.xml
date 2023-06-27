@@ -33,7 +33,12 @@
   <concept>
     <code value="V2"/>
     <display value="v2"/>
-    <definition value="tbd"/>
+    <definition value="Value is to CNE/CWE types as defined in V2 R2.8"/>
+  </concept>
+  <concept>
+    <code value="openEHR"/>
+    <display value="openEHR"/>
+    <definition value="Binding is to openEHR DV_CODED_TEXT (?)"/>
   </concept>
 
 </CodeSystem>

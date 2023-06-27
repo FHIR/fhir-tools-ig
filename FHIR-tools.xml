@@ -130,6 +130,7 @@
 <artifact deprecated="true" id="MeasureReport/indv-measurereport02" key="MeasureReport-indv-measurereport02" name="Indv Measurereport02"/>
 <artifact deprecated="true" id="MeasureReport/indv-measurereport03" key="MeasureReport-indv-measurereport03" name="Indv Measurereport03"/>
 <artifact deprecated="true" id="MeasureReport/indv-measurreport-stratification-example" key="MeasureReport-indv-measurreport-stratification-example" name="Indv Measurreport Stratification Example"/>
+<artifact id="StructureDefinition/inherit-obligations" key="StructureDefinition-inherit-obligations" name="Inherit Obligations"/>
 <artifact id="CodeSystem/json-empty-behavior" key="CodeSystem-json-empty-behavior" name="Json Empty Behavior Codes"/>
 <artifact id="ValueSet/json-empty-behavior" key="ValueSet-json-empty-behavior" name="Json Empty Behavior Codes Value Set"/>
 <artifact id="StructureDefinition/json-empty-behavior" key="StructureDefinition-json-empty-behavior" name="Json Empty Behavior Extension"/>
@@ -158,6 +159,7 @@
 <artifact id="CodeSystem/obligation" key="CodeSystem-obligation" name="Obligation Codes"/>
 <artifact id="ValueSet/obligation" key="ValueSet-obligation" name="Obligation Codes ValueSet"/>
 <artifact id="StructureDefinition/obligation" key="StructureDefinition-obligation" name="Obligation Extension"/>
+<artifact id="StructureDefinition/obligation-profile" key="StructureDefinition-obligation-profile" name="Obligation Profile Flag"/>
 <artifact deprecated="true" id="Observation/observation01" key="Observation-observation01" name="Observation01"/>
 <artifact deprecated="true" id="Observation/observation02" key="Observation-observation02" name="Observation02"/>
 <artifact deprecated="true" id="Observation/observation03" key="Observation-observation03" name="Observation03"/>
@@ -176,7 +178,6 @@
 <artifact deprecated="true" id="CapabilityStatement/producer-client" key="CapabilityStatement-producer-client" name="Producer Client CapabilityStatement"/>
 <artifact deprecated="true" id="CapabilityStatement/producer-server" key="CapabilityStatement-producer-server" name="Producer Server CapabilityStatement"/>
 <artifact id="StructureDefinition/profile-mapping" key="StructureDefinition-profile-mapping" name="Profile Mapping Extension"/>
-<artifact id="StructureDefinition/profile-summary" key="StructureDefinition-profile-summary" name="ProfileSummary"/>
 <artifact deprecated="true" id="CapabilityStatement/receiver-server" key="CapabilityStatement-receiver-server" name="Receiver Server CapabilityStatement"/>
 <artifact deprecated="true" id="CapabilityStatement/reporter-client" key="CapabilityStatement-reporter-client" name="Reporter Client CapabilityStatement"/>
 <artifact id="StructureDefinition/select-by-map" key="StructureDefinition-select-by-map" name="Select By Map"/>
@@ -195,9 +196,9 @@
 <artifact deprecated="true" id="Task/task01" key="Task-task01" name="Task01"/>
 <artifact deprecated="true" id="Task/task02" key="Task-task02" name="Task02"/>
 <artifact deprecated="true" id="Task/task03" key="Task-task03" name="Task03"/>
+<artifact id="StructureDefinition/elementdefinition-binding-style" key="StructureDefinition-elementdefinition-binding-style" name="Terminology Binding Style Extension"/>
 <artifact id="StructureDefinition/type-specifier" key="StructureDefinition-type-specifier" name="Type Specifier Extension"/>
 <artifact id="CodeSystem/binding-style" key="CodeSystem-binding-style" name="Vocab Binding Style Codes"/>
-<artifact id="StructureDefinition/binding-style" key="StructureDefinition-binding-style" name="Vocab Binding Style Extension"/>
 <artifact id="ValueSet/binding-style" key="ValueSet-binding-style" name="Vocab Binding Style ValueSet"/>
 <artifact id="ValueSet/ig-parameters" key="ValueSet-ig-parameters" name="ig-parameters Codes ValueSet"/>
 <page key="NA" name="(NA)"/>
