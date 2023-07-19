@@ -2,7 +2,7 @@ The IG publisher can be configured to produce a page for each item in a list.
 There can be multiple page factories. Each page factory is registered as a 
 parameter using the ```page-factory``` parameter.
 
-Each page factory is a refernece to a page factory control file which is a json file 
+Each page factory is a reference to a page factory control file which is a json file 
 with the following format:
 
 ```json
