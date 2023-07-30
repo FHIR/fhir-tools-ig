@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="additional-binding"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="4"/>
+  </extension>
   <url value="http://hl7.org/fhir/tools/StructureDefinition/additional-binding"/>
   <name value="AdditionalBinding"/>
   <title value="Additional Binding Extension"/>
@@ -14,7 +17,7 @@
       <value value="http://hl7.org/Special/committees/fhir-i"/>
     </telecom>
   </contact>
-  <description value="Extension definition for Additional Binding"/>
+  <description value="Extension definition for Additional Binding. Additional Bindings are in the R5 Element Definition; this extension is used in prior versions (instead of the R5 cross-version extension)"/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>

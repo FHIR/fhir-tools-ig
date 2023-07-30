@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="ig-parameter"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="5"/>
+  </extension>
   <url value="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"/>
   <name value="IGParameter"/>
   <title value="IG Parameter"/>
@@ -13,7 +16,7 @@
       <value value="http://hl7.org/Special/committees/fhir-i"/>
     </telecom>
   </contact>
-  <description value="An implementation guide parameter defined by the HL7 IG Publisher"/>
+  <description value="An implementation guide parameter defined by the HL7 IG Publisher. This is used in R4 IGs where the binding to paramater name prevented the use of additional parameters"/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>

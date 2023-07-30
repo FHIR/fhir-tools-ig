@@ -1,12 +1,16 @@
 {
   "resourceType" : "StructureDefinition",
   "id" : "CDSHookPatientViewContext",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : "2"
+  }],
   "url" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookPatientViewContext",
   "version" : "0.0.1",
   "name" : "CDSHookPatientViewContext",
   "title" : "CDS Hook Specific Context for patient-view (Logical Definition)",
   "status" : "draft",
-  "description" : "This structure is defined to allow the FHIR Validator to validate a CDSHooks Patient-View context",
+  "description" : "This structure is defined to allow the FHIR Validator to validate a CDSHooks Patient-View context. TODO: This content will be moved to the CDS Hooks specification in the future",
   "kind" : "logical",
   "fhirVersion" : "4.0.1",
   "baseDefinition" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookContext",

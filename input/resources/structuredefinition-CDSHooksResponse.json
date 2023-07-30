@@ -1,12 +1,16 @@
 {
   "resourceType" : "StructureDefinition",
   "id" : "CDSHooksResponse",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : "2"
+  }],
   "url" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksResponse",
   "version" : "0.0.1",
   "name" : "CDSHooksResponse",
   "title" : "CDSHooks Response (Logical Definition)",
   "status" : "draft",
-  "description" : "This structure is defined to allow the FHIR Validator to validate a CDSHooks Response body",
+  "description" : "This structure is defined to allow the FHIR Validator to validate a CDSHooks Response body. TODO: This content will be moved to the CDS Hooks specification in the future",
   "kind" : "logical",
   "fhirVersion" : "4.0.1",
   "baseDefinition" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement",

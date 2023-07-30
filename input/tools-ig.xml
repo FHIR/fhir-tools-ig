@@ -4,7 +4,7 @@
   <id value="hl7.fhir.tools"/>
   <url value="http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools"/>
   <!-- This version will propagate to all artifacts unless the "propagate-version" extension is overridden -->
-  <version value="0.1.0"/>
+  <version value="1.0.0-candidate"/>
   <name value="FHIRToolExtensionsIG"/>
   <title value="FHIR Tooling Extensions IG"/>
   <status value="active"/>
@@ -143,27 +143,7 @@
       <name value="CDSHookServices Example"/>
       <description value="An example a CDS Hooks Service Request"/>
     </resource>
-    
-    <resource>
-      <reference>
-        <reference value="ActorDefinition/server"/>
-      </reference>
-    </resource>
-    
-    <resource>
-      <reference>
-        <reference value="Requirements/example"/>
-      </reference>
-      <description value="An example of how to to include requirements in an IG"/>
-    </resource>
-
-    <resource>
-      <reference>
-        <reference value="Practitioner/grahame"/>
-      </reference>
-      <name value="Supporting Practitioner"/>
-      <description value="Supporting practitioner for requirements resource"/>
-    </resource>
+ 
 
     <page>
       <name value="index.html"/>

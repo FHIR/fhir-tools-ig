@@ -1,12 +1,16 @@
 {
   "resourceType" : "StructureDefinition",
   "id" : "CDSHooksExtension-DaVinci-config",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : "2"
+  }],
   "url" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksExtension-DaVinci-config",
   "version" : "0.0.1",
   "name" : "CDSHooksExtensionDaVinciConfigTest",
   "title" : "CDS Hook Extension Definition for DaVinci Configuration  (Test)",
   "status" : "draft",
-  "description" : "This structure is defines the CRD Configuration  (Test only)",
+  "description" : "This structure is defines the CRD Configuration  (Test only). TODO: This content will be moved to the CDS Hooks specification in the future",
   "kind" : "logical",
   "fhirVersion" : "4.0.1",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Base",

@@ -3,14 +3,46 @@
   <a name="intro"> </a>
   <h3>Introduction</h3>
 	<p>
-    This IG defines the extensions used internally by the FHIR tools.
-    These extensions should never appear in implementations unless they
-    are concerned with code generation from the FHIR packages.
+    This IG defines extensions and their valuesets + code systems used internally by FHIR tools that support the 
+    implementation community. These tools include:
   </p>
+  <ul>
+    <li>Validators</li>
+    <li>Code Generators</li>
+    <li>Profile &amp; Terminology tooling</li>
+    <li>Implementation Guide Authoring Tooling</li>
+  </ul>
+  <p>
+    These extensions are not intended to appear in health systems implementations 
+    unless they are concerned with code generation from the FHIR packages. 
+  </p>
+  <p>
+    In addition, there are a few extensions and logical models
+    that are defined in this IG to allow for experimental use; once 
+    more experience has been gained, these are intended to move into the main FHIR Extensions package (at 
+    which time their URL will change). Those extensions and the supporting 
+    terminology resources are clearly labeled.
+  </p>
+
+	<a name="summary"> </a>
+	<h3>Extension Summary</h3>
+
+  {% include extension-list.xhtml %}
+
+	<a name="updates"> </a>
+	<h3>Tooling IG Lifecycle</h3>
+  <p>
+  This IG is not subject to formal balloting. It is maintained 
+  by the FHIR-I Working Group on behalf of the tooling providers,
+  and updated regularly to keep in sync with the various tools. 
+  Changes are proposed and managed using the standard Jira process
+  (see right link on the footer). 
+  </p>
+
 	<a name="topics"> </a>
 	<h3>Additional Documentation</h3>
 	<ul>
-    <li><a href="binary.html">Providing Binary files in native formats</a></li>
+    <li><a href="binary.html">Providing Binary files in native formats to the IG publisher</a></li>
     <li><a href="format-extensions.html">Extensions that control formats</a></li>
     <li><a href="page-factories.html">Page Factories</a></li>
     <li><a href="other.html">Supporting Documentation</a></li>

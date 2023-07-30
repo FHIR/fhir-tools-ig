@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="select-by-map"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1"/>
+  </extension>
   <url value="http://hl7.org/fhir/tools/StructureDefinition/select-by-map"/>
   <name value="SelectByMap"/>
   <title value="Select By Map"/>
@@ -13,7 +16,7 @@
       <value value="http://hl7.org/Special/committees/fhir-i"/>
     </telecom>
   </contact>
-  <description value="This extension indicates that in addition to the concepts directly selected (either included or excluded) in the include/exclude statement, any source codes that are mapped to target codes that are selected by the nominated ConceptMapare also selected. The filter property can be used to restrict which types of relationships are included."/>
+  <description value="This extension indicates that in addition to the concepts directly selected (either included or excluded) in the include/exclude statement, any source codes that are mapped to target codes that are selected by the nominated ConceptMapare also selected. The filter property can be used to restrict which types of relationships are included. Todo: If this is useful, it will be moved to the core extensions pack"/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>

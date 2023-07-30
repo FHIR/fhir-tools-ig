@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="elementdefinition-binding-style"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="2"/>
+  </extension>
   <url value="http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-binding-style"/>
   <name value="TerminologyBindingStyleEXT"/>
   <title value="Terminology Binding Style Extension"/>
@@ -36,11 +39,7 @@
       <short value="Defines what should happen if a repeating element has no items"/> 
       <min value="0"/> 
       <max value="*"/> 
-<<<<<<< HEAD:input/resources/structuredefinition-elementdefinition-binding-style.xml
-      <meaningWhenMissing value="The default binding style is the FHIR binding styleß"/>
-=======
       <meaningWhenMissing value="default is that the binding works as a normal FHIR binding to a FHIR datatype"/>
->>>>>>> master:input/resources/structuredefinition-binding-style.xml
     </element> 
 
     <element id="Extension.extension">

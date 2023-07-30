@@ -1,12 +1,16 @@
 {
   "resourceType" : "StructureDefinition",
   "id" : "CDSHooksElement",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : "2"
+  }],
   "url" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement",
   "version" : "0.0.1",
   "name" : "CDSHooksElement",
   "title" : "CDSHooks Services Base Extensible Element",
   "status" : "draft",
-  "description" : "This structure is defined to allow the FHIR Validator to validate a CDSHooks Services Element with Extensions",
+  "description" : "This structure is defined to allow the FHIR Validator to validate a CDSHooks Services Element with Extensions. TODO: This content will be moved to the CDS Hooks specification in the future",
   "kind" : "logical",
   "fhirVersion" : "4.0.1",
   "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Base",
