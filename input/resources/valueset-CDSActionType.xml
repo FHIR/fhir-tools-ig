@@ -4,7 +4,7 @@
   <url value="http://hl7.org/fhir/tools/ValueSet/CDSActionType"/>
   <name value="CDSActionTypeCodesVS"/>
   <title value="CDSActionType Codes ValueSet"/>
-  <status value="active"/>
+  <status value="draft"/>
   <experimental value="true"/>
   <description value="CDSActionType Codes"/>
   <jurisdiction>

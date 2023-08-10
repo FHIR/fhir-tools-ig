@@ -5,7 +5,7 @@
   <name value="IdExpectationCodes"/>
   <title value="Id Expectation Codes"/>
   <status value="active"/>
-  <experimental value="true"/>
+  <experimental value="false"/>
   <description value="Specifies whether a particular element or resource is expected to have an id or not"/>
   <jurisdiction>
     <coding>

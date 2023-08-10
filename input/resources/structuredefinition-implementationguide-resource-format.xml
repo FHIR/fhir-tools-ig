@@ -11,7 +11,7 @@
   <version value="5.0.0"/>
 	<name value="BinaryResourceFormat"/>
 	<title value="Binary Resource Format"/>
-	<status value="draft"/>
+	<status value="active"/>
 	<date value="2015-03-02"/>
 	<publisher value="Health Level Seven, Inc. - FHIR-I WG"/>
 	<contact>

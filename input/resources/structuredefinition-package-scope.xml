@@ -7,7 +7,7 @@
   <url value="http://hl7.org/fhir/tools/StructureDefinition/package-scope"/>
   <name value="PackageScope"/>
   <title value="Package Scope"/>
-  <status value="draft"/>
+  <status value="active"/>
   <experimental value="true"/>
   <publisher value="HL7 International / FHIR Infrastructure"/>
   <contact>
@@ -16,7 +16,7 @@
       <value value="http://hl7.org/Special/committees/fhir-i"/>
     </telecom>
   </contact>
-  <description value="Specifies the Npm Package scope for scoped packages. See how [FHIR Packages are scoped](todo) for further information"/>
+  <description value="Specifies the Npm Package scope for scoped packages. See how [FHIR Packages are scoped](http://hl7.org/fhir/packages.html) for further information"/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -41,7 +41,7 @@
    <element id="Extension">
       <path value="Extension"/> 
       <short value="Npm Package scope for scoped packages"/> 
-      <definition value="Specifies the Npm Package scope for scoped packages. See how [FHIR Packages are scoped](todo) for further information"/> 
+      <definition value="Specifies the Npm Package scope for scoped packages. See how [FHIR Packages are scoped](http://hl7.org/fhir/packages.html) for further information"/> 
       <min value="0"/> 
       <max value="*"/> 
     </element> 

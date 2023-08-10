@@ -5,7 +5,7 @@
   <name value="IGParametersCodesVS"/>
   <title value="ig-parameters Codes ValueSet"/>
   <status value="active"/>
-  <experimental value="true"/>
+  <experimental value="false"/>
   <description value="ig-parameters Codes"/>
   <jurisdiction>
     <coding>

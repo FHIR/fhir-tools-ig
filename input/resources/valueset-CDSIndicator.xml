@@ -4,7 +4,7 @@
   <url value="http://hl7.org/fhir/tools/ValueSet/CDSIndicator"/>
   <name value="CDSIndicatorCodesVS"/>
   <title value="CDSIndicator Codes ValueSet"/>
-  <status value="active"/>
+  <status value="draft"/>
   <experimental value="true"/>
   <description value="CDSIndicator Codes"/>
   <jurisdiction>

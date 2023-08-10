@@ -7,8 +7,8 @@
   <url value="http://hl7.org/fhir/tools/StructureDefinition/inherit-obligations"/>
   <name value="InheritObligations"/>
   <title value="Inherit Obligations"/>
-  <status value="draft"/>
-  <experimental value="true"/>
+  <status value="active"/>
+  <experimental value="false"/>
   <publisher value="HL7 International / FHIR Infrastructure"/>
   <contact>
     <telecom>
@@ -49,7 +49,7 @@
 
     <element id="Extension.url">
       <path value="Extension.url"/> 
-      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/obligation-profile"/> 
+      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/inherit-obligations"/> 
     </element> 
     <element id="Extension.value[x]">
       <path value="Extension.value[x]"/> 

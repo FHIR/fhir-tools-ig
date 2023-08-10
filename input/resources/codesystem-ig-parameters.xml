@@ -8,7 +8,7 @@
   <name value="IGParameters"/>
   <title value="IG Parameter Codes"/>
   <status value="active"/>
-  <experimental value="true"/>
+  <experimental value="false"/>
   <description value="Ig Parameter Codes Defined by the FHIR Tooling. These parameter codes go in [ImplementationGuide.definition.parameter.code](http://hl7.org/fhir/R4/implementationguide-definitions.html#ImplementationGuide.definition.parameter.code)"/>
   <jurisdiction>
     <coding>

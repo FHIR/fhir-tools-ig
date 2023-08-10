@@ -3,13 +3,14 @@
   "id" : "CDSHookOrderSelectContext",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
-    "valueInteger" : "2"
+    "valueInteger" : 2
   }],
   "url" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookOrderSelectContext",
   "version" : "0.0.1",
   "name" : "CDSHookOrderSelectContext",
   "title" : "CDS Hook Specific Context for order-select (Logical Definition)",
   "status" : "draft",
+  "experimental" : true,
   "description" : "This structure is defined to allow the FHIR Validator to validate a CDSHooks order-select context. TODO: This content will be moved to the CDS Hooks specification in the future",
   "kind" : "logical",
   "fhirVersion" : "4.0.1",

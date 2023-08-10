@@ -7,7 +7,7 @@
   <url value="http://hl7.org/fhir/tools/StructureDefinition/json-property-key"/>
   <name value="JsonPropertyKey"/>
   <title value="Json Property Key Extension"/>
-  <status value="draft"/>
+  <status value="active"/>
   <experimental value="true"/>
   <publisher value="HL7 International / FHIR Infrastructure"/>
   <contact>

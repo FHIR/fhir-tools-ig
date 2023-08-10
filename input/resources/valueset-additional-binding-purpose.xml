@@ -5,7 +5,7 @@
   <name value="AdditionalBindingPurposeVS"/>
   <title value="Additional Binding Purpose ValueSet"/>
   <status value="active"/>
-  <experimental value="true"/>
+  <experimental value="false"/>
   <description value="Additional Binding Purpose"/>
   <jurisdiction>
     <coding>

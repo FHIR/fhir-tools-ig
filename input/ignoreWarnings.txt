@@ -5,3 +5,15 @@
 # (And include comments like this justifying why)
 
 This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/shareablecodesystem|5.0.0-draft-final
+
+# can't do anything about this right now 
+Reference to deprecated item http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+
+# this is ok
+The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+
+# this is ok
+The element Extension.extension.value[x] has a binding, and has multiple types subject to bindings ([code, string]). The binding will apply to all the types
+
+# this is ok
+The Implementation Guide contains no examples for this extension

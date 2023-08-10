@@ -8,7 +8,7 @@
   <version value="4.0.1"/> 
   <name value="ConceptMapEquivalence"/> 
   <title value="ConceptMapEquivalence"/> 
-  <status value="draft"/> 
+  <status value="active"/> 
   <experimental value="false"/> 
   <date value="2019-11-01T09:29:23+11:00"/> 
   <description value="The degree of equivalence between concepts (R4)."/> 

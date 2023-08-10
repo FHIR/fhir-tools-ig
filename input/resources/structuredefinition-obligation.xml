@@ -11,7 +11,7 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
     <valueCode value="deprecated"/>
   </extension>
-  <url value="http://hl7.org/fhir/StructureDefinition/obligation"/>
+  <url value="http://hl7.org/fhir/tools/StructureDefinition/obligation"/>
   <version value="5.0.0"/>
   <name value="Obligation"/>
   <title value="Obligation Extension"/>
@@ -237,7 +237,7 @@
     </element>
     <element id="Extension.extension:filterDocumentation.value[x]">
       <path value="Extension.extension.value[x]"/>
-      <min value="1"/>\
+      <min value="1"/>
       <type>
         <code value="string"/>
       </type>
@@ -246,7 +246,7 @@
     <element id="Extension.extension:process">
       <path value="Extension.extension"/>
       <sliceName value="process"/>
-      <short value="The obligation only applies when perfomring the indicated process"/>
+      <short value="The obligation only applies when performing the indicated process"/>
       <definition value="A process that the obligation applies to. This might a canonical URL for an OperationDefiniti on, or some other reference."/>
       <min value="0"/>
       <max value="*"/>
@@ -268,7 +268,7 @@
     </element>
     <element id="Extension.url">
       <path value="Extension.url"/>
-      <fixedUri value="http://hl7.org/fhir/StructureDefinition/obligation"/>
+      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/obligation"/>
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]"/>

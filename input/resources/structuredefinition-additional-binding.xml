@@ -7,8 +7,8 @@
   <url value="http://hl7.org/fhir/tools/StructureDefinition/additional-binding"/>
   <name value="AdditionalBinding"/>
   <title value="Additional Binding Extension"/>
-  <status value="draft"/>
-  <experimental value="true"/>
+  <status value="active"/>
+  <experimental value="false"/>
   <publisher value="HL7 International / FHIR Infrastructure"/>
   <contact>
     <telecom>

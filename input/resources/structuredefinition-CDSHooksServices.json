@@ -3,13 +3,14 @@
   "id" : "CDSHooksServices",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
-    "valueInteger" : "2"
+    "valueInteger" : 2
   }],
   "url" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksServices",
   "version" : "0.0.1",
   "name" : "CDSHooksServices",
   "title" : "CDSHooks Services Request (Logical Definition)",
   "status" : "draft",
+  "experimental" : true,
   "description" : "This structure is defined to allow the FHIR Validator to validate a CDSHooks Services response body. TODO: This content will be moved to the CDS Hooks specification in the future",
   "kind" : "logical",
   "fhirVersion" : "4.0.1",

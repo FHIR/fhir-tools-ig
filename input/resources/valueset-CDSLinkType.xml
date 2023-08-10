@@ -4,7 +4,7 @@
   <url value="http://hl7.org/fhir/tools/ValueSet/CDSLinkType"/>
   <name value="CDSLinkTypeCodesVS"/>
   <title value="CDSLinkType Codes ValueSet"/>
-  <status value="active"/>
+  <status value="draft"/>
   <experimental value="true"/>
   <description value="CDSLinkType Codes"/>
   <jurisdiction>
