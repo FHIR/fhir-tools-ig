@@ -1064,6 +1064,24 @@
   </concept>
   
   <concept>
+    <code value="version-comparison-master"/>
+    <display value="version-comparison-master"/>
+    <definition value="Provide this parameter to instruct the IG publisher to mark up the generated pages with the differences found for the version specified. This version can be listed in version-comparison too but it doesn't need to be. Note that the impact of this parameter is a work in progress"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="code"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="no annotations about versions in the produced content"/>
+    </property>
+  </concept>
+  
+  <concept>
     <code value="ipa-comparison"/>
     <display value="ipa-comparison"/>
     <definition value="Control how the IG publisher does a comparison with a IPA (see qa.html). Possible values:&#10;&#10;* ```{last}``` - compare with the last published version (whatever it's status) - this is the default if the parameter doesn't appear&#10;* ```{current}``` - compare with the last full published version &#10;* ```n/a``` - don't do any comparison&#10;* ```[v]``` - a previous version where [v] is the version"/>
