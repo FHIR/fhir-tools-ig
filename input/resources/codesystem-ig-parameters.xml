@@ -1497,5 +1497,25 @@
       <valueString value="Wrong displays cause errors"/>
     </property>
   </concept>  
-  
+
+
+  <concept>
+    <code value="logged-when-scanning"/>
+    <display value="logged-when-scanning"/>
+    <definition value="Whether to report issues when scanning files for resources. Valid values are: true, false, stack"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="code"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="errors are reported, but no stack dump"/>
+    </property>
+  </concept>  
+
+
 </CodeSystem>
