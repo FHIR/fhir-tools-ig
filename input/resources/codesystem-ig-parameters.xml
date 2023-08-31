@@ -1498,7 +1498,6 @@
     </property>
   </concept>  
 
-
   <concept>
     <code value="logged-when-scanning"/>
     <display value="logged-when-scanning"/>
@@ -1514,6 +1513,24 @@
     <property>
       <code value="missing"/>
       <valueString value="errors are reported, but no stack dump"/>
+    </property>
+  </concept>  
+
+  <concept>
+    <code value="validation-duration-report-cutoff"/>
+    <display value="validation-duration-report-cutoff"/>
+    <definition value="An integer value that specifies the a number of seconds. If any resource takes longer than that time, it will be reported in the log"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="integer"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="default value is 0, in which case no reports will be generated"/>
     </property>
   </concept>  
 

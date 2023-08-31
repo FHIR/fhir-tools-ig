@@ -227,6 +227,13 @@
         <code value="i18n-lang"/>
       </code>    
       <value value="es"/>
-    </parameter>    
-  </definition>
+    </parameter>   
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="validation-duration-report-cutoff"/>
+      </code>    
+      <value value="1"/>
+    </parameter>     
+  </definition> 
 </ImplementationGuide>
