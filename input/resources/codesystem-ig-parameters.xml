@@ -776,6 +776,42 @@
 
 
   <concept>
+    <code value="apply-wg"/>
+    <display value="apply-wg"/>
+    <definition value="if true, overwrite all canonical resource WG details with that found in the IG.&#10;&#10;(Note: the ig-template-base template, on which almost all IG templates are based, sets this to parameter to true unless it has been explicitly set.)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="default-wg"/>
+    <display value="default-wg"/>
+    <definition value="if true, populate all canonical resources that don't specify their own WG details with that found in the IG. Ignored if apply-contact is true."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
     <code value="propagate-status"/>
     <display value="propagate-status"/>
     <definition value="If true, indicates that the FMM and Standards Status declarations from top-level artifacts should be propagated to any dependencies that don't declare their own values.  If different statuses or maturity level would propagate to a dependency from different artifacts, the 'highest' FMM or most mature standards status will apply (Normative or Informative, then STU, then Draft).  Information does not propagate to artifacts marked as examples or as experimental.&#10;Propagation is based on references.  E.g. the IG references everything (so its status will propagate everywhere by default).  If there are higher statuses on certain CapabilityStatements, Operations or Profiles, those status will propagate to the artifacts they reference, such as other profiles, ValueSets or CodeSystems.&#10;Propagation only happens within the context of an IG.  There is no propagation across artifacts present in other IG packages listed as dependencies."/>
