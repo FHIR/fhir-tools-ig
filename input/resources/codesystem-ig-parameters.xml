@@ -378,6 +378,24 @@
   </concept>
 
   <concept>
+    <code value="path-test"/>
+    <display value="path-test"/>
+    <definition value="Indicates a folder that contains useful testing collateral to include a /test folder in the package. If more than one value is provided, the contents are all added to the one folder (in order)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="path"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="No /test folder in the package"/>
+    </property>
+  </concept>
+
+  <concept>
     <code value="html-exempt"/>
     <display value="html-exempt"/>
     <definition value="A mask that identifies specific HTML files exempt from having header / footer etc.&#10;&#10;Discuss with FHIR Product Manager before using in any HL7 IG"/>
@@ -1567,6 +1585,24 @@
     <property>
       <code value="missing"/>
       <valueString value="default value is 0, in which case no reports will be generated"/>
+    </property>
+  </concept>  
+
+  <concept>
+    <code value="viewDefinition"/>
+    <display value="viewDefinition"/>
+    <definition value="A ViewDefinition to execute (path to file). Output is added in the package.db file as a generated table, and can be used in the page contents. See also [documentation](https://build.fhir.org/ig/FHIR/ig-guidance/sql.html)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="string"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="No view definitions "/>
     </property>
   </concept>  
 
