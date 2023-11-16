@@ -137,7 +137,7 @@
 <artifact id="StructureDefinition/json-nullable" key="StructureDefinition-json-nullable" name="Json Nullable Extension"/>
 <artifact id="StructureDefinition/json-primitive-choice" key="StructureDefinition-json-primitive-choice" name="Json Primitive Choice Extension"/>
 <artifact id="StructureDefinition/json-property-key" key="StructureDefinition-json-property-key" name="Json Property Key Extension"/>
-<artifact id="StructureDefinition/elementdefinition-json-name" key="StructureDefinition-elementdefinition-json-name" name="Json Property Name Extension"/>
+<artifact id="StructureDefinition/json-name" key="StructureDefinition-json-name" name="Json Property Name Extension"/>
 <artifact deprecated="true" id="Library/library-exm124-example" key="Library-library-exm124-example" name="Library Cervical Cancer Screening (EXM124)"/>
 <artifact deprecated="true" id="Library/library-exm130-example" key="Library-library-exm130-example" name="Library Colorectal Cancer Screening (EXM130)"/>
 <artifact deprecated="true" id="Library/library-mrp-example" key="Library-library-mrp-example" name="Library Mrp Example"/>
@@ -155,6 +155,7 @@
 <artifact deprecated="true" id="Bundle/multiple-indv-mrp-obs-report" key="Bundle-multiple-indv-mrp-obs-report" name="Multiple Indv Mrp Obs Report"/>
 <artifact deprecated="true" id="Bundle/multiple-indv-mrp-task-report" key="Bundle-multiple-indv-mrp-task-report" name="Multiple Indv Mrp Task Report"/>
 <artifact deprecated="true" id="Bundle/multiple-summ-report" key="Bundle-multiple-summ-report" name="Multiple Summ Report"/>
+<artifact id="StructureDefinition/xml-namespace" key="StructureDefinition-xml-namespace" name="Namespace"/>
 <artifact id="StructureDefinition/no-binding" key="StructureDefinition-no-binding" name="No Binding Extension"/>
 <artifact id="CodeSystem/obligation" key="CodeSystem-obligation" name="Obligation Codes"/>
 <artifact id="ValueSet/obligation" key="ValueSet-obligation" name="Obligation Codes ValueSet"/>
@@ -202,8 +203,8 @@
 <artifact id="ValueSet/binding-style" key="ValueSet-binding-style" name="Vocab Binding Style ValueSet"/>
 <artifact id="StructureDefinition/web-source" key="StructureDefinition-web-source" name="Web Source"/>
 <artifact id="StructureDefinition/xml-choice-group" key="StructureDefinition-xml-choice-group" name="XML Choice Group"/>
+<artifact id="StructureDefinition/xml-name" key="StructureDefinition-xml-name" name="Xml Element Name Extension"/>
 <artifact id="ValueSet/ig-parameters" key="ValueSet-ig-parameters" name="ig-parameters Codes ValueSet"/>
-<artifact id="Patient/example" key="Patient-example" name="some name"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page deprecated="true" key="all-examples" name="All Examples"/>

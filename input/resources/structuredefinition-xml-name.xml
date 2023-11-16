@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
-  <id value="json-name"/>
+  <id value="xml-name"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="2"/>
   </extension>
-  <url value="http://hl7.org/fhir/tools/StructureDefinition/json-name"/>
-  <name value="JsonPropertyName"/>
-  <title value="Json Property Name Extension"/>
+  <url value="http://hl7.org/fhir/tools/StructureDefinition/xml-name"/>
+  <name value="XmlElementName"/>
+  <title value="Xml Element Name Extension"/>
   <status value="active"/>
   <experimental value="true"/>
   <publisher value="HL7 International / FHIR Infrastructure"/>
@@ -16,7 +16,7 @@
       <value value="http://hl7.org/Special/committees/fhir-i"/>
     </telecom>
   </contact>
-  <description value="Provides the JSON property name for when the JSON name is not a valid element name, or on the root of a type to give the type itself an element name"/>
+  <description value="Provides the XML element name for when the XML name is not a valid element name, or on the root of a type to give the type itself an element name"/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -36,8 +36,8 @@
   <differential>
    <element id="Extension">
       <path value="Extension"/> 
-      <short value="JSON property name (when the JSON name is not a valid element name, a name for the type)"/> 
-      <definition value="Provides the JSON property name for when the JSON name is not a valid element name, or on the root of a type to give the type itself an element name"/> 
+      <short value="XML element name (when the XML name is not a valid element name, a name for the type)"/> 
+      <definition value="Provides the XML element name for when the XML name is not a valid element name, or on the root of a type to give the type itself an element name"/> 
       <min value="0"/> 
       <max value="*"/> 
     </element> 
@@ -49,7 +49,7 @@
 
     <element id="Extension.url">
       <path value="Extension.url"/> 
-      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/json-name"/> 
+      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/xml-name"/> 
     </element> 
     <element id="Extension.value[x]">
       <path value="Extension.value[x]"/> 
