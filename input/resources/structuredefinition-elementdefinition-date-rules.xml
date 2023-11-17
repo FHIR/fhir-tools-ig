@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="elementdefinition-date-rules"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="3"/>
+  </extension>
+  <url value="http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-date-rules"/>
+  <name value="DateRulesControl"/>
+  <title value="Date Validation Rules control"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <publisher value="HL7 International / FHIR Infrastructure"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/Special/committees/fhir-i"/>
+    </telecom>
+  </contact>
+  <description value="A set of colon delimited codes that control the execution of specific valdation rules for date(/time) elements. The code ```tz-for-time``` controls whether the rule that there must be a timezone if there's a time is enforced - in it's absence, the rule is not enforced. The code ```year-valid``` controls whether the year is checked for being in the range 1800 -> now + 80 year - in it's absence, the rule is not enforced. If the extension is not present, the rules are enforced. This extension has no effect on data types and resources, only in logical models"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  
+  <fhirVersion value="4.0.1"/>
+  <kind value="complex-type"/>
+  <abstract value="false"/>
+  <context>
+    <type value="element"/>
+    <expression value="ElementDefinition"/>
+  </context>
+  <type value="Extension"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+  <derivation value="constraint"/>
+  <differential>
+   <element id="Extension">
+      <path value="Extension"/> 
+      <short value="Date/Time validation rules for the element"/> 
+      <definition value="A set of colon delimited codes that control the execution of specific valdation rules for date(/time) elements. The code ```tz-for-time``` controls whether the rule that there must be a timezone if there's a time is enforced - in it's absence, the rule is not enforced. The code ```year-valid``` controls whether the year is checked for being in the range 1800 -> now + 80 year - in it's absence, the rule is not enforced. If the extension is not present, the rules are enforced. This extension has no effect on data types and resources, only in logical models"/> 
+      <min value="0"/> 
+      <max value="*"/> 
+    </element> 
+
+    <element id="Extension.extension">
+      <path value="Extension.extension"/> 
+      <max value="0"/> 
+    </element> 
+
+    <element id="Extension.url">
+      <path value="Extension.url"/> 
+      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-date-rules"/> 
+    </element> 
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]"/> 
+      <min value="1"/> 
+      <max value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+    </element> 
+  </differential>
+</StructureDefinition>
