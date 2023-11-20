@@ -1154,6 +1154,24 @@
   </concept>
   
   <concept>
+    <code value="ips-comparison"/>
+    <display value="ips-comparison"/>
+    <definition value="Control how the IG publisher does a comparison with a IPS (see qa.html). Possible values:&#10;&#10;* ```{last}``` - compare with the last published version (whatever it's status) - this is the default if the parameter doesn't appear&#10;* ```{current}``` - compare with the last full published version &#10;* ```n/a``` - don't do any comparison&#10;* ```[v]``` - a previous version where [v] is the version"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="code"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="don't compare"/>
+    </property>
+  </concept>
+  
+  <concept>
     <code value="bundle-references-resolve"/>
     <display value="bundle-references-resolve"/>
     <definition value="Whether to require that references in bundles resolve. ```true``` means references must resolve within implementation guides or an error is created."/>
