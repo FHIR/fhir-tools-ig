@@ -184,6 +184,7 @@
 <artifact deprecated="true" id="CapabilityStatement/receiver-server" key="CapabilityStatement-receiver-server" name="Receiver Server CapabilityStatement"/>
 <artifact deprecated="true" id="CapabilityStatement/reporter-client" key="CapabilityStatement-reporter-client" name="Reporter Client CapabilityStatement"/>
 <artifact id="StructureDefinition/resource-sort" key="StructureDefinition-resource-sort" name="Resource Sort Extension"/>
+<artifact id="StructureDefinition/searchparameter-base-type" key="StructureDefinition-searchparameter-base-type" name="Search Parameter Base Type"/>
 <artifact id="StructureDefinition/select-by-map" key="StructureDefinition-select-by-map" name="Select By Map"/>
 <artifact id="ValueSet/select-by-map-filter" key="ValueSet-select-by-map-filter" name="SelectByMap Filter Codes (VS)"/>
 <artifact deprecated="true" id="Bundle/single-indv-col-obs-report" key="Bundle-single-indv-col-obs-report" name="Single Indv Col Obs Report"/>
@@ -210,25 +211,24 @@
 <page key="many" name="(many)"/>
 <page deprecated="true" key="all-examples" name="All Examples"/>
 <page key="artifacts" name="Artifacts Summary"/>
-<page key="" name="Binary Support"/>
+<page key="binary" name="Binary Support"/>
 <page deprecated="true" key="capstatements" name="Capability Statements"/>
 <page deprecated="true" key="change-notes" name="Change Notes"/>
 <page deprecated="true" key="col" name="Colorectal Cancer Screening (COL)"/>
 <page deprecated="true" key="datax" name="Data Exchange"/>
 <page deprecated="true" key="downloads" name="Downloads"/>
 <page deprecated="true" key="usecases" name="Example Use Cases"/>
-<page key="" name="Format Extensions"/>
+<page key="format-extensions" name="Format Extensions"/>
 <page deprecated="true" key="framework" name="Framework"/>
 <page deprecated="true" key="gaps-examples" name="Gaps in Care Example Use Cases"/>
 <page deprecated="true" key="gaps-in-care-reporting" name="Gaps in Care Reporting"/>
 <page deprecated="true" key="guidance" name="General Guidance"/>
-<page deprecated="true" key="index" name="Home"/>
-<page key="" name="Home Page"/>
+<page key="index" name="Home Page"/>
 <page deprecated="true" key="indv-reporting" name="Individual Reporting"/>
 <page deprecated="true" key="mrp" name="Medication Reconciliation Post-Discharge (MRP)"/>
 <page deprecated="true" key="operations" name="Operations"/>
-<page key="" name="Other Information"/>
-<page key="" name="Page Factories"/>
+<page key="other" name="Other Information"/>
+<page key="page-factories" name="Page Factories"/>
 <page deprecated="true" key="profiles" name="Profiles and Extensions"/>
 <page deprecated="true" key="summary-reporting" name="Summary Reporting"/>
 <page key="toc" name="Table of Contents"/>
