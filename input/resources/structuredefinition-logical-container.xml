@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="logical-container"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1"/>
+  </extension>
+  <url value="http://hl7.org/fhir/tools/StructureDefinition/logical-container"/>
+  <name value="LogicalContainer"/>
+  <title value="Logical Container"/>
+  <status value="active"/>
+  <experimental value="true"/>
+  <publisher value="HL7 International / FHIR Infrastructure"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/Special/committees/fhir-i"/>
+    </telecom>
+  </contact>
+  <description value="This extension is used in logical models to indicate that the type that can be the container of this definition. This can be a reference to an abstract definition, or a particular concrete definition. This is the (base) class encountered when %resource and %rootResource is found in FHIRPath constraint expressions."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  
+  <fhirVersion value="4.0.1"/>
+  <kind value="complex-type"/>
+  <abstract value="false"/>
+  <context>
+    <type value="element"/>
+    <expression value="StructureDefinition"/>
+  </context>
+  <type value="Extension"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+  <derivation value="constraint"/>
+  <differential>
+   <element id="Extension">
+      <path value="Extension"/> 
+      <short value="logical-container"/> 
+      <definition value="This extension is used in logical models to indicate that the type that can be the container of this definition. This can be a reference to an abstract definition, or a particular concrete definition. This is the (base) class encountered when %resource and %rootResource is found in FHIRPath constraint expressions."/> 
+      <min value="0"/> 
+      <max value="1"/> 
+    </element> 
+    <element id="Extension.extension">
+      <path value="Extension.extension"/> 
+      <max value="0"/> 
+    </element> 
+    <element id="Extension.url">
+      <path value="Extension.url"/> 
+      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/logical-container"/> 
+    </element> 
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]"/> 
+      <min value="1"/> 
+      <type> 
+        <code value="uri"/> 
+      </type> 
+    </element> 
+  </differential>
+</StructureDefinition>
