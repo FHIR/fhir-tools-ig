@@ -133,7 +133,13 @@
         "definition" : "Allows a service to suggest a set of changes in the context of the current activity (e.g. changing the dose of a medication currently being prescribed, for the order-sign activity).",
         "min" : 0,
         "max" : "*",
-        "type" : [{ "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"}]
+        "type" : [{ "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"}],
+        "constraint" : [{
+          "key" : "cds-resp-5",
+          "severity" : "error",
+          "human" : "All suggestion actions must have a description",
+          "expression" : "actions.all(description.exists())"
+        }]
       },
       {
         "path" : "CDSHooksResponse.cards.suggestions.label",
@@ -196,9 +202,10 @@
         "path" : "CDSHooksResponse.cards.suggestions.actions.description",
         "short" : "Human-readable description of the suggested action (MAY be presented to the end-user)",
         "definition" : "Human-readable description of the suggested action that MAY be presented to the end-user.",
-        "min" : 1,
+        "min" : 0,
         "max" : "1",
-        "type" : [{ "code" : "string"}]
+        "type" : [{ "code" : "string"}],
+        "condition" : ["cds-resp-5"]
       },
       {
         "path" : "CDSHooksResponse.cards.suggestions.actions.resource",
@@ -207,11 +214,7 @@
         "comment" : "Use of this field to communicate a string of a FHIR id for delete suggestions is DEPRECATED and resourceId SHOULD be used instead.",
         "min" : 0,
         "max" : "1",
-        "type" : [{ "code" : "Resource"}],
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/id-expectation",
-          "valueCode" : "prohibited"
-        }]
+        "type" : [{ "code" : "Resource"}]
       },
       {
         "path" : "CDSHooksResponse.cards.suggestions.actions.resourceId",

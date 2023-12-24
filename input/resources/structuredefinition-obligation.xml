@@ -2,9 +2,6 @@
 
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="obligation"/>
-  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
-    <valueCode value="fhir"/>
-  </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="3"/>
   </extension>
@@ -17,13 +14,6 @@
   <title value="Obligation Extension"/>
   <status value="retired"/>
   <experimental value="true"/>
-  <publisher value="HL7 International / FHIR Infrastructure"/>
-  <contact>
-    <telecom>
-      <system value="url"/>
-      <value value="http://hl7.org/Special/committees/fhir-i"/>
-    </telecom>
-  </contact>
   <description value="This definition is deprecated in favor of the same extension in the core extensions pack. Documents obligations that apply to applications implementing this element. The obligations relate to application behaviour, not the content of the element itself in the resource instances that contain this element. See [Obligation Extension](obligations.html) for further detail."/>
   <jurisdiction>
     <coding>
