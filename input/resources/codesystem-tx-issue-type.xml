@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+  <id value="tx-issue-type"/>
+  <url value="http://hl7.org/fhir/tools/CodeSystem/tx-issue-type"/>
+  <name value="Terminology Issue Type"/>
+  <title value="TerminologyIssueType"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <description value="Codes that the type of an issue in the response to a $validate-code operation. The validator will handle some types of issues differently. In the absence of an issue type, issues are passed to the user without processing, and this may be confusing to users"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="true"/>
+  <compositional value="true"/>
+  <content value="complete"/>
+
+  <concept>
+    <code value="not-found"/>
+    <display value="Not Found"/>
+    <definition value="An issue that identifies a code system or value set that was not found validating the code(s)"/>
+  </concept>
+  <concept>
+    <code value="not-in-vs"/>
+    <display value="Not in ValueSet"/>
+    <definition value="An issue that represents the value set validation failure"/>
+  </concept>
+  <concept>
+    <code value="this-code-not-in-vs"/>
+    <display value="This code not in valueset"/>
+    <definition value="An issue that indicates that a particular code as not in the value set (but others might be)"/>
+  </concept>
+  <concept>
+    <code value="invalid-code"/>
+    <display value="Invalid Code"/>
+    <definition value="An issue that indicates that a code is not valid in a code system"/>
+  </concept>
+  <concept>
+    <code value="invalid-display"/>
+    <display value="Invalid Display"/>
+    <definition value="An issue relating to the display provided for a code"/>
+  </concept>
+  <concept>
+    <code value="cannot-infer"/>
+    <display value="Cannot Infer System"/>
+    <definition value="An issue indicating why inferring the code system failed (for type=code)"/>
+  </concept>
+  <concept>
+    <code value="code-rule"/>
+    <display value="Code Rule"/>
+    <definition value="An issue indicating that a valid code was not valid in this context"/>
+  </concept>
+  <concept>
+    <code value="vs-invalid"/>
+    <display value="ValueSet Invalid"/>
+    <definition value="An issue relating to a problem processing a value set while validating"/>
+  </concept>
+  <concept>
+    <code value="status-check"/>
+    <display value="Status Check"/>
+    <definition value="An issue pertaining to the status of the underlying resources"/>
+  </concept>
+</CodeSystem>
