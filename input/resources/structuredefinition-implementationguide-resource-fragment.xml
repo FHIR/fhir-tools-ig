@@ -38,7 +38,6 @@
 			<path value="Extension.extension"/>
 			<min value="1"/>
 		</element>
-
 		<element id="Extension.extension:id">
 			<path value="Extension.extension"/>
 			<sliceName value="id"/>
@@ -62,7 +61,6 @@
         <code value="id"/>
       </type>
 		</element>
-
 		<element id="Extension.extension:base">
 			<path value="Extension.extension"/>
 			<sliceName value="base"/>
@@ -109,19 +107,17 @@
         <code value="string"/>
       </type>
 		</element>
-
-		<element id="Extension.extension:ellipseExclude">
+		<element id="Extension.extension:ellipseExcept">
 			<path value="Extension.extension"/>
-			<sliceName value="ellipseExclude"/>
+			<sliceName value="ellipseExcept"/>
 			<short value="Element(s) to NOT ellipse"/>
 			<definition value="Indicates one or more element paths where all child elements are to be ellipsed except for a specified subset"/>
 		</element>
-		<element id="Extension.extension:ellipseExclude.extension">
+		<element id="Extension.extension:ellipseExcept.extension">
 			<path value="Extension.extension.extension"/>
 			<min value="1"/>
 		</element>
-
-		<element id="Extension.extension:ellipseExclude.extension:base">
+		<element id="Extension.extension:ellipseExcept.extension:base">
 			<path value="Extension.extension.extension"/>
 			<sliceName value="base"/>
 			<short value="FHIRPath to element(s) whose children will be ellipsed"/>
@@ -129,54 +125,51 @@
 			<comment value="If specified, must resolve to at least one element"/>
 			<max value="1"/>
 		</element>
-		<element id="Extension.extension:ellipseExclude.extension:base.extension">
+		<element id="Extension.extension:ellipseExcept.extension:base.extension">
 			<path value="Extension.extension.extension.extension"/>
 			<max value="0"/>
 		</element>
-		<element id="Extension.extension:ellipseExclude.extension:base.url">
+		<element id="Extension.extension:ellipseExcept.extension:base.url">
 			<path value="Extension.extension.extension.url"/>
 			<fixedUri value="base"/>
 		</element>
-		<element id="Extension.extension:ellipseExclude.extension:base.value[x]">
+		<element id="Extension.extension:ellipseExcept.extension:base.value[x]">
 			<path value="Extension.extension.extension.value[x]"/>
 			<min value="1"/>
 			<type>
         <code value="string"/>
       </type>
 		</element>
-
-		<element id="Extension.extension:ellipseExclude.extension:exclude">
+		<element id="Extension.extension:ellipseExcept.extension:except">
 			<path value="Extension.extension.extension"/>
-			<sliceName value="exclude"/>
+			<sliceName value="except"/>
 			<short value="FHIRPath to element(s) to exclude from ellipsing"/>
 			<definition value="FHIRPath to child element(s) that should NOT be ellipsed.  These will be excluded when ellipsing the child nodes."/>
 			<comment value="Must resolve to at least one element for at least one of the ellipse base elements.  If this resolves to elements that are not direct children of the element to be ellipsed, there will be no effect on those elements"/>
 		</element>
-		<element id="Extension.extension:ellipseExclude.extension:exclude.extension">
+		<element id="Extension.extension:ellipseExcept.extension:except.extension">
 			<path value="Extension.extension.extension.extension"/>
 			<max value="0"/>
 		</element>
-		<element id="Extension.extension:ellipseExclude.extension:exclude.url">
+		<element id="Extension.extension:ellipseExcept.extension:except.url">
 			<path value="Extension.extension.extension.url"/>
-			<fixedUri value="exclude"/>
+			<fixedUri value="except"/>
 		</element>
-		<element id="Extension.extension:ellipseExclude.extension:exclude.value[x]">
+		<element id="Extension.extension:ellipseExcept.extension:except.value[x]">
 			<path value="Extension.extension.extension.value[x]"/>
 			<min value="1"/>
 			<type>
         <code value="string"/>
       </type>
 		</element>
-
-		<element id="Extension.extension:ellipseExclude.url">
+		<element id="Extension.extension:ellipseExcept.url">
 			<path value="Extension.extension.url"/>
-			<fixedUri value="ellipseExclude"/>
+			<fixedUri value="ellipseExcept"/>
 		</element>
-		<element id="Extension.extension:ellipseExclude.value[x]">
+		<element id="Extension.extension:ellipseExcept.value[x]">
 			<path value="Extension.extension.value[x]"/>
 			<max value="0"/>
 		</element>
-
 		<element id="Extension.url">
 			<path value="Extension.url"/>
 			<fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-fragment"/>
