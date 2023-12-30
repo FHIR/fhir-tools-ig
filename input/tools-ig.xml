@@ -7,7 +7,7 @@
   </extension>
   <url value="http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools"/>
   <!-- This version will propagate to all artifacts unless the "propagate-version" extension is overridden -->
-  <version value="1.0.0-candidate"/>
+  <version value="0.2.0-snapshot"/>
   <name value="FHIRToolExtensionsIG"/>
   <title value="FHIR Tooling Extensions IG"/>
   <status value="active"/>
@@ -187,7 +187,7 @@
         <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
         <code value="releaselabel"/>
       </code>    
-      <value value="Working Copy"/>
+      <value value="Release"/>
     </parameter>
     <parameter>
       <code>
