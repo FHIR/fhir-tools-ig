@@ -33,9 +33,14 @@
     <definition value="An issue that indicates that a particular code as not in the value set (but others might be)"/>
   </concept>
   <concept>
+    <code value="invalid-data"/>
+    <display value="Invalid Data"/>
+    <definition value="An issue that indicates that the code/Coding/CodeableConcept provided was invalid"/>
+  </concept>
+  <concept>
     <code value="invalid-code"/>
     <display value="Invalid Code"/>
-    <definition value="An issue that indicates that a code is not valid in a code system"/>
+    <definition value="An issue that indicates that a provided code is not valid in a code system"/>
   </concept>
   <concept>
     <code value="invalid-display"/>

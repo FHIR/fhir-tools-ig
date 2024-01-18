@@ -1624,5 +1624,22 @@
     </property>
   </concept>  
 
+  <concept>
+    <code value="fixed-value-format"/>
+    <display value="Fixed Value Format Code"/>
+    <definition value="A code that indicates how to format fixed and pattern values. Valid values for this parameter are json | json-all | xml | all-xml. The -all options relate to primitives - whether they are shown just as a value or as a formatted fragment"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="code"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="Default presentation is json"/>
+    </property>
+  </concept>  
 
 </CodeSystem>
