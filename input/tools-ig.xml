@@ -237,6 +237,13 @@
         <code value="validation-duration-report-cutoff"/>
       </code>    
       <value value="1"/>
+    </parameter>    
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="auto-oid-root"/>
+      </code>    
+      <value value="2.16.840.1.113883.4.642.40.1"/>
     </parameter>     
   </definition> 
 </ImplementationGuide>

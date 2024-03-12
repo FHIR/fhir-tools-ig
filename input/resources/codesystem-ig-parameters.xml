@@ -1642,4 +1642,23 @@
     </property>
   </concept>  
 
+
+  <concept>
+    <code value="auto-oid-root"/>
+    <display value="OID root for automatically assigned OIDs"/>
+    <definition value="Defines the OID root for the IG. Must be globally unique. Contact the FHIR product director or deputy for an assignment, though you can assign your own if you wish. If this is present, any canonical resources that do not have OIDs assigned manually will have OIDs automatically assigned by the publisher. The OID assignments are stored in oids.ini next to the IG resource for the IG, and must be committed with other changes to the source."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="type"/>
+      <valueString value="code"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="OIDs are not automatically assigned"/>
+    </property>
+  </concept>  
+
 </CodeSystem>
