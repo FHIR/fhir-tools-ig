@@ -38,6 +38,7 @@
 			<path value="Extension.extension"/>
 			<min value="1"/>
 		</element>
+		
 		<element id="Extension.extension:uri">
 			<path value="Extension.extension"/>
 			<sliceName value="uri"/>
@@ -58,9 +59,10 @@
 			<path value="Extension.extension.value[x]"/>
 			<min value="1"/>
 			<type>
-        <code value="uri"/>
-      </type>
+              <code value="uri"/>
+            </type>
 		</element>
+
 		<element id="Extension.extension:target">
 			<path value="Extension.extension"/>
 			<sliceName value="target"/>
@@ -90,6 +92,7 @@
 			<sliceName value="use"/>
 			<short value="A text description of the intended usage for the URI"/>
 			<definition value="A text description of the intended usage for the URI."/>
+			<max value="1"/>
 		</element>
 		<element id="Extension.extension:use.extension">
 			<path value="Extension.extension.extension"/>
