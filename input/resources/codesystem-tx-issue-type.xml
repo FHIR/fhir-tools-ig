@@ -2,8 +2,8 @@
 <CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
   <id value="tx-issue-type"/>
   <url value="http://hl7.org/fhir/tools/CodeSystem/tx-issue-type"/>
-  <name value="Terminology Issue Type"/>
-  <title value="TerminologyIssueType"/>
+  <name value="TerminologyIssueType"/>
+  <title value="Terminology Issue Type"/>
   <status value="active"/>
   <experimental value="false"/>
   <description value="Codes that the type of an issue in the response to a $validate-code operation. The validator will handle some types of issues differently. In the absence of an issue type, issues are passed to the user without processing, and this may be confusing to users"/>

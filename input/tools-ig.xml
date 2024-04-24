@@ -38,11 +38,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/obligation"/>
-      </reference>
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/ig-parameter"/>
       </reference>
     </resource>

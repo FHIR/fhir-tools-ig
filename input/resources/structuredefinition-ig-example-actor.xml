@@ -57,7 +57,7 @@
       <min value="1"/>
       <type>
         <code value="canonical"/>
-        <targetProfile value="ActorDefinition"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ActorDefinition"/>
       </type>
     </element> 
   </differential>

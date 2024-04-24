@@ -20,16 +20,19 @@
   <content value="complete"/>
   <property>
     <code value="repeats"/>
+    <uri value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters#repeats"/>
     <description value="Whether the parameter can repeat more than once"/>
     <type value="boolean"/>
   </property>
   <property>
     <code value="string-format"/>
+    <uri value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters#string-format"/>
     <description value="Description of the value domain for the values of the parameter. Note: all values are strings, this provides additional information about what can go in the string"/>
     <type value="string"/>
   </property>  
   <property>
     <code value="missing"/>
+    <uri value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters#missing"/>
     <description value="What it means if the parameter is not provided"/>
     <type value="string"/>
   </property>  
