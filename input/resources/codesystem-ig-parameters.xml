@@ -1464,25 +1464,6 @@
       <valueString value="No other versions are loaded to support version conversion maps"/>
     </property>
   </concept>  
-
-  <concept>
-    <code value="defaultVersion"/>
-    <display value="defaultVersion"/>
-    <definition value="Lloyd to provide definition"/>
-    <property>
-      <code value="repeats"/>
-      <valueBoolean value="false"/>
-    </property>
-    <property>
-      <code value="string-format"/>
-      <valueString value="string"/>
-    </property>
-    <property>
-      <code value="missing"/>
-      <valueString value="Lloyd to define"/>
-    </property>
-  </concept>  
-
   <concept>
     <code value="no-usage-check"/>
     <display value="no-usage-check"/>
