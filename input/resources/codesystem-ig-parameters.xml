@@ -943,7 +943,7 @@
   <concept>
     <code value="releaselabel"/>
     <display value="releaselabel"/>
-    <definition value="The release label at the top of the page - values:&#10;&#10;* ```ci-build``` - the continuous integration build release (not stable)&#10;* ```draft``` - draft version&#10;* ```qa-preview``` - frozen snapshot for non-ballot feedback&#10;* ```ballot``` - frozen snapshot for ballot&#10;* ```trial-use``` - official release with 'trial use' status&#10;* ```release``` - official release for use&#10;* ```update``` - official release with 'trial use' status - posted as an un-ballotedSTU update&#10;* ```normative+trial-use``` - official release with mixture of trial use and normative content"/>
+    <definition value="The release label at the top of the page. This is a text label with no fixed set of values that describes the status of the publication to users. Typical values might be 'STU X' or 'Normative Standard' or '2024 Edition'"/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="false"/>
