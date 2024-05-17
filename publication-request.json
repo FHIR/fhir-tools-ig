@@ -3,11 +3,11 @@
   "title" : "HL7 Tools Extension IG", 
   "category" : "Infrastructure",
   "introduction" : "This implementation guide defines resources used by the FHIR tooling internally",
-  "version" : "0.1.0",
-  "desc" : "First stable release",
-  "path" : "http://hl7.org/fhir/tools/0.1.0",
+  "version" : "0.2.0",
+  "desc" : "Routine update",
+  "path" : "http://hl7.org/fhir/tools/0.2.0",
   "status" : "informative",
   "sequence" : "Releases",
   "ci-build" : "https://build.fhir.org/ig/FHIR/fhir-tools-ig/",
-  "first" : true
+  "mode" : "milestone"
 }
