@@ -21,10 +21,13 @@ Latest version is available at [https://build.fhir.org/ig/FHIR/fhir-tools-ig].
 ## Security
 
 As an implementation guide that includes no active content, there's no direct security related content. 
+
+For issues with the scripts that launch the publisher, see https://raw.githubusercontent.com/HL7/ig-publisher-scripts
+
 If you think that there's security issues in the tools that implement these extensions etc, you can report them 
 either on GitHub ([Validator](https://github.com/hapifhir/org.hl7.fhir.core), 
 [IG Publisher](https://github.com/HL7/fhir-ig-publisher), [FHIRServer](https://github.com/HealthIntersections/fhirserver)) 
-using GitHub's standard security reporting framework, or you can email the [FHIR Director](mailto:fhir-director@hl7.org) directly.
+using GitHub's [standard security reporting framework](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability#privately-reporting-a-security-vulnerability), or you can email the [FHIR Director](mailto:fhir-director@hl7.org) directly.
 
 If you think that the content of this IG has designs that imply bad security decisions, feel free to raise 
 an issue using on GitHub, or discuss on [Zulip](https://chat.fhir.org/#narrow/stream/179239-tooling). 
