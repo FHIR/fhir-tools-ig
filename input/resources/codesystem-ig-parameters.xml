@@ -853,7 +853,7 @@
   <concept>
     <code value="validation"/>
     <display value="validation"/>
-    <definition value="Fine grained control over validation flags when validating resources / IGs:&#10;&#10;* ```check-must-support```: Does nothing! (for now?)&#10;* ```allow-any-extensions```: Allow any extensions at all (and therefore miss accidental broken extension references)&#10;* ```check-aggregation```: check that aggregation is correct (in IGs, bundles are often broken up for publishing / documentation purposes)&#10;* ```no-broken-links```: forbid broken links in HTML pages - stop the build if any are found&#10;* ```show-reference-messages```: when validating, instead of showing a summary of issues from validating the target of references, just show all the validation messages in detail"/>
+    <definition value="Fine grained control over validation flags when validating resources / IGs:&#10;&#10;* ```check-must-support```: Does nothing! (for now?)&#10;* ```allow-any-extensions```: Allow any extensions at all (and therefore miss accidental broken extension references)&#10;* ```check-aggregation```: check that aggregation is correct (in IGs, bundles are often broken up for publishing / documentation purposes)&#10;* ```no-broken-links```: forbid broken links in HTML pages - stop the build if any are found&#10;* ```show-reference-messages```: when validating, instead of showing a summary of issues from validating the target of references, just show all the validation messages in detail&#10;* ```no-experimental-content```: create an error if the IG contains any experimental content"/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="true"/>
@@ -1557,7 +1557,7 @@
   <concept>
     <code value="display-warnings"/>
     <display value="display-warnings"/>
-    <definition value="Instruct the terminology layer that wrong displays result in a warning not an error"/>
+    <definition value="Instruct the terminology layer that wrong displays result in a warning not an error. Note that you have to clear the terminology cache manually when changing the value of this parameter."/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="false"/>
