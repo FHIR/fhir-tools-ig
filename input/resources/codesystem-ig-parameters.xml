@@ -148,7 +148,7 @@
   <concept>
     <code value="path-binary"/>
     <display value="path-binary"/>
-    <definition value="Relative path to a location in the IG repository in which to look for binary adjunct files (see below)"/>
+    <definition value="Relative path to a location in the IG repository in which to look for binary adjunct files. These files are only used in the context of the CQL loader"/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="true"/>
@@ -202,7 +202,7 @@
   <concept>
     <code value="path-pages"/>
     <display value="path-pages"/>
-    <definition value="A relative path in which pages can be found."/>
+    <definition value="A relative path in which page source material can be found. In spite of the implication of the name, the materials in this directory are not processed, they are passed through to Jekyll untouched"/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="true"/>
