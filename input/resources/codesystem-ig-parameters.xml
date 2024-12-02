@@ -1663,4 +1663,23 @@
     </property>
   </concept>  
 
+
+  <concept>
+    <code value="test-data-factory"/>
+    <display value="Generate a set of instances for testing from a spreadsheet"/>
+    <definition value="Prompts the Publisher to generate a set of instances for testing given an input spreadsheet and a liquid template"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="relativepath"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="no factory generation"/>
+    </property>
+  </concept>  
+
 </CodeSystem>
