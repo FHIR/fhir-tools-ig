@@ -20,16 +20,19 @@
   <content value="complete"/>
   <property>
     <code value="repeats"/>
+    <uri value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters#repeats"/>
     <description value="Whether the parameter can repeat more than once"/>
     <type value="boolean"/>
   </property>
   <property>
     <code value="string-format"/>
+    <uri value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters#string-format"/>
     <description value="Description of the value domain for the values of the parameter. Note: all values are strings, this provides additional information about what can go in the string"/>
     <type value="string"/>
   </property>  
   <property>
     <code value="missing"/>
+    <uri value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters#missing"/>
     <description value="What it means if the parameter is not provided"/>
     <type value="string"/>
   </property>  
@@ -145,7 +148,7 @@
   <concept>
     <code value="path-binary"/>
     <display value="path-binary"/>
-    <definition value="Relative path to a location in the IG repository in which to look for binary adjunct files (see below)"/>
+    <definition value="Relative path to a location in the IG repository in which to look for binary adjunct files. These files are only used in the context of the CQL loader"/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="true"/>
@@ -199,7 +202,7 @@
   <concept>
     <code value="path-pages"/>
     <display value="path-pages"/>
-    <definition value="A relative path in which pages can be found."/>
+    <definition value="A relative path in which page source material can be found. In spite of the implication of the name, the materials in this directory are not processed, they are passed through to Jekyll untouched"/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="true"/>
@@ -850,7 +853,7 @@
   <concept>
     <code value="validation"/>
     <display value="validation"/>
-    <definition value="Fine grained control over validation flags when validating resources / IGs:&#10;&#10;* ```check-must-support```: Does nothing! (for now?)&#10;* ```allow-any-extensions```: Allow any extensions at all (and therefore miss accidental broken extension references)&#10;* ```check-aggregation```: check that aggregation is correct (in IGs, bundles are often broken up for publishing / documentation purposes)&#10;* ```no-broken-links```: forbid broken links in HTML pages - stop the build if any are found&#10;* ```show-reference-messages```: when validating, instead of showing a summary of issues from validating the target of references, just show all the validation messages in detail"/>
+    <definition value="Fine grained control over validation flags when validating resources / IGs:&#10;&#10;* ```check-must-support```: Does nothing! (for now?)&#10;* ```allow-any-extensions```: Allow any extensions at all (and therefore miss accidental broken extension references)&#10;* ```check-aggregation```: check that aggregation is correct (in IGs, bundles are often broken up for publishing / documentation purposes)&#10;* ```no-broken-links```: forbid broken links in HTML pages - stop the build if any are found&#10;* ```show-reference-messages```: when validating, instead of showing a summary of issues from validating the target of references, just show all the validation messages in detail&#10;* ```no-experimental-content```: create an error if the IG contains any experimental content"/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="true"/>
@@ -940,7 +943,7 @@
   <concept>
     <code value="releaselabel"/>
     <display value="releaselabel"/>
-    <definition value="The release label at the top of the page - values:&#10;&#10;* ```ci-build``` - the continuous integration build release (not stable)&#10;* ```draft``` - draft version&#10;* ```qa-preview``` - frozen snapshot for non-ballot feedback&#10;* ```ballot``` - frozen snapshot for ballot&#10;* ```trial-use``` - official release with 'trial use' status&#10;* ```release``` - official release for use&#10;* ```update``` - official release with 'trial use' status - posted as an un-ballotedSTU update&#10;* ```normative+trial-use``` - official release with mixture of trial use and normative content"/>
+    <definition value="The release label at the top of the page. This is a text label with no fixed set of values that describes the status of the publication to users. Typical values might be 'STU X' or 'Normative Standard' or '2024 Edition'"/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="false"/>
@@ -1461,25 +1464,6 @@
       <valueString value="No other versions are loaded to support version conversion maps"/>
     </property>
   </concept>  
-
-  <concept>
-    <code value="defaultVersion"/>
-    <display value="defaultVersion"/>
-    <definition value="Lloyd to provide definition"/>
-    <property>
-      <code value="repeats"/>
-      <valueBoolean value="false"/>
-    </property>
-    <property>
-      <code value="string-format"/>
-      <valueString value="string"/>
-    </property>
-    <property>
-      <code value="missing"/>
-      <valueString value="Lloyd to define"/>
-    </property>
-  </concept>  
-
   <concept>
     <code value="no-usage-check"/>
     <display value="no-usage-check"/>
@@ -1573,7 +1557,7 @@
   <concept>
     <code value="display-warnings"/>
     <display value="display-warnings"/>
-    <definition value="Instruct the terminology layer that wrong displays result in a warning not an error"/>
+    <definition value="Instruct the terminology layer that wrong displays result in a warning not an error. Note that you have to clear the terminology cache manually when changing the value of this parameter."/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="false"/>
@@ -1676,6 +1660,25 @@
     <property>
       <code value="missing"/>
       <valueString value="OIDs are not automatically assigned"/>
+    </property>
+  </concept>  
+
+
+  <concept>
+    <code value="test-data-factory"/>
+    <display value="Generate a set of instances for testing from a spreadsheet"/>
+    <definition value="Prompts the Publisher to generate a set of instances for testing given an input spreadsheet and a liquid template"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="relativepath"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="no factory generation"/>
     </property>
   </concept>  
 

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
-  <id value="ig-example-actor"/>
+  <id value="json-suppress-resourcetype"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="2"/>
   </extension>
-  <url value="http://hl7.org/fhir/tools/StructureDefinition/ig-example-actor"/>
-  <name value="ActorForExample"/>
-  <title value="Actor For Example"/>
+  <url value="http://hl7.org/fhir/tools/StructureDefinition/json-suppress-resourcetype"/>
+  <name value="JsonSuppressResourceType"/>
+  <title value="Json Suppress resourceType Property"/>
   <status value="active"/>
   <experimental value="true"/>
   <publisher value="HL7 International / FHIR Infrastructure"/>
@@ -16,7 +16,7 @@
       <value value="http://hl7.org/Special/committees/fhir-i"/>
     </telecom>
   </contact>
-  <description value="Used to associate an example in an IG with a particular actor that provides/serves this example (e.g. on a RESTful API)"/>
+  <description value="If this extension is present and true, then the JSON format produced from this logical doesn't include a 'resourceType' property (and it isn't recognized automatically when reading the JSON format)"/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -28,7 +28,7 @@
   <abstract value="false"/>
   <context>
     <type value="element"/>
-    <expression value="ImplementationGuide.definition.resource"/>
+    <expression value="ElementDefinition"/>
   </context>
   <type value="Extension"/>
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
@@ -36,28 +36,27 @@
   <differential>
    <element id="Extension">
       <path value="Extension"/> 
-      <short value="Used to associate an example in an IG with a particular actor that provides/serves this example"/> 
-      <definition value="Used to associate an example in an IG with a particular actor that provides/serves this example (e.g. on a RESTful API)"/> 
+      <short value="If true, the JSON format doesn't include a 'resourceType' property"/> 
+      <definition value="If this extension is present and true, then the JSON format produced from this logical doesn't include a 'resourceType' property (and it isn't recognized automatically when reading the JSON format)"/> 
       <min value="0"/> 
       <max value="*"/> 
     </element> 
 
     <element id="Extension.extension">
       <path value="Extension.extension"/> 
-      <min value="0"/> 
       <max value="0"/> 
     </element> 
 
     <element id="Extension.url">
       <path value="Extension.url"/> 
-      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/ig-example-actor"/> 
+      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/json-suppress-resourcetype"/> 
     </element> 
     <element id="Extension.value[x]">
       <path value="Extension.value[x]"/> 
-      <min value="1"/>
+      <min value="1"/> 
+      <max value="1"/>
       <type>
-        <code value="canonical"/>
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ActorDefinition"/>
+        <code value="boolean"/>
       </type>
     </element> 
   </differential>

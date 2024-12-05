@@ -4,22 +4,21 @@
 # instructions for ignoreWarnings.txt https://confluence.hl7.org/pages/viewpage.action?pageId=66938614#ImplementationGuideParameters-ManagingWarningsandHints
 # (And include comments like this justifying why)
 
-# This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/shareablecodesystem|5.0.0-draft-final
-
-# can't do anything about this right now 
-Reference to deprecated item http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
-Reference to draft item http://hl7.org/fhir/hl7-work-group|1.0.0
-Reference to draft item http://hl7.org/fhir/standards-status|1.0.0
-
 # this is ok
 The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
-
-# this is ok
 The element Extension.extension.value[x] has a binding, and has multiple types subject to bindings ([code, string]). The binding will apply to all the types
-
-# this is ok
 The Implementation Guide contains no examples for this extension
+MSG_DEPRECATED
+
+# These won't ever be move to THO
+CODESYSTEM_THO_CHECK
 
 # Extensions and id aren't possible here, so fixed is appropriate
 WARNING: StructureDefinition/CDSHooksRequest: StructureDefinition.snapshot.element[8]: Constraint failed: eld-24: 'pattern[x] should be used rather than fixed[x]' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)
 WARNING: StructureDefinition/CDSHooksRequest: StructureDefinition.differential.element[6]: Constraint failed: eld-24: 'pattern[x] should be used rather than fixed[x]' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)
+
+# Will be fixed by a future extensions pack release
+MSG_DRAFT
+
+# Will be cleaned up when moving CDS hooks content to CDSHooks spec
+CODESYSTEM_PROPERTY_UNKNOWN_CODE

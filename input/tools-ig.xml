@@ -7,7 +7,7 @@
   </extension>
   <url value="http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools"/>
   <!-- This version will propagate to all artifacts unless the "propagate-version" extension is overridden -->
-  <version value="0.2.0-snapshot"/>
+  <version value="0.3.0"/>
   <name value="FHIRToolExtensionsIG"/>
   <title value="FHIR Tooling Extensions IG"/>
   <status value="active"/>
@@ -34,11 +34,6 @@
     <resource>
       <reference>
         <reference value="StructureDefinition/additional-binding"/>
-      </reference>
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/obligation"/>
       </reference>
     </resource>
     <resource>
@@ -187,7 +182,7 @@
         <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
         <code value="releaselabel"/>
       </code>    
-      <value value="Release"/>
+      <value value="Release 0.2.0"/>
     </parameter>
     <parameter>
       <code>
@@ -244,6 +239,27 @@
         <code value="auto-oid-root"/>
       </code>    
       <value value="2.16.840.1.113883.4.642.40.1"/>
+    </parameter>     
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="generate-version"/>
+      </code>    
+      <value value="r4"/>
+    </parameter>     
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="generate-version"/>
+      </code>    
+      <value value="r5"/>
+    </parameter>     
+    <parameter>
+      <code>
+        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
+        <code value="generate-version"/>
+      </code>    
+      <value value="r3"/>
     </parameter>     
   </definition> 
 </ImplementationGuide>
