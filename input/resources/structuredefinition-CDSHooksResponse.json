@@ -38,6 +38,11 @@
           "severity" : "error",
           "human" : "only one action can be suggested if selectionBehavior = at-most-one",
           "expression" : "(selectionBehavior = 'at-most-one') implies suggestions.where(isRecommended).count() <= 1"
+        },{
+          "key" : "cds-resp-6",
+          "severity" : "error",
+          "human" : "If suggestions are present, selectionBehavior MUST also be provided.",
+          "expression" : "suggestions.exists() implies selectionBehavior.exists()"
         }],
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-empty-behavior",
@@ -54,7 +59,7 @@
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/implied-string-prefix",
           "valueString" : "urn:uuid:"
-          }]
+         }]
       },
       {
         "path" : "CDSHooksResponse.cards.summary",
@@ -134,6 +139,7 @@
         "min" : 0,
         "max" : "*",
         "type" : [{ "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksElement"}],
+        "condition" : ["cds-resp-1", "cds-resp-6"],
         "constraint" : [{
           "key" : "cds-resp-5",
           "severity" : "error",
@@ -222,7 +228,7 @@
         "definition" : "A relative reference to the relevant resource. SHOULD be provided when the type attribute is delete.",
         "comment" : "",
         "min" : 0,
-        "max" : "*",
+        "max" : "1",
         "type" : [{ "code" : "url"}]
       },
       {
@@ -233,6 +239,7 @@
         "min" : 0,
         "max" : "1",
         "type" : [{ "code" : "code"}],
+        "condition" : ["cds-resp-1", "cds-resp-6"],
         "binding" : {
           "strength" : "required",
           "valueSet" : "http://hl7.org/fhir/tools/ValueSet/CDSSelectionBehavior"
