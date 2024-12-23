@@ -1665,9 +1665,9 @@
 
 
   <concept>
-    <code value="test-data-factory"/>
+    <code value="test-data-factories"/>
     <display value="Generate a set of instances for testing from a spreadsheet"/>
-    <definition value="Prompts the Publisher to generate a set of instances for testing given an input spreadsheet and a liquid template"/>
+    <definition value="Prompts the Publisher to generate a set of instances for testing given a json file as described here: &lt;https://build.fhir.org/ig/FHIR/ig-guidance/testfactory.html&gt;"/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="true"/>
