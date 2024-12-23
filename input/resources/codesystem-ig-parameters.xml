@@ -1663,7 +1663,6 @@
     </property>
   </concept>  
 
-
   <concept>
     <code value="test-data-factories"/>
     <display value="Generate a set of instances for testing from a spreadsheet"/>
@@ -1681,5 +1680,22 @@
       <valueString value="no factory generation"/>
     </property>
   </concept>  
-
+  
+  <concept>
+    <code value="resource-language-policy"/>
+    <display value="Control Automatic population of Resource.language: all-ig | ig-realm | all-realm"/>
+    <definition value="Controls how the IG Publisher populates Resource.language. Missing = do nothing. 'all-ig' = populate all resources with what's in the ig. 'ig-realm' = populate just the IG with the language implied by the realm. 'alll-realm' - populated all the resources with the language implied by the realm"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="all-ig|ig-realm|all-realm"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="no automatic population"/>
+    </property>
+  </concept>  
 </CodeSystem>
