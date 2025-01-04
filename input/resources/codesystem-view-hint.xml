@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="view-hint"/>
+  <url value="http://hl7.org/fhir/tools/CodeSystem/view-hint"/>
+  <name value="RenderingEngineViewHintsCS"/>
+  <title value="Viewing Hints for Rendering Engines (CodeSystem)"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <description value="Codes that drive Rendering Engine behaviour, to assist profiles and profile-based renderers to provide more useful human rendering"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <concept>
+    <code value="profile"/>
+    <display value="Profile Hints"/>
+    <definition value="Hints that help rendering profiles themselves"/>
+    <concept>
+      <code value="element-view-hints"/>
+      <display value="Hints relating to the element View"/>
+      <concept>
+        <code value="element-view-ready"/>
+        <display value="Element View Ready"/>
+        <definition value="The logical model that contains this code has the metadata internally to enable rendering the element based view"/>
+      </concept>
+      <concept>
+        <code value="element-view-group"/>
+        <display value="Element View Group"/>
+        <definition value="The logical model element that has this tag is treated as a group of elements. The value is the name of the group (string)"/>
+      </concept>
+      <concept>
+        <code value="element-view-order"/>
+        <display value="Element View Order"/>
+        <definition value="The group for this logical model element is ordered by the value of this tag (integer) "/>
+      </concept>
+      <concept>
+        <code value="element-view-as-leaf"/>
+        <display value="Element View As Leaf"/>
+        <definition value="For logical model, indicates that a type is to be treated as a 'leaf node' and treated as a group entry"/>
+      </concept>
+      <concept>
+        <code value="element-view-defns-parent"/>
+        <display value="Element View Parent has Definitions"/>
+        <definition value="For logical model, indicates the leaf node gets definitional materials from the parent (an openEHR pattern)"/>
+      </concept>''
+    </concept>
+    
+  </concept>
+  <concept>
+    <code value="instance"/>
+    <display value="Instance Hints "/>
+    <definition value="Hints that help render instances based on profiles"/>
+  </concept>
+</CodeSystem>

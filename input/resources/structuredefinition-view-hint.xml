@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="view-hint"/>
+  <extension url="http://hl7.org/fhir/tools/StructureDefinition/snapshot-behavior">
+    <valueCode value="add"/>
+  </extension>
+  <url value="http://hl7.org/fhir/tools/StructureDefinition/view-hint"/>
+  <name value="RenderingEngineViewHintsExt"/>
+  <title value="Viewing Hints for Rendering Engines (Extension)"/>
+  <status value="active"/>
+  <experimental value="true"/>
+  <publisher value="HL7 International / FHIR Infrastructure"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/Special/committees/fhir-i"/>
+    </telecom>
+  </contact>
+  <description value="Definitions that drive Rendering Engine behaviour, to assist profiles and profile-based renderers to provide more useful human rendering"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  
+  <fhirVersion value="4.0.1"/>
+  <kind value="complex-type"/>
+  <abstract value="false"/>
+  <context>
+    <type value="element"/>
+    <expression value="StructureDefinition"/>
+  </context>
+  <context>
+    <type value="element"/>
+    <expression value="ElementDefinition"/>
+  </context>
+  <context>
+    <type value="element"/>
+    <expression value="ElementDefinition.type"/>
+  </context>
+  <type value="Extension"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+  <derivation value="constraint"/>
+  <differential>
+   <element id="Extension">
+      <path value="Extension"/> 
+      <short value="no-binding"/> 
+      <definition value="A view hint - either a bare code, or a code with a value."/> 
+      <min value="0"/> 
+      <max value="1"/> 
+    </element> 
+    <element id="Extension.extension">
+      <path value="Extension.extension"/> 
+      <max value="1"/> 
+    </element> 
+    <element id="Extension.extension:name">
+      <path value="Extension.extension"/> 
+      <sliceName value="name"/> 
+      <short value="The name of a view hint with a property value"/> 
+      <min value="0"/> 
+      <max value="1"/> 
+      <type> 
+        <code value="Extension"/> 
+      </type> 
+    </element> 
+    <element id="Extension.extension:name.extension">
+      <path value="Extension.extension.extension"/> 
+      <max value="0"/> 
+    </element> 
+    <element id="Extension.extension:name.url">
+      <path value="Extension.extension.url"/> 
+      <type> 
+        <code value="uri"/> 
+      </type> 
+      <fixedUri value="name"/> 
+    </element> 
+    <element id="Extension.extension:name.value[x]">
+      <path value="Extension.extension.value[x]"/> 
+      <min value="0"/> 
+      <type> 
+        <code value="code"/> 
+      </type> 
+      <binding>
+        <strength value="required"/>
+        <valueSet value="http://hl7.org/fhir/tools/ValueSet/view-hint"/>
+      </binding>
+    </element> 
+    <element id="Extension.extension:value">
+      <path value="Extension.extension"/> 
+      <sliceName value="value"/> 
+      <short value="The value of a view hint with a property value"/> 
+      <min value="0"/> 
+      <max value="1"/> 
+      <type> 
+        <code value="Extension"/> 
+      </type> 
+    </element> 
+    <element id="Extension.extension:value.extension">
+      <path value="Extension.extension.extension"/> 
+      <max value="0"/> 
+    </element> 
+    <element id="Extension.extension:value.url">
+      <path value="Extension.extension.url"/> 
+      <type> 
+        <code value="uri"/> 
+      </type> 
+      <fixedUri value="value"/> 
+    </element> 
+    <element id="Extension.extension:value.value[x]">
+      <path value="Extension.extension.value[x]"/> 
+      <min value="0"/> 
+      <type> 
+        <code value="string"/> 
+      </type> 
+      <type> 
+        <code value="integer"/> 
+      </type> 
+      <type> 
+        <code value="code"/> 
+      </type> 
+    </element> 
+    <element id="Extension.url">
+      <path value="Extension.url"/> 
+      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/view-hint"/> 
+    </element> 
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]"/> 
+      <min value="1"/> 
+      <type> 
+        <code value="code"/> 
+      </type> 
+      <binding>
+        <strength value="required"/>
+        <valueSet value="http://hl7.org/fhir/tools/ValueSet/view-hint"/>
+      </binding>
+    </element> 
+  </differential>
+</StructureDefinition>
