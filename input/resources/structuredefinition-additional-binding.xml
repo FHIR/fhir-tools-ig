@@ -4,6 +4,14 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="4"/>
   </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/version-specific-use">
+    <extension url="startFhirVersion">
+      <valueCode value="1.0"/>
+    </extension>
+    <extension url="endFhirVersion">
+      <valueCode value="4.0"/>
+    </extension>
+  </extension>
   <url value="http://hl7.org/fhir/tools/StructureDefinition/additional-binding"/>
   <name value="AdditionalBinding"/>
   <title value="Additional Binding Extension"/>

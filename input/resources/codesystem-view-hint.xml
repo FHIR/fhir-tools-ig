@@ -15,6 +15,7 @@
   </jurisdiction>  
   <caseSensitive value="true"/>
   <content value="complete"/>
+  <hierarchyMeaning value="is-a">
   <concept>
     <code value="profile"/>
     <display value="Profile Hints"/>
@@ -35,7 +36,7 @@
       <concept>
         <code value="element-view-order"/>
         <display value="Element View Order"/>
-        <definition value="The group for this logical model element is ordered by the value of this tag (integer) "/>
+        <definition value="The group for this logical model element is ordered by the value of this tag (integer)"/>
       </concept>
       <concept>
         <code value="element-view-as-leaf"/>
@@ -46,13 +47,17 @@
         <code value="element-view-defns-parent"/>
         <display value="Element View Parent has Definitions"/>
         <definition value="For logical model, indicates the leaf node gets definitional materials from the parent (an openEHR pattern)"/>
-      </concept>''
+      </concept>
+      <concept>
+        <code value="element-view-replace-cardinality"/>
+        <display value="Replace cardinality in Element View"/>
+        <definition value="Replace cardinality with Required, Optional etc in Element View"/>
+      </concept>
     </concept>
-    
   </concept>
   <concept>
     <code value="instance"/>
-    <display value="Instance Hints "/>
+    <display value="Instance Hints"/>
     <definition value="Hints that help render instances based on profiles"/>
   </concept>
 </CodeSystem>

@@ -40,7 +40,7 @@
   <concept>
     <code value="logging"/>
     <display value="logging"/>
-    <definition value="Which kinds of log output messages to produce - the value is a code, from this list:&#10;&#10;* ```init```: Messages describing the start up process (for debugging)&#10;* ```progress```: Overall progress messages&#10;* ```tx```: Messages describing the use of the terminology server (for debugging)&#10;* ```generate```: Log when producing an individual resource  (troubleshooting only - leave off)&#10;* ```html```: Log when validating an html page (troubleshooting only - leave off)"/>
+    <definition value="Which kinds of log output messages to produce - the value is a code, from this list:&#10;&#10;* ```init```: Messages describing the start up process (for debugging)&#10;* ```progress```: Overall progress messages&#10;* ```tx```: Messages describing the use of the terminology server (for debugging)&#10;* ```generate```: Log when producing an individual resource  (troubleshooting only - leave off)&#10;* ```html```: Log when validating an html page (troubleshooting only - leave off)&#10;* ```template```: see template log output"/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="true"/>
@@ -217,7 +217,6 @@
     </property>
   </concept>
 
-
   <concept>
     <code value="path-data"/>
     <display value="path-data"/>
@@ -233,6 +232,24 @@
     <property>
       <code value="missing"/>
       <valueString value="no data files copied"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="path-other"/>
+    <display value="path-other"/>
+    <definition value="A relative path in which binary files can be found that will be added to the /other folder in the produced NPM package."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="relative-path"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="no other files added"/>
     </property>
   </concept>
 
