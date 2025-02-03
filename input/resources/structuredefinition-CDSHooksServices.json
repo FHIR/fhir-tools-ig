@@ -3,7 +3,7 @@
   "id" : "CDSHooksServices",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
-    "valueInteger" : 2
+    "valueInteger" : 1
   }],
   "url" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksServices",
   "version" : "0.0.1",

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="view-hint"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="0"/>
+  </extension>
   <url value="http://hl7.org/fhir/tools/CodeSystem/view-hint"/>
   <name value="RenderingEngineViewHintsCS"/>
   <title value="Viewing Hints for Rendering Engines (CodeSystem)"/>
-  <status value="active"/>
-  <experimental value="false"/>
+  <status value="draft"/>
+  <experimental value="true"/>
   <description value="Codes that drive Rendering Engine behaviour, to assist profiles and profile-based renderers to provide more useful human rendering"/>
   <jurisdiction>
     <coding>
@@ -15,7 +18,7 @@
   </jurisdiction>  
   <caseSensitive value="true"/>
   <content value="complete"/>
-  <hierarchyMeaning value="is-a">
+  <hierarchyMeaning value="is-a"/>
   <concept>
     <code value="profile"/>
     <display value="Profile Hints"/>

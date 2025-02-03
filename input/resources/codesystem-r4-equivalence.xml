@@ -1,5 +1,8 @@
 <CodeSystem xmlns="http://hl7.org/fhir">
   <id value="r4-equivalence"/> 
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="4"/>
+  </extension>
   <url value="http://hl7.org/fhir/tools/CodeSystem/r4-equivalence"/> 
   <identifier> 
     <system value="urn:ietf:rfc:3986"/> 

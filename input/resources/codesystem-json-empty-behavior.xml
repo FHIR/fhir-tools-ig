@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="json-empty-behavior"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="4"/>
+  </extension>
   <url value="http://hl7.org/fhir/tools/CodeSystem/json-empty-behavior"/>
   <name value="JsonEmptyBehaviorCodes"/>
   <title value="Json Empty Behavior Codes"/>
   <status value="active"/>
-  <experimental value="true"/>
+  <experimental value="false"/>
   <description value="empty-behaviour: what should be in JSON when a repeating elements has no items. Can be absent, present, or either"/>
   <jurisdiction>
     <coding>

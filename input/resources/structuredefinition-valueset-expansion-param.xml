@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="valueset-expansion-parameter"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
-    <valueInteger value="3"/>
+    <valueInteger value="4"/>
   </extension>
   <url value="http://hl7.org/fhir/tools/StructureDefinition/valueset-expansion-parameter"/>
   <name value="ValueSetExpansionParameter"/>

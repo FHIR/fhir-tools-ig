@@ -3,7 +3,7 @@
   "id" : "CDSHookContext",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
-    "valueInteger" : 2
+    "valueInteger" : 1
   }],
   "url" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookContext",
   "version" : "0.0.1",

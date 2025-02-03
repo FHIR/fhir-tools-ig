@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
-  <id value="ig-parameter"/>
+  <id value="matchetype-sort"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="5"/>
   </extension>
-  <url value="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"/>
-  <name value="IGParameter"/>
-  <title value="IG Parameter"/>
+  <url value="http://hl7.org/fhir/tools/StructureDefinition/matchetype-sort"/>
+  <name value="MatchetypeSortRules"/>
+  <title value="Matchetype Sort Rules"/>
   <status value="active"/>
   <experimental value="false"/>
   <publisher value="HL7 International / FHIR Infrastructure"/>
@@ -16,7 +16,7 @@
       <value value="http://hl7.org/Special/committees/fhir-i"/>
     </telecom>
   </contact>
-  <description value="An implementation guide parameter defined by the HL7 IG Publisher. This is used in R4 IGs where the binding to parameter name prevented the use of additional parameters"/>
+  <description value="Specifies how a list of elements is sorted prior to comparison with the matchetype"/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -28,7 +28,7 @@
   <abstract value="false"/>
   <context>
     <type value="element"/>
-    <expression value="ImplementationGuide.definition"/>
+    <expression value="Element"/>
   </context>
   <type value="Extension"/>
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
@@ -36,69 +36,62 @@
   <differential>
    <element id="Extension">
       <path value="Extension"/> 
-      <short value="ig-parameter"/> 
+      <short value="matchetype-sort"/> 
       <definition value="An implementation guide parameter defined by the HL7 IG Publisher."/>
       <min value="0"/> 
       <max value="*"/> 
     </element> 
-    <element id="Extension.extension:code">
+    <element id="Extension.extension:element">
       <path value="Extension.extension"/> 
-      <sliceName value="code"/> 
-      <short value="The code for the parameter"/> 
+      <sliceName value="element"/> 
+      <short value="Which element is to be sorted"/> 
       <min value="1"/> 
       <max value="1"/> 
       <type> 
         <code value="Extension"/> 
       </type> 
     </element> 
-    <element id="Extension.extension:code.extension">
+    <element id="Extension.extension:element.extension">
       <path value="Extension.extension.extension"/> 
       <max value="0"/> 
     </element> 
-    <element id="Extension.extension:code.url">
+    <element id="Extension.extension:element.url">
       <path value="Extension.extension.url"/> 
       <type> 
         <code value="uri"/> 
       </type> 
-      <fixedUri value="code"/> 
+      <fixedUri value="element"/> 
     </element> 
-    <element id="Extension.extension:code.value[x]">
+    <element id="Extension.extension:element.value[x]">
       <path value="Extension.extension.value[x]"/> 
       <min value="0"/> 
       <type> 
-        <code value="code"/> 
-      </type> 
-      <type> 
         <code value="string"/> 
       </type> 
-      <binding>
-        <strength value="required"/>
-        <valueSet value="http://hl7.org/fhir/tools/ValueSet/ig-parameters"/>
-      </binding>
     </element> 
 
-    <element id="Extension.extension:value">
+    <element id="Extension.extension:expression">
       <path value="Extension.extension"/> 
-      <sliceName value="value"/> 
-      <short value="The value for the parameter"/> 
+      <sliceName value="expression"/> 
+      <short value="A FHIRPath expression that provides the value by which the element will be sorted"/> 
       <min value="1"/> 
       <max value="*"/> 
       <type> 
         <code value="Extension"/> 
       </type> 
     </element> 
-    <element id="Extension.extension:value.extension">
+    <element id="Extension.extension:expression.extension">
       <path value="Extension.extension.extension"/> 
       <max value="0"/> 
     </element> 
-    <element id="Extension.extension:value.url">
+    <element id="Extension.extension:expression.url">
       <path value="Extension.extension.url"/> 
       <type> 
         <code value="uri"/> 
       </type> 
-      <fixedUri value="value"/> 
+      <fixedUri value="expression"/> 
     </element> 
-    <element id="Extension.extension:value.value[x]">
+    <element id="Extension.extension:expression.value[x]">
       <path value="Extension.extension.value[x]"/> 
       <min value="1"/> 
       <type> 
@@ -110,7 +103,7 @@
       <type> 
         <code value="uri"/> 
       </type> 
-      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"/> 
+      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/matchetype-sort"/> 
     </element> 
 
     <element id="Extension.value[x]">

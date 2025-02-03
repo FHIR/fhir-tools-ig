@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="view-hint"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="0"/>
+  </extension>
   <extension url="http://hl7.org/fhir/tools/StructureDefinition/snapshot-behavior">
     <valueCode value="add"/>
   </extension>
   <url value="http://hl7.org/fhir/tools/StructureDefinition/view-hint"/>
   <name value="RenderingEngineViewHintsExt"/>
   <title value="Viewing Hints for Rendering Engines (Extension)"/>
-  <status value="active"/>
+  <status value="draft"/>
   <experimental value="true"/>
   <publisher value="HL7 International / FHIR Infrastructure"/>
   <contact>
