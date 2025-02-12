@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
-  <id value="matchetype-value"/>
+  <id value="ig-use-as-resource-id"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
-    <valueInteger value="0"/>
+    <valueInteger value="3"/>
   </extension>
-  <url value="http://hl7.org/fhir/tools/StructureDefinition/matchetype-value"/>
-  <name value="MatchetypeValueFlag"/>
-  <title value="Matchetype Value Flag"/>
-  <status value="draft"/>
-  <experimental value="true"/>
+  <url value="http://hl7.org/fhir/tools/StructureDefinition/ig-use-as-resource-id"/>
+  <name value="IGPublisherUseAsResourceId"/>
+  <title value="IGPublisher Use As Resource Id"/>
+  <status value="active"/>
+  <experimental value="false"/>
   <publisher value="HL7 International / FHIR Infrastructure"/>
   <contact>
     <telecom>
@@ -16,7 +16,7 @@
       <value value="http://hl7.org/Special/committees/fhir-i"/>
     </telecom>
   </contact>
-  <description value="Specifies a token that the actual value of the primitive value must meet. Use this on any primitive element"/>
+  <description value="Instructs the IG publisher to use this element as the resource id when it builds an IG (if there's no .id element)"/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -28,7 +28,7 @@
   <abstract value="false"/>
   <context>
     <type value="element"/>
-    <expression value="Element"/>
+    <expression value="ElementDefinition"/>
   </context>
   <type value="Extension"/>
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
@@ -36,27 +36,27 @@
   <differential>
    <element id="Extension">
       <path value="Extension"/> 
-      <short value="Specifies a token that the actual value of the primitive value must meet"/> 
-      <definition value="Specifies a token that the actual value of the primitive value must meet. Use this on any primitive element"/> 
+      <short value="Use this element as the resource id (no .id element)"/> 
+      <definition value="Instructs the IG publisher to use this element as the resource id when it builds an IG (if there's no .id element)"/> 
       <min value="0"/> 
       <max value="*"/> 
     </element> 
 
     <element id="Extension.extension">
       <path value="Extension.extension"/> 
+      <min value="0"/> 
       <max value="0"/> 
     </element> 
 
     <element id="Extension.url">
       <path value="Extension.url"/> 
-      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/matchetype-value"/> 
+      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/ig-use-as-resource-id"/> 
     </element> 
     <element id="Extension.value[x]">
       <path value="Extension.value[x]"/> 
-      <min value="1"/> 
-      <max value="1"/>
+      <min value="1"/>
       <type>
-        <code value="code"/>
+        <code value="boolean"/>
       </type>
     </element> 
   </differential>

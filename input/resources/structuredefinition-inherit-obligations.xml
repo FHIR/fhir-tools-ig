@@ -16,7 +16,7 @@
       <value value="http://hl7.org/Special/committees/fhir-i"/>
     </telecom>
   </contact>
-  <description value="Inherit all the obligations from an Obligation Profile"/>
+  <description value="Inherit all the obligations from an Obligation Profile. The other profile must be a Obligation Profile (using [[[http://hl7.org/fhir/tools/StructureDefinition/obligation-profile]]])"/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>

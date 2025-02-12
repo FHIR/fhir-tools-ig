@@ -1,8 +1,9 @@
-<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+<div xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
   <!-- The spaces between the open and close "a" tag are mandatory.  (Cuz HTML renderers are dumb...) -->
-  <a name="intro"> </a>
+  <a name="intro"></a>
   <h3>Introduction</h3>
-	<p>
+  <p>
     This IG defines extensions and their valuesets + code systems used internally by FHIR tools that support the 
     implementation community. These tools include:
   </p>
@@ -24,13 +25,616 @@
     terminology resources are clearly labeled.
   </p>
 
-	<a name="summary"> </a>
-	<h3>Extension Summary</h3>
+  <a name="summary"></a>
+  <h3>Extension Summary</h3>
 
-  {% include extension-list.xhtml %}
+  <table class="list">
+    <tbody>
+      <tr>
+        <td>
+          <b>Extension</b>
+        </td>
+        <td>
+          <b>Description</b>
+        </td>
+        <td>
+          <b>
+            <a href="http://hl7.org/fhir/R5/defining-extensions.html#context">Usage</a>
+          </b>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" style="background-color: #eeeeee">
+          <b>Profiling</b> Extensions that define additional useful profiling behavior.
+        </td>
+      </tr>      
+      <tr>
+        <td>
+          <a href="StructureDefinition-obligation-profile.html" title="Profiles marked to be 'Obligation Profiles' cannot introduce new structural elements or slicing, but they can change the cardinality, add additional bindings, and additional obligations on the elements that are already defined">obligation-profile</a>
+        </td>
+        <td>Obligation Profiles change the cardinality, add additional bindings, and additional obligations, without changing the structure
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html">StructureDefinition</a>            
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-inherit-obligations.html" title="Inherit all the obligations from an Obligation Profile. The other profile must be a Obligation Profile">inherit-obligations</a>
+        </td>
+        <td>Inherit all the obligations from an Obligation Profile. The other profile must be a Obligation Profile
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html">StructureDefinition</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-snapshot-base-version.html" title="Specifies the version of the base definition that was used when the snapshot was generated">snapshot-base-version</a>
+        </td>
+        <td>Version of the base when snapshot generated. Indicates when to regenerate snapshots as other packages become available
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html">StructureDefinition.snapshot</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-snapshot-behavior.html" title="Defines how an extension is treated when generating snapshots - ignore, add, override, defer">snapshot-behavior</a>
+        </td>
+        <td>how an extension is treated when generating snapshots - ignore, add, override, defer
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html">StructureDefinition</a>
+        </td>
+      </tr>
 
-	<a name="updates"> </a>
-	<h3>Tooling IG Lifecycle</h3>
+      <tr>
+        <td colspan="3" style="background-color: #eeeeee">
+          <b>JSON Format Control</b> Extensions that control how Logical Models are represented in JSON (e.g. for CDS hooks, openEHR WebTemplates)
+        </td>
+      </tr>      
+      <tr>
+        <td>
+          <a href="StructureDefinition-json-empty-behavior.html" title="empty-behaviour: what should be in JSON when a repeating elements has no items? Can be absent, present, or either">json-empty-behavior</a>
+        </td>
+        <td>Property value for when a repeating element has no items. Can be absent, present, or either
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition</a>,          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition.type</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-json-name.html" title="Provides the JSON property name for when the JSON name is not a valid element name, or on the root of a type to give the type itself an element name">json-name</a>
+        </td>
+        <td>The JSON property name for when the JSON name is not a valid element name (or for a type)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-json-nullable.html" title="If an element is labelled nullable, it can be present as a null value in the json. If this extension does not appear, a null value is treated as an error">json-nullable</a>
+        </td>
+        <td>If an element is labelled nullable, it can be present as a null value in the json
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition</a>,          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition.type</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-json-primitive-choice.html" title="Marks an element as a choice of types where the type is implied by the JSON type. The only valid types at string, integer, decimal, and boolean">json-primitive-choice</a>
+        </td>
+        <td>Marks an element as a choice of types where the type is implied by the JSON type
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition</a>,          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition.type</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-json-property-key.html" title="If true, indicates that in a JSON representation, the indicated child element is the json property key for the value. Implies that this is a property with max = * that has two children, one of which is the key and the other is the value ">json-property-key</a>
+        </td>
+        <td>The indicated child element is the json property key for the other child which is the value (on a property with max = *)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition</a>,          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition.type</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-json-suppress-resourcetype.html" title="If this extension is present and true, then the JSON format produced from this logical doesn't include a 'resourceType' property (and it isn't recognized automatically when reading the JSON format)">json-suppress-resourcetype</a>
+        </td>
+        <td>If true, then the JSON format produced from this logical doesn't include a 'resourceType' property
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="3" style="background-color: #eeeeee">
+          <b>XML Format Control</b> Extensions that control how Logical Models are represented in XML (e.g. for CDA)
+        </td>
+      </tr>   
+
+      <tr>
+        <td>
+          <a href="StructureDefinition-xml-choice-group.html" title="If true, marks that this element is a choice group that doesn't literally appear in the XML; it only exists to group a set of repeating of elements">xml-choice-group</a>
+        </td>
+        <td>when element is a choice group that doesn't literally appear in the XML: it groups a set of repeating of elements
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-xml-name.html" title="Provides the XML element name for when the XML name is not a valid element name, or on the root of a type to give the type itself an element name">xml-name</a>
+        </td>
+        <td>XML element name for when the XML name is not a valid element name (or for a type)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition</a>,          <a href="http://hl7.org/fhir/R5/structuredefinition.html">StructureDefinition</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-xml-namespace.html" title="Use this extension to indicate tha the element has an XML namespace different to http://hl7.org/fhir. The special value `noNamespace` indicates that there is no assigned XML namespace.">xml-namespace</a>
+        </td>
+        <td>Use this extension to indicate tha the element has an XML namespace different to http://hl7.org/fhir
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition</a>,          <a href="http://hl7.org/fhir/R5/structuredefinition.html">StructureDefinition</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-xml-no-order.html" title="Whether elements can come in any order in XML.">xml-no-order</a>
+        </td>
+        <td>Whether elements can come in any order in XML
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html">StructureDefinition</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="3" style="background-color: #eeeeee">
+          <b>General Format Control</b> Controls how content is represented in both JSON and XML
+        </td>
+      </tr>   
+      <tr>
+        <td>
+          <a href="StructureDefinition-implied-string-prefix.html" title="A prefix value that is automatically prefixed to the value before it's validated (for use in logical models)">implied-string-prefix</a>
+        </td>
+        <td>A prefix value that is automatically prefixed to the value before it's validated (for e.g. prefixing UUIDs)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-elementdefinition-date-format.html" title="The date format, as a Java date/time format (todo: extract a common subset from FHIRPath? Java? DotNet? Windows API?)">elementdefinition-date-format</a>
+        </td>
+        <td>The date format, as a Java date/time format (e.g. for YYYYMMDDHHNNSS.ZZZ per v2/CDA)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-elementdefinition-date-rules.html" title="A set of colon delimited codes that control the execution of specific validation rules for date(/time) elements. The code ```tz-for-time``` controls whether the rule that there must be a timezone if there's a time is enforced - in it's absence, the rule is not enforced. The code ```year-valid``` controls whether the year is checked for being in the range 1800 -> now + 80 year - in it's absence, the rule is not enforced. If the extension is not present, the rules are enforced. This extension has no effect on data types and resources, only in logical models">elementdefinition-date-rules</a>
+        </td>
+        <td>A set of colon delimited codes that control specific validation rules for date(/time) elements
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-elementdefinition-binding-style.html" title="How the data type is bound to vocabulary">elementdefinition-binding-style</a>
+        </td>
+        <td>How the data type is bound to vocabulary - styles such as FHIR, CDA, OpenEHR
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html">StructureDefinition</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-extension-style.html" title="How the type can be extended. Note that all FHIR types that inherit from ```Element``` have extension-style = fhir-extensions">extension-style</a>
+        </td>
+        <td>How the type can be extended. (FHIR types inherit from <code>Element</code> and have extension-style = fhir-extensions)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html">StructureDefinition</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="3" style="background-color: #eeeeee">
+          <b>IG Publisher Control</b> Control how content is managed by the IG Publisher
+        </td>
+      </tr>      
+      <tr>
+        <td>
+          <a href="StructureDefinition-ig-actor-example-url.html" title="An example URL used to refer to examples associated with this actor. This is used when an IG describes a federated system with multiple servers playing the roles of different actors. Note that this is for example references, and has no impact on the canonical URLs defined by the IG">ig-actor-example-url</a>
+        </td>
+        <td>An example URL used to refer to examples associated with this actor, for describing federated systems
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/actordefinition.html">ActorDefinition</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-ig-example-actor.html" title="Used to associate an example in an IG with a particular actor that provides/serves this example (e.g. on a RESTful API)">ig-example-actor</a>
+        </td>
+        <td>Used to associate an example in an IG with a particular actor that provides/serves this example
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/implementationguide.html">ImplementationGuide.definition.resource</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-ig-internal-dependency.html" title="A package (id#ver) that this IG has an internal dependency on. An internal dependency is a package that is required to validate the resources in the IG itself but that is not required by the implementers of the IG">ig-internal-dependency</a>
+        </td>
+        <td>A package that is required to validate the resources in the IG itself but that is not required by the implementers (tooling IG)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/implementationguide.html">ImplementationGuide.definition</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-ig-link-dependency.html" title="A package (id#ver) that has pages that this IG references, without depending on. The sole purpose of defining these IGs is to inform the publisher link checker that links to this IG are valid">ig-link-dependency</a>
+        </td>
+        <td>A package (id#ver) that has pages that this IG references, without depending on (for link checking)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/implementationguide.html">ImplementationGuide.definition</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-ig-load-as-resource.html" title="Instructs the IG publisher to treat this content model as a resource when it builds an IG (instead of treating it as a binary)">ig-load-as-resource</a>
+        </td>
+        <td>Treat this content model as a resource when it builds an IG (instead of a binary)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html">StructureDefinition</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-ig-page-name.html" title="IG Page Name (for R4 or earlier - part of R5)">ig-page-name</a>
+        </td>
+        <td>IG Page Name (for R4 or earlier - added in R5)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/implementationguide.html">ImplementationGuide.definition.page</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-ig-parameter.html" title="An implementation guide parameter defined by the HL7 IG Publisher. This is used in R4 IGs where the binding to parameter name prevented the use of additional parameters">ig-parameter</a>
+        </td>
+        <td>An IG parameter defined by the HL7 IG Publisher. This is used in R4 IGs
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/implementationguide.html">ImplementationGuide.definition</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-ig-use-as-resource-id.html" title="Instructs the IG publisher to use this element as the resource id when it builds an IG (if there's no .id element)">ig-use-as-resource-id</a>
+        </td>
+        <td>use this element as the resource id when it builds an IG (if there's no .id element)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-igpublisher-bundle.html" title="Instructs the IG publisher to load a bundle when loading the source, but to treat all the resources found in the bundle as independent resources in the IG (e.g. not a bundle). Use this for bundles of examples">igpublisher-bundle</a>
+        </td>
+        <td>load a bundle when loading the source, but to treat all the resources found in the bundle as independent resources
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/implementationguide.html">ImplementationGuide.definition</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-implementationguide-dependency-comment.html" title="This extension provides a comment explaining the why an IG depends on another IG.">implementationguide-dependency-comment</a>
+        </td>
+        <td>provides a comment explaining the why an IG depends on another IG
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/implementationguide.html">ImplementationGuide.dependsOn</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-implementationguide-resource-format.html" title="This extension specifies the format (= mime type) of a binary resource, when the binary resource is provided to the IG publisher as raw content (rather than as a FHIR binary resource with base64 content).">implementationguide-resource-format</a>
+        </td>
+        <td>This extension specifies the format (= mime type) of a binary resource when provided as raw content
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/implementationguide.html">ImplementationGuide.definition.resource</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-implementationguide-resource-fragment.html" title="Defines fragments, possibly with ellipsed content, to generate from a specified resource for a embedding as part of resource pages.">implementationguide-resource-fragment</a>
+        </td>
+        <td>Defines fragments (/with ellipsed content) to generate from a specified resource for a embedding in Narrative
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/implementationguide.html">ImplementationGuide.definition.resource</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-implementationguide-resource-logical.html" title="This extension specifies a logical model to use to validate the binary contents.">implementationguide-resource-logical</a>
+        </td>
+        <td>A logical model to use to validate the binary contents
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/implementationguide.html">ImplementationGuide.definition.resource</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-implementationguide-resource-uri.html" title="A URI defined in the IG that is (or may be) the target of an element with type URI. A typical use is for consent policies.">implementationguide-resource-uri</a>
+        </td>
+        <td>A URI defined in the IG that is (or may be) the target of an element with type URI (for link checking)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/implementationguide.html">ImplementationGuide</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-resource-sort.html" title="Allows assertion of a sort order for a resource in the list of artifacts within the IG">resource-sort</a>
+        </td>
+        <td>Manage sort order for a resource in the list of artifacts within the IG
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/implementationguide.html">ImplementationGuide.definition.resource</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-package-scope.html" title="Specifies the Npm Package scope for scoped packages. See how [FHIR Packages are scoped](http://hl7.org/fhir/packages.html) for further information">package-scope</a>
+        </td>
+        <td>Specifies the Npm Package scope for scoped packages (see <a href="http://hl7.org/fhir/packages.html">FHIR Package</a>)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/implementationguide.html">ImplementationGuide</a>,          <a href="http://hl7.org/fhir/R5/implementationguide.html">ImplementationGuide.dependsOn</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="3" style="background-color: #eeeeee">
+          <b>Matchetypes</b> Templates that specify allowable resource content for test cases 
+        </td>
+      </tr>      
+      <tr>
+        <td>
+          <a href="StructureDefinition-matchetype.html" title="Marks that this resource is a matchetype - an instance of data with extensions and primary values that specify a set of rules. Other resources can be tested against this.">matchetype</a>
+        </td>
+        <td>Marks that this resource is a matchetype and how to interpret (complete/partial)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/resource.html">Resource</a>,          <a href="http://hl7.org/fhir/R5/implementationguide.html">ImplementationGuide.definition.resource</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-matchetype-count.html" title="Marks that the named repeating element is evaluated only by the number of items, not by the contents of the items">matchetype-count</a>
+        </td>
+        <td>Evaluate as a count only
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/types.html#Element">Element</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-matchetype-optional.html" title="Marks the element or a set of sub-elements as optional - they do not need to be present">matchetype-optional</a>
+        </td>
+        <td>Mark element/properties as optional
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/types.html#Element">Element</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-matchetype-sort.html" title="Specifies how a list of elements is sorted prior to comparison with the matchetype">matchetype-sort</a>
+        </td>
+        <td>define sort order (sort is prior to comparison)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/types.html#Element">Element</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="3" style="background-color: #eeeeee">
+          <b>Trial</b> Stuff being evaluated here before moving to other IGs or the Extension Pack
+        </td>
+      </tr>      
+      <tr>
+        <td>
+          <a href="StructureDefinition-additional-binding.html" title="Extension definition for Additional Binding. Additional Bindings are in the R5 Element Definition; this extension is used in prior versions (instead of the R5 cross-version extension)">additional-binding</a>
+        </td>
+        <td>Extension definition for Additional Binding - due to be removed
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition.binding</a>,          <a href="http://hl7.org/fhir/R5/codesystem.html">CodeSystem.property</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-profile-mapping.html" title="Extension definition for Mapping between ```API``` and ```Profile```. ">profile-mapping</a>
+        </td>
+        <td>for Mapping between <code>API</code> and <code>Profile</code>
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/capabilitystatement.html">CapabilityStatement.rest.resource</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="3" style="background-color: #eeeeee">
+          <b>Logical Model</b> More Logical Model stuff
+        </td>
+      </tr>    
+      <tr>
+        <td>
+          <a href="StructureDefinition-logical-container.html" title="This extension is used in logical models to indicate that the type that can be the container of this definition. This can be a reference to an abstract definition, or a particular concrete definition. This is the (base) class encountered when %resource and %rootResource is found in FHIRPath constraint expressions.">logical-container</a>
+        </td>
+        <td>Indicate that a type that can be the container of this definition (helps with FHIRPath expression validation)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html">StructureDefinition</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-logical-target.html" title="This extension is used logical models to indicate that this type can be the target of a reference. This indicates that there is a persistence identity and maintenance lifecycle for the type, though there are no requirements for how those are defined.">logical-target</a>
+        </td>
+        <td>That this type can be the target of a reference (e.g. can exist with an id)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html">StructureDefinition</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-type-parameter.html" title="Specifies a type parameter for the type it is on (for use with logical models). This can also be used to narrow the binding - that usually means, bind to a concrete class in a descendent of this type">type-parameter</a>
+        </td>
+        <td>A type parameter for the type it is on (for use with logical models)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html">StructureDefinition</a>,          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition.type</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-type-specifier.html" title="In some logical models, the type of content at one location depends on the value of some other element, and the type is otherwise not explicit in the instance. In such cases, the type of the element is assigned an abstract ancestor type, and this extension specifies how to determine what type is actually used">type-specifier</a>
+        </td>
+        <td>When the type of content at one location depends on the value of some other element, and the type is otherwise not explicit in the instance
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="3" style="background-color: #eeeeee">
+          <b>Miscellaineous</b> Other extensions
+        </td>
+      </tr>    
+      <tr>
+        <td>
+          <a href="StructureDefinition-id-expectation.html" title="Specifies whether a particular element or resource is expected to have an id or not. Note that this can be done in a profile on the element, but it is sometimes useful to say this e.g. on an abstract element in a logical model">id-expectation</a>
+        </td>
+        <td>Specifies whether a particular element or resource is expected to have an id or not
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition</a>,          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition.type</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <a href="StructureDefinition-binding-definition.html" title="This provides a definition for a binding. There's really no functional difference between a definition and a description, and this extension will be removed in R6. No tools do anything with the binding definitions (they use binding.description instead).">binding-definition</a>
+        </td>
+        <td>A definition for a binding (this is legacy: there's really no difference between definition and description)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition.binding</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-no-binding.html" title="This extension is used on elements of type code to indicate that it's deliberate and appropriate that they not have a binding. Typically, this is because they are contained by another type that does have a binding, but there are other reasons. This is provided to assist with QA processes that can use this to be informed where bindings are not necessary or appropriate.">no-binding</a>
+        </td>
+        <td>used on elements of type code to indicate that it's deliberate and appropriate that they not have a binding
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition</a>,          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition.type</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <a href="StructureDefinition-searchparameter-base-type.html" title="Indicates the base type for a search parameter when the actual base type is not a valid resource (e.g. custom resource etc)">searchparameter-base-type</a>
+        </td>
+        <td>Indicates the base type for a search parameter when the actual base type is not a valid resource (R4 and earlier)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/searchparameter.html">SearchParameter.base</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-select-by-map.html" title="This extension indicates that in addition to the concepts directly selected (either included or excluded) in the include/exclude statement, any source codes that are mapped to target codes that are selected by the nominated ConceptMapare also selected. The filter property can be used to restrict which types of relationships are included. Todo: If this is useful, it will be moved to the core extensions pack">select-by-map</a>
+        </td>
+        <td>in addition to the concepts directly selected (either included or excluded) in the include/exclude statement, any source codes that are mapped to target codes that are selected by the nominated ConceptMapare also selected
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/valueset.html">ValueSet.compose.include</a>,          <a href="http://hl7.org/fhir/R5/valueset.html">ValueSet.compose.exclude</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <a href="StructureDefinition-valueset-expansion-parameter.html" title="A default parameter to use when expanding this value set. A client may also pass a parameter with the same parameter name; servers should either overwrite this default parameter, or add to the list of identically named parameters, depending on which parameter is named">valueset-expansion-parameter</a>
+        </td>
+        <td>A default parameter to use when expanding a value set
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/valueset.html">ValueSet.compose</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-view-hint.html" title="Definitions that drive Rendering Engine behaviour, to assist profiles and profile-based renderers to provide more useful human rendering">view-hint</a>
+        </td>
+        <td>Hints to drive Rendering Engine behavior, so profile-based renderers can provide more useful human rendering
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html">StructureDefinition</a>,          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition</a>,          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition.type</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-web-source.html" title="This extension is for canonical resources to indicate where a human readable web page describing the resource can be found, if it's at a different location to the canonical URL itself. Todo: This might be considered for moving to the core extensions pack">web-source</a>
+        </td>
+        <td>for canonical resources to indicate where a human readable web page describing the resource can be found
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/canonicalresource.html">CanonicalResource</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a name="updates"></a>
+  <h3>Tooling IG Lifecycle</h3>
   <p>
   This IG is not subject to formal balloting. It is maintained 
   by the FHIR-I Working Group on behalf of the tooling providers,
@@ -39,13 +643,23 @@
   (see right link on the footer). 
   </p>
 
-	<a name="topics"> </a>
-	<h3>Additional Documentation</h3>
-	<ul>
-    <li><a href="CodeSystem-ig-parameters.html">IG Parameter Documentation</a></li>
-    <li><a href="binary.html">Providing Binary files in native formats to the IG publisher</a></li>
-    <li><a href="format-extensions.html">Extensions that control formats</a></li>
-    <li><a href="page-factories.html">Page Factories</a></li>
-    <li><a href="other.html">Supporting Documentation</a></li>
+  <a name="topics"></a>
+  <h3>Additional Documentation</h3>
+  <ul>
+    <li>
+      <a href="CodeSystem-ig-parameters.html">IG Parameter Documentation</a>
+    </li>
+    <li>
+      <a href="binary.html">Providing Binary files in native formats to the IG publisher</a>
+    </li>
+    <li>
+      <a href="format-extensions.html">Extensions that control formats</a>
+    </li>
+    <li>
+      <a href="page-factories.html">Page Factories</a>
+    </li>
+    <li>
+      <a href="other.html">Supporting Documentation</a>
+    </li>
   </ul>
 </div>

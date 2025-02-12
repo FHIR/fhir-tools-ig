@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
-  <id value="obligation-profile"/>
+  <id value="ig-load-as-resource"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
-    <valueInteger value="4"/>
+    <valueInteger value="3"/>
   </extension>
-  <url value="http://hl7.org/fhir/tools/StructureDefinition/obligation-profile"/>
-  <name value="ObligationProfile"/>
-  <title value="Obligation Profile Flag"/>
+  <url value="http://hl7.org/fhir/tools/StructureDefinition/ig-load-as-resource"/>
+  <name value="IGPublisherLoadAsResource"/>
+  <title value="IGPublisher Load As Resource"/>
   <status value="active"/>
   <experimental value="false"/>
   <publisher value="HL7 International / FHIR Infrastructure"/>
@@ -16,7 +16,7 @@
       <value value="http://hl7.org/Special/committees/fhir-i"/>
     </telecom>
   </contact>
-  <description value="Profiles marked to be 'Obligation Profiles' cannot introduce new structural elements or slicing, but they can change the cardinality, add additional bindings, and additional obligations on the elements that are already defined"/>
+  <description value="Instructs the IG publisher to treat this content model as a resource when it builds an IG (instead of treating it as a binary)"/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -36,25 +36,25 @@
   <differential>
    <element id="Extension">
       <path value="Extension"/> 
-      <short value="Marks that a profile is an obligation only profile"/> 
-      <definition value="Marks that a profiles is an 'Obligation Profile', which cannot introduce new structural elements or slicing, but it can change the cardinality, add additional bindings, and additional obligations on the elements that are already defined"/> 
+      <short value="IG publisher to treat this content model as a resource"/> 
+      <definition value="Instructs the IG publisher to treat this content model as a resource when it builds an IG (instead of treating it as a binary)"/> 
       <min value="0"/> 
       <max value="*"/> 
     </element> 
 
     <element id="Extension.extension">
       <path value="Extension.extension"/> 
+      <min value="0"/> 
       <max value="0"/> 
     </element> 
 
     <element id="Extension.url">
       <path value="Extension.url"/> 
-      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/obligation-profile"/> 
+      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/ig-load-as-resource"/> 
     </element> 
     <element id="Extension.value[x]">
       <path value="Extension.value[x]"/> 
-      <min value="1"/> 
-      <max value="1"/>
+      <min value="1"/>
       <type>
         <code value="boolean"/>
       </type>
