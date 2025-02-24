@@ -1747,6 +1747,24 @@
     </property>
     <property>
       <code value="string-format"/>
+      <valueString value="complex"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="no profile test cases"/>
+    </property>
+  </concept>  
+
+  <concept>
+    <code value="related-ig"/>
+    <display value="related-ig"/>
+    <definition value="Defines a related IG - an IG that depends on this IG that is developed with it. Format is `role:code=id` - see [Related IGs](https://build.fhir.org/ig/FHIR/ig-guidance/branches/master/related-igs.html) for further information"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="string-format"/>
       <valueString value="relative-path"/>
     </property>
     <property>

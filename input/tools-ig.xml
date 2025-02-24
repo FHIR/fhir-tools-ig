@@ -239,27 +239,6 @@
         <code value="auto-oid-root"/>
       </code>    
       <value value="2.16.840.1.113883.4.642.40.1"/>
-    </parameter>     
-    <parameter>
-      <code>
-        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
-        <code value="generate-version"/>
-      </code>    
-      <value value="r4"/>
-    </parameter>     
-    <parameter>
-      <code>
-        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
-        <code value="generate-version"/>
-      </code>    
-      <value value="r5"/>
-    </parameter>     
-    <parameter>
-      <code>
-        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
-        <code value="generate-version"/>
-      </code>    
-      <value value="r3"/>
-    </parameter>     
+    </parameter>  
   </definition> 
 </ImplementationGuide>
