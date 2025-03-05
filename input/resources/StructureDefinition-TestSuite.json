@@ -1,0 +1,414 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "TestCases",
+  "url": "http://hl7.org/fhir/uv/application-feature/StructureDefinition/TestCases",
+  "name": "TestCases",
+  "title": "Test Cases",
+  "status": "active",
+  "description": "A standard format for test cases used throughout the FHIR ecosystem",
+  "fhirVersion": "5.0.0",
+  "kind": "logical",
+  "abstract": false,
+  "type": "http://hl7.org/fhir/uv/application-feature/StructureDefinition/TestCases",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/CanonicalResource",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "TestCases",
+        "path": "TestCases",
+        "short": "Test Suite - set of tests executed by a runner",
+        "definition": "A set of tests that are executed by some runner to test the functionality of a tool in the FHIR ecosystem"
+      },
+      {
+        "id": "TestCases.runner",
+        "path": "TestCases.runner",
+        "short": "URL Documentation for a runner that executes these tests",
+        "definition": "URL of documentation that explains how a runner would read these tests, and use them to actually test out a tool.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "url"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.mode",
+        "path": "TestCases.mode",
+        "short": "A mode that can be passed to runner - affects test content",
+        "definition": "A mode that can be passed to a runner running these these tests, that affects test content and influences how the tests are executed or evaulated (or even if they run)",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.mode.code",
+        "path": "TestCases.mode.code",
+        "short": "The code that identifies the mode",
+        "definition": "The code by which the mode is identified when passed to runner",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "String"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.mode.description",
+        "path": "TestCases.mode.description",
+        "short": "Description of what this mode exists / why it was defined",
+        "definition": "Description of what this mode does / why it was defined. This should explain to a tester when they should use the mode",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "String"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite",
+        "path": "TestCases.suite",
+        "short": "A suite of tests that share a common set up",
+        "definition": "A suite of tests that all share a common set up, and can be executed as a group",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.name",
+        "path": "TestCases.suite.name",
+        "short": "The name of this suite - unique in the TestCases resource",
+        "definition": "The name by which this suite is known by in the test system. The name must be unique in the amongst the suites",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "String"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.description",
+        "path": "TestCases.suite.description",
+        "short": "Description of what this suite does / why it was defined",
+        "definition": "Description of what this suite does / why it was defined. This should explain to a tester what they should know when deciding which tests to run",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "String"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.mode",
+        "path": "TestCases.suite.mode",
+        "short": "mode required to run this suite",
+        "definition": "If this mode is not passed to the runner, then this suite will not be run",
+        "meaningWhenMissing" : "If no modes are listed, the suite is always executed",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "String"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.setup",
+        "path": "TestCases.suite.setup",
+        "short": "Resources used in the tests in this suite",
+        "definition": "The resources used in the tests in this suite. How exactly they are used depends on the definition of the runner ",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "String"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.setup.file",
+        "path": "TestCases.suite.setup.file",
+        "short": "A file containing a resource used in the tests in this suite",
+        "definition": "A file containing a resource used in the tests in this suite",
+        "comment" : "Filename is relative to the folder/directory containing this TestCases",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "String"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.setup.resource",
+        "path": "TestCases.suite.setup.resource",
+        "short": "An inline resource used in the tests in this suite",
+        "definition": "An inline resource used in the tests in this suite. How exactly it is used depends on the definition of the runner ",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Resource"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.setup.mode",
+        "path": "TestCases.suite.setup.mode",
+        "short": "A mode that must be true for this resource to be used",
+        "definition": "If this mode is not passed to the runner, then this resource will not be used",
+        "meaningWhenMissing" : "If no modes are listed, the resource is always used",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Resource"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.test",
+        "path": "TestCases.suite.test",
+        "short": "A test in the test suite",
+        "definition": "An actual test in the test suite",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.test.name",
+        "path": "TestCases.suite.test.name",
+        "short": "The name of this test - unique in the suite",
+        "definition": "The name by which this test is known by in the test system. The name must be unique in the suite",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.test.description",
+        "path": "TestCases.suite.test.description",
+        "short": "Description of what this test does / why it was defined",
+        "definition": "Description of what this test does / why it was defined. This should explain to a tester what they should know when looking at failing test results",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "String"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.test.operation",
+        "path": "TestCases.suite.test.operation",
+        "short": "Operation that is executed during this test (per definition of runner)",
+        "definition": "A code that identifies the operation executed for this test. One of the codes defined in the definition of the runner",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.test.mode",
+        "path": "TestCases.suite.test.mode",
+        "short": "mode required to run this test",
+        "definition": "If this mode is not passed to the runner, then this test will not be run",
+        "meaningWhenMissing" : "If no modes are listed, the test is always executed",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "String"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.test.input",
+        "path": "TestCases.suite.test.input",
+        "short": "Resources used when executing this test",
+        "definition": "The resources used when executing this test. How exactly they are used depends on the definition of the runner ",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "String"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.test.input.file",
+        "path": "TestCases.suite.test.input.file",
+        "short": "A file containing a resource used as input to this test",
+        "definition": "A file containing a resource used in the tests in this suite",
+        "comment" : "Filename is relative to the folder/directory containing this TestCases",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "String"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.test.input.resource",
+        "path": "TestCases.suite.test.input.resource",
+        "short": "An inline resource used in the tests in this suite",
+        "definition": "An inline resource used in the tests in this suite. How exactly it is used depends on the definition of the runner ",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Resource"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.test.input.mode",
+        "path": "TestCases.suite.test.input.mode",
+        "short": "A mode that must be true for this resource to be used",
+        "definition": "If this mode is not passed to the runner, then this resource will not be used",
+        "meaningWhenMissing" : "If no modes are listed, the resource is always used",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.test.parameter",
+        "path": "TestCases.suite.test.parameter",
+        "short": "Parameter passed to the runner",
+        "definition": "A parameter passed to the runner when executing this test. Which parameters are valid, and how exactly the parameter is used are used depends on the definition of the runner",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "String"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.test.parameter.name",
+        "path": "TestCases.suite.test.parameter.name",
+        "short": "Name of parameter",
+        "definition": "Name of parameter",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "String"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.test.parameter.value[x]",
+        "path": "TestCases.suite.test.parameter.value[x]",
+        "short": "Value of this parameter",
+        "definition": "The value of the parameter",
+        "min": 1,
+        "max": "1",
+        "type": [
+          { "code": "string" },
+          { "code": "boolean" },
+          { "code": "integer" },
+          { "code": "uri" },
+          { "code": "Coding" },
+          { "code": "Quantity" }
+        ]
+      },
+      {
+        "id": "TestCases.suite.test.parameter.mode",
+        "path": "TestCases.suite.test.parameter.mode",
+        "short": "A mode that must be true for this parameter to be used",
+        "definition": "If this mode is not passed to the runner, then this parameter will not be used",
+        "meaningWhenMissing" : "If no modes are listed, the parameter is always used",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.test.output",
+        "path": "TestCases.suite.test.output",
+        "short": "Resources expected as output from this test (often Matchetypes)",
+        "definition": "Resources expected as output from this test. Often, but not always, these resource is a Matchetype resources. How exactly it is used depends on the definition of the runner",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "String"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.test.output.file",
+        "path": "TestCases.suite.test.output.file",
+        "short": "A file containing a resource expected from this test",
+        "definition": "A file containing a resource expected from this test",
+        "comment" : "Filename is relative to the folder/directory containing this TestCases",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "String"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.test.output.resource",
+        "path": "TestCases.suite.test.output.resource",
+        "short": "An inline resource expected from this test",
+        "definition": "An inline resource expected from this test.  ",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Resource"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.test.output.mode",
+        "path": "TestCases.suite.test.output.mode",
+        "short": "A mode that must be true for this resource to be considered",
+        "definition": "If this mode is not passed to the runner, then this resource will not be considered",
+        "meaningWhenMissing" : "If no modes are listed, the resource is always considered",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      }
+    ]
+  }
+}
