@@ -1,0 +1,27 @@
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "CDSHooksExtensions",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : 1
+  },{
+    "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-suppress-resourcetype",
+    "valueBoolean" : true
+  },{
+    "url" : "http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-extension-style",
+    "valueCode" : "named-elements"
+  }],
+  "url" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksExtensions",
+  "version" : "0.0.1",
+  "name" : "CDSHooksExtensions",
+  "title" : "CDSHooks Services Extensions",
+  "status" : "draft",
+  "experimental" : true,
+  "description" : "This is a concrete subtype of Element that has extensions (though the format in JSON is different)",
+  "kind" : "logical",
+  "fhirVersion" : "4.0.1",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Element",
+  "derivation" : "specialization",
+  "abstract"  : false,
+  "type" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksExtensions"
+}
