@@ -53,6 +53,41 @@
       <definition value="Additional bindings applied to bindable elements."/> 
       <min value="0"/> 
       <max value="*"/> 
+      <constraint>
+        <key value="ext-ab-1"/>
+        <severity value="warning"/>
+        <human value="Additional Bindings SHOULD have a key to allow a binding to be constrained."/>
+        <expression value="extension.where(url='key').exists()"/>
+      </constraint>
+    </element> 
+
+    <element id="Extension.extension:key">
+      <path value="Extension.extension"/> 
+      <sliceName value="key"/> 
+      <short value="Unique identifier so additional bindings to be matched across profiles"/> 
+      <min value="0"/> 
+      <max value="1"/> 
+      <type> 
+        <code value="Extension"/> 
+      </type> 
+    </element> 
+    <element id="Extension.extension:purpose.extension">
+      <path value="Extension.extension.extension"/> 
+      <max value="0"/> 
+    </element> 
+    <element id="Extension.extension:purpose.url">
+      <path value="Extension.extension.url"/> 
+      <type> 
+        <code value="uri"/> 
+      </type> 
+      <fixedUri value="purpose"/> 
+    </element> 
+    <element id="Extension.extension:purpose.value[x]">
+      <path value="Extension.extension.value[x]"/> 
+      <min value="1"/> 
+      <type> 
+        <code value="id"/> 
+      </type> 
     </element> 
 
     <element id="Extension.extension:purpose">

@@ -42,7 +42,7 @@
         "max": "*",
         "type": [
           {
-            "code": "BackboneElement"
+            "code": "Base"
           }
         ]
       },
@@ -55,7 +55,7 @@
         "max": "1",
         "type": [
           {
-            "code": "String"
+            "code": "string"
           }
         ]
       },
@@ -68,7 +68,7 @@
         "max": "1",
         "type": [
           {
-            "code": "String"
+            "code": "string"
           }
         ]
       },
@@ -81,7 +81,7 @@
         "max": "*",
         "type": [
           {
-            "code": "BackboneElement"
+            "code": "Base"
           }
         ]
       },
@@ -94,7 +94,7 @@
         "max": "1",
         "type": [
           {
-            "code": "String"
+            "code": "string"
           }
         ]
       },
@@ -107,7 +107,7 @@
         "max": "1",
         "type": [
           {
-            "code": "String"
+            "code": "string"
           }
         ]
       },
@@ -121,7 +121,7 @@
         "max": "1",
         "type": [
           {
-            "code": "String"
+            "code": "code"
           }
         ]
       },
@@ -134,29 +134,48 @@
         "max": "*",
         "type": [
           {
-            "code": "String"
+            "code": "Base"
+          }
+        ],
+        "constraint" : [{
+          "key" : "ts-2",
+          "severity" : "error",
+          "human" : "Either a file, or a resource, but not both",
+          "expression" : "file xor resource"
+        }]
+      },
+      {
+        "id": "TestCases.suite.setup.name",
+        "path": "TestCases.suite.setup.name",
+        "short": "A name for this resource (per runner definition)",
+        "definition": "A name that identifies this resource. The runner definition defines whether there must be a name, and what names there are",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
           }
         ]
       },
       {
         "id": "TestCases.suite.setup.file",
         "path": "TestCases.suite.setup.file",
-        "short": "A file containing a resource used in the tests in this suite",
-        "definition": "A file containing a resource used in the tests in this suite",
+        "short": "A file containing a resource used in the tests",
+        "definition": "A file containing a resource used in the tests",
         "comment" : "Filename is relative to the folder/directory containing this TestCases",
         "min": 0,
         "max": "1",
         "type": [
           {
-            "code": "String"
+            "code": "string"
           }
         ]
       },
       {
         "id": "TestCases.suite.setup.resource",
         "path": "TestCases.suite.setup.resource",
-        "short": "An inline resource used in the tests in this suite",
-        "definition": "An inline resource used in the tests in this suite. How exactly it is used depends on the definition of the runner ",
+        "short": "An inline resource used in the tests",
+        "definition": "An inline resource used in the tests. How exactly it is used depends on the definition of the runner.",
         "min": 0,
         "max": "1",
         "type": [
@@ -175,7 +194,7 @@
         "max": "1",
         "type": [
           {
-            "code": "Resource"
+            "code": "code"
           }
         ]
       },
@@ -188,7 +207,7 @@
         "max": "*",
         "type": [
           {
-            "code": "BackboneElement"
+            "code": "Base"
           }
         ]
       },
@@ -214,7 +233,7 @@
         "max": "1",
         "type": [
           {
-            "code": "String"
+            "code": "string"
           }
         ]
       },
@@ -241,61 +260,7 @@
         "max": "1",
         "type": [
           {
-            "code": "String"
-          }
-        ]
-      },
-      {
-        "id": "TestCases.suite.test.input",
-        "path": "TestCases.suite.test.input",
-        "short": "Resources used when executing this test",
-        "definition": "The resources used when executing this test. How exactly they are used depends on the definition of the runner ",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "String"
-          }
-        ]
-      },
-      {
-        "id": "TestCases.suite.test.input.file",
-        "path": "TestCases.suite.test.input.file",
-        "short": "A file containing a resource used as input to this test",
-        "definition": "A file containing a resource used in the tests in this suite",
-        "comment" : "Filename is relative to the folder/directory containing this TestCases",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "String"
-          }
-        ]
-      },
-      {
-        "id": "TestCases.suite.test.input.resource",
-        "path": "TestCases.suite.test.input.resource",
-        "short": "An inline resource used in the tests in this suite",
-        "definition": "An inline resource used in the tests in this suite. How exactly it is used depends on the definition of the runner ",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Resource"
-          }
-        ]
-      },
-      {
-        "id": "TestCases.suite.test.input.mode",
-        "path": "TestCases.suite.test.input.mode",
-        "short": "A mode that must be true for this resource to be used",
-        "definition": "If this mode is not passed to the runner, then this resource will not be used",
-        "meaningWhenMissing" : "If no modes are listed, the resource is always used",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "code"
+            "code": "string"
           }
         ]
       },
@@ -308,7 +273,7 @@
         "max": "*",
         "type": [
           {
-            "code": "String"
+            "code": "string"
           }
         ]
       },
@@ -321,7 +286,7 @@
         "max": "1",
         "type": [
           {
-            "code": "String"
+            "code": "string"
           }
         ]
       },
@@ -336,6 +301,8 @@
           { "code": "string" },
           { "code": "boolean" },
           { "code": "integer" },
+          { "code": "decimal" },
+          { "code": "dateTime" },
           { "code": "uri" },
           { "code": "Coding" },
           { "code": "Quantity" }
@@ -356,58 +323,22 @@
         ]
       },
       {
+        "id": "TestCases.suite.test.input",
+        "path": "TestCases.suite.test.input",
+        "short": "Resources used when executing this test",
+        "definition": "The resources used when executing this test. How exactly they are used depends on the definition of the runner ",
+        "min": 0,
+        "max": "*",
+        "contentReference" : "http://hl7.org/fhir/uv/application-feature/StructureDefinition/TestCases#TestCases.suite.setup"
+      },
+      {
         "id": "TestCases.suite.test.output",
         "path": "TestCases.suite.test.output",
         "short": "Resources expected as output from this test (often Matchetypes)",
         "definition": "Resources expected as output from this test. Often, but not always, these resource is a Matchetype resources. How exactly it is used depends on the definition of the runner",
         "min": 0,
         "max": "*",
-        "type": [
-          {
-            "code": "String"
-          }
-        ]
-      },
-      {
-        "id": "TestCases.suite.test.output.file",
-        "path": "TestCases.suite.test.output.file",
-        "short": "A file containing a resource expected from this test",
-        "definition": "A file containing a resource expected from this test",
-        "comment" : "Filename is relative to the folder/directory containing this TestCases",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "String"
-          }
-        ]
-      },
-      {
-        "id": "TestCases.suite.test.output.resource",
-        "path": "TestCases.suite.test.output.resource",
-        "short": "An inline resource expected from this test",
-        "definition": "An inline resource expected from this test.  ",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "Resource"
-          }
-        ]
-      },
-      {
-        "id": "TestCases.suite.test.output.mode",
-        "path": "TestCases.suite.test.output.mode",
-        "short": "A mode that must be true for this resource to be considered",
-        "definition": "If this mode is not passed to the runner, then this resource will not be considered",
-        "meaningWhenMissing" : "If no modes are listed, the resource is always considered",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "code"
-          }
-        ]
+        "contentReference" : "http://hl7.org/fhir/uv/application-feature/StructureDefinition/TestCases#TestCases.suite.setup"
       }
     ]
   }
