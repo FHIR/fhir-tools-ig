@@ -273,7 +273,7 @@
         "max": "*",
         "type": [
           {
-            "code": "string"
+            "code": "Base"
           }
         ]
       },
