@@ -26,6 +26,7 @@
     <concept>
       <code value="element-view-hints"/>
       <display value="Hints relating to the element View"/>
+      <definition value="Hints relating to the element View."/>
       <concept>
         <code value="element-view-ready"/>
         <display value="Element View Ready"/>

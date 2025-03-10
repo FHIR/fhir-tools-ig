@@ -18,26 +18,19 @@
   </jurisdiction>  
   <caseSensitive value="true"/>
   <content value="complete"/>
-  <property>
-    <code value="should-shall"/>
-    <description value="Codes with this property true must have shall or should appended in the grammar"/>
-    <type value="boolean"/>
-  </property>
-  <property>
-    <code value="expression"/>
-    <description value="Expression that expresses aggregate codes using the grammar"/>
-    <type value="string"/>
-  </property>
   <concept>
     <code value="create"/>
     <display value="create"/>
+    <definition value="Create this resource"/>
   </concept>
   <concept>
     <code value="update"/>
     <display value="update"/>
+    <definition value="Update this resource"/>
   </concept>
   <concept>
     <code value="delete"/>
     <display value="delete"/>
+    <definition value="Delete this resource"/>
   </concept>
 </CodeSystem>

@@ -1,0 +1,9 @@
+{
+  "package-id" : "hl7.fhir.uv.tools",
+  "version" : "0.4.0",
+  "desc" : "Routine updates - new extensions and IG parameters + add TestCases definition",
+  "path" : "http://hl7.org/fhir/tools/0.4.0",
+  "status" : "informative",
+  "sequence" : "Releases",
+  "mode" : "milestone"
+}

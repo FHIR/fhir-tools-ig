@@ -54,7 +54,7 @@
     </element> 
     <element id="Extension.extension">
       <path value="Extension.extension"/> 
-      <max value="1"/> 
+      <max value="2"/> 
     </element> 
     <element id="Extension.extension:name">
       <path value="Extension.extension"/> 

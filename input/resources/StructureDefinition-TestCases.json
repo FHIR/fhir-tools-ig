@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "TestCases",
-  "url": "http://hl7.org/fhir/uv/application-feature/StructureDefinition/TestCases",
+  "url": "http://hl7.org/fhir/tools/StructureDefinition/TestCases",
   "name": "TestCases",
   "title": "Test Cases",
   "status": "active",
@@ -9,7 +9,7 @@
   "fhirVersion": "5.0.0",
   "kind": "logical",
   "abstract": false,
-  "type": "http://hl7.org/fhir/uv/application-feature/StructureDefinition/TestCases",
+  "type": "http://hl7.org/fhir/tools/StructureDefinition/TestCases",
   "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Resource",
   "derivation": "specialization",
   "differential": {
@@ -37,11 +37,9 @@
             "key": "cnl-1",
             "severity": "warning",
             "human": "URL should not contain | or # - these characters make processing canonical references problematic",
-            "expression": "exists() implies matches('^[^|# ]+$')",
-            "source": "http://hl7.org/fhir/StructureDefinition/CodeSystem"
+            "expression": "exists() implies matches('^[^|# ]+$')"
           }
         ],
-        "mustSupport": false,
         "isModifier": false,
         "isSummary": true
       },
@@ -57,7 +55,6 @@
             "code": "string"
           }
         ],
-        "mustSupport": false,
         "isModifier": false,
         "isSummary": true
       },
@@ -73,7 +70,6 @@
             "code": "string"
           }
         ],
-        "mustSupport": false,
         "isModifier": false,
         "isSummary": true
       },
@@ -89,7 +85,6 @@
             "code": "markdown"
           }
         ],
-        "mustSupport": false,
         "isModifier": false,
         "isSummary": true
       },
@@ -398,20 +393,20 @@
       {
         "id": "TestCases.suite.test.input",
         "path": "TestCases.suite.test.input",
-        "short": "Resources used when executing this test",
-        "definition": "The resources used when executing this test. How exactly they are used depends on the definition of the runner ",
+        "short": "Resources used when executing this test (per runner definition)",
+        "definition": "The resources used when executing this test. How exactly they are used depends on the definition of the runner.",
         "min": 0,
         "max": "*",
-        "contentReference" : "http://hl7.org/fhir/uv/application-feature/StructureDefinition/TestCases#TestCases.suite.setup"
+        "contentReference" : "http://hl7.org/fhir/tools/StructureDefinition/TestCases#TestCases.suite.setup"
       },
       {
         "id": "TestCases.suite.test.output",
         "path": "TestCases.suite.test.output",
-        "short": "Resources expected as output from this test (often Matchetypes)",
-        "definition": "Resources expected as output from this test. Often, but not always, these resource is a Matchetype resources. How exactly it is used depends on the definition of the runner",
+        "short": "Resources expected as output from this test (per runner definition, often Matchetypes)",
+        "definition": "Resources expected as output from this test. Often, but not always, these resources are Matchetype resources. How exactly it is used depends on the definition of the runner",
         "min": 0,
         "max": "*",
-        "contentReference" : "http://hl7.org/fhir/uv/application-feature/StructureDefinition/TestCases#TestCases.suite.setup"
+        "contentReference" : "http://hl7.org/fhir/tools/StructureDefinition/TestCases#TestCases.suite.setup"
       }
     ]
   }
