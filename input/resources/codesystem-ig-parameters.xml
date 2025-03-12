@@ -510,7 +510,7 @@
   <concept>
     <code value="special-url-base"/>
     <display value="special-url-base"/>
-    <definition value="A common alternative base URL for multiple canonical resources in the IG"/>
+    <definition value="A common alternative base URL for multiple canonical resources in the IG. The entire Canonical URL must exactly match `{special-url-base}/{type}/{id}`"/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="false"/>
