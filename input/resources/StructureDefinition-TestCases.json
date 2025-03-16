@@ -194,8 +194,8 @@
         ]
       },
       {
-        "id": "TestCases.suite.setup",
-        "path": "TestCases.suite.setup",
+        "id": "TestCases.suite.resource",
+        "path": "TestCases.suite.resource",
         "short": "Resources used in the tests in this suite",
         "definition": "The resources used in the tests in this suite. How exactly they are used depends on the definition of the runner ",
         "min": 0,
@@ -213,8 +213,8 @@
         }]
       },
       {
-        "id": "TestCases.suite.setup.name",
-        "path": "TestCases.suite.setup.name",
+        "id": "TestCases.suite.resource.name",
+        "path": "TestCases.suite.resource.name",
         "short": "A name for this resource (per runner definition)",
         "definition": "A name that identifies this resource. The runner definition defines whether there must be a name, and what names there are",
         "min": 0,
@@ -226,8 +226,8 @@
         ]
       },
       {
-        "id": "TestCases.suite.setup.file",
-        "path": "TestCases.suite.setup.file",
+        "id": "TestCases.suite.resource.file",
+        "path": "TestCases.suite.resource.file",
         "short": "A file containing a resource used in the tests",
         "definition": "A file containing a resource used in the tests",
         "comment" : "Filename is relative to the folder/directory containing this TestCases",
@@ -240,8 +240,8 @@
         ]
       },
       {
-        "id": "TestCases.suite.setup.resource",
-        "path": "TestCases.suite.setup.resource",
+        "id": "TestCases.suite.resource.resource",
+        "path": "TestCases.suite.resource.resource",
         "short": "An inline resource used in the tests",
         "definition": "An inline resource used in the tests. How exactly it is used depends on the definition of the runner.",
         "min": 0,
@@ -253,11 +253,69 @@
         ]
       },
       {
-        "id": "TestCases.suite.setup.mode",
-        "path": "TestCases.suite.setup.mode",
+        "id": "TestCases.suite.resource.mode",
+        "path": "TestCases.suite.resource.mode",
         "short": "A mode that must be true for this resource to be used",
         "definition": "If this mode is not passed to the runner, then this resource will not be used",
-        "meaningWhenMissing" : "If no modes are listed, the resource is always used",
+        "meaningWhenMissing" : "If no modes are listed, the resource is always used, unless there is another entry with the same name that is selected by mode",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.parameter",
+        "path": "TestCases.suite.parameter",
+        "short": "Parameter passed to the runner",
+        "definition": "A parameter passed to the runner when executing tests. Which parameters are valid, and how exactly the parameter is used are used depends on the definition of the runner",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Base"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.parameter.name",
+        "path": "TestCases.suite.parameter.name",
+        "short": "Name of parameter",
+        "definition": "Name of parameter",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.parameter.value[x]",
+        "path": "TestCases.suite.parameter.value[x]",
+        "short": "Value of this parameter",
+        "definition": "The value of the parameter",
+        "min": 1,
+        "max": "1",
+        "type": [
+          { "code": "string" },
+          { "code": "boolean" },
+          { "code": "integer" },
+          { "code": "decimal" },
+          { "code": "dateTime" },
+          { "code": "uri" },
+          { "code": "Coding" },
+          { "code": "Quantity" }
+        ]
+      },
+      {
+        "id": "TestCases.suite.parameter.mode",
+        "path": "TestCases.suite.parameter.mode",
+        "short": "A mode that must be true for this parameter to be used",
+        "definition": "If this mode is not passed to the runner, then this parameter will not be used",
+        "meaningWhenMissing" : "If no modes are listed, the parameter is always used, unless there is a parameter with the same name that is selected by mode",
         "min": 0,
         "max": "1",
         "type": [
@@ -335,60 +393,7 @@
       {
         "id": "TestCases.suite.test.parameter",
         "path": "TestCases.suite.test.parameter",
-        "short": "Parameter passed to the runner",
-        "definition": "A parameter passed to the runner when executing this test. Which parameters are valid, and how exactly the parameter is used are used depends on the definition of the runner",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "Base"
-          }
-        ]
-      },
-      {
-        "id": "TestCases.suite.test.parameter.name",
-        "path": "TestCases.suite.test.parameter.name",
-        "short": "Name of parameter",
-        "definition": "Name of parameter",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "string"
-          }
-        ]
-      },
-      {
-        "id": "TestCases.suite.test.parameter.value[x]",
-        "path": "TestCases.suite.test.parameter.value[x]",
-        "short": "Value of this parameter",
-        "definition": "The value of the parameter",
-        "min": 1,
-        "max": "1",
-        "type": [
-          { "code": "string" },
-          { "code": "boolean" },
-          { "code": "integer" },
-          { "code": "decimal" },
-          { "code": "dateTime" },
-          { "code": "uri" },
-          { "code": "Coding" },
-          { "code": "Quantity" }
-        ]
-      },
-      {
-        "id": "TestCases.suite.test.parameter.mode",
-        "path": "TestCases.suite.test.parameter.mode",
-        "short": "A mode that must be true for this parameter to be used",
-        "definition": "If this mode is not passed to the runner, then this parameter will not be used",
-        "meaningWhenMissing" : "If no modes are listed, the parameter is always used",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "code"
-          }
-        ]
+        "contentReference" : "http://hl7.org/fhir/tools/StructureDefinition/TestCases#TestCases.suite.parameter"      
       },
       {
         "id": "TestCases.suite.test.input",
@@ -397,7 +402,7 @@
         "definition": "The resources used when executing this test. How exactly they are used depends on the definition of the runner.",
         "min": 0,
         "max": "*",
-        "contentReference" : "http://hl7.org/fhir/tools/StructureDefinition/TestCases#TestCases.suite.setup"
+        "contentReference" : "http://hl7.org/fhir/tools/StructureDefinition/TestCases#TestCases.suite.resource"
       },
       {
         "id": "TestCases.suite.test.output",
@@ -406,7 +411,7 @@
         "definition": "Resources expected as output from this test. Often, but not always, these resources are Matchetype resources. How exactly it is used depends on the definition of the runner",
         "min": 0,
         "max": "*",
-        "contentReference" : "http://hl7.org/fhir/tools/StructureDefinition/TestCases#TestCases.suite.setup"
+        "contentReference" : "http://hl7.org/fhir/tools/StructureDefinition/TestCases#TestCases.suite.resource"
       }
     ]
   }
