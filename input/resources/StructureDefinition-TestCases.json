@@ -393,6 +393,8 @@
       {
         "id": "TestCases.suite.test.parameter",
         "path": "TestCases.suite.test.parameter",
+        "min": 0,
+        "max": "*",
         "contentReference" : "http://hl7.org/fhir/tools/StructureDefinition/TestCases#TestCases.suite.parameter"      
       },
       {
