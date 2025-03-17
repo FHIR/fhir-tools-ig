@@ -1772,4 +1772,22 @@
       <valueString value="no profile test cases"/>
     </property>
   </concept>  
+
+  <concept>
+    <code value="pin-canonicals"/>
+    <display value="Pin Canonical Versions"/>
+    <definition value="Defines how the IG publisher treats unversioned canonical references. Possible values:&#10;&#10;* `pin-none`: no action is taken (default)&#10;* `pin-all`: any unversioned canonical references that can be resolved through the package dependencies will have |(version) appended to the canonical&#10;* `pin-multiples`: pinning the canonical reference will only happen if there is multiple versions found in the package dependencies"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="code"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="default behaviour is 'pin-none': no action"/>
+    </property>
+  </concept>  
 </CodeSystem>
