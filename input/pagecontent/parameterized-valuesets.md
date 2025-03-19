@@ -49,6 +49,7 @@ Parameterised ValueSets are defined in the same way as regular ValueSets, except
           "extension" :[{
             "url" : "http://hl7.org/fhir/StructureDefinition/cqf-expression",
             "valueExpression" : {
+              "language" : "text/fhirpath",
               "expression" : "%p-inactive"
             }
           }]
@@ -138,6 +139,7 @@ A primary use context for parameterised ValueSets is in Questionnaires, using th
       },{
         "name":"expression",
         "valueExpression": {
+            "language" : "text/fhirpath",
             "expression":"item(12).answer.valueString.join(',')"              
         }
       }
