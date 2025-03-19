@@ -133,6 +133,16 @@
         <reference value="StructureDefinition/select-by-map"/>
       </reference>
     </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/valueset-parameter"/>
+      </reference>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/binding-parameter"/>
+      </reference>
+    </resource>
 
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format">
@@ -166,6 +176,11 @@
       <page>
         <name value="page-factories.html"/>
         <title value="Page Factories"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <name value="parameterized-valuesets.html"/>
+        <title value="Parameterized ValueSets"/>
         <generation value="markdown"/>
       </page>
       <page>
