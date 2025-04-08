@@ -130,28 +130,28 @@ A primary use context for parameterised ValueSets is in Questionnaires, using th
   "linkId": "language_vsc.3",
   "text": "language (valueset canonical - no version)",
   "type": "choice",
-  "_answerValueSet":{
+  "_answerValueSet": {
     "extension": [{
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-parameter",
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-parameterX",
       "extension": [{
-        "name":"name",
+        "url":"name",
         "valueCode": "p-inactive"            
       },{
-        "name":"expression",
+        "url":"expression",
         "valueExpression": {
             "language" : "text/fhirpath",
-            "expression":"item(12).answer.valueString.join(',')"              
+            "expression":"item(1).answer.valueString.join(',')"              
         }
-      }
+      }]
     },{
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-parameter",
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-parameterX",
       "extension": [{
-        "name":"name",
-        "valueCode": "language"            
+        "url":"name",
+        "valueCode": "displayLanguage"            
       },{
-        "name":"expression",
+        "url":"expression",
         "valueString": "en-AU"
-      }
+      }]
     }]
   },
   "answerValueSet": "http://hl7.org/fhir/ValueSet/languages"
