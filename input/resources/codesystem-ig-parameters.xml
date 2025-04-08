@@ -1790,4 +1790,22 @@
       <valueString value="default behaviour is 'pin-none': no action"/>
     </property>
   </concept>  
+  
+  <concept>
+    <code value="r5-bundle-relative-reference-policy"/>
+    <display value="R5 Bundle Relative Reference Policy"/>
+    <definition value="Defines when the validation engine in the publisher applies the revised resolution for relative reference as described in the R5 specification. Possible values:&#10;&#10;* `default`: apply in R5+ (default)&#10;* `never`: never apply the revised algorithm &#10;* `always`: the new algorithm is applied irrespective of the version of the IG"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="code"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="default behaviour is 'default': apply in R5+"/>
+    </property>
+  </concept>  
 </CodeSystem>
