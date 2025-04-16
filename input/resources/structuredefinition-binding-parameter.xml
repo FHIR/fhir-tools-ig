@@ -16,7 +16,7 @@
       <value value="http://hl7.org/Special/committees/fhir-i"/>
     </telecom>
   </contact>
-  <description value="This extension declares a parameter that is passed along with an $expand or $validate-code invocation, and where the value comes from. See [Parameterised ValueSets](parameterised-valuesets.html) for further details."/>
+  <description value="This extension declares a parameter that is passed along with an $expand or $validate-code invocation, and where the value comes from. See [Parameterised ValueSets](parameterized-valuesets.html) for further details."/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -41,7 +41,7 @@
    <element id="Extension">
       <path value="Extension"/> 
       <short value="ValueSet parameter declaration"/> 
-      <definition value="This extension declares a parameter that is passed along with an $expand or $validate-code invocation, and where the value comes from. See [Parameterised ValueSets](parameterised-valuesets.html) for further details."/> 
+      <definition value="This extension declares a parameter that is passed along with an $expand or $validate-code invocation, and where the value comes from. See [Parameterised ValueSets](parameterized-valuesets.html) for further details."/> 
     </element> 
 
     <element id="Extension.extension:name">
@@ -71,7 +71,6 @@
       <min value="1"/> 
       <type> 
         <code value="code"/> 
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/ConceptMap"/> 
       </type> 
     </element> 
 

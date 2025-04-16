@@ -512,9 +512,9 @@
         <td>for defining binding parameters when using parameterized value sets
         </td>
         <td>
-          <a href="http://hl7.org/fhir/R5/Questionnaire.html">Questionnaire.item.answerValueSet</a>
+          <a href="http://hl7.org/fhir/R5/questionnaire.html">Questionnaire.item.answerValueSet</a>
           and
-          <a href="http://hl7.org/fhir/R5/StructureDefinition.html">ElementDefinition.binding</a>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html">ElementDefinition.binding</a>
         </td>
       </tr>
 

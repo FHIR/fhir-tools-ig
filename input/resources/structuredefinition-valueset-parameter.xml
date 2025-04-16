@@ -16,7 +16,7 @@
       <value value="http://hl7.org/Special/committees/fhir-i"/>
     </telecom>
   </contact>
-  <description value="This extension declares a parameter that can be passed along with an $expand or $validate-code invocation to further narrow the value set. See [Parameterised ValueSets](parameterised-valuesets.html) for further details."/>
+  <description value="This extension declares a parameter that can be passed along with an $expand or $validate-code invocation to further narrow the value set. See [Parameterised ValueSets](parameterized-valuesets.html) for further details."/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -37,7 +37,7 @@
    <element id="Extension">
       <path value="Extension"/> 
       <short value="ValueSet parameter declaration"/> 
-      <definition value="This extension declares a parameter that can be passed along with an $expand or $validate-code invocation to further narrow the value set. See [Parameterised ValueSets](parameterised-valuesets.html) for further details."/> 
+      <definition value="This extension declares a parameter that can be passed along with an $expand or $validate-code invocation to further narrow the value set. See [Parameterised ValueSets](parameterized-valuesets.html) for further details."/> 
     </element> 
 
     <element id="Extension.extension:name">
