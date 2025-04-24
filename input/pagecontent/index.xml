@@ -664,7 +664,7 @@
   "attributes" : true,
   "no-inner-classes" : true,
   "classes" : ["CDSHookContext", "CDSHookOrderSelectContext", "CDSHookOrderSignContext", "CDSHookPatientViewContext",
-     "CDSHooksRequest", "CDSHooksResponse", "CDSHooksElement", "CDSHooksExtensions", "CDSHooksServices", CDSHooksExtension]
+     "CDSHooksRequest", "CDSHooksResponse", "CDSHooksElement", "CDSHooksExtensions", "CDSHooksServices"]
 }
 %}
 -->

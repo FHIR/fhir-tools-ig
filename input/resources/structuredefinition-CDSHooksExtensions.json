@@ -40,12 +40,12 @@
         "valueCode" : "named-elements"
       }],
       "path" : "CDSHooksExtensions.extension",
-      "short" : "An extension of type CDSHooksExtension",
-      "definition" : "An extension where the name is defined by the extension definition, and the extension definition is of type CDSHooksExtension",
+      "short" : "An extension of any type",
+      "definition" : "An extension where the name is defined by the extension definition, and the extension definition is of any type (including primitives, though the 'id' element cannot be represented for primitives)",
       "min" : 0,
       "max" : "*",
       "type" : [{
-        "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksExtension",
+        "code" : "http://hl7.org/fhir/StructureDefinition/Base",
       }]
     }]
   }
