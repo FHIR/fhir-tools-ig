@@ -27,16 +27,26 @@
   "differential" : {
     "element" : [{
       "id" : "CDSHooksExtensions",
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-extension-style",
-        "valueCode" : "named-elements"
-      }],
       "path" : "CDSHooksExtensions",
       "short" : "Object that has Named Extension Properties",
       "definition" : "A JSON object that has properties where the names are defined by the extension definitions",
       "comment" : "Extension structures SHOULD use a strategy for naming that ensures global uniqueness, such as reverse-domain-name notation, e.g. com.cds-hooks.sandbox.myextension-practitionerspecialty. How to handle complex extensions (objects) is not defined",
       "min" : 0,
       "max" : "1"
+    },{
+      "id" : "CDSHooksExtensions.extension",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-extension-style",
+        "valueCode" : "named-elements"
+      }],
+      "path" : "CDSHooksExtensions.extension",
+      "short" : "An extension of type CDSHooksExtension",
+      "definition" : "An extension where the name is defined by the extension definition, and the extension definition is of type CDSHooksExtension",
+      "min" : 0,
+      "max" : "*",
+      "type" : [{
+        "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksExtension",
+      }]
     }]
   }
 }
