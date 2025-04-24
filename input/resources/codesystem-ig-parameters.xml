@@ -1808,4 +1808,22 @@
       <valueString value="default behaviour is 'default': apply in R5+"/>
     </property>
   </concept>  
+
+  <concept>
+    <code value="generate-uml"/>
+    <display value="Generate UML Setting"/>
+    <definition value="Control whether UML Diagrams are generated for StructureDefinitions.. Possible values:&#10;&#10;* `none`: Do not generate any UML (default)&#10;* `source`: generate when a source diagram is found &#10;* `all`: Generate a UML diagram always"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="code"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="default behaviour is 'none': No UML Generation"/>
+    </property>
+  </concept>  
 </CodeSystem>
