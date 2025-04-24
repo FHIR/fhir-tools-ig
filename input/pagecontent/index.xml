@@ -658,7 +658,8 @@
   <a name="updates"></a>
   <h3>CDS Hooks Summary</h3>
 
-{% class-diagram {
+<!--
+{!% class-diagram {
   "id" : "cdshooks",
   "attributes" : true,
   "no-inner-classes" : true,
@@ -666,6 +667,7 @@
      "CDSHooksRequest", "CDSHooksResponse", "CDSHooksElement", "CDSHooksExtensions", "CDSHooksServices"]
 }
 %}
+-->
   <a name="updates"></a>
   <h3>Tooling IG Lifecycle</h3>
   <p>
