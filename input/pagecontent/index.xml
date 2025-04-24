@@ -656,6 +656,17 @@
   </table>
 
   <a name="updates"></a>
+  <h3>CDS Hooks Summary</h3>
+
+{% class-diagram {
+  "id" : "cdshooks",
+  "attributes" : true,
+  "no-inner-classes" : true,
+  "classes" : ["CDSHookContext", "CDSHookOrderSelectContext", "CDSHookOrderSignContext", "CDSHookPatientViewContext",
+     "CDSHooksRequest", "CDSHooksResponse", "CDSHooksElement", "CDSHooksExtensions", "CDSHooksServices"]
+}
+%}
+  <a name="updates"></a>
   <h3>Tooling IG Lifecycle</h3>
   <p>
   This IG is not subject to formal balloting. It is maintained 

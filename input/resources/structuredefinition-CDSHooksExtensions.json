@@ -17,11 +17,26 @@
   "title" : "CDSHooks Services Extensions",
   "status" : "draft",
   "experimental" : true,
-  "description" : "This is a concrete subtype of Element that has extensions (though the format in JSON is different)",
+  "description" : "This is a concrete subtype of Base that has extensions (though the format in JSON is different)",
   "kind" : "logical",
   "fhirVersion" : "4.0.1",
-  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Element",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Base",
   "derivation" : "specialization",
   "abstract"  : false,
-  "type" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksExtensions"
+  "type" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksExtensions",
+  "differential" : {
+    "element" : [{
+      "id" : "CDSHooksExtensions",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-extension-style",
+        "valueCode" : "named-elements"
+      }],
+      "path" : "CDSHooksExtensions",
+      "short" : "Object that has Named Extension Properties",
+      "definition" : "A JSON object that has properties where the names are defined by the extension definitions",
+      "comment" : "Extension structures SHOULD use a strategy for naming that ensures global uniqueness, such as reverse-domain-name notation, e.g. com.cds-hooks.sandbox.myextension-practitionerspecialty. How to handle complex extensions (objects) is not defined",
+      "min" : 0,
+      "max" : "1"
+    }]
+  }
 }
