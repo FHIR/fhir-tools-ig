@@ -45,7 +45,7 @@
       "min" : 0,
       "max" : "*",
       "type" : [{
-        "code" : "http://hl7.org/fhir/StructureDefinition/Base",
+        "code" : "Base"
       }]
     }]
   }
