@@ -517,6 +517,16 @@
           <a href="http://hl7.org/fhir/R5/structuredefinition.html">ElementDefinition.binding</a>
         </td>
       </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-snapshot-source.html" title="Tracks which structure first defined an extension found in the snapshot">snapshot-source</a>
+        </td>
+        <td>Tracks which structure first defined an extension found in the snapshot
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/extensibility.html">Extension in StructureDefinition.snapshot tree</a>
+        </td>
+      </tr>
 
       <tr>
         <td colspan="3" style="background-color: #eeeeee">
