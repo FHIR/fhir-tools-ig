@@ -35,11 +35,7 @@
         "comment" : "Extension structures SHOULD use a strategy for naming that ensures global uniqueness, such as reverse-domain-name notation, e.g. com.cds-hooks.sandbox.myextension-practitionerspecialty. How to handle complex extensions (objects) is not defined",
         "min" : 0,
         "max" : "1",
-        "type" : [{ "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksExtensions"}],
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-extension-style",
-          "valueCode" : "named-elements"
-        }]
+        "type" : [{ "code" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHooksExtensions"}]
       }
     ]
   }
