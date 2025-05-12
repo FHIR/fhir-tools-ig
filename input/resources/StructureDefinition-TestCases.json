@@ -156,6 +156,64 @@
             "code": "string"
           }
         ]
+      },      {
+        "id": "TestCases.parameter",
+        "path": "TestCases.parameter",
+        "short": "Parameter passed to the runner",
+        "definition": "A parameter passed to the runner when executing tests. Which parameters are valid, and how exactly the parameter is used are used depends on the definition of the runner",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Base"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.parameter.name",
+        "path": "TestCases.parameter.name",
+        "short": "Name of parameter",
+        "definition": "Name of parameter",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.parameter.value[x]",
+        "path": "TestCases.parameter.value[x]",
+        "short": "Value of this parameter",
+        "definition": "The value of the parameter. If the value is an Expression, the definition of the runner describes what kind of expressions are allowed and the features/capabilities that they can make use of",
+        "min": 1,
+        "max": "1",
+        "type": [
+          { "code": "string" },
+          { "code": "boolean" },
+          { "code": "integer" },
+          { "code": "decimal" },
+          { "code": "dateTime" },
+          { "code": "uri" },
+          { "code": "Coding" },
+          { "code": "Quantity" },
+          { "code": "Expression" }
+        ]
+      },
+      {
+        "id": "TestCases.parameter.mode",
+        "path": "TestCases.parameter.mode",
+        "short": "A mode that must be true for this parameter to be used",
+        "definition": "If this mode is not passed to the runner, then this parameter will not be used",
+        "meaningWhenMissing" : "If no modes are listed, the parameter is always used, unless there is a parameter with the same name that is selected by mode",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
       },
       {
         "id": "TestCases.scope",
@@ -372,56 +430,7 @@
         "definition": "A parameter passed to the runner when executing tests. Which parameters are valid, and how exactly the parameter is used are used depends on the definition of the runner",
         "min": 0,
         "max": "*",
-        "type": [
-          {
-            "code": "Base"
-          }
-        ]
-      },
-      {
-        "id": "TestCases.suite.parameter.name",
-        "path": "TestCases.suite.parameter.name",
-        "short": "Name of parameter",
-        "definition": "Name of parameter",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "string"
-          }
-        ]
-      },
-      {
-        "id": "TestCases.suite.parameter.value[x]",
-        "path": "TestCases.suite.parameter.value[x]",
-        "short": "Value of this parameter",
-        "definition": "The value of the parameter",
-        "min": 1,
-        "max": "1",
-        "type": [
-          { "code": "string" },
-          { "code": "boolean" },
-          { "code": "integer" },
-          { "code": "decimal" },
-          { "code": "dateTime" },
-          { "code": "uri" },
-          { "code": "Coding" },
-          { "code": "Quantity" }
-        ]
-      },
-      {
-        "id": "TestCases.suite.parameter.mode",
-        "path": "TestCases.suite.parameter.mode",
-        "short": "A mode that must be true for this parameter to be used",
-        "definition": "If this mode is not passed to the runner, then this parameter will not be used",
-        "meaningWhenMissing" : "If no modes are listed, the parameter is always used, unless there is a parameter with the same name that is selected by mode",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "code"
-          }
-        ]
+        "contentReference" : "http://hl7.org/fhir/tools/StructureDefinition/TestCases#TestCases.parameter"      
       },
       {
         "id": "TestCases.suite.test",
@@ -494,7 +503,7 @@
         "path": "TestCases.suite.test.parameter",
         "min": 0,
         "max": "*",
-        "contentReference" : "http://hl7.org/fhir/tools/StructureDefinition/TestCases#TestCases.suite.parameter"      
+        "contentReference" : "http://hl7.org/fhir/tools/StructureDefinition/TestCases#TestCases.parameter"      
       },
       {
         "id": "TestCases.suite.test.input",
