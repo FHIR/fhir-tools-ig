@@ -89,6 +89,88 @@
         "isSummary": true
       },
       {
+        "id": "TestCases.scope",
+        "path": "TestCases.scope",
+        "short": "The scope - what these test cases are testing",
+        "definition": "The scope indicates what kind of systems these test cases are intended to test",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Base"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.scope.reference",
+        "path": "TestCases.scope.reference",
+        "short": "A reference to what is being tested",
+        "definition": "A reference to what is being tested",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "canonical",
+            "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/ActorDefinition",
+               "http://hl7.org/fhir/StructureDefinition/ImplementationGuide",
+               "http://hl7.org/fhir/StructureDefinition/StructureDefinition"]
+          }
+        ]
+      },
+      {
+        "id": "TestCases.scope.description",
+        "path": "TestCases.scope.description",
+        "short": "Description of what the scope is exists / what is being tested",
+        "definition": "Description of what the scope is does / what is being tested",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.dependency",
+        "path": "TestCases.dependency",
+        "short": "Test cases that must be passed before these test cases are meaningful to execute",
+        "definition": "Another set of test cases that must be passed before these test cases are meaningful to execute. These test cases prove functionality that these tests require to execute",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Base"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.dependency.reference",
+        "path": "TestCases.dependency.reference",
+        "short": "The Test Cases",
+        "definition": "The test cases.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "canonical",
+            "targetProfile" : ["http://hl7.org/fhir/tools/StructureDefinition/TestCases"]
+          }
+        ]
+      },
+      {
+        "id": "TestCases.dependency.description",
+        "path": "TestCases.dependency.description",
+        "short": "Description of what the dependency exists / why it was defined",
+        "definition": "Description of what this mode does / why it was defined. This should explain to a tester why the ",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
         "id": "TestCases.runner",
         "path": "TestCases.runner",
         "short": "URL Documentation for a runner that executes these tests",
@@ -98,23 +180,6 @@
         "type": [
           {
             "code": "url"
-          }
-        ]
-      },
-      {
-        "id": "TestCases.script[x]",
-        "path": "TestCases.script[x]",
-        "short": "A script that guides the execution of the test (for some runners)",
-        "definition": "A script in a format understood by the runner that provides additional details about the execution of the test cases. The script provided depends on the definition of the runner; some runners do not cater for scripts, while others need a script.",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Expression"
-          },
-          {
-            "code": "canonical",
-            "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/Library"]
           }
         ]
       },
@@ -212,88 +277,6 @@
         "type": [
           {
             "code": "code"
-          }
-        ]
-      },
-      {
-        "id": "TestCases.scope",
-        "path": "TestCases.scope",
-        "short": "The scope - what these test cases are testing",
-        "definition": "The scope indicates what kind of systems these test cases are intended to test",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "Base"
-          }
-        ]
-      },
-      {
-        "id": "TestCases.scope.reference",
-        "path": "TestCases.scope.reference",
-        "short": "A reference to what is being tested",
-        "definition": "A reference to what is being tested",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "canonical",
-            "targetProfile" : ["http://hl7.org/fhir/StructureDefinition/ActorDefinition",
-               "http://hl7.org/fhir/StructureDefinition/ImplementationGuide",
-               "http://hl7.org/fhir/StructureDefinition/StructureDefinition"]
-          }
-        ]
-      },
-      {
-        "id": "TestCases.scope.description",
-        "path": "TestCases.scope.description",
-        "short": "Description of what the scope is exists / what is being tested",
-        "definition": "Description of what the scope is does / what is being tested",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "string"
-          }
-        ]
-      },
-      {
-        "id": "TestCases.dependency",
-        "path": "TestCases.dependency",
-        "short": "Test cases that must be passed before these test cases are meaningful to execute",
-        "definition": "Another set of test cases that must be passed before these test cases are meaningful to execute. These test cases prove functionality that these tests require to execute",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "Base"
-          }
-        ]
-      },
-      {
-        "id": "TestCases.dependency.reference",
-        "path": "TestCases.dependency.reference",
-        "short": "The Test Cases",
-        "definition": "The test cases.",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "canonical",
-            "targetProfile" : ["http://hl7.org/fhir/tools/StructureDefinition/TestCases"]
-          }
-        ]
-      },
-      {
-        "id": "TestCases.dependency.description",
-        "path": "TestCases.dependency.description",
-        "short": "Description of what the dependency exists / why it was defined",
-        "definition": "Description of what this mode does / why it was defined. This should explain to a tester why the ",
-        "min": 0,
-        "max": "1",
-        "type": [
-          {
-            "code": "string"
           }
         ]
       },
@@ -614,6 +597,21 @@
         "min": 0,
         "max": "*",
         "contentReference": "http://hl7.org/fhir/tools/StructureDefinition/TestCases#TestCases.suite"
+      },
+      {
+        "id": "TestCases.suite.cases",
+        "path": "TestCases.suite.cases",
+        "short": "A nested set of test cases",
+        "definition": "A nested set of test cases. Typically, the runner must be the same in the nested test cases",
+        "min": 0,
+        "max": "*",
+        "type": [{
+          "code" : "Reference",
+          "targetProfile" : ["http://hl7.org/fhir/tools/StructureDefinition/TestCases"]
+        },{
+          "code" : "canonical",
+          "targetProfile" : ["http://hl7.org/fhir/tools/StructureDefinition/TestCases"]
+        }]
       }
     ]
   }
