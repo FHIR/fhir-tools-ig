@@ -334,8 +334,8 @@
         ]
       },
       {
-        "id": "TestCases.suite.resource",
-        "path": "TestCases.suite.resource",
+        "id": "TestCases.suite.data",
+        "path": "TestCases.suite.data",
         "short": "Resources used in the tests in this suite",
         "definition": "The resources used in the tests in this suite. How exactly they are used depends on the definition of the runner ",
         "min": 0,
@@ -353,8 +353,8 @@
         }]
       },
       {
-        "id": "TestCases.suite.resource.name",
-        "path": "TestCases.suite.resource.name",
+        "id": "TestCases.suite.data.name",
+        "path": "TestCases.suite.data.name",
         "short": "A name for this resource (per runner definition)",
         "definition": "A name that identifies this resource. The runner definition defines whether there must be a name, and what names there are",
         "min": 0,
@@ -366,8 +366,8 @@
         ]
       },
       {
-        "id": "TestCases.suite.resource.file",
-        "path": "TestCases.suite.resource.file",
+        "id": "TestCases.suite.data.file",
+        "path": "TestCases.suite.data.file",
         "short": "A file containing a resource used in the tests",
         "definition": "A file containing a resource used in the tests",
         "comment" : "Filename is relative to the folder/directory containing this TestCases",
@@ -380,8 +380,8 @@
         ]
       },
       {
-        "id": "TestCases.suite.resource.resource",
-        "path": "TestCases.suite.resource.resource",
+        "id": "TestCases.suite.data.resource",
+        "path": "TestCases.suite.data.resource",
         "short": "An inline resource used in the tests",
         "definition": "An inline resource used in the tests. How exactly it is used depends on the definition of the runner.",
         "min": 0,
@@ -393,8 +393,8 @@
         ]
       },
       {
-        "id": "TestCases.suite.resource.mode",
-        "path": "TestCases.suite.resource.mode",
+        "id": "TestCases.suite.data.mode",
+        "path": "TestCases.suite.data.mode",
         "short": "A mode that must be true for this resource to be used",
         "definition": "If this mode is not passed to the runner, then this resource will not be used",
         "meaningWhenMissing" : "If no modes are listed, the resource is always used, unless there is another entry with the same name that is selected by mode",
@@ -495,7 +495,7 @@
         "definition": "The resources used when executing this test. How exactly they are used depends on the definition of the runner.",
         "min": 0,
         "max": "*",
-        "contentReference" : "http://hl7.org/fhir/tools/StructureDefinition/TestCases#TestCases.suite.resource"
+        "contentReference" : "http://hl7.org/fhir/tools/StructureDefinition/TestCases#TestCases.suite.data"
       },
       {
         "id": "TestCases.suite.test.output",
@@ -504,7 +504,7 @@
         "definition": "Resources expected as output from this test. Often, but not always, these resources are Matchetype resources. How exactly it is used depends on the definition of the runner. How exactly it is used depends on the definition of the runner, but the expectation is that these are the expected output, to which the actual output is compared",
         "min": 0,
         "max": "*",
-        "contentReference" : "http://hl7.org/fhir/tools/StructureDefinition/TestCases#TestCases.suite.resource"
+        "contentReference" : "http://hl7.org/fhir/tools/StructureDefinition/TestCases#TestCases.suite.data"
       },
       {
         "id": "TestCases.suite.test.assertion",
@@ -586,6 +586,20 @@
         "type": [
           {
             "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "TestCases.suite.test.assertion.mode",
+        "path": "TestCases.suite.test.assertion.mode",
+        "short": "A mode that must be true for this assertion to apply",
+        "definition": "If this mode is not passed to the runner, then this assertion will not be used",
+        "meaningWhenMissing" : "If no modes are listed, the assertion is always used, unless there is another assertion with the same name that is selected by mode",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
           }
         ]
       },
