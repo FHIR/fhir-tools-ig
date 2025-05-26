@@ -1123,6 +1123,24 @@
   </concept>
 
   <concept>
+    <code value="excludeflags"/>
+    <display value="excludeflags"/>
+    <definition value="Cause the publisher to exclude the display of flags in the language drop-down."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
     <code value="fmm-definition"/>
     <display value="fmm-definition"/>
     <definition value="Indicates the URL that provides a definition for the maturity levels declared in the current IG."/>
