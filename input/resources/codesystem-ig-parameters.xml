@@ -1826,4 +1826,25 @@
       <valueString value="default behaviour is 'none': No UML Generation"/>
     </property>
   </concept>  
+
+  <concept>
+    <code value="no-cibuild-issues"/>
+    <display value="Suppress CIBuild Warnings"/>
+    <definition value="For integrity and security reasons, the ci-build enforces some requirements about the generated HTML, and the IG publisher gives warnings about these for all IGs. This parameter is used to turn those warnings, for IGs that will never be on the ci-build"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="note issues that will prevent the IG running on the ci-build"/>
+    </property>
+  </concept>  
+
+  
+
 </CodeSystem>
