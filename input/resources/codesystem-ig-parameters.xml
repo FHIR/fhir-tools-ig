@@ -1141,6 +1141,24 @@
   </concept>
 
   <concept>
+    <code value="openehr"/>
+    <display value="openehr"/>
+    <definition value="Cause the publisher to include an Open EHR-like view of structure definitions."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
     <code value="fmm-definition"/>
     <display value="fmm-definition"/>
     <definition value="Indicates the URL that provides a definition for the maturity levels declared in the current IG."/>
