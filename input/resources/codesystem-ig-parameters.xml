@@ -1881,6 +1881,111 @@
     </property>
   </concept>  
 
+  <concept>
+    <code value="wantGen-json"/>
+    <display value="Want to generate JSON"/>
+    <definition value="Allows overriding to prohibit generating JSON files"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="JSON will be created"/>
+    </property>
+  </concept>
+  <concept>
+    <code value="wantGen-json-html"/>
+    <display value="Want to generate JSON HTML"/>
+    <definition value="Allows overriding to prohibit generating JSON HTML files"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="JSON HTML will be created"/>
+    </property>
+  </concept>  
+  
+  <concept>
+    <code value="wantGen-ttl"/>
+    <display value="Want to generate TTL"/>
+    <definition value="Allows overriding to prohibit generating TTL files"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="TTL will be created"/>
+    </property>
+  </concept>
+  <concept>
+    <code value="wantGen-ttl-html"/>
+    <display value="Want to generate TTL HTML"/>
+    <definition value="Allows overriding to prohibit generating TTL HTML files"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="TTL HTML will be created"/>
+    </property>
+  </concept>  
+  
+  <concept>
+    <code value="wantGen-xml"/>
+    <display value="Want to generate XML"/>
+    <definition value="Allows overriding to prohibit generating XML files"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="XML will be created"/>
+    </property>
+  </concept>
+  <concept>
+    <code value="wantGen-xml-html"/>
+    <display value="Want to generate XML HTML"/>
+    <definition value="Allows overriding to prohibit generating XML HTML files"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="XML HTML will be created"/>
+    </property>
+  </concept>  
+  
   
 
 </CodeSystem>
