@@ -1808,7 +1808,25 @@
       <valueString value="default behaviour is 'pin-none': no action"/>
     </property>
   </concept>  
-  
+
+  <concept>
+    <code value="pin-manifest"/>
+    <display value="Manifest to use when pinning"/>
+    <definition value="If this parameter is present, then pinning is redirected to a manifest rather than being performed on the canonical reference itself. The value is the ID of a parameters resource"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="id"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="pinning happens in the canonicals directly"/>
+    </property>
+  </concept>  
+
   <concept>
     <code value="r5-bundle-relative-reference-policy"/>
     <display value="R5 Bundle Relative Reference Policy"/>
@@ -1863,6 +1881,23 @@
     </property>
   </concept>  
 
-  
+  <concept>
+    <code value="suppress-mappings"/>
+    <display value="Suppress an inherited mapping"/>
+    <definition value="By default, snapshots inherit mappings, and the mappings are carried through. But many of them aren't useful, or desired, and can be suppressed by adding this parameter. The value is the URI found in StructureDefinition.mapping.uri. The special value '*' suppresses most of the mappings in the main specification"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="uri"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="no mappings are suppressed (though the extension http://hl7.org/fhir/StructureDefinition/elementdefinition-suppress can still be used)"/>
+    </property>
+  </concept>  
+
 
 </CodeSystem>
