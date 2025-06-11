@@ -1577,7 +1577,7 @@
  <concept>
     <code value="i18n-lang"/>
     <display value="i18n-lang"/>
-    <definition value="A language to translate the IG into. note that i18n-default-lang is automatically a language, and doesn't need to be restated"/>
+    <definition value="A language to translate the IG into as any valid language code (mostly a 2 letter language code, or combination language + region) (e.g. `fr`, `nl`, `de`). Note that i18n-default-lang is automatically a language, and doesn't need to be restated"/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="true"/>
