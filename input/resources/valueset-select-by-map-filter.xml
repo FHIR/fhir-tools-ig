@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="select-by-map-filter"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="3"/>
+  </extension>
   <url value="http://hl7.org/fhir/tools/ValueSet/select-by-map-filter"/>
   <name value="SelectByMapFilterCodesVS"/>
   <title value="SelectByMap Filter Codes (VS)"/>
   <status value="active"/>
-  <experimental value="true"/>
+  <experimental value="false"/>
   <description value="select-by-map filter Codes - from either R4 (or previous) or R5"/>
   <jurisdiction>
     <coding>

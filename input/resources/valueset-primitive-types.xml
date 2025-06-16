@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="primitive-types"/>
+  <url value="http://hl7.org/fhir/tools/ValueSet/primitive-types"/>
+  <name value="PrimitiveTypesVS"/>
+  <title value="Primitive Types ValueSet"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <description value="List of primitive FHIR Types"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/CodeSystem/fhir-types"/>
+      <concept>
+        <code value="base64Binary"/>
+      </concept>
+      <concept>
+        <code value="boolean"/>
+      </concept>
+      <concept>
+        <code value="canonical"/>
+      </concept>
+      <concept>
+        <code value="code"/>
+      </concept>
+      <concept>
+        <code value="date"/>
+      </concept>
+      <concept>
+        <code value="dateTime"/>
+      </concept>
+      <concept>
+        <code value="decimal"/>
+      </concept>
+      <concept>
+        <code value="id"/>
+      </concept>
+      <concept>
+        <code value="instant"/>
+      </concept>
+      <concept>
+        <code value="integer"/>
+      </concept>
+      <concept>
+        <code value="integer64"/>
+      </concept>
+      <concept>
+        <code value="markdown"/>
+      </concept>
+      <concept>
+        <code value="oid"/>
+      </concept>
+      <concept>
+        <code value="string"/>
+      </concept>
+      <concept>
+        <code value="positiveInt"/>
+      </concept>
+      <concept>
+        <code value="time"/>
+      </concept>
+      <concept>
+        <code value="unsignedInt"/>
+      </concept>
+      <concept>
+        <code value="uri"/>
+      </concept>
+      <concept>
+        <code value="url"/>
+      </concept>
+      <concept>
+        <code value="uuid"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>
+
+

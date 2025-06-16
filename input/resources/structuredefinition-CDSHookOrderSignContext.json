@@ -3,7 +3,10 @@
   "id" : "CDSHookOrderSignContext",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
-    "valueInteger" : 2
+    "valueInteger" : 1
+  },{
+    "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-suppress-resourcetype",
+    "valueBoolean" : true
   }],
   "url" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookOrderSignContext",
   "version" : "0.0.1",

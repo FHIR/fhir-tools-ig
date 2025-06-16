@@ -16,7 +16,7 @@
       <value value="http://hl7.org/Special/committees/fhir-i"/>
     </telecom>
   </contact>
-  <description value="An implementation guide parameter defined by the HL7 IG Publisher. This is used in R4 IGs where the binding to paramater name prevented the use of additional parameters"/>
+  <description value="An implementation guide parameter defined by the HL7 IG Publisher. This is used in R4 IGs where the binding to parameter name prevented the use of additional parameters"/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>

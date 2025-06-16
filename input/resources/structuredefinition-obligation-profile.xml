@@ -2,13 +2,13 @@
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
   <id value="obligation-profile"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
-    <valueInteger value="2"/>
+    <valueInteger value="4"/>
   </extension>
   <url value="http://hl7.org/fhir/tools/StructureDefinition/obligation-profile"/>
   <name value="ObligationProfile"/>
   <title value="Obligation Profile Flag"/>
   <status value="active"/>
-  <experimental value="true"/>
+  <experimental value="false"/>
   <publisher value="HL7 International / FHIR Infrastructure"/>
   <contact>
     <telecom>
@@ -16,7 +16,7 @@
       <value value="http://hl7.org/Special/committees/fhir-i"/>
     </telecom>
   </contact>
-  <description value="Profiles marked to be 'Obligation Profiles' cannot introduce new structural elements or slicing, but they can add additional bindings, and additional obligations on the elements that are already defined"/>
+  <description value="Profiles marked to be 'Obligation Profiles' cannot introduce new structural elements or slicing, but they can change the cardinality, add additional bindings, and additional obligations on the elements that are already defined"/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -37,7 +37,7 @@
    <element id="Extension">
       <path value="Extension"/> 
       <short value="Marks that a profile is an obligation only profile"/> 
-      <definition value="Marks that a profiles is an 'Obligation Profile', which cannot introduce new structural elements or slicing, but it can add additional bindings, and additional obligations on the elements that are already defined"/> 
+      <definition value="Marks that a profiles is an 'Obligation Profile', which cannot introduce new structural elements or slicing, but it can change the cardinality, add additional bindings, and additional obligations on the elements that are already defined"/> 
       <min value="0"/> 
       <max value="*"/> 
     </element> 

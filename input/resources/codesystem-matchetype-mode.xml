@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="matchetype-mode"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="3"/>
+  </extension>
+  <url value="http://hl7.org/fhir/tools/CodeSystem/matchetype-mode"/>
+  <name value="MatchetypeMode"/>
+  <title value="Matchetype Mode"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <description value="How the type can be extended. Note that all FHIR types that inherit from ```Element``` have matchetype-mode = fhir-extensions"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <concept>
+    <code value="complete"/>
+    <display value="complete"/>
+    <definition value="Complete Mode"/>
+  </concept>
+  <concept>
+    <code value="partial"/>
+    <display value="partial"/>
+    <definition value="Partial Mode"/>
+  </concept>
+</CodeSystem>

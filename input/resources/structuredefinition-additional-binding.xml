@@ -4,6 +4,14 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="4"/>
   </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/version-specific-use">
+    <extension url="startFhirVersion">
+      <valueCode value="1.0"/>
+    </extension>
+    <extension url="endFhirVersion">
+      <valueCode value="4.0"/>
+    </extension>
+  </extension>
   <url value="http://hl7.org/fhir/tools/StructureDefinition/additional-binding"/>
   <name value="AdditionalBinding"/>
   <title value="Additional Binding Extension"/>
@@ -45,6 +53,41 @@
       <definition value="Additional bindings applied to bindable elements."/> 
       <min value="0"/> 
       <max value="*"/> 
+      <constraint>
+        <key value="ext-ab-1"/>
+        <severity value="warning"/>
+        <human value="Additional Bindings SHOULD have a key to allow a binding to be constrained."/>
+        <expression value="extension.where(url='key').exists()"/>
+      </constraint>
+    </element> 
+
+    <element id="Extension.extension:key">
+      <path value="Extension.extension"/> 
+      <sliceName value="key"/> 
+      <short value="Unique identifier so additional bindings to be matched across profiles"/> 
+      <min value="0"/> 
+      <max value="1"/> 
+      <type> 
+        <code value="Extension"/> 
+      </type> 
+    </element> 
+    <element id="Extension.extension:key.extension">
+      <path value="Extension.extension.extension"/> 
+      <max value="0"/> 
+    </element> 
+    <element id="Extension.extension:key.url">
+      <path value="Extension.extension.url"/> 
+      <type> 
+        <code value="uri"/> 
+      </type> 
+      <fixedUri value="key"/> 
+    </element> 
+    <element id="Extension.extension:key.value[x]">
+      <path value="Extension.extension.value[x]"/> 
+      <min value="1"/> 
+      <type> 
+        <code value="id"/> 
+      </type> 
     </element> 
 
     <element id="Extension.extension:purpose">

@@ -5,9 +5,15 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="fhir"/>
   </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="informative"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="3"/>
+  </extension>
   <url value="http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools"/>
   <!-- This version will propagate to all artifacts unless the "propagate-version" extension is overridden -->
-  <version value="0.3.0"/>
+  <version value="0.6.0-cibuild"/>
   <name value="FHIRToolExtensionsIG"/>
   <title value="FHIR Tooling Extensions IG"/>
   <status value="active"/>
@@ -127,6 +133,16 @@
         <reference value="StructureDefinition/select-by-map"/>
       </reference>
     </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/valueset-parameter"/>
+      </reference>
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/binding-parameter"/>
+      </reference>
+    </resource>
 
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-resource-format">
@@ -160,6 +176,11 @@
       <page>
         <name value="page-factories.html"/>
         <title value="Page Factories"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <name value="parameterized-valuesets.html"/>
+        <title value="Parameterized ValueSets"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -239,27 +260,13 @@
         <code value="auto-oid-root"/>
       </code>    
       <value value="2.16.840.1.113883.4.642.40.1"/>
-    </parameter>     
+    </parameter>  
     <parameter>
       <code>
         <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
-        <code value="generate-version"/>
+        <code value="generate-uml"/>
       </code>    
-      <value value="r4"/>
-    </parameter>     
-    <parameter>
-      <code>
-        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
-        <code value="generate-version"/>
-      </code>    
-      <value value="r5"/>
-    </parameter>     
-    <parameter>
-      <code>
-        <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
-        <code value="generate-version"/>
-      </code>    
-      <value value="r3"/>
-    </parameter>     
+      <value value="sourced"/>
+    </parameter>  
   </definition> 
 </ImplementationGuide>

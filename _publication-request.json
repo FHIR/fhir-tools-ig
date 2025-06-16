@@ -1,0 +1,9 @@
+{
+  "package-id" : "hl7.fhir.uv.tools",
+  "version" : "0.5.0",
+  "desc" : "Fix the definition of additional bindings, and add the IG parameters pin-canonicals and 5-bundle-relative-reference-policy. Define parameterised value sets for testing",
+  "path" : "http://hl7.org/fhir/tools/0.5.0",
+  "status" : "informative",
+  "sequence" : "Releases",
+  "mode" : "milestone"
+}
