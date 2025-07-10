@@ -329,6 +329,24 @@
   </concept>
 
   <concept>
+    <code value="path-liquid-template"/>
+    <display value="path-liquid-template"/>
+    <definition value="A relative path that contains liquid templates for generating narrative, provided by the template (this is distinct from path-liquid, because any liquid templates found in path-liquid override ones found in path-liquid-template)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="relative-path"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="n/a"/>
+    </property>
+  </concept>
+
+  <concept>
     <code value="path-temp"/>
     <display value="path-temp"/>
     <definition value="The relative path to use for jekyll processing."/>
@@ -1812,7 +1830,7 @@
   <concept>
     <code value="pin-canonicals"/>
     <display value="Pin Canonical Versions"/>
-    <definition value="Defines how the IG publisher treats unversioned canonical references. Possible values:&#10;&#10;* `pin-none`: no action is taken (default)&#10;* `pin-all`: any unversioned canonical references that can be resolved through the package dependencies will have |(version) appended to the canonical&#10;* `pin-multiples`: pinning the canonical reference will only happen if there is multiple versions found in the package dependencies"/>
+    <definition value="Defines how the IG publisher treats unversioned canonical references. Possible values:&#10;&#10;* `pin-none`: no action is taken (default)&#10;* `pin-all`: any unversioned canonical references that can be resolved through the package dependencies will have |(version) appended to the canonical, where (version) is the latest available within the package dependencies&#10;* `pin-multiples`: pinning the canonical reference will only happen if there is multiple versions found in the package dependencies"/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="false"/>
@@ -1844,6 +1862,7 @@
       <valueString value="pinning happens in the canonicals directly"/>
     </property>
   </concept>  
+  
 
   <concept>
     <code value="r5-bundle-relative-reference-policy"/>
