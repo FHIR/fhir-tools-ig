@@ -4,10 +4,17 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="3"/>
   </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="deprecated">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status-reason">
+        <valueMarkdown value="Replaced by [[[http://hl7.org/fhir/ValueSet/select-by-map-filter]]]"/>
+      </extension>
+    </valueCode>
+  </extension>
   <url value="http://hl7.org/fhir/tools/ValueSet/select-by-map-filter"/>
   <name value="SelectByMapFilterCodesVS"/>
   <title value="SelectByMap Filter Codes (VS)"/>
-  <status value="active"/>
+  <status value="retired"/>
   <experimental value="false"/>
   <description value="select-by-map filter Codes - from either R4 (or previous) or R5"/>
   <jurisdiction>

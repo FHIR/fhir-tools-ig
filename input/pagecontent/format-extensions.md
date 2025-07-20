@@ -47,7 +47,7 @@ The Element type inherits from Base. Logical Models that inherit from Base do no
 any inherent extensions. Note that the type Base is implicitly defined in FHIR R4 and 
 is made explicit in R5. 
 
-The FHIR Extension ```http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-extension-style```
+The FHIR Extension ```http://hl7.org/fhir/tools/StructureDefinition/extension-style```
 defines how extensions are managed. In the absence of the extension, there are no extensions.
 If the extension is present, it may have one of the following values:
 
@@ -59,7 +59,7 @@ If the extension is present, it may have one of the following values:
 
 These elements control the JSON format. They're mainly used for describing CDSHooks format using StructureDefinitions.
 
-```http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-json-name```
+```http://hl7.org/fhir/tools/StructureDefinition/json-name```
 
 The name of the json property in the instance. This has two uses: if the actual json name is not 
 a legal ElementDefinition path name, or if there is a need to define a name for the type itself,

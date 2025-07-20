@@ -520,19 +520,6 @@
         ]
       },
       {
-        "id": "TestCases.suite.test.assertion",
-        "path": "TestCases.suite.test.assertion",
-        "short": "Assertion to run on the output",
-        "definition": "An assertion to run on the output of the test",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "Base"
-          }
-        ]
-      },
-      {
         "id": "TestCases.suite.test.assertion.focus",
         "path": "TestCases.suite.test.assertion.focus",
         "short": "Which output the assertion is tested on (by name, if there is more than one)",

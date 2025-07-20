@@ -85,7 +85,7 @@
         "max" : "1",
         "type" : [{ "code" : "string"}],
         "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-json-name",
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-name",
           "valueString": "access_token"
         }]
       },
@@ -98,7 +98,7 @@
         "fixedCode" : "Bearer",
         "type" : [{ "code" : "code"}],
         "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-json-name",
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-name",
           "valueString": "token_type"
         }]
       },
@@ -110,7 +110,7 @@
         "max" : "1",
         "type" : [{ "code" : "integer"}],
         "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-json-name",
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-name",
           "valueString": "expires_in"
         }]
       },

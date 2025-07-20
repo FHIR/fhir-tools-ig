@@ -4,11 +4,18 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1"/>
   </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="deprecated">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status-reason">
+        <valueMarkdown value="Replaced by [[[http://hl7.org/fhir/StructureDefinition/select-by-map]]]"/>
+      </extension>
+    </valueCode>
+  </extension>
   <url value="http://hl7.org/fhir/tools/StructureDefinition/select-by-map"/>
   <name value="SelectByMap"/>
   <title value="Select By Map"/>
-  <status value="active"/>
-  <experimental value="true"/>
+  <status value="retired"/>
+  <experimental value="false"/>
   <publisher value="HL7 International / FHIR Infrastructure"/>
   <contact>
     <telecom>

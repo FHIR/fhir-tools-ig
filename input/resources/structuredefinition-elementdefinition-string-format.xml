@@ -49,7 +49,7 @@
 
     <element id="Extension.url">
       <path value="Extension.url"/> 
-      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-date-format"/> 
+      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/elementdefinition-string-format"/> 
     </element> 
     <element id="Extension.value[x]">
       <path value="Extension.value[x]"/> 

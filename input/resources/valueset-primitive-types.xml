@@ -15,7 +15,7 @@
   </jurisdiction>  
   <compose>
     <include>
-      <system value="http://hl7.org/fhir/CodeSystem/fhir-types"/>
+      <system value="http://hl7.org/fhir/fhir-types"/>
       <concept>
         <code value="base64Binary"/>
       </concept>
