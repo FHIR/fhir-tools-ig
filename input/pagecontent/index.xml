@@ -88,6 +88,17 @@
           <a href="http://hl7.org/fhir/R5/structuredefinition.html">StructureDefinition</a>
         </td>
       </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-type-profile-style.html" title="How profiles are applied to types (resources, data types)">type-profile-style</a>
+        </td>
+        <td>How profiles are applied to types (resources, data types)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html">StructureDefinition</a>
+        </td>
+      </tr>
+
 
       <tr>
         <td colspan="3" style="background-color: #eeeeee">
