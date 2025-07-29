@@ -2040,6 +2040,24 @@
     </property>
   </concept>  
   
+  <concept>
+    <code value="no-xig-link"/>
+    <display value="Suppress XIG link"/>
+    <definition value="Suppresses the XIG link that automatically appears on extensions - for IGs that do not find their way into the Cross-IG statistics analysis (which covers all public/published IGs)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="XIG Link will be created"/>
+    </property>
+  </concept>  
+  
   
 
 

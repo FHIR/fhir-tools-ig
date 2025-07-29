@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="type-profile-style"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="3"/>
+  </extension>
+  <url value="http://hl7.org/fhir/tools/CodeSystem/type-profile-style"/>
+  <name value="TypeProfileStylesCS"/>
+  <title value="Type Profile Style Codes"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <description value="How the data type is bound to vocabulary"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <concept>
+    <code value="fhir"/>
+    <display value="FHIR"/>
+    <definition value="FHIR profiling using profiles specified by the context, or as specified in Resource.meta.profile. This is the default if nothing else is specified"/>
+  </concept>
+  <concept>
+    <code value="cda"/>
+    <display value="CDA"/>
+    <definition value="Type Profiles are applied using templateId"/>
+  </concept>
+</CodeSystem>
