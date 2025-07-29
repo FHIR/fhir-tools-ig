@@ -1,0 +1,10 @@
+{
+  "package-id" : "hl7.fhir.uv.tools",
+  "version" : "0.7.1",
+  "path" : "http://hl7.org/fhir/tools/0.7.1",
+  "mode" : "milestone",
+  "status" : "informative",
+  "sequence" : "Release",
+  "desc" : "Regenerate IG to include elements missing in R3 and R4 snapshots for CDSHooks content",
+  "first" : false
+}
