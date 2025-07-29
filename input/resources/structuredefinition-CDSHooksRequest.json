@@ -149,11 +149,47 @@
            "url" : "http://hl7.org/fhir/tools/StructureDefinition/type-specifier",
            "extension" : [{
              "url" : "condition",
+             "valueString" : "%resource.hook = 'appointment-book'"
+           },{
+             "url" : "type",
+             "valueCode" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookAppointmentBookContext"
+           }]
+        },{
+           "url" : "http://hl7.org/fhir/tools/StructureDefinition/type-specifier",
+           "extension" : [{
+             "url" : "condition",
+             "valueString" : "%resource.hook = 'encounter-start'"
+           },{
+             "url" : "type",
+             "valueCode" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookEncounterStartContext"
+           }]
+        },{
+           "url" : "http://hl7.org/fhir/tools/StructureDefinition/type-specifier",
+           "extension" : [{
+             "url" : "condition",
+             "valueString" : "%resource.hook = 'encounter-discharge'"
+           },{
+             "url" : "type",
+             "valueCode" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookEncounterDischargeContext"
+           }]
+        },{
+           "url" : "http://hl7.org/fhir/tools/StructureDefinition/type-specifier",
+           "extension" : [{
+             "url" : "condition",
              "valueString" : "%resource.hook = 'patient-view'"
            },{
              "url" : "type",
              "valueCode" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookPatientViewContext"
            }]
+        },{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/type-specifier",
+          "extension" : [{
+            "url" : "condition",
+            "valueString" : "%resource.hook = 'order-dispatch'"
+          },{
+            "url" : "type",
+            "valueCode" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookOrderDispatchContext"
+          }]
         },{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/type-specifier",
           "extension" : [{
