@@ -1,6 +1,6 @@
 {
   "resourceType" : "StructureDefinition",
-  "id" : "CDSHookOrderSignContext",
+  "id" : "CDSHookAppointmentBookContext",
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
     "valueInteger" : 1
@@ -8,27 +8,27 @@
     "url" : "http://hl7.org/fhir/tools/StructureDefinition/json-suppress-resourcetype",
     "valueBoolean" : true
   }],
-  "url" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookOrderSignContext",
+  "url" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookAppointmentBookContext",
   "version" : "0.0.1",
-  "name" : "CDSHookOrderSignContext",
-  "title" : "CDS Hook Specific Context for order-sign (Logical Definition)",
-  "status" : "active",
-  "experimental" : false,
-  "description" : "This structure is defined to allow the FHIR Validator to validate a CDSHooks Order-Sign context. TODO: This content will be moved to the CDS Hooks specification in the future",
+  "name" : "CDSHookAppointmentBookContext",
+  "title" : "CDS Hooks Specific Context for appointment-book (Logical Definition)",
+  "status" : "draft",
+  "experimental" : true,
+  "description" : "This structure is defined to allow the FHIR Validator to validate a CDSHooks Appointment-Book context. TODO: This content will be moved to the CDS Hooks specification in the future",
   "kind" : "logical",
   "fhirVersion" : "4.0.1",
   "baseDefinition" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookContext",
   "derivation" : "specialization",
   "abstract"  : false,
-  "type" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookOrderSignContext",
+  "type" : "http://hl7.org/fhir/tools/StructureDefinition/CDSHookAppointmentBookContext",
   "differential" : {
     "element" : [
       {
-        "path" : "CDSHookOrderSignContext",
-        "short" : "The context for the order-sign hook"
+        "path" : "CDSHookAppointmentBookContext",
+        "short" : "The context for the appointment-book hook"
       },
       {
-        "path" : "CDSHookOrderSignContext.userId",
+        "path" : "CDSHookAppointmentBookContext.userId",
         "short" : "The id of the current user. Must be in the format [ResourceType]/[id].",
         "definition" : "For this hook, the user is expected to be of type Practitioner, PractitionerRole, Patient, or RelatedPerson. Patient or RelatedPerson are appropriate when a patient or their proxy are viewing the record. For example, Practitioner/abc or Patient/123.",
         "min" : 1,
@@ -36,7 +36,7 @@
         "type" : [{ "code" : "url"}]        
       },
       {
-        "path" : "CDSHookOrderSignContext.patientId",
+        "path" : "CDSHookAppointmentBookContext.patientId",
         "short" : "The FHIR Patient.id of the current patient in context",
         "definition" : "The FHIR Patient.id of the current patient in context",
         "min" : 1,
@@ -44,7 +44,7 @@
         "type" : [{ "code" : "id"}]        
       },
       {
-        "path" : "CDSHookOrderSignContext.encounterId",
+        "path" : "CDSHookAppointmentBookContext.encounterId",
         "short" : "The FHIR Encounter.id of the current encounter in context",
         "definition" : "The FHIR Encounter.id of the current encounter in context",
         "min" : 0,
@@ -52,9 +52,9 @@
         "type" : [{ "code" : "id"}]        
       },
       {
-        "path" : "CDSHookOrderSignContext.draftOrders",
-        "short" : "FHIR Bundle of MedicationRequest, NutritionOrder, ServiceRequest, VisionPrescription with draft status",
-        "definition" : "FHIR Bundle of MedicationRequest, NutritionOrder, ServiceRequest, VisionPrescription with draft status",
+        "path" : "CDSHookAppointmentBookContext.appointments",
+        "short" : "FHIR Bundle of Appointments",
+        "definition" : "FHIR Bundle of Appointments",
         "min" : 1,
         "max" : "1",
         "type" : [{ "code" : "Bundle"}],

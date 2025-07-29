@@ -7,8 +7,8 @@
   <url value="http://hl7.org/fhir/tools/CodeSystem/CDSSelectionBehavior"/>
   <name value="CDSSelectionBehaviorCodes"/>
   <title value="CDSSelectionBehavior Codes"/>
-  <status value="draft"/>
-  <experimental value="true"/>
+  <status value="active"/>
+  <experimental value="false"/>
   <description value="Codes that describe application CDSSelectionBehaviors"/>
   <jurisdiction>
     <coding>

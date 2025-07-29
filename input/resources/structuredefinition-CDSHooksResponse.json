@@ -12,8 +12,8 @@
   "version" : "0.0.1",
   "name" : "CDSHooksResponse",
   "title" : "CDSHooks Response (Logical Definition)",
-  "status" : "draft",
-  "experimental" : true,
+  "status" : "active",
+  "experimental" : false,
   "description" : "This structure is defined to allow the FHIR Validator to validate a CDSHooks Response body. TODO: This content will be moved to the CDS Hooks specification in the future",
   "kind" : "logical",
   "fhirVersion" : "4.0.1",
@@ -30,7 +30,7 @@
       },
       {
         "path" : "CDSHooksResponse.cards",
-        "short" : "An array of Cards that provide information, suggested actions, and links",
+        "short" : "CDS responses to show user",
         "definition" : "An array of Cards. Cards can provide a combination of information (for reading), suggested actions (to be applied if a user selects them), and links (to launch an app if the user selects them).",
         "comment": "The CDS Client decides how to display cards, but this specification recommends displaying suggestions using buttons, and links using underlined text.",
         "min" : 0,
@@ -128,7 +128,7 @@
       },
       {
         "path" : "CDSHooksResponse.cards.source.topic",
-        "short" : "Describes the content of the card - can be useful for filtering, searching or ordered display",
+        "short" : "Describes the content of the card",
         "definition" : "A topic describes the content of the card by providing a high-level categorization that can be useful for filtering, searching or ordered display of related cards in the CDS client's UI. This specification does not prescribe a standard set of topics",
         "comment" : "This specification does not prescribe a standard set of topics",
         "min" : 0,
@@ -173,7 +173,7 @@
       },
       {
         "path" : "CDSHooksResponse.cards.suggestions.isRecommended",
-        "short" : "",
+        "short" : "Which suggestion is most preferred of a set",
         "definition" : "When there are multiple suggestions, allows a service to indicate that a specific suggestion is recommended from all the available suggestions on the card",
         "comment" : "CDS Hooks clients may choose to influence their UI based on this value, such as pre-selecting, or highlighting recommended suggestions. Multiple suggestions MAY be recommended, if card.selectionBehavior is any.",
         "min" : 0,
@@ -209,7 +209,7 @@
       },
       {
         "path" : "CDSHooksResponse.cards.suggestions.actions.description",
-        "short" : "Human-readable description of the suggested action (MAY be presented to the end-user)",
+        "short" : "Human-readable description of the suggested action",
         "definition" : "Human-readable description of the suggested action that MAY be presented to the end-user.",
         "min" : 0,
         "max" : "1",
@@ -236,7 +236,7 @@
       },
       {
         "path" : "CDSHooksResponse.cards.selectionBehavior",
-        "short" : "at-most-one, any - intended selection behavior of the suggestions in the card",
+        "short" : "at-most-one | any",
         "definition" : "Describes the intended selection behavior of the suggestions in the card. Allowed values are: at-most-one, indicating that the user may choose none or at most one of the suggestions; any, indicating that the end user may choose any number of suggestions including none of them and all of them",
         "comment" : "CDS Clients that do not understand the value MUST treat the card as an error.",
         "min" : 0,
@@ -250,7 +250,7 @@
       },
       {
         "path" : "CDSHooksResponse.cards.overrideReasons",
-        "short" : "Can be selected by the end user when overriding a card without taking the suggested recommendations.",
+        "short" : "Feedback from user on card - why not acted on",
         "definition" : "Override reasons can be selected by the end user when overriding a card without taking the suggested recommendations. The CDS service MAY return a list of override reasons to the CDS client.",
         "comment" : "The CDS Client SHOULD present these reasons to the clinician when they dismiss a card. A CDS Client MAY augment the override reasons presented to the user with its own reasons",
         "min" : 0,
@@ -265,7 +265,7 @@
       },
       {
         "path" : "CDSHooksResponse.cards.links",
-        "short" : "Link to an app that the user might want to run for additional information or to help guide a decision",
+        "short" : "Link to app or additional information",
         "definition" : "Allows a service to suggest a link to an app that the user might want to run for additional information or to help guide a decision.",
         "min" : 0,
         "max" : "*",
@@ -279,7 +279,7 @@
       },
       {
         "path" : "CDSHooksResponse.cards.links.label",
-        "short" : "Human-readable label to display for this link (e.g. the CDS Client might render this as the underlined text of a clickable link).",
+        "short" : "Human-readable label to display for this link",
         "definition" : "Human-readable label to display for this link (e.g. the CDS Client might render this as the underlined text of a clickable link).",
         "min" : 1,
         "max" : "1",
@@ -287,7 +287,7 @@
       },
       {
         "path" : "CDSHooksResponse.cards.links.url",
-        "short" : "URL to load (via GET, in a browser context) when a user clicks on this link. Note that this MAY be a 'deep link' with context embedded in path segments, query parameters, or a hash.",
+        "short" : "URL to load",
         "definition" : "URL to load (via GET, in a browser context) when a user clicks on this link. Note that this MAY be a 'deep link' with context embedded in path segments, query parameters, or a hash.",
         "min" : 1,
         "max" : "1",
@@ -295,7 +295,7 @@
       },
       {
         "path" : "CDSHooksResponse.cards.links.type",
-        "short" : "absolute, smart - how to use the link",
+        "short" : "absolute | smart",
         "definition" : "The type of the given URL. There are two possible values for this field. A type of absolute indicates that the URL is absolute and should be treated as-is. A type of smart indicates that the URL is a SMART app launch URL and the CDS Client should ensure the SMART app launch URL is populated with the appropriate SMART launch parameters",
         "min" : 0,
         "max" : "1",
@@ -307,7 +307,7 @@
       },
       {
         "path" : "CDSHooksResponse.cards.links.appContext",
-        "short" : "Allows the CDS Service to share information from the CDS card with a subsequently launched SMART app",
+        "short" : "Information to share when launching SMART app",
         "definition" : "An optional field that allows the CDS Service to share information from the CDS card with a subsequently launched SMART app. The appContext field should only be valued if the link type is smart and is not valid for absolute links. The appContext field and value will be sent to the SMART app as part of the OAuth 2.0 access token response, alongside the other SMART launch parameters when the SMART app is launched. Note that appContext could be escaped JSON, base64 encoded XML, or even a simple string, so long as the SMART app can recognize it.",
         "comment" : "CDS Client support for appContext requires additional coordination with the authorization server that is not described or specified in CDS Hooks nor SMART.",
         "min" : 0,
@@ -316,7 +316,7 @@
       },
       {
         "path" : "CDSHooksResponse.systemActions",
-        "short" : "An array of Actions that the CDS Service proposes to auto-apply",
+        "short" : "Actions to auto-apply",
         "definition" : "An array of Actions that the CDS Service proposes to auto-apply",
         "comment" : "Each action follows the schema of a card-based suggestion.action. The CDS Client decides whether to auto-apply actions.",
         "min" : 0,

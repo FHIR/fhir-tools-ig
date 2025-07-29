@@ -12,8 +12,8 @@
   "version" : "0.0.1",
   "name" : "CDSHooksServices",
   "title" : "CDSHooks Services Request (Logical Definition)",
-  "status" : "draft",
-  "experimental" : true,
+  "status" : "active",
+  "experimental" : false,
   "description" : "This structure is defined to allow the FHIR Validator to validate a CDSHooks Services response body. TODO: This content will be moved to the CDS Hooks specification in the future",
   "kind" : "logical",
   "fhirVersion" : "4.0.1",
@@ -55,7 +55,7 @@
       },
       {
         "path" : "CDSHooksServices.services.id",
-        "short" : "The URL to this service which is available at: {baseUrl}/cds-services/{id}",
+        "short" : "{baseUrl}/cds-services/{id}",
         "definition" : "The {id} portion of the URL to this service which is available at ```{baseUrl}/cds-services/{id}```",
         "min" : 1,
         "max" : "1",
@@ -71,7 +71,7 @@
       },
       {
         "path" : "CDSHooksServices.services.usageRequirements",
-        "short" : "Human-friendly description of any preconditions for the use of this CDS Services",
+        "short" : "Human-friendly preconditions for this CDS Services",
         "definition" : "Human-friendly description of any preconditions for the use of this CDS Services",
         "min" : 0,
         "max" : "1",
@@ -79,7 +79,7 @@
       },
       {
         "path" : "CDSHooksServices.services.prefetch",
-        "short" : "Key/value pairs of FHIR queries the CDS Client provides on each call",
+        "short" : "Key/value pairs of FHIR queries to provide when calling",
         "definition" : "An object containing key/value pairs of FHIR queries that this Services is requesting the CDS Client to perform and provide on each Services call. The key is a string that describes the type of data being requested and the value is a string representing the FHIR query",
         "min" : 0,
         "max" : "*",
@@ -91,7 +91,7 @@
       },
       {
         "path" : "CDSHooksServices.services.prefetch.key",
-        "short" : "Key of FHIR query - name for client to use when sending to Services",
+        "short" : "Key of FHIR query",
         "definition" : "Key of FHIR query - name for client to use when sending to Services",
         "min" : 1,
         "max" : "1",
@@ -99,7 +99,7 @@
       },
       {
         "path" : "CDSHooksServices.services.prefetch.value",
-        "short" : "Value of FHIR query - FHIR Query for client to perform",
+        "short" : "FHIR query to execute",
         "definition" : "Value of FHIR query - FHIR Query for client to perform",
         "min" : 1,
         "max" : "1",
