@@ -586,6 +586,17 @@
       </tr>
 
       <tr>
+        <td>
+          <a href="StructureDefinition-type-operation.html" title="Defines a function that is part of a type definition">type-operation</a>
+        </td>
+        <td>Defines a function that is part of a type definition
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html">StructureDefinition</a>
+        </td>
+      </tr>
+
+      <tr>
         <td colspan="3" style="background-color: #eeeeee">
           <b>Miscellaineous</b> Other extensions
         </td>
