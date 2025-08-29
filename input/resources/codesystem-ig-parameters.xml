@@ -2058,6 +2058,42 @@
     </property>
   </concept>  
   
+  <concept>
+    <code value="no-expansions-files"/>
+    <display value="Suppress Generation of Expansions files"/>
+    <definition value="Suppresses the generation of expansions files, typically for performance reasons on structural IGs. Note that this needs to have template support, since some templates put these in the downloads automatically "/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="Expansions files will be created"/>
+    </property>
+  </concept>  
+  
+  <concept>
+    <code value="no-ig-database"/>
+    <display value="Suppress Generation of Expansions files"/>
+    <definition value="Suppresses the generation of the database file for the IG - typically for performance reasons"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="The database will be created"/>
+    </property>
+  </concept>  
+  
   
 
 
