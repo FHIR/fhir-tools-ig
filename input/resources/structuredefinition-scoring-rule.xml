@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="scoring-rule"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1"/>
+  </extension>
+  <url value="http://hl7.org/fhir/tools/StructureDefinition/scoring-rule"/>
+  <name value="ScoringRule"/>
+  <title value="Scoring Rule"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <publisher value="HL7 International / FHIR Infrastructure"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/Special/committees/fhir-i"/>
+    </telecom>
+  </contact>
+  <description value="Defines a scoring rule, used by the scoring system. See [scoring documentation](scoring-documentation.html) for further information."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  
+  <fhirVersion value="4.0.1"/>
+  <kind value="complex-type"/>
+  <abstract value="false"/>
+  <context>
+    <type value="element"/>
+    <expression value="ElementDefinition"/>
+  </context>
+  <type value="Extension"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+  <derivation value="constraint"/>
+  <differential>
+   <element id="Extension">
+      <path value="Extension"/> 
+      <short value="Defines a scoring rule"/> 
+      <definition value="Defines a scoring rule, used by the scoring system. See [scoring documentation](scoring-documentation.html) for further information."/> 
+    </element> 
+
+    <element id="Extension.extension:key">
+      <path value="Extension.extension"/> 
+      <sliceName value="key"/> 
+      <short value="The key by which this rule is identified. it's not an error for more than one rules to have the same key - that just means they are reported together. But they do need to have the same value"/> 
+      <min value="1"/> 
+      <max value="1"/> 
+      <type> 
+        <code value="Extension"/> 
+      </type> 
+    </element> 
+    <element id="Extension.extension:key.extension">
+      <path value="Extension.extension.extension"/> 
+      <max value="0"/> 
+    </element> 
+    <element id="Extension.extension:key.url">
+      <path value="Extension.extension.url"/> 
+      <type> 
+        <code value="uri"/> 
+      </type> 
+      <fixedUri value="key"/> 
+    </element> 
+    <element id="Extension.extension:key.value[x]">
+      <path value="Extension.extension.value[x]"/> 
+      <min value="1"/> 
+      <type> 
+        <code value="id"/> 
+      </type> 
+    </element> 
+
+    <element id="Extension.extension:value">
+      <path value="Extension.extension"/> 
+      <sliceName value="value"/> 
+      <short value="The value associated with this rule. Defaults to 1"/> 
+      <min value="0"/> 
+      <max value="1"/> 
+      <type> 
+        <code value="Extension"/> 
+      </type> 
+    </element> 
+    <element id="Extension.extension:value.extension">
+      <path value="Extension.extension.extension"/> 
+      <max value="0"/> 
+    </element> 
+    <element id="Extension.extension:value.url">
+      <path value="Extension.extension.url"/> 
+      <type> 
+        <code value="uri"/> 
+      </type> 
+      <fixedUri value="value"/> 
+    </element> 
+    <element id="Extension.extension:value.value[x]">
+      <path value="Extension.extension.value[x]"/> 
+      <min value="1"/> 
+      <type> 
+        <code value="integer"/> 
+      </type> 
+      <type> 
+        <code value="decimal"/> 
+      </type> 
+    </element> 
+
+    <element id="Extension.extension:rule">
+      <path value="Extension.extension"/> 
+      <sliceName value="rule"/> 
+      <short value="Zero or more named rules associated with this scoring rule. See [scoring documentation](scoring-documentation.html) for further information."/> 
+      <min value="0"/> 
+      <max value="*"/> 
+      <type> 
+        <code value="Extension"/> 
+      </type> 
+    </element> 
+    <element id="Extension.extension:rule.extension">
+      <path value="Extension.extension.extension"/> 
+      <max value="0"/> 
+    </element> 
+    <element id="Extension.extension:rule.url">
+      <path value="Extension.extension.url"/> 
+      <type> 
+        <code value="uri"/> 
+      </type> 
+      <fixedUri value="rule"/> 
+    </element> 
+    <element id="Extension.extension:rule.value[x]">
+      <path value="Extension.extension.value[x]"/> 
+      <min value="1"/> 
+      <type> 
+        <code value="string"/> 
+      </type> 
+    </element>
+
+
+    <element id="Extension.extension:condition">
+      <path value="Extension.extension"/> 
+      <sliceName value="condition"/> 
+      <short value="A FHIRPath statement that must be true for this rule to apply"/> 
+      <min value="0"/> 
+      <max value="1"/> 
+      <type> 
+        <code value="Extension"/> 
+      </type> 
+    </element> 
+    <element id="Extension.extension:condition.extension">
+      <path value="Extension.extension.extension"/> 
+      <max value="0"/> 
+    </element> 
+    <element id="Extension.extension:condition.url">
+      <path value="Extension.extension.url"/> 
+      <type> 
+        <code value="uri"/> 
+      </type> 
+      <fixedUri value="condition"/> 
+    </element> 
+    <element id="Extension.extension:condition.value[x]">
+      <path value="Extension.extension.value[x]"/> 
+      <min value="1"/> 
+      <type> 
+        <code value="string"/> 
+      </type> 
+    </element>
+
+    <element id="Extension.url">
+      <path value="Extension.url"/> 
+      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/scoring-rule"/> 
+    </element> 
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]"/> 
+      <min value="0"/> 
+      <max value="0"/>
+    </element> 
+  </differential>
+</StructureDefinition>

@@ -46,9 +46,19 @@
     <definition value="An issue that indicates that a provided code is not valid in a code system"/>
   </concept>
   <concept>
+    <code value="code-comment"/>
+    <display value="Code Comment"/>
+    <definition value="An issue that provides some hints or warnings about the use of the code, but does not indicate that is invalid"/>
+  </concept>
+  <concept>
     <code value="invalid-display"/>
     <display value="Invalid Display"/>
     <definition value="An issue relating to the display provided for a code"/>
+  </concept>
+  <concept>
+    <code value="display-comment"/>
+    <display value="Display Comment"/>
+    <definition value="An issue that provides some hints or warnings about the use of the display, but does not indicate that is invalid"/>
   </concept>
   <concept>
     <code value="cannot-infer"/>
