@@ -2094,6 +2094,24 @@
     </property>
   </concept>  
   
+  <concept>
+    <code value="additional-resource"/>
+    <display value="Additional Resource Name"/>
+    <definition value="Defines an additional resource that this IG will publish. The value is a file reference to the StructureDefinition that defines the resource. This requires additional steps - see [Defining Additional Resources](??)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="relative-path"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="The IG doesn't define any additional resources"/>
+    </property>
+  </concept>  
+  
   
 
 

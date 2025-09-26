@@ -635,6 +635,17 @@
 
       <tr>
         <td>
+          <a href="StructureDefinition-entered-in-error-status.html" title="This extension is used to indicate how an erroneous entry is represented, for the summary page in the FHIR standard.">entered-in-error-status</a>
+        </td>
+        <td>Describes how a resource represents that it was created/entered in error
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html#StructureDefinition">StructureDefinition</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
           <a href="StructureDefinition-searchparameter-base-type.html" title="Indicates the base type for a search parameter when the actual base type is not a valid resource (e.g. custom resource etc)">searchparameter-base-type</a>
         </td>
         <td>Indicates the base type for a search parameter when the actual base type is not a valid resource (R4 and earlier)
