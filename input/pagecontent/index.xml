@@ -495,6 +495,26 @@
         <td>
           <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition.binding</a>,          <a href="http://hl7.org/fhir/R5/codesystem.html">CodeSystem.property</a>
         </td>
+      </tr>    
+      <tr>
+        <td>
+          <a href="StructureDefinition-additional-resource-compartment.html" title="Extension used by Additional Resources to define which compartments (if any) they are part of. Resources are only part of the compartment if they declare a search parameter">additional-resource-compartment</a>
+        </td>
+        <td>Extension used by Additional Resources to define which compartments (if any) they are part of
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/StructureDefinition.html#StructureDefinition">StructureDefinition</a>
+        </td>
+      </tr>    
+      <tr>
+        <td>
+          <a href="StructureDefinition-additional-resource-reference.html" title="Extension used by Additional Resources to define paths in the resources found in the base specification that are able to reference this resource">additional-resource-reference</a>
+        </td>
+        <td>Extension used by Additional Resources to define paths in the resources found in the base specification that are able to reference the resource
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/StructureDefinition.html#StructureDefinition">StructureDefinition</a>
+        </td>
       </tr>
       <tr>
         <td>
@@ -719,7 +739,26 @@
   Changes are proposed and managed using the standard Jira process
   (see right link on the footer). 
   </p>
+  <p>
+    <span class="fhir-conformance" id="conf-2">Tools SHALL follow this IG</span>
+  </p>
 
+<div class="fhir-conformance" id="conf-3" summary="Additional General Conformance Statement">
+  <p>
+   Tools SHALL follow this IG #2
+  </p>
+  <p>
+   Tools SHOULD follow this IG #2
+  </p>
+</div>
+
+<p>
+  This IG is not subject to formal balloting. It is maintained 
+  by the FHIR-I Working Group on behalf of the tooling providers,
+  and updated regularly to keep in sync with the various tools. 
+  Changes are proposed and SHALL be managed using the standard Jira process
+  (see right link on the footer). 
+  </p>
   <a name="topics"></a>
   <h3>Additional Documentation</h3>
   <ul>
@@ -742,4 +781,7 @@
       <a href="other.html">Supporting Documentation</a>
     </li>
   </ul>
+
+  <h3>Conformance Statement Index</h3>
+  <ul class="fhir-conformance-list"/>
 </div>
