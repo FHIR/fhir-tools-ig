@@ -97,7 +97,7 @@ The schema type associated with the FHIR primitive type
 
 ```http://hl7.org/fhir/StructureDefinition/elementdefinition-xml-name```
 
-The name of the sml element in the instance. This has two uses: if the actual xml name is not 
+The name of the xml element in the instance. This has two uses: if the actual xml name is not 
 a legal ElementDefinition path name (e.g. includes '.'), or if there is a need to define a name for the type itself,
 for use with ```named-elements``` - see above.
 
