@@ -61,7 +61,7 @@ Parameterised ValueSets are defined in the same way as regular ValueSets, except
 ```
 
 #### Notes:
-* The expression SHALL be a FHIRPath expression, using a restricted subset of the [FHIRPath](http://hl7.org/fhir/fhirpath.html) specification. The following functions SHALL not be used, and servers do not make them available:
+* §The expression SHALL be a FHIRPath expression, using a restricted subset of the [FHIRPath](http://hl7.org/fhir/fhirpath.html) specification§. The following functions SHALL not be used, and servers do not make them available:
   * `resolve()`
   * `elementDefinition()`
   * `slice()`
@@ -72,7 +72,16 @@ Parameterised ValueSets are defined in the same way as regular ValueSets, except
 * Separation of "definition" and "use" enables the parameter to be used more than once in different parts of the `ValueSet.compose` and provides a place to document the parameter.
 * Using `cqf-expression` rather than just naming the parameter allows for additional logic to be applied to the parameter value. For example, the parameter value might be one of "left" or "right", and then it can be mapped to the corresponding SNOMED CT code in one filter and the corresponding LOINC code in another filter.
 * While it is possible to define arbitrary parameter names, care should be taken to avoid naming conflicts with existing parameters to `ValueSet/$expand` and `ValueSet/$validate-code`.
-* parameter names SHOULD start with  `p-` to avoid naming conflicts, and for ease of processing on API Gateways and servers
+* §conf-4: parameter names SHOULD start with  `p-` to avoid naming conflicts, and for ease of processing on API Gateways and servers§
+
+§§conf-1:Additional markdown conformance statement^Title
+
+This is an additional conformance statement:
+
+* Clause 1 
+* Clause 2 
+
+§§
 
 ### Parameterised ValueSet expansion
 
@@ -164,3 +173,5 @@ Notes:
 ## Use in Profiles
 
 TBD
+
+$$$

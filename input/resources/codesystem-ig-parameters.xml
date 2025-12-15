@@ -2112,7 +2112,76 @@
     </property>
   </concept>  
   
-  
+  <concept>
+    <code value="dataset"/>
+    <display value="dataset"/>
+    <definition value="A relative path to a set of resources to load as a data set. Datasets are rendered differently from regular resources in the IG - see [todo]."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="relative-path"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="No datasets are loaded"/>
+    </property>
+  </concept>
 
+  <concept>
+    <code value="ig-expansion-parameters"/>
+    <display value="ig-expansion-parameters"/>
+    <definition value="Specifies where an IG consumer can find the expansion parameters used during the creation of the IG. The usual (but ony only) use for this is to specify the applicable SNOMED CT edition"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="string"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="The IG has no specified expansion parameters"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="custom-resource"/>
+    <display value="custom-resource"/>
+    <definition value="Defines a custom resource type that this IG uses. The value is a file reference to the StructureDefinition that defines the custom resource. Unlike additional-resource, custom resources are not published by this IG but are used within it."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="relative-path"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="The IG doesn't use any custom resources"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="language-translations-mode"/>
+    <display value="Language Translations Mode"/>
+    <definition value="Controls how language translations are handled in resources for the language specific rendering of a multi-language IG. By default, instances will only include the value for the relevant language. If the value of this parameter is 'preserve', then all the translations will be retained; they'll be reorganized so that the relevant language is the primary value."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="code"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="Default: instances will only include the value for the relevant language"/>
+    </property>
+  </concept>
 
 </CodeSystem>

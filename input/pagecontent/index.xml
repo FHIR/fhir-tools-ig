@@ -490,12 +490,22 @@
         <td>
           <a href="StructureDefinition-additional-binding.html" title="Extension definition for Additional Binding. Additional Bindings are in the R5 Element Definition; this extension is used in prior versions (instead of the R5 cross-version extension)">additional-binding</a>
         </td>
-        <td>Extension definition for Additional Binding - due to be removed
+        <td>Extension definition for Additional Binding (replaced by ElementDefinition.binding.additional in R5)
         </td>
         <td>
           <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition.binding</a>,          <a href="http://hl7.org/fhir/R5/codesystem.html">CodeSystem.property</a>
         </td>
-      </tr>    
+      </tr> 
+      <tr>
+        <td>
+          <a href="StructureDefinition-additional-resource.html" title="This extension flags that this resource is an additional resource">additional-resource</a>
+        </td>
+        <td>This extension flags that this resource is an additional resource
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/StructureDefinition.html#StructureDefinition">StructureDefinition</a>
+        </td>
+      </tr>       
       <tr>
         <td>
           <a href="StructureDefinition-additional-resource-compartment.html" title="Extension used by Additional Resources to define which compartments (if any) they are part of. Resources are only part of the compartment if they declare a search parameter">additional-resource-compartment</a>

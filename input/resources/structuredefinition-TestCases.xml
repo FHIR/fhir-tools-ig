@@ -28,7 +28,7 @@
 	<url value="http://hl7.org/fhir/StructureDefinition/TestCases"/>
 	<version value="6.0.0"/>
 	<name value="TestCases"/>
-	<title value="Test Plan"/>
+	<title value="Test Cases"/>
 	<status value="draft"/>
 	<date value="2021-01-02T08:58:31+11:00"/>
 	<publisher value="HL7 International / FHIR Infrastructure"/>
@@ -71,7 +71,7 @@
 	<type value="TestCases"/>
 	<baseDefinition value="http://hl7.org/fhir/StructureDefinition/CanonicalResource"/>
 	<derivation value="specialization"/>
-	<snapshot>
+	<differential>
 		<element id="TestCases">
 			<extension url="http://hl7.org/fhir/build/StructureDefinition/svg">
 				<valueCode value="0,0"/>
@@ -938,5 +938,5 @@
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/TestCases"/>
       </type>
     </element>
-	</snapshot>
+	</differential>
 </StructureDefinition>
