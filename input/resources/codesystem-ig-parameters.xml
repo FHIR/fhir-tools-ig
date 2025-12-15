@@ -2113,6 +2113,43 @@
   </concept>  
   
   <concept>
+    <code value="toggle-changes"/>
+    <display value="Toggle Text Changes"/>
+    <definition value="If true, gives the user a mechanism to toggle the 'new-content' and 'modified-content' styles on and off"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="The toggle mechanism will not be available"/>
+    </property>
+  </concept>  
+  
+  <concept>
+    <code value="strict-identifiers"/>
+    <display value="Strict Identifier Systems"/>
+    <definition value="If true, will give info messages if non-example identifier systems are present that aren't preferred URIs in known NamingSystems"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="No info messages will be provided"/>
+    </property>
+  </concept>  
+  
+  
+  <concept>
     <code value="dataset"/>
     <display value="dataset"/>
     <definition value="A relative path to a set of resources to load as a data set. Datasets are rendered differently from regular resources in the IG - see [todo]."/>
