@@ -2115,7 +2115,7 @@
   <concept>
     <code value="toggle-changes"/>
     <display value="Toggle Text Changes"/>
-    <definition value="If true, gives the user a mechanism to toggle the 'new-content' and 'modified-content' styles on and off"/>
+    <definition value="If true causes rendering of text changes to default to 'on'.  If false, causes rendering of text changes to default to off"/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="false"/>
@@ -2126,7 +2126,7 @@
     </property>
     <property>
       <code value="missing"/>
-      <valueString value="The toggle mechanism will not be available"/>
+      <valueString value="Rendering of changes will default to 'on'"/>
     </property>
   </concept>  
   
@@ -2148,7 +2148,22 @@
     </property>
   </concept>  
   
-  
-
+  <concept>
+    <code value="requirements-category-vs"/>
+    <display value="Requirements Category Value Set"/>
+    <definition value="Indicates the canonical of the value set from which requirements category codes are drawn when they appear inline as part of conformance statement markup"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="uri"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="Including a categories in conformance statement markup will result in an error"/>
+    </property>
+  </concept>
 
 </CodeSystem>
