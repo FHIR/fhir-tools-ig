@@ -1,8 +1,8 @@
 
-{% include dependency-table.xhtml %}
+{% lang-fragment dependency-table.xhtml %}
 
-{% include globals-table.xhtml %}
+{% lang-fragment globals-table.xhtml %}
 
-{% include cross-version-analysis.xhtml %}
+{% lang-fragment cross-version-analysis.xhtml %}
 
-{% include ip-statements.xhtml %}
+{% lang-fragment ip-statements.xhtml %}
