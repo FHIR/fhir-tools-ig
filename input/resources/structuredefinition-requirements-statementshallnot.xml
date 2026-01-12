@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
-  <id value="requirements-statementactor"/>
+  <id value="requirements-statementshallnot"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1"/>
   </extension>
-  <url value="http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor"/>
-  <name value="RequirementsStatementActor"/>
-  <title value="Requirements Statement Actor"/>
+  <url value="http://hl7.org/fhir/tools/StructureDefinition/requirements-statementshallnot"/>
+  <name value="RequirementsStatementShallNot"/>
+  <title value="Requirements Statement Shall Not"/>
   <status value="active"/>
   <experimental value="false"/>
   <publisher value="HL7 International / FHIR Infrastructure"/>
@@ -16,7 +16,7 @@
       <value value="http://hl7.org/Special/committees/fhir-i"/>
     </telecom>
   </contact>
-  <description value="A reference to the key of an actor listed in Requirements.actor that is relevant to this requirement statement (as introduced in FHIR R6)."/>
+  <description value="If 'true', means that 'conformance' should behave as though it also had a code of 'SHALL NOT' (as introduced in FHIR R6)."/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -41,8 +41,9 @@
   <differential>
    <element id="Extension">
       <path value="Extension"/> 
-      <short value="Key of relevant actor"/> 
-      <definition value="A reference to the key of an actor listed in Requirements.actor that is relevant to this requirement statement (as introduced in FHIR R6)."/> 
+      <short value="conformance = SHALL-NOT"/> 
+      <definition value="If 'true', means that 'conformance' should behave as though it also had a code of 'SHALL NOT' (as introduced in FHIR R6)."/> 
+      <max value="1"/>
     </element>
     <element id="Extension.extension">
       <path value="Extension.extension"/> 
@@ -50,13 +51,13 @@
     </element>
     <element id="Extension.url">
       <path value="Extension.url"/> 
-      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor"/> 
+      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/requirements-statementshallnot"/> 
     </element> 
     <element id="Extension.value[x]">
       <path value="Extension.value[x]"/> 
       <min value="1"/>
       <type>
-        <code value="id"/>
+        <code value="boolean"/>
       </type>
     </element> 
   </differential>

@@ -16,7 +16,7 @@
       <value value="http://hl7.org/Special/committees/fhir-i"/>
     </telecom>
   </contact>
-  <description value="An arbitrary categorization or grouping of the requirements statement to allow for filtering."/>
+  <description value="An arbitrary categorization or grouping of the requirements statement to allow for filtering (as introduced in FHIR R6)."/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -42,7 +42,7 @@
    <element id="Extension">
       <path value="Extension"/> 
       <short value="High level categorization of a statement"/> 
-      <definition value="An arbitrary categorization or grouping of the requirements statement to allow for filtering."/>
+      <definition value="An arbitrary categorization or grouping of the requirements statement to allow for filtering (as introduced in FHIR R6)."/>
       <comment value="Categorization might be done automatically (inferred by code) or manually by user assertion. The absence of a category may limit the ability to determine when the element should be handled, so strong consideration should be given to how systems will be able to determine category values for legacy data and how data that cannot be categorized will be handled. As well, some categories might not be mutually exclusive, so systems should prepare for multiple declared categories - even within a single category 'axis'."/>
     </element>
     <element id="Extension.extension">

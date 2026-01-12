@@ -23,3 +23,7 @@ MSG_DRAFT
 
 # Will be cleaned up when moving CDS hooks content to CDSHooks spec
 CODESYSTEM_PROPERTY_UNKNOWN_CODE
+
+# This isn't a conformance usage
+INFORMATION: StructureDefinition-requirements-statementshallnot.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause
+
