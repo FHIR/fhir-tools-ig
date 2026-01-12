@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="requirements-statementactor"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1"/>
+  </extension>
+  <url value="http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor"/>
+  <name value="RequirementsStatementActor"/>
+  <title value="Requirements Statement Actor"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <publisher value="HL7 International / FHIR Infrastructure"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/Special/committees/fhir-i"/>
+    </telecom>
+  </contact>
+  <description value="A reference to the key of an actor listed in Requirements.actor that is relevant to this requirement statement."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>  
+  <fhirVersion value="4.0.1"/>
+  <kind value="complex-type"/>
+  <abstract value="false"/>
+  <context>
+    <extension url="http://hl7.org/fhir/StructureDefinition/version-specific-use">
+      <extension url="startFhirVersion">
+        <valueCode value="5.0"/>
+      </extension>
+    </extension>
+    <type value="element"/>
+    <expression value="Requirements.statement"/>
+  </context>
+  <type value="Extension"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+  <derivation value="constraint"/>
+  <differential>
+   <element id="Extension">
+      <path value="Extension"/> 
+      <short value="Key of relevant actor"/> 
+      <definition value="A reference to the key of an actor listed in Requirements.actor that is relevant to this requirement statement."/> 
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension"/> 
+      <max value="0"/>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url"/> 
+      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/requirements-statementactor"/> 
+    </element> 
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]"/> 
+      <min value="1"/>
+      <type>
+        <code value="id"/>
+      </type>
+    </element> 
+  </differential>
+</StructureDefinition>
