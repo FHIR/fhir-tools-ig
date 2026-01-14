@@ -628,7 +628,53 @@
 
       <tr>
         <td colspan="3" style="background-color: #eeeeee">
-          <b>Miscellaineous</b> Other extensions
+          <b>R6 inter-version extensions</b> for infrastructure resources.  (Needed because R6 isn't officially released yet)
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-requirements-actorkey.html" title="Allows communication of a 'key' for a requirements actor, allowing that actor to be referenced on individual requirements (as introduced in FHIR R6)"></a>
+        </td>
+        <td>Allows capturing a 'key' for each actor referenced at the root of the Requirements instance, thus allowing those actors to be referenced by individual statements.
+        </td>
+        <td>
+          <a href="http://build.fhir.org/requirements.html">Requirements.actor</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-requirements-statementactor.html" title="A reference to the key of an actor listed in Requirements.actor that is relevant to this requirement statement (as introduced in FHIR R6).">requirements-statementactor</a>
+        </td>
+        <td>Allows referencing relevant actors on individual requirements statements.
+        </td>
+        <td>
+          <a href="http://build.fhir.org/requirements.html">Requirements.statement</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-requirements-statementcategory.html" title="An arbitrary categorization or grouping of the requirements statement to allow for filtering (as introduced in FHIR R6).">requirements-statementcategory</a>
+        </td>
+        <td>Allows capturing categories for individual requirements statements.
+        </td>
+        <td>
+          <a href="http://build.fhir.org/requirements.html">Requirements.statement</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="StructureDefinition-requirements-statementshallnot.html" title="If 'true', means that 'conformance' should behave as though it also had a code of 'SHALL NOT' (as introduced in FHIR R6).">requirements-statementshallnot</a>
+        </td>
+        <td>Allows a statement to have a 'conformance' level of SHALL NOT, which was not introduced until R6
+        </td>
+        <td>
+          <a href="http://build.fhir.org/requirements.html">Requirements.statement</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="3" style="background-color: #eeeeee">
+          <b>Miscellaneous</b> Other extensions
         </td>
       </tr>    
       <tr>
