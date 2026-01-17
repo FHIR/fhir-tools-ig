@@ -633,7 +633,7 @@
       </tr>
       <tr>
         <td>
-          <a href="StructureDefinition-requirements-actorkey.html" title="Allows communication of a 'key' for a requirements actor, allowing that actor to be referenced on individual requirements (as introduced in FHIR R6)"></a>
+          <a href="StructureDefinition-requirements-actorkey.html" title="Allows communication of a 'key' for a requirements actor, allowing that actor to be referenced on individual requirements (as introduced in FHIR R6)">requirements-actorkey</a>
         </td>
         <td>Allows capturing a 'key' for each actor referenced at the root of the Requirements instance, thus allowing those actors to be referenced by individual statements.
         </td>
