@@ -188,6 +188,11 @@
         <title value="Other Information"/>
         <generation value="markdown"/>
       </page>
+      <page>
+        <name value="scoring-documentation.html"/>
+        <title value="Scoring Documentation"/>
+        <generation value="markdown"/>
+      </page>
     </page>
     <!-- copyright year is a mandatory parameter -->
     <parameter>

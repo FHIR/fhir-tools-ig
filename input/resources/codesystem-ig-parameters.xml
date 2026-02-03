@@ -2079,7 +2079,7 @@
   <concept>
     <code value="no-expansions-files"/>
     <display value="Suppress Generation of Expansions files"/>
-    <definition value="Suppresses the generation of expansions files, typically for performance reasons on structural IGs. Note that this needs to have template support, since some templates put these in the downloads automatically "/>
+    <definition value="Suppresses the generation of expansions files, typically for performance reasons on structural IGs. Note that this needs to have template support, since some templates put these in the downloads automatically"/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="false"/>
@@ -2115,7 +2115,7 @@
   <concept>
     <code value="additional-resource"/>
     <display value="Additional Resource Name"/>
-    <definition value="Defines an additional resource that this IG will publish. The value is a file reference to the StructureDefinition that defines the resource. This requires additional steps - see [Defining Additional Resources](??)"/>
+    <definition value="Defines an additional resource that this IG will publish. The value is a file reference to the StructureDefinition that defines the resource. This requires additional steps - see [Defining Additional Resources](https://build.fhir.org/resource.html#additional)"/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="true"/>

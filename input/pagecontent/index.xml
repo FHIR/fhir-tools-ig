@@ -503,7 +503,7 @@
         <td>This extension flags that this resource is an additional resource
         </td>
         <td>
-          <a href="http://hl7.org/fhir/R5/StructureDefinition.html#StructureDefinition">StructureDefinition</a>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html#StructureDefinition'">StructureDefinition</a>
         </td>
       </tr>       
       <tr>
@@ -513,7 +513,7 @@
         <td>Extension used by Additional Resources to define which compartments (if any) they are part of
         </td>
         <td>
-          <a href="http://hl7.org/fhir/R5/StructureDefinition.html#StructureDefinition">StructureDefinition</a>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html#StructureDefinition'">StructureDefinition</a>
         </td>
       </tr>    
       <tr>
@@ -523,7 +523,7 @@
         <td>Extension used by Additional Resources to define paths in the resources found in the base specification that are able to reference the resource
         </td>
         <td>
-          <a href="http://hl7.org/fhir/R5/StructureDefinition.html#StructureDefinition">StructureDefinition</a>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html#StructureDefinition'">StructureDefinition</a>
         </td>
       </tr>
       <tr>
@@ -774,7 +774,7 @@
     </tbody>
   </table>
 
-  <a name="updates"></a>
+  <a name="cds-hooks"></a>
   <h3>CDS Hooks Summary</h3>
 
 {% class-diagram {
