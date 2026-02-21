@@ -74,7 +74,7 @@ Parameterised ValueSets are defined in the same way as regular ValueSets, except
 * While it is possible to define arbitrary parameter names, care should be taken to avoid naming conflicts with existing parameters to `ValueSet/$expand` and `ValueSet/$validate-code`.
 * §conf-4: parameter names SHOULD start with  `p-` to avoid naming conflicts, and for ease of processing on API Gateways and servers§
 
-§§conf-1:Additional markdown conformance statement^Title
+§§conf-1:Additional markdown conformance statement SHALL apply^Title
 
 This is an additional conformance statement:
 

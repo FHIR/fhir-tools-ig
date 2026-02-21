@@ -1,10 +1,10 @@
 {
   "package-id" : "hl7.fhir.uv.tools",
-  "version" : "0.8.0",
-  "path" : "http://hl7.org/fhir/tools/0.8.0",
+  "version" : "1.0.0",
+  "path" : "http://hl7.org/fhir/tools/1.0.0",
   "mode" : "milestone",
   "status" : "informative",
   "sequence" : "Release",
-  "desc" : "More refinements to the CDS Hooks definitions",
+  "desc" : "Added term-params-in-artifacts parameter, Added R6 inter-version Requirements parameters,Added requirements-category-vs, add strict-identifiers and toggle-changes parameters",
   "first" : false
 }
