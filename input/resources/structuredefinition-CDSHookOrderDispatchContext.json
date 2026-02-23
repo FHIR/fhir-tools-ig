@@ -41,7 +41,7 @@
         "definition" : "Collection of the FHIR local references for the Request resource(s) for which fulfillment is sought E.g. `ServiceRequest/123`",
         "min" : 1,
         "max" : "1",
-        "type" : [{ "code" : "Bundle"}],
+        "type" : [{ "code" : "string"}],
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/id-expectation",
           "valueCode" : "optional"
@@ -60,8 +60,8 @@
         "short" : "FHIR Bundle of Task resources",
         "definition" : "FHIR Bundle of Task resources",
         "min" : 0,
-        "max" : "1",
-        "type" : [{ "code" : "Bundle"}],
+        "max" : "*",
+        "type" : [{ "code" : "Task"}],
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/id-expectation",
           "valueCode" : "optional"
