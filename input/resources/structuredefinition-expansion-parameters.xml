@@ -28,6 +28,11 @@
   <abstract value="false"/>
   <context>
     <type value="element"/>
+    <expression value="ImplementationGuide.definition"/>
+  </context>
+  <context>
+    <!-- actually, this is an error -->
+    <type value="element"/>
     <expression value="ValueSet.compose"/>
   </context>
   <type value="Extension"/>
