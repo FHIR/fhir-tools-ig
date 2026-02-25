@@ -2256,4 +2256,22 @@
     </property>
   </concept>
 
+  <concept>
+    <code value="lang-pack"/>
+    <display value="Language Pack"/>
+    <definition value="Indicates that the IG creates a language pack, and the CodeSystems should be marked accordingly"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="The IG does not create a language pack"/>
+    </property>
+  </concept>
+
 </CodeSystem>
