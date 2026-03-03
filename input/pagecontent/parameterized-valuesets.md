@@ -61,13 +61,13 @@ Parameterised ValueSets are defined in the same way as regular ValueSets, except
 ```
 
 #### Notes:
-* §The expression SHALL be a FHIRPath expression, using a restricted subset of the [FHIRPath](http://hl7.org/fhir/fhirpath.html) specification§. The following functions SHALL not be used, and servers do not make them available:
+* §The expression SHALL be a FHIRPath expression, using a restricted subset of the [FHIRPath](http://hl7.org/fhir/fhirpath.html) specification. The following functions SHALL not be used, and servers do not make them available:
   * `resolve()`
   * `elementDefinition()`
   * `slice()`
   * conformsTo()
   * any functions defined for the Type Factory and the General Service API
-  * Note that the terminology API is expected to be available
+  * Note that the terminology API is expected to be available§
 * All the parameters passed to the $expand or $validate-code operation are made available to the expression as FHIRPath constants (no matter how the parameter was passed)
 * Separation of "definition" and "use" enables the parameter to be used more than once in different parts of the `ValueSet.compose` and provides a place to document the parameter.
 * Using `cqf-expression` rather than just naming the parameter allows for additional logic to be applied to the parameter value. For example, the parameter value might be one of "left" or "right", and then it can be mapped to the corresponding SNOMED CT code in one filter and the corresponding LOINC code in another filter.
