@@ -665,7 +665,7 @@
         <td>
           <a href="StructureDefinition-requirements-statementshallnot.html" title="If 'true', means that 'conformance' should behave as though it also had a code of 'SHALL NOT' (as introduced in FHIR R6).">requirements-statementshallnot</a>
         </td>
-        <td>Allows a statement to have a 'conformance' level of SHALL NOT, which was not introduced until R6
+        <td>Allows a statement to have a 'conformance' level of 'SHALL NOT', which was not introduced until R6
         </td>
         <td>
           <a href="http://build.fhir.org/requirements.html">Requirements.statement</a>
@@ -796,23 +796,14 @@
   (see right link on the footer). 
   </p>
   <p>
-    <span class="fhir-conformance" id="conf-2">Tools SHALL follow this IG</span>
+    <span class="fhir-conformance" id="conf-3">Tools SHALL follow this IG</span>
   </p>
-
-<div class="fhir-conformance" id="conf-3" summary="Additional General Conformance Statement">
-  <p>
-   Tools SHALL follow this IG #2
-  </p>
-  <p>
-   Tools SHOULD follow this IG #2
-  </p>
-</div>
 
 <p>
   This IG is not subject to formal balloting. It is maintained 
   by the FHIR-I Working Group on behalf of the tooling providers,
   and updated regularly to keep in sync with the various tools. 
-  Changes are proposed and SHALL be managed using the standard Jira process
+  Changes are proposed and managed using the standard Jira process
   (see right link on the footer). 
   </p>
   <a name="topics"></a>
