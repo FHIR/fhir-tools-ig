@@ -839,5 +839,11 @@
   </ul>
 
   <h3>Conformance Statement Index</h3>
-  <ul class="fhir-conformance-list"/>
+  <table class="fhir-conformance-list">
+    <tbody>
+      <tr>
+        <th></th>
+      </tr>
+    </tbody>
+  </table>
 </div>
