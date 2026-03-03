@@ -6,7 +6,7 @@
   </extension>
   <url value="http://hl7.org/fhir/tools/ValueSet/snapshot-behavior"/>
   <name value="RenderingEngineViewHintsVS"/>
-  <title value="Viewing Hints for Rendering Engines (ValueSet)"/>
+  <title value="Snapshot Behavior (ValueSet)"/>
   <status value="active"/>
   <experimental value="false"/>
   <description value="How the data type is bound to vocabulary"/>

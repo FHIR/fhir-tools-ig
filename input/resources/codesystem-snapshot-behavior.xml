@@ -6,7 +6,7 @@
   </extension>
   <url value="http://hl7.org/fhir/tools/CodeSystem/snapshot-behavior"/>
   <name value="RenderingEngineViewHintsCS"/>
-  <title value="Viewing Hints for Rendering Engines (CodeSystem)"/>
+  <title value="Extension Snapshot Behavior - codes"/>
   <status value="active"/>
   <experimental value="false"/>
   <description value="Code that drives Snapshot generation behavior when copying extensions from base to derived"/>
