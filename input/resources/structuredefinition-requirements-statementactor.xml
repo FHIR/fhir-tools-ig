@@ -28,6 +28,9 @@
   <abstract value="false"/>
   <context>
     <extension url="http://hl7.org/fhir/StructureDefinition/version-specific-use">
+      <extension url="startFhirVersion">
+        <valueCode value="5.0"/>
+      </extension>
       <extension url="endFhirVersion">
         <valueCode value="5.0"/>
       </extension>

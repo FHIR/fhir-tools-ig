@@ -108,7 +108,7 @@ will result in the expansion of a ValueSet defined as follows:
 }
 ```
 
-All parameters that are used in the expansion SHALL be included in the `ValueSet.expansion.parameters` element of the resulting ValueSet.
+§All parameters that are used in the expansion SHALL be included in the `ValueSet.expansion.parameters` element of the resulting ValueSet§.
 
 If the cqf-expression evaluates to `()`, then corresponding filter element is omitted from the compose definition used for expansion.
 Hence the following GET request:

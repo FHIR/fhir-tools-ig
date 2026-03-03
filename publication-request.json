@@ -1,10 +1,10 @@
 {
   "package-id" : "hl7.fhir.uv.tools",
-  "version" : "1.0.0",
-  "path" : "http://hl7.org/fhir/tools/1.0.0",
+  "version" : "1.1.0",
+  "path" : "http://hl7.org/fhir/tools/1.1.0",
   "mode" : "milestone",
   "status" : "informative",
   "sequence" : "Release",
-  "desc" : "Added term-params-in-artifacts parameter, Added R6 inter-version Requirements parameters,Added requirements-category-vs, add strict-identifiers and toggle-changes parameters",
+  "desc" : "Publish expansion-parameters extension, CDS Hooks QA Corrections, Add lang-pack parameter",
   "first" : false
 }
