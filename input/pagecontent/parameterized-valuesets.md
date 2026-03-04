@@ -74,6 +74,24 @@ Parameterised ValueSets are defined in the same way as regular ValueSets, except
 * While it is possible to define arbitrary parameter names, care should be taken to avoid naming conflicts with existing parameters to `ValueSet/$expand` and `ValueSet/$validate-code`.
 * §conf-4: parameter names SHOULD start with  `p-` to avoid naming conflicts, and for ease of processing on API Gateways and servers§
 
+§§conf-1a:Additional markdown conformance statement SHALL apply^Title
+
+This is a broken additional conformance statement because only the title has conformance language:
+
+* Clause 1 
+* Clause 2 
+
+§§
+
+§§conf-1b:Additional markdown conformance statement SHALL apply^Title
+
+This is an additional conformance statement:
+
+* Clause 1 SHALL apply
+* Clause 2 MAY apply
+
+§§
+
 
 ### Parameterised ValueSet expansion
 
@@ -160,7 +178,7 @@ A primary use context for parameterised ValueSets is in Questionnaires, using th
 ```
 
 Notes:
-* When an expression is provided, it is evaluated under the rules defined in the [SDC specification](https://build.fhir.org/ig/HL7/sdc/behavior.html)
+* WHen an expression is provided, it is evaluated under the rules defined in the [SDC specification](https://build.fhir.org/ig/HL7/sdc/behavior.html)
 
 ## Use in Profiles
 
