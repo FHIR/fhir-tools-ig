@@ -743,6 +743,16 @@
 
       <tr>
         <td>
+          <a href="StructureDefinition-expansion-parameters.html" title="Identifies the expansion parameters used when building an IG">expansion-parameters</a>
+        </td>
+        <td>Identifies the expansion parameters used when building an IG
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/implementationguide.html">ImplementationGuide.definition</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
           <a href="StructureDefinition-valueset-expansion-parameter.html" title="A default parameter to use when expanding this value set. A client may also pass a parameter with the same parameter name; servers should either overwrite this default parameter, or add to the list of identically named parameters, depending on which parameter is named">valueset-expansion-parameter</a>
         </td>
         <td>A default parameter to use when expanding a value set

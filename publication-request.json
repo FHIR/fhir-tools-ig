@@ -1,10 +1,10 @@
 {
   "package-id" : "hl7.fhir.uv.tools",
-  "version" : "1.1.0",
-  "path" : "http://hl7.org/fhir/tools/1.1.0",
+  "version" : "1.1.1",
+  "path" : "http://hl7.org/fhir/tools/1.1.1",
   "mode" : "milestone",
   "status" : "informative",
   "sequence" : "Release",
-  "desc" : "Publish expansion-parameters extension, CDS Hooks QA Corrections, Add lang-pack parameter",
+  "desc" : "Mark CDSHooks definitions as not experimental. Tidy up Conformance statemetnnts",
   "first" : false
 }

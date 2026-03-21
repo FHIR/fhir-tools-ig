@@ -6,7 +6,7 @@
   </extension>
   <url value="http://hl7.org/fhir/tools/ValueSet/view-hint"/>
   <name value="RenderingEngineViewHintsVS"/>
-  <title value="Viewing Hints for Rendering Engines (ValueSet)"/>
+  <title value="Viewing Hints for Rendering Engines - ValueSet"/>
   <status value="draft"/>
   <experimental value="true"/>
   <description value="How the data type is bound to vocabulary"/>

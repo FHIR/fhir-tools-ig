@@ -6,7 +6,7 @@
   </extension>
   <url value="http://hl7.org/fhir/tools/CodeSystem/view-hint"/>
   <name value="RenderingEngineViewHintsCS"/>
-  <title value="Viewing Hints for Rendering Engines"/>
+  <title value="Viewing Hints for Rendering Engines - CodeSystem"/>
   <status value="draft"/>
   <experimental value="true"/>
   <description value="Codes that drive Rendering Engine behavior, to assist profiles and profile-based renderers to provide more useful human rendering"/>
