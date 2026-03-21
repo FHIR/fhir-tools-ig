@@ -16,7 +16,7 @@
   "name" : "CDSHooksExtensions",
   "title" : "CDSHooks Services Extensions",
   "status" : "draft",
-  "experimental" : true,
+  "experimental" : false,
   "description" : "This is a concrete subtype of Base that has extensions (though the format in JSON is different)",
   "kind" : "logical",
   "fhirVersion" : "4.0.1",

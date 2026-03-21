@@ -13,7 +13,7 @@
   "name" : "CDSHookOrderSelectContext",
   "title" : "CDS Hook Specific Context for order-select (Logical Definition)",  
   "status" : "draft",
-  "experimental" : true,
+  "experimental" : false,
   "description" : "This structure is defined to allow the FHIR Validator to validate a CDSHooks order-select context. TODO: This content will be moved to the CDS Hooks specification in the future",
   "kind" : "logical",
   "fhirVersion" : "4.0.1",
