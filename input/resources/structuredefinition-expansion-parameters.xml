@@ -16,7 +16,7 @@
       <value value="http://hl7.org/Special/committees/fhir-i"/>
     </telecom>
   </contact>
-  <description value="Identifies the expansion parameters used when building the IG"/>
+  <description value="Identifies the expansion parameters used when building an IG"/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -34,11 +34,6 @@
     </extension>
     <type value="element"/>
     <expression value="ImplementationGuide.definition"/>
-  </context>
-  <context>
-    <!-- actually, this is an error -->
-    <type value="element"/>
-    <expression value="ValueSet.compose"/>
   </context>
   <type value="Extension"/>
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
