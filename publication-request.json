@@ -2,9 +2,9 @@
   "package-id" : "hl7.fhir.uv.tools",
   "version" : "1.1.1",
   "path" : "http://hl7.org/fhir/tools/1.1.1",
-  "mode" : "milestone",
+  "mode" : "technical-correction",
   "status" : "informative",
   "sequence" : "Release",
-  "desc" : "Mark CDSHooks definitions as not experimental. Tidy up Conformance statemetnnts",
+  "desc" : "Mark CDSHooks definitions as not experimental. Tidy up Conformance statemetments",
   "first" : false
 }

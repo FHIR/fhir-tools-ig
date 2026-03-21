@@ -208,7 +208,7 @@
         <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
         <code value="releaselabel"/>
       </code>    
-      <value value="Release 0.2.0"/>
+      <value value="Release 1.1"/>
     </parameter>
     <parameter>
       <code>

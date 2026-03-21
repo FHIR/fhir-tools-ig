@@ -12,7 +12,7 @@
   "version" : "0.0.1",
   "name" : "CDSHooksElement",
   "title" : "CDSHooks Services Base Extensible Element",
-  "status" : "draft",
+  "status" : "active",
   "experimental" : false,
   "description" : "This structure is defined to allow the FHIR Validator to validate a CDSHooks Services Element with Extensions. TODO: This content will be moved to the CDS Hooks specification in the future",
   "kind" : "logical",
