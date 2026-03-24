@@ -2274,4 +2274,22 @@
     </property>
   </concept>
 
+  <concept>
+    <code value="infer-resource-conformance"/>
+    <display value="Infer Resource Conformance"/>
+    <definition value="If true, indicates that the conformance level for a resource in a CapabilityStatement will be inferred based on the maximum conformance expectation of interactions and search parameters used within the resource"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="No inference will occur"/>
+    </property>
+  </concept>
+
 </CodeSystem>
