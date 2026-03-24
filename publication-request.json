@@ -1,10 +1,10 @@
 {
   "package-id" : "hl7.fhir.uv.tools",
-  "version" : "1.1.1",
-  "path" : "http://hl7.org/fhir/tools/1.1.1",
+  "version" : "1.1.2",
+  "path" : "http://hl7.org/fhir/tools/1.1.2",
   "mode" : "technical-correction",
   "status" : "informative",
   "sequence" : "Release",
-  "desc" : "Mark CDSHooks definitions as not experimental. Tidy up Conformance statemetments",
+  "desc" : "Correction to representation of extension contexts in the hl7.fhir.uv.tools.r4 package",
   "first" : false
 }
