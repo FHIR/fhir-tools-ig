@@ -49,11 +49,23 @@ The operation returns a `Parameters` resource with a `result` code and a human-r
 
 A server **may** answer directly from the value set definitions where it can, and otherwise falls back to comparing expansions. Neither approach is required: a server is free to always expand, and a client cannot assume any particular strategy was used. What matters to the caller is the `result`; the strategy only affects cost and how often the answer is `indeterminate`.
 
-**From the definitions.** A server that compares the `compose` definitions directly groups the includes and excludes by code system and compares them. This is cheap, exact, and needs no expansion. It can handle whole-system includes, enumerated code lists, and single filters &mdash; including reasoning about `is-a` filters through subsumption, so a value set bound to a concept and one bound to its ancestor can be related as `subset`/`superset`. Such a comparison is version-aware: where a code system version changes the answer, the server takes the versions into account.
+**From the definitions.** A server that compares the `compose` definitions directly groups the includes and excludes by code system and compares them. This is cheap, exact, and needs no expansion. It can handle whole-system includes, enumerated code lists, and single filters &mdash; including reasoning about `is-a` filters through subsumption, so a value set bound to a concept and one bound to its ancestor can be related as `subset`/`superset`. How the comparison treats code system versions is described under [Versioning](#versioning) below.
 
 **By expansion.** Where the definitions are too complex to compare directly (or the server simply chooses to), it expands both value sets and compares the resulting code lists. If either expansion is unclosed or unbounded, or fails, the result is `indeterminate`.
 
 Whether the server expanded is reported in the diagnostics (see below); callers do not choose the strategy.
+
+### Versioning
+
+By default, `$compare` treats different versions of a code system as interchangeable: the same code is the same member whether it was drawn from version 1 or version 2 of its code system. Version becomes significant only where it has to &mdash; specifically, when the code system declares `versionNeeded = true`, or when a **filter** is involved, because a filter such as `is-a` can select different codes in different versions, so its result is inherently version-dependent.
+
+A client can override this with the `version-policy` parameter, which takes one of three values:
+
+* `always` &mdash; versions always matter. A code counts as shared only if its code system version matches on both sides.
+* `as-needed` &mdash; the default described above: version matters where either code system declares `versionNeeded = true`, or where a filter makes it significant.
+* `never` &mdash; versions never matter. Codes are compared by system and code alone, ignoring version. The caller takes responsibility for this, including where filters are present.
+
+When versions are significant, two value sets that include the same codes but pin different code system versions can be reported as `disjoint` or `overlapping` rather than `same`; under `never` they would be reported as `same`.
 
 ### Diagnostics
 

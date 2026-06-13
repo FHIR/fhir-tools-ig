@@ -10,7 +10,7 @@
   <status value="active"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <description value="Determine the set relationship between the memberships of two value sets: whether they contain the same codes, whether one is a subset or superset of the other, whether they overlap, or whether they are disjoint. The comparison is over what the value sets *mean* (the set of codes each includes), not over the structure of the ValueSet resources.&#xA;&#xA;The two value sets are referred to as 'this' and 'other'. At the type level (`POST /ValueSet/$compare`), supply each one as either an inline resource (`thisValueSet` / `otherValueSet`) or as a canonical URL the server resolves (`thisUrl` / `otherUrl`). At the instance level (`POST /ValueSet/[id]/$compare`), the value set addressed in the URL is 'this', and only 'other' need be supplied.&#xA;&#xA;The server decides from the value set definitions (the `compose`) wherever it can &mdash; this is cheap and exact, and is version-aware. Where the definitions are too complex to compare directly, it expands both value sets and compares the resulting code lists. Either way the answer is reported in the `result` output parameter. When the relationship cannot be established &mdash; for example a value set has no `compose`, an expansion is unclosed or infinite, an expansion fails, or the definitions combine in ways the server cannot soundly reason about &mdash; the result is `indeterminate` rather than a guess.&#xA;&#xA;If the `diagnostics` parameter is true, the server additionally reports the codes that differ (`common-codes`, `missing-codes`, `extra-codes`) and whether it had to expand the value sets to reach its conclusion (`performed-expansion`). This operation does not change server state."/>
+  <description value="Determine the set relationship between the memberships of two value sets: whether they contain the same codes, whether one is a subset or superset of the other, whether they overlap, or whether they are disjoint. The comparison is over what the value sets *mean* (the set of codes each includes), not over the structure of the ValueSet resources.&#xA;&#xA;The two value sets are referred to as 'this' and 'other'. At the type level (`POST /ValueSet/$compare`), supply each one as either an inline resource (`thisValueSet` / `otherValueSet`) or as a canonical URL the server resolves (`thisUrl` / `otherUrl`). At the instance level (`POST /ValueSet/[id]/$compare`), the value set addressed in the URL is 'this', and only 'other' need be supplied.&#xA;&#xA;The server decides from the value set definitions (the `compose`) wherever it can &#8212; this is cheap and exact, and is version-aware. Where the definitions are too complex to compare directly, it expands both value sets and compares the resulting code lists. Either way the answer is reported in the `result` output parameter. When the relationship cannot be established &#8212; for example a value set has no `compose`, an expansion is unclosed or infinite, an expansion fails, or the definitions combine in ways the server cannot soundly reason about &#8212; the result is `indeterminate` rather than a guess.&#xA;&#xA;If the `diagnostics` parameter is true, the server additionally reports the codes that differ (`common-codes`, `missing-codes`, `extra-codes`) and whether it had to expand the value sets to reach its conclusion (`performed-expansion`). This operation does not change server state."/>
   <affectsState value="false"/>
   <code value="compare"/>
   <resource value="ValueSet"/>
@@ -62,8 +62,16 @@
     <use value="in"/>
     <min value="0"/>
     <max value="*"/>
-    <documentation value="Additional code systems and value sets the server may need in order to perform the comparison &mdash; for example, code systems referenced by the value sets but not otherwise known to the server. These may also be supplied via the terminology cache; see the $cache-control operation."/>
+    <documentation value="Additional code systems and value sets the server may need in order to perform the comparison &#8212; for example, code systems referenced by the value sets but not otherwise known to the server. These may also be supplied via the terminology cache; see the $cache-control operation."/>
     <type value="Resource"/>
+  </parameter>
+  <parameter>
+    <name value="version-policy"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Controls whether code system versions are significant when comparing membership:&#xA;* `always` &#8212; versions always matter: a code counts as the same member in both value sets only if its code system version matches on both sides;&#xA;* `as-needed` &#8212; (the default) versions matter only where they need to: when either code system declares versionNeeded = true, or where a filter is involved (a filter such as is-a can select different codes in different versions, so the version always matters there);&#xA;* `never` &#8212; versions never matter: codes are compared by system and code alone, ignoring version. The caller takes responsibility for this, including where filters are present.&#xA;&#xA;If omitted, `as-needed` applies."/>
+    <type value="code"/>
   </parameter>
   <parameter>
     <name value="diagnostics"/>
@@ -78,7 +86,7 @@
     <use value="out"/>
     <min value="1"/>
     <max value="1"/>
-    <documentation value="The relationship between the first value set ('this') and the second ('other'), stated from the perspective of 'this':&#xA;* `same` &mdash; both value sets contain the same codes;&#xA;* `subset` &mdash; every code in 'this' is in 'other', and 'other' has more;&#xA;* `superset` &mdash; every code in 'other' is in 'this', and 'this' has more;&#xA;* `overlapping` &mdash; each value set contains codes the other does not, but they share some codes;&#xA;* `disjoint` &mdash; the value sets share no codes;&#xA;* `empty` &mdash; both value sets are empty;&#xA;* `indeterminate` &mdash; the server cannot determine the relationship (e.g. a value set has no compose, an expansion is unclosed or infinite, an expansion failed, or the definitions are too complex to compare). The `message` parameter explains why."/>
+    <documentation value="The relationship between the first value set ('this') and the second ('other'), stated from the perspective of 'this':&#xA;* `same` &#8212; both value sets contain the same codes;&#xA;* `subset` &#8212; every code in 'this' is in 'other', and 'other' has more;&#xA;* `superset` &#8212; every code in 'other' is in 'this', and 'this' has more;&#xA;* `overlapping` &#8212; each value set contains codes the other does not, but they share some codes;&#xA;* `disjoint` &#8212; the value sets share no codes;&#xA;* `empty` &#8212; both value sets are empty;&#xA;* `indeterminate` &#8212; the server cannot determine the relationship (e.g. a value set has no compose, an expansion is unclosed or infinite, an expansion failed, or the definitions are too complex to compare). The `message` parameter explains why."/>
     <type value="code"/>
   </parameter>
   <parameter>

@@ -25,7 +25,7 @@ It is essential that the **server** allocates the cache-id (at `mode=start`), no
 * a request that refers to a cache-id the server has (resolve the registered resources), versus
 * a request that refers to a cache-id the server does **not** have &mdash; one that was never created, or has expired, or has already been released.
 
-The second case is reported as an error whose `OperationOutcome.issue.details.coding` carries the code [`cache-id-unknown`](CodeSystem-tx-issue-type.html) from `http://hl7.org/fhir/tools/CodeSystem/tx-issue-type`. This is deliberately a **distinct, coded** signal: it is not the same as a value set or code system genuinely not being found. A client that sees `cache-id-unknown` knows its cache is gone (and could, if it chose, start a new cache and replay its registrations), whereas an unknown value set is an authoring problem. Without this distinction, a lost cache masquerades as a content error, and implementers waste time hunting for an authoring mistake that does not exist.
+The second case is reported as an error. The request fails with HTTP status **`404 Not Found`**, and the returned `OperationOutcome` has an issue whose `details.coding` carries the code [`cache-id-unknown`](CodeSystem-tx-issue-type.html) from `http://hl7.org/fhir/tools/CodeSystem/tx-issue-type`. `404` is the appropriate status because the cache the request named is, as far as the server is concerned, simply not there. The coded issue is deliberately a **distinct, coded** signal, and it &mdash; not the status code alone &mdash; is what a client should key on: it means something different from a value set or code system genuinely not being found. A client that sees `cache-id-unknown` knows its cache is gone (and could, if it chose, start a new cache and replay its registrations), whereas an unknown value set is an authoring problem. Without this distinction, a lost cache masquerades as a content error, and implementers waste time hunting for an authoring mistake that does not exist.
 
 ### Capability negotiation
 
@@ -35,6 +35,7 @@ A server advertises support for this protocol by declaring the `$cache-control` 
 
 * The cache holds resource **definitions**, not expansions. A value set sent with an inline `expansion` has that expansion cached as supplied.
 * Caches are scoped to the endpoint (and FHIR version) they were started on; a cache-id from one endpoint is not valid on another.
+* A request that carries an unknown cache-id (in the `X-Cache-Id` header) on `$validate-code`, `$expand`, or any other operation fails with HTTP `404` and the `cache-id-unknown` issue described above. By contrast, `mode=end` for a cache the server does not have is deliberately **not** an error: it returns `200`, because the client's intent &mdash; that the cache be gone &mdash; is already satisfied.
 * `mode=check` is reserved for a future revision: it will report whether a cache is still valid and may return statistics about it.
 
 See the [$cache-control OperationDefinition](OperationDefinition-cache-control.html) for the formal operation definition, and the [Terminology Issue Type code system](CodeSystem-tx-issue-type.html) for `cache-id-unknown` and the other terminology issue codes.
