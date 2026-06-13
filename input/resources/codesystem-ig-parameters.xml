@@ -2274,4 +2274,22 @@
     </property>
   </concept>
 
+  <concept>
+    <code value="wcag-conformant"/>
+    <display value="WCAG Conformant"/>
+    <definition value="Indicates that the IG should be WCAG Conformant (or at least, more conformant). Note that WCAG compliance reduces the rendering freedom, and the resulting content is harder to read for the majority of readers. Where there's no reduction in utility, the content is already WCAG conformant"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="The IG is only somewhat WCAG compliant"/>
+    </property>
+  </concept>
+
 </CodeSystem>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OperationDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+  <id value="cache-control"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1"/>
+  </extension>
+  <url value="http://hl7.org/fhir/tools/OperationDefinition/cache-control"/>
+  <name value="CacheControl"/>
+  <title value="Terminology Cache Control"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <experimental value="false"/>
+  <description value="Manage a terminology client cache on the server. A client that repeatedly validates or expands against the same value sets and code systems can register those resources with the server once, under a server-issued cache-id, and then refer to them by url on subsequent calls instead of re-sending them each time.&#xA;&#xA;The protocol is explicit: the client calls this operation with mode=start to create a cache; the server allocates the cache and returns its identifier in the `cache-id` output parameter. The client then sends that identifier as the `X-Cache-Id` HTTP header on subsequent $validate-code and $expand requests. Resources are populated into the cache by sending them (as `tx-resource`, or as the primary `valueSet`/`codeSystem`) on those requests, or by front-loading them in the mode=start call. When finished, the client calls mode=end to release the cache (the server will otherwise time it out).&#xA;&#xA;Because the server owns the cache-id, it can authoritatively report when a client refers to a cache it does not have (never created, expired, or released): such requests fail with an OperationOutcome whose issue carries the code `cache-id-unknown` from http://hl7.org/fhir/tools/CodeSystem/tx-issue-type. This is distinct from a value set or code system genuinely not being found, so a client can tell a stale cache from an authoring error.&#xA;&#xA;This operation affects server state and SHOULD be invoked with POST; servers MAY also accept GET for convenience."/>
+  <affectsState value="true"/>
+  <code value="cache-control"/>
+  <system value="true"/>
+  <type value="false"/>
+  <instance value="false"/>
+  <parameter>
+    <name value="mode"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="What to do: 'start' creates a new cache and returns its id; 'end' releases the cache identified by the X-Cache-Id header; 'check' (where supported) reports whether the cache identified by the X-Cache-Id header is still valid, and may return statistics about it."/>
+    <type value="code"/>
+  </parameter>
+  <parameter>
+    <name value="tx-resource"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Optional resources (CodeSystem, ValueSet, ConceptMap) to front-load into the cache when mode=start, so they are immediately in scope for subsequent calls that carry the cache-id. Resources may also be added incrementally on later $validate-code / $expand calls."/>
+    <type value="Resource"/>
+  </parameter>
+  <parameter>
+    <name value="cache-id"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The server-issued cache identifier, returned by mode=start. The client sends this value as the X-Cache-Id HTTP header on subsequent requests that should use the cache. Absent if no cache was created."/>
+    <type value="id"/>
+  </parameter>
+</OperationDefinition>

@@ -80,4 +80,9 @@
     <display value="Status Check"/>
     <definition value="An issue pertaining to the status of the underlying resources"/>
   </concept>
+  <concept>
+    <code value="cache-id-unknown"/>
+    <display value="Unknown Cache"/>
+    <definition value="An issue indicating that the cache-id provided by the client is not known to the server: it was never created (caches are created with $cache-control mode=start), or it has expired or been released. The client cannot continue to refer to resources by that cache-id, and should establish a new cache if it wishes to keep using one"/>
+  </concept>
 </CodeSystem>
