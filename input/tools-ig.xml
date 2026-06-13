@@ -193,6 +193,11 @@
         <title value="Scoring Documentation"/>
         <generation value="markdown"/>
       </page>
+      <page>
+        <name value="terminology-caching.html"/>
+        <title value="Terminology Caching"/>
+        <generation value="markdown"/>
+      </page>
     </page>
     <!-- copyright year is a mandatory parameter -->
     <parameter>
