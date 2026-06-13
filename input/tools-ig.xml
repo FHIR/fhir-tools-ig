@@ -198,6 +198,11 @@
         <title value="Terminology Caching"/>
         <generation value="markdown"/>
       </page>
+      <page>
+        <name value="valueset-comparison.html"/>
+        <title value="ValueSet Comparison"/>
+        <generation value="markdown"/>
+      </page>
     </page>
     <!-- copyright year is a mandatory parameter -->
     <parameter>

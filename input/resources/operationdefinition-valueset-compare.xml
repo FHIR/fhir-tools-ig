@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OperationDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+  <id value="ValueSet-compare"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1"/>
+  </extension>
+  <url value="http://hl7.org/fhir/tools/OperationDefinition/ValueSet-compare"/>
+  <name value="ValueSetCompare"/>
+  <title value="ValueSet Comparison"/>
+  <status value="active"/>
+  <kind value="operation"/>
+  <experimental value="false"/>
+  <description value="Determine the set relationship between the memberships of two value sets: whether they contain the same codes, whether one is a subset or superset of the other, whether they overlap, or whether they are disjoint. The comparison is over what the value sets *mean* (the set of codes each includes), not over the structure of the ValueSet resources.&#xA;&#xA;The two value sets are referred to as 'this' and 'other'. At the type level (`POST /ValueSet/$compare`), supply each one as either an inline resource (`thisValueSet` / `otherValueSet`) or as a canonical URL the server resolves (`thisUrl` / `otherUrl`). At the instance level (`POST /ValueSet/[id]/$compare`), the value set addressed in the URL is 'this', and only 'other' need be supplied.&#xA;&#xA;The server decides from the value set definitions (the `compose`) wherever it can &mdash; this is cheap and exact, and is version-aware. Where the definitions are too complex to compare directly, it expands both value sets and compares the resulting code lists. Either way the answer is reported in the `result` output parameter. When the relationship cannot be established &mdash; for example a value set has no `compose`, an expansion is unclosed or infinite, an expansion fails, or the definitions combine in ways the server cannot soundly reason about &mdash; the result is `indeterminate` rather than a guess.&#xA;&#xA;If the `diagnostics` parameter is true, the server additionally reports the codes that differ (`common-codes`, `missing-codes`, `extra-codes`) and whether it had to expand the value sets to reach its conclusion (`performed-expansion`). This operation does not change server state."/>
+  <affectsState value="false"/>
+  <code value="compare"/>
+  <resource value="ValueSet"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="true"/>
+  <parameter>
+    <name value="thisUrl"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The canonical URL of the first value set ('this'), which the server resolves. Used at the type level as an alternative to thisValueSet. Not used at the instance level, where the value set in the request URL is 'this'."/>
+    <type value="uri"/>
+  </parameter>
+  <parameter>
+    <name value="thisValueSet"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The first value set ('this'), supplied inline. Used at the type level as an alternative to thisUrl. Not used at the instance level."/>
+    <type value="ValueSet"/>
+  </parameter>
+  <parameter>
+    <name value="otherUrl"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The canonical URL of the second value set ('other'), which the server resolves. An alternative to otherValueSet."/>
+    <type value="uri"/>
+  </parameter>
+  <parameter>
+    <name value="otherValueSet"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The second value set ('other'), supplied inline. An alternative to otherUrl."/>
+    <type value="ValueSet"/>
+  </parameter>
+  <parameter>
+    <name value="valueSetVersion"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The business version to use when resolving a value set supplied by URL."/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="tx-resource"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="Additional code systems and value sets the server may need in order to perform the comparison &mdash; for example, code systems referenced by the value sets but not otherwise known to the server. These may also be supplied via the terminology cache; see the $cache-control operation."/>
+    <type value="Resource"/>
+  </parameter>
+  <parameter>
+    <name value="diagnostics"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="If true, the server includes the diagnostic output parameters (performed-expansion, common-codes, missing-codes, extra-codes) where it can. Diagnostics are best-effort and may be omitted."/>
+    <type value="boolean"/>
+  </parameter>
+  <parameter>
+    <name value="result"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The relationship between the first value set ('this') and the second ('other'), stated from the perspective of 'this':&#xA;* `same` &mdash; both value sets contain the same codes;&#xA;* `subset` &mdash; every code in 'this' is in 'other', and 'other' has more;&#xA;* `superset` &mdash; every code in 'other' is in 'this', and 'this' has more;&#xA;* `overlapping` &mdash; each value set contains codes the other does not, but they share some codes;&#xA;* `disjoint` &mdash; the value sets share no codes;&#xA;* `empty` &mdash; both value sets are empty;&#xA;* `indeterminate` &mdash; the server cannot determine the relationship (e.g. a value set has no compose, an expansion is unclosed or infinite, an expansion failed, or the definitions are too complex to compare). The `message` parameter explains why."/>
+    <type value="code"/>
+  </parameter>
+  <parameter>
+    <name value="message"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="A human-readable explanation of the result, suitable for display. Always present for `indeterminate` and `empty`, where it gives the reason."/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="performed-expansion"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Present when diagnostics were requested: true if the server expanded the value sets to determine the result, false if it decided from the definitions alone."/>
+    <type value="boolean"/>
+  </parameter>
+  <parameter>
+    <name value="common-codes"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Present when diagnostics were requested and the value sets are not identical: a comma-separated list of codes present in both value sets."/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="missing-codes"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Present when diagnostics were requested: a comma-separated list of codes present in the first value set ('this') but not the second ('other')."/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="extra-codes"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Present when diagnostics were requested: a comma-separated list of codes present in the second value set ('other') but not the first ('this')."/>
+    <type value="string"/>
+  </parameter>
+</OperationDefinition>
