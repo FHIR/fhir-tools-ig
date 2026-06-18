@@ -2310,4 +2310,22 @@
     </property>
   </concept>
 
+  <concept>
+    <code value="dynamic-source-viewers"/>
+    <display value="dynamic-source-viewers"/>
+    <definition value="When 'true', the json/xml/ttl &quot;view source&quot; pages are rendered client-side from the raw resource file (fetched and syntax-highlighted in the browser) instead of baking the highlighted source into each page, greatly reducing page size. The in-source FHIR reference hyperlinks added by the server-side renderer are not present in this view. Requires the raw json/xml/ttl formats to also be generated."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
 </CodeSystem>
