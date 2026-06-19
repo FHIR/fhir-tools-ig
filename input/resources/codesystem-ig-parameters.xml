@@ -185,6 +185,24 @@
   </concept>
 
   <concept>
+    <code value="tx-unload-early"/>
+    <display value="tx-unload-early"/>
+    <definition value="If true, unload the terminology context before the HTML inspection phase in order to reclaim memory earlier. This is only needed for very large IGs that are memory starved. The trade-off is that conformance statement rendering (which requires terminology) will not work when this is set, so only set it for IGs that do not use conformance statements."/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
     <code value="autoload-resources"/>
     <display value="autoload-resources"/>
     <definition value="If true, scan the locations in which resources might be found (above) looking for resources, and auto-loading them. Else, only load what is in the IG."/>
