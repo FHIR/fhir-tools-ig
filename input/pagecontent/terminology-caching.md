@@ -41,6 +41,18 @@ The `start` call takes a `sealed` parameter (`valueBoolean`) that governs whethe
 
 A client that requests an **unsealed** cache takes on responsibility for the consequences of that shared, mutable state. In particular, it must ensure that its own requests do not race against each other in ways that produce unexpected results &mdash; for example, it should not issue overlapping requests that populate and read the same cache concurrently, because whether a given resource is present depends on whether the request that adds it has already been processed. Sealing the cache avoids this class of problem entirely, which is why it is the default.
 
+### Batch processing
+
+Some servers accept a **batch** of operations in a single call (for example, a batch of `$validate-code` invocations). A batch is not simply a convenience for pipelining unrelated requests: with respect to the cache it behaves as one unit, and the following rules apply when a batch is sent against a session (unsealed) cache:
+
+* **The batch as a whole participates in the session.** The batch is treated as a single interaction with the cache; the individual entries within it do not each have their own cache status. There is no state in which one entry has been "added to the cache" while a sibling entry in the same batch has not &mdash; the batch's effect on the cache is all-or-nothing at the level of the batch, not the entry.
+
+* **All `tx-resource`s are populated before any entry is evaluated.** Every `tx-resource` supplied anywhere in the batch is added to the cache *first*, before any of the batch's actual validations (or expansions) are processed. This means an entry may refer &mdash; by `url` &mdash; to a resource that was supplied inline by a *different* entry, regardless of the order in which the two entries appear in the batch. A batch is therefore order-independent with respect to the resources it carries: the client does not have to arrange for a resource to be defined by an earlier entry than the one that uses it.
+
+* **`tx-resource`s are populated regardless of per-entry outcome.** A resource carried as a `tx-resource` is added to the cache even if the entry that carried it &mdash; or any other entry &mdash; is not processed successfully. Population of the cache is independent of the success or failure of the individual entries: a failing validation does not "roll back" the resources that entry (or the batch) contributed.
+
+In a **sealed** cache these same ordering rules apply *within* the batch (all `tx-resource`s are available to every entry before evaluation), but, as for any sealed cache, the resources are used only for the batch that carried them and are not retained afterwards, and tx-resources are not available between batch items.
+
 ### Versionless references and caching
 
 Caching does not change *which* resource a reference resolves to, but it can make disagreements about resolution more visible and more damaging. When a client refers to a code system or value set **without a version** &mdash; either the primary resource or a dependency referenced from one cached resource to another &mdash; the server must decide which version is "the latest". If the client and the server do not resolve a versionless reference to the *same* version (for example, because they have different packages loaded, apply different "current version" rules, or were populated at different times), they will silently operate on different definitions.
