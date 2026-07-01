@@ -10,7 +10,7 @@
   <status value="active"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <description value="Manage a terminology client cache on the server. A client that repeatedly validates or expands against the same value sets and code systems can register those resources with the server once, under a server-issued cache-id, and then refer to them by url on subsequent calls instead of re-sending them each time.&#xA;&#xA;The protocol is explicit: the client calls this operation with mode=start to create a cache; the server allocates the cache and returns its identifier in the `cache-id` output parameter. The client then sends that identifier as the `X-Cache-Id` HTTP header on subsequent $validate-code and $expand requests. Resources are populated into the cache by sending them (as `tx-resource`, or as the primary `valueSet`/`codeSystem`) on those requests, or by front-loading them in the mode=start call. When finished, the client calls mode=end to release the cache (the server will otherwise time it out).&#xA;&#xA;Because the server owns the cache-id, it can authoritatively report when a client refers to a cache it does not have (never created, expired, or released): such requests fail with an OperationOutcome whose issue carries the code `cache-id-unknown` from http://hl7.org/fhir/tools/CodeSystem/tx-issue-type. This is distinct from a value set or code system genuinely not being found, so a client can tell a stale cache from an authoring error.&#xA;&#xA;This operation affects server state and SHOULD be invoked with POST; servers MAY also accept GET for convenience."/>
+  <description value="Manage a terminology client cache on the server. A client that repeatedly validates or expands against the same value sets and code systems can register those resources with the server once, under a server-issued cache-id, and then refer to them by url on subsequent calls instead of re-sending them each time.&#xA;&#xA;The protocol is explicit: the client calls this operation with mode=start to create a cache; the server allocates the cache and returns its identifier in the `cache-id` output parameter. The client then sends that identifier as the `X-Cache-Id` HTTP header on subsequent $validate-code and $expand requests. Resources are populated into the cache by sending them (as `tx-resource`, or as the primary `valueSet`/`codeSystem`) on those requests, or by front-loading them in the mode=start call.&#xA;&#xA;By default a cache is sealed: it holds only the resources front-loaded at mode=start and does not grow. A client that wants the cache to accumulate resources as they are seen (needed for incremental population and batch front-loading) requests an unsealed cache by sending sealed=false at mode=start. The mode=start response always reports, in the `sealed` output parameter, which kind of cache was created. When finished, the client calls mode=end to release the cache (the server will otherwise time it out).&#xA;&#xA;Because the server owns the cache-id, it can authoritatively report when a client refers to a cache it does not have (never created, expired, or released): such requests fail with an OperationOutcome whose issue carries the code `cache-id-unknown` from http://hl7.org/fhir/tools/CodeSystem/tx-issue-type. This is distinct from a value set or code system genuinely not being found, so a client can tell a stale cache from an authoring error.&#xA;&#xA;This operation affects server state and SHOULD be invoked with POST; servers MAY also accept GET for convenience."/>
   <affectsState value="true"/>
   <code value="cache-control"/>
   <system value="true"/>
@@ -29,8 +29,16 @@
     <use value="in"/>
     <min value="0"/>
     <max value="*"/>
-    <documentation value="Optional resources (CodeSystem, ValueSet, ConceptMap) to front-load into the cache when mode=start, so they are immediately in scope for subsequent calls that carry the cache-id. Resources may also be added incrementally on later $validate-code / $expand calls."/>
+    <documentation value="Optional resources (CodeSystem, ValueSet, ConceptMap) to front-load into the cache when mode=start, so they are immediately in scope for subsequent calls that carry the cache-id. Resources may also be added incrementally on later $validate-code / $expand calls (unless the cache is sealed)."/>
     <type value="Resource"/>
+  </parameter>
+  <parameter>
+    <name value="sealed"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Used with mode=start: whether the cache is sealed. A sealed cache (the default) contains only the resources front-loaded in this call and does not grow; an unsealed cache (sealed=false) additionally accumulates resources it sees on subsequent calls, and is what makes incremental population and batch front-loading possible. If omitted, the server's default applies (which SHOULD be true); a client that requires a particular behaviour should set this explicitly and check the sealed value returned in the response."/>
+    <type value="boolean"/>
   </parameter>
   <parameter>
     <name value="cache-id"/>
@@ -39,5 +47,13 @@
     <max value="1"/>
     <documentation value="The server-issued cache identifier, returned by mode=start. The client sends this value as the X-Cache-Id HTTP header on subsequent requests that should use the cache. Absent if no cache was created."/>
     <type value="id"/>
+  </parameter>
+  <parameter>
+    <name value="sealed"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Returned by mode=start: whether the created cache is sealed. A mode=start response always includes it, so the client does not have to assume a default - it states authoritatively whether the cache is fixed at what was front-loaded (sealed=true) or will grow as further resources are seen (sealed=false). The minimum cardinality is 0 because it is not returned for the other modes (mode=end, mode=check); it is nonetheless mandatory in a mode=start response."/>
+    <type value="boolean"/>
   </parameter>
 </OperationDefinition>
