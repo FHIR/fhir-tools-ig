@@ -1810,6 +1810,24 @@
   </concept>  
   
   <concept>
+    <code value="incubator-ig"/>
+    <display value="Use the generated code for an incubator IG"/>
+    <definition value="Identifies an incubator IG whose resources this IG works with. The value is a code from the list of incubator IGs for which code has been generated into the publisher (see the allowed values). When this parameter is present, the publisher uses the incubator IG's definitions of its resources in place of the definitions in the base specification. Codes currently supported: `hl7.fhir.uv.testing` - the FHIR Testing IG (TestPlan, TestScript, TestReport)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="hl7.fhir.uv.testing"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="the definitions of all resources are taken from the base specification"/>
+    </property>
+  </concept>  
+
+  <concept>
     <code value="resource-language-policy"/>
     <display value="Control Automatic population of Resource.language: all-ig | ig-realm | all-realm"/>
     <definition value="Controls how the IG Publisher populates Resource.language. Missing = do nothing. 'all-ig' = populate all resources with what's in the ig. 'ig-realm' = populate just the IG with the language implied by the realm. 'all-realm' - populated all the resources with the language implied by the realm"/>

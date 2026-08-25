@@ -1,3 +1,6 @@
+* Document terminology caching (here temporarily)
+* Add resource-tla extension for a resource type's short mnemonic / three-letter acronym
+* Add new incubator-ig parameter code - directs the publisher to use the generated code for an incubator IG in place of the base specification definitions
 * Document UML parameters + set up UML examples as demonstrations
 * Rework CDSHooks definitions to validate CDSHooks content properly
 * Add snapshot-source extension for tracking the source of the snapshot - preparing in advance for wildcard dependencies
