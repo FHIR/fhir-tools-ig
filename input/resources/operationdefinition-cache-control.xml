@@ -10,7 +10,7 @@
   <status value="active"/>
   <kind value="operation"/>
   <experimental value="false"/>
-  <description value="Manage a terminology client cache on the server. A client that repeatedly validates or expands against the same value sets and code systems can register those resources with the server once, under a server-issued cache-id, and then refer to them by url on subsequent calls instead of re-sending them each time.&#xA;&#xA;The protocol is explicit: the client calls this operation with mode=start to create a cache; the server allocates the cache and returns its identifier in the `cache-id` output parameter. The client then sends that identifier as the `X-Cache-Id` HTTP header on subsequent $validate-code and $expand requests. Resources are populated into the cache by sending them (as `tx-resource`, or as the primary `valueSet`/`codeSystem`) on those requests, or by front-loading them in the mode=start call.&#xA;&#xA;By default a cache is sealed: it holds only the resources front-loaded at mode=start and does not grow. A client that wants the cache to accumulate resources as they are seen (needed for incremental population and batch front-loading) requests an unsealed cache by sending sealed=false at mode=start. The mode=start response always reports, in the `sealed` output parameter, which kind of cache was created. When finished, the client calls mode=end to release the cache (the server will otherwise time it out).&#xA;&#xA;Because the server owns the cache-id, it can authoritatively report when a client refers to a cache it does not have (never created, expired, or released): such requests fail with an OperationOutcome whose issue carries the code `cache-id-unknown` from http://hl7.org/fhir/tools/CodeSystem/tx-issue-type. This is distinct from a value set or code system genuinely not being found, so a client can tell a stale cache from an authoring error.&#xA;&#xA;This operation affects server state and SHOULD be invoked with POST; servers MAY also accept GET for convenience."/>
+  <description value="Manage a terminology client cache on the server. A client that repeatedly validates or expands against the same value sets and code systems can register those resources with the server once, under a server-issued cache-id, and then refer to them by url on subsequent calls instead of re-sending them each time.&#xA;&#xA;The protocol is explicit: the client calls this operation with mode=start to create a cache; the server allocates the cache and returns its identifier in the `cache-id` output parameter. The client then sends that identifier as the `X-Cache-Id` HTTP header on subsequent $validate-code and $expand requests. Resources are populated into the cache by sending them (as `tx-resource`, or as the primary `valueSet`/`codeSystem`) on those requests, or by front-loading them in the mode=start call.&#xA;&#xA;By default a cache is sealed: it holds only the resources front-loaded at mode=start and does not grow. A client that wants the cache to accumulate resources as they are seen (needed for incremental population and batch front-loading) requests an unsealed cache by sending sealed=false at mode=start. The mode=start response always reports, in the `sealed` output parameter, which kind of cache was created. When finished, the client calls mode=end to release the cache (the server will otherwise time it out).&#xA;&#xA;A server releases a cache that has not been used for some time. Because a client's own local caching can absorb its terminology work for long stretches, a client may still depend on a server-side cache it has not touched for a while; mode=check exists for this case. It reports whether the cache is still there, and checking counts as use, so a client that expects to go quiet can keep its cache alive by checking periodically. The response reports the server's idle timeout, so the client can size that interval to the server rather than guessing.&#xA;&#xA;Because the server owns the cache-id, it can authoritatively report when a client refers to a cache it does not have (never created, expired, or released): such requests fail with an OperationOutcome whose issue carries the code `cache-id-unknown` from http://hl7.org/fhir/tools/CodeSystem/tx-issue-type. This is distinct from a value set or code system genuinely not being found, so a client can tell a stale cache from an authoring error.&#xA;&#xA;This operation affects server state and SHOULD be invoked with POST; servers MAY also accept GET for convenience."/>
   <affectsState value="true"/>
   <code value="cache-control"/>
   <system value="true"/>
@@ -21,7 +21,7 @@
     <use value="in"/>
     <min value="1"/>
     <max value="1"/>
-    <documentation value="What to do: 'start' creates a new cache and returns its id; 'end' releases the cache identified by the X-Cache-Id header; 'check' (where supported) reports whether the cache identified by the X-Cache-Id header is still valid, and may return statistics about it."/>
+    <documentation value="What to do: 'start' creates a new cache and returns its id; 'end' releases the cache identified by the X-Cache-Id header; 'check' reports whether the cache identified by the X-Cache-Id header is still valid, returns statistics about it, and - because checking is itself use - resets its idle timer, so a client can use 'check' to keep a cache it still needs from timing out."/>
     <type value="code"/>
   </parameter>
   <parameter>
@@ -53,7 +53,47 @@
     <use value="out"/>
     <min value="0"/>
     <max value="1"/>
-    <documentation value="Returned by mode=start: whether the created cache is sealed. A mode=start response always includes it, so the client does not have to assume a default - it states authoritatively whether the cache is fixed at what was front-loaded (sealed=true) or will grow as further resources are seen (sealed=false). The minimum cardinality is 0 because it is not returned for the other modes (mode=end, mode=check); it is nonetheless mandatory in a mode=start response."/>
+    <documentation value="Whether the cache is sealed. A mode=start response always includes it, so the client does not have to assume a default - it states authoritatively whether the cache is fixed at what was front-loaded (sealed=true) or will grow as further resources are seen (sealed=false). A mode=check response includes it for a cache that is still valid, so a client can confirm what it is actually working with. The minimum cardinality is 0 because it is not returned by mode=end, nor by a mode=check that reports valid=false; it is nonetheless mandatory in a mode=start response."/>
     <type value="boolean"/>
+  </parameter>
+  <parameter>
+    <name value="valid"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Returned by mode=check: whether the cache named in the X-Cache-Id header is still held by this server. Mandatory in a mode=check response (the minimum cardinality is 0 only because the parameter is not returned by the other modes). Note that a mode=check that finds nothing is still a successful operation - it returns HTTP 200 with valid=false, not an error - so that a client can distinguish a server that reports the cache is gone from a server it could not reach at all. The two call for opposite responses: the first means start a new cache, the second means retry."/>
+    <type value="boolean"/>
+  </parameter>
+  <parameter>
+    <name value="resource-count"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Returned by mode=check for a valid cache: how many resources the cache currently holds. Informational - useful for confirming that incremental population of an unsealed cache is working as the client expects."/>
+    <type value="unsignedInt"/>
+  </parameter>
+  <parameter>
+    <name value="idle"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Returned by mode=check for a valid cache: how many seconds it had been since the cache was last used, measured before this check reset the timer. A client can compare this against the `timeout` to see how close it came to losing the cache, and adjust how often it checks."/>
+    <type value="unsignedInt"/>
+  </parameter>
+  <parameter>
+    <name value="timeout"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Returned by mode=check for a valid cache, where the server is willing to say: how many seconds a cache may go unused before this server releases it. This lets a client size its checking interval to the server it is actually talking to, rather than guessing at a value it has no other way to discover. A server that has no idle timeout, or does not wish to state one, omits this - a client that gets no value should choose a conservative interval of its own."/>
+    <type value="unsignedInt"/>
+  </parameter>
+  <parameter>
+    <name value="outcome"/>
+    <use value="out"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="Returned by mode=check when valid=false: an OperationOutcome explaining why the cache is not available, with an issue carrying the code `cache-id-unknown` from http://hl7.org/fhir/tools/CodeSystem/tx-issue-type - the same coded issue a request that used the cache-id would have failed with. Servers SHOULD make the diagnostics say which fate the cache met (never issued by this server, released by the client, or timed out after a period of not being used), since those point at quite different problems."/>
+    <type value="OperationOutcome"/>
   </parameter>
 </OperationDefinition>

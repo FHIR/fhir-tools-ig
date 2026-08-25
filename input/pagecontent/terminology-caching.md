@@ -16,6 +16,8 @@ The protocol is explicit and server-driven:
 
 3. **End.** When the client is finished (for example, at the end of a build), it calls `$cache-control` with `mode=end`, sending the cache-id in the `X-Cache-Id` header. The server releases the cache. If the client does not call `end` (for example, because it crashed), the server releases the cache on an idle timeout instead.
 
+A fourth mode, [`check`](#keeping-a-cache-alive), lets a client ask whether its cache is still there &mdash; and keeps it there.
+
 The cache-id is carried as an HTTP header, rather than as an operation parameter, so that it is transport metadata rather than terminological content: it can be acted on by proxies and load balancers, and read by the server before the request body is parsed.
 
 ### Why the server issues the cache-id
@@ -30,6 +32,24 @@ The second case is reported as an error. The request fails with HTTP status **`4
 ### Capability negotiation
 
 A server advertises support for this protocol by declaring the `$cache-control` operation at the system level in its `CapabilityStatement`. A client uses the protocol only against servers that advertise it; against any other server it simply inlines the resources on every request (correct, just not optimised). The operation declares `affectsState = true`; conformant clients invoke `start` and `end` with `POST`.
+
+### Keeping a cache alive
+
+A server will not hold a cache forever. A client that stops using a cache &mdash; because it finished, or crashed, or simply moved on &mdash; leaves the server holding resources nobody will ask for again, so servers release a cache that has gone unused for some period. This is what makes `mode=end` an optimisation rather than an obligation.
+
+The complication is that **a client can still depend on a cache it has not used recently**. Terminology clients cache aggressively themselves: a validator or IG publisher that has already resolved a code answers from its own local cache and never reaches the server at all. A client can therefore be working hard, and still relying on its server-side cache, while sending the server nothing for a long time. The usual shape of the resulting failure is that a build runs for a long stretch served entirely from local caches, and then the first code that *does* need the server &mdash; typically something rare, which is exactly why it was not cached locally &mdash; fails, because the cache the client was counting on timed out somewhere in the quiet period.
+
+`mode=check` addresses this. The client sends the cache-id in the `X-Cache-Id` header, and the server reports whether that cache is still valid:
+
+* If it is, the response has `valid = true`, along with `sealed`, the number of resources the cache holds (`resource-count`), how long it had been idle in seconds (`idle`), and &mdash; where the server is willing to say &mdash; the idle timeout it applies, in seconds (`timeout`). A client should use `timeout` to size its checking interval to the server it is actually talking to, rather than guessing; checking at some fraction of the timeout (a third, say) leaves room for a missed check.
+
+* If it is not, the response has `valid = false` and an `outcome` parameter containing an `OperationOutcome` with the `cache-id-unknown` issue described above &mdash; the same coded issue that a request using the cache-id would have failed with.
+
+**A check counts as use.** If the cache is valid, checking it resets its idle timer. This is deliberate: a client that asks whether its cache is still there is, by definition, a client that still wants it, and there is no useful case for asking the question while wanting the answer to become "no". So a client that expects to go quiet does not need any other mechanism to keep its cache alive &mdash; it just checks. (Note that the `idle` value reported is the idle time as it was *before* the check reset it, so a client can see how close it came.)
+
+A check for a cache the server does not have is **not** an error: it returns HTTP `200` with `valid = false`, unlike a `$validate-code` or `$expand` request carrying the same cache-id, which fails with `404`. The distinction matters for the client. A client polling its cache needs to tell "the server is up, and says my cache is gone" from "I could not reach the server" &mdash; the first means start a new cache, the second means try again later &mdash; and collapsing both into a failed request loses exactly that. This also matches `mode=end`, which likewise tolerates a cache-id the server does not have.
+
+Servers should make the diagnostics in the `outcome` say **which** fate the cache met &mdash; never issued by this server, released by the client, or timed out after a period of not being used &mdash; because those point at very different problems. A cache-id the server never issued suggests the client is talking to a different server or instance than the one that issued it, or that the server has restarted. A cache the client released suggests something in the client tore down a cache another part of it was still using. Only the third is a timeout, and only the third is fixed by checking more often. A server that cannot distinguish these should say so rather than guess.
 
 ### Sealed and unsealed caches
 
@@ -69,7 +89,7 @@ Caching amplifies this in two ways. First, a resolution made once against the ca
 
 * The cache holds resource **definitions**, not expansions. A value set sent with an inline `expansion` has that expansion cached as supplied.
 * Caches are scoped to the endpoint (and FHIR version) they were started on; a cache-id from one endpoint is not valid on another.
-* A request that carries an unknown cache-id (in the `X-Cache-Id` header) on `$validate-code`, `$expand`, or any other operation fails with HTTP `404` and the `cache-id-unknown` issue described above. By contrast, `mode=end` for a cache the server does not have is deliberately **not** an error: it returns `200`, because the client's intent &mdash; that the cache be gone &mdash; is already satisfied.
-* `mode=check` is reserved for a future revision: it will report whether a cache is still valid and may return statistics about it.
+* A request that carries an unknown cache-id (in the `X-Cache-Id` header) on `$validate-code`, `$expand`, or any other operation fails with HTTP `404` and the `cache-id-unknown` issue described above. By contrast, `mode=end` for a cache the server does not have is deliberately **not** an error: it returns `200`, because the client's intent &mdash; that the cache be gone &mdash; is already satisfied. Nor is `mode=check`, for the reasons given [above](#keeping-a-cache-alive).
+* A server that applies an idle timeout should record why each cache-id it has retired went away, so that when a request later arrives carrying that id, it can say which of the three things happened rather than listing the possibilities. The wrong diagnosis here is expensive: an expiry and a cache the client released look identical on the wire, but one is fixed by checking more often and the other by fixing the client's lifecycle. A bounded, insertion-ordered record of the most recently retired cache-ids is enough; an id old enough to have fallen off the end reports as never issued, which is the honest answer once the server no longer knows.
 
 See the [$cache-control OperationDefinition](OperationDefinition-cache-control.html) for the formal operation definition, and the [Terminology Issue Type code system](CodeSystem-tx-issue-type.html) for `cache-id-unknown` and the other terminology issue codes.
