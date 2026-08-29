@@ -81,6 +81,16 @@
     <definition value="An issue pertaining to the status of the underlying resources"/>
   </concept>
   <concept>
+    <code value="cannot-determine"/>
+    <display value="Cannot Determine"/>
+    <definition value="An issue indicating that the server was unable to determine the answer to the question it was asked, and is declining to give one rather than giving one that may be wrong. This arises where an operation's outcome codes have no value meaning &quot;unknown&quot;: $subsumes, for instance, can answer equivalent, subsumes, subsumed-by or not-subsumed, so a server that cannot establish the relationship - between SNOMED CT expressions that no classifier has seen, or between media types differing in a parameter the server does not understand - has no outcome it can honestly return. The client should treat the relationship as undetermined; it must not read this as a negative answer"/>
+  </concept>
+  <concept>
+    <code value="cache-id-duplicate"/>
+    <display value="Duplicate Cache Id"/>
+    <definition value="An issue indicating that the request carried more than one cache-id. Each request must carry exactly one; a server has no way to choose between them. This is a client error, and usually means a second cache was started on a connection that already had one without the first cache-id being removed"/>
+  </concept>
+  <concept>
     <code value="cache-id-unknown"/>
     <display value="Unknown Cache"/>
     <definition value="An issue indicating that the cache-id provided by the client is not known to the server: it was never created (caches are created with $cache-control mode=start), or it has expired or been released. The client cannot continue to refer to resources by that cache-id, and should establish a new cache if it wishes to keep using one"/>

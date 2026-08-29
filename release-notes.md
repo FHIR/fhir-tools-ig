@@ -1,3 +1,5 @@
+* Add `cannot-determine` to the terminology issue types - for when a server declines to answer rather than risk answering wrongly (e.g. $subsumes, which has no outcome code meaning "unknown")
+* Add `cache-id-duplicate` to the terminology issue types - a request that carries more than one cache-id
 * Document terminology caching (here temporarily)
 * Add resource-tla extension for a resource type's short mnemonic / three-letter acronym
 * Add new incubator-ig parameter code - directs the publisher to use the generated code for an incubator IG in place of the base specification definitions
