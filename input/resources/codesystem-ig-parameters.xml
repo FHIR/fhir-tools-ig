@@ -1955,6 +1955,42 @@
   </concept>  
 
   <concept>
+    <code value="page-heading-level"/>
+    <display value="page-heading-level"/>
+    <definition value="The heading level that the top heading of every generated page is moved to. When this is set, the HTML checks shift the headings on each page so that its top heading sits at this level, keeping the structure beneath it; pages that have more than one top level heading are left alone and reported instead. When it is not set, heading levels are left exactly as generated.&#10;&#10;Only set this if your template's CSS has been written for it: templates that number headings with CSS counters keyed to h2/h3/h4 will number pages wrongly if the headings move underneath them"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="integer"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="heading levels are left as generated"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="narrative-heading-level"/>
+    <display value="narrative-heading-level"/>
+    <definition value="The heading level that a resource's narrative is placed at when it is rendered into a page. The headings in the narrative - whether the author wrote them or a renderer generated them - are shifted so that the highest one sits at this level, preserving the structure beneath it. The default of 3 suits templates that title a page with an h2; set this if your template titles pages at a different level. If the narrative is nested too deeply to shift (it would need a heading below h6) it is left alone, and reported by the HTML checks instead"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="integer"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="default value is 3"/>
+    </property>
+  </concept>
+
+  <concept>
     <code value="no-cibuild-issues"/>
     <display value="Suppress CIBuild Warnings"/>
     <definition value="For integrity and security reasons, the ci-build enforces some requirements about the generated HTML, and the IG publisher gives warnings about these for all IGs. This parameter is used to turn those warnings, for IGs that will never be on the ci-build"/>
@@ -2343,6 +2379,24 @@
     <property>
       <code value="missing"/>
       <valueString value="No inference will occur"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="signatures-using-r6-method"/>
+    <display value="Signatures Use R6 Method"/>
+    <definition value="The way signatures are done on Bundles changed with R6. That method can be preadopted for signing bundles using this parameter (it is mandatory in R6)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="R5 and before "/>
     </property>
   </concept>
 
