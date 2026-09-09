@@ -86,6 +86,26 @@
     <definition value="An issue indicating that the server was unable to determine the answer to the question it was asked, and is declining to give one rather than giving one that may be wrong. This arises where an operation's outcome codes have no value meaning &quot;unknown&quot;: $subsumes, for instance, can answer equivalent, subsumes, subsumed-by or not-subsumed, so a server that cannot establish the relationship - between SNOMED CT expressions that no classifier has seen, or between media types differing in a parameter the server does not understand - has no outcome it can honestly return. The client should treat the relationship as undetermined; it must not read this as a negative answer"/>
   </concept>
   <concept>
+    <code value="not-supported"/>
+    <display value="Not Supported"/>
+    <definition value="An issue indicating that the server understood the request but does not implement what it asks for: a parameter, filter or property it does not support, or a code system whose codes it cannot enumerate at all. The request is not wrong, so repeating it against this server will not produce a different answer, but another server may be able to give one"/>
+  </concept>
+  <concept>
+    <code value="too-costly"/>
+    <display value="Too Costly"/>
+    <definition value="An issue indicating that the server can work out the answer but the answer is too large or too expensive to produce - typically an expansion with more members than the server is prepared to return. Nothing is wrong with the value set: the client should narrow the request with a filter, or page through it with count and offset"/>
+  </concept>
+  <concept>
+    <code value="version-error"/>
+    <display value="Version Error"/>
+    <definition value="An issue arising from the versions of the resources involved rather than from the code or the value set: a version was asked for that does not exist, the same code system was pinned to two different versions in the one request, or a value set&#39;s stated version does not match the version it was fetched by. The client can usually recover by changing or dropping the version it named"/>
+  </concept>
+  <concept>
+    <code value="business-rule"/>
+    <display value="Business Rule"/>
+    <definition value="An issue indicating that the server is declining to process content because of a rule it enforces about what it will accept, rather than because the content is invalid - a resource carrying implicit rules or modifier extensions it cannot safely ignore, say, or a compose with a lockedDate. The content may be perfectly valid; this server will not act on it"/>
+  </concept>
+  <concept>
     <code value="cache-id-duplicate"/>
     <display value="Duplicate Cache Id"/>
     <definition value="An issue indicating that the request carried more than one cache-id. Each request must carry exactly one; a server has no way to choose between them. This is a client error, and usually means a second cache was started on a connection that already had one without the first cache-id being removed"/>
