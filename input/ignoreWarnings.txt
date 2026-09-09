@@ -10,6 +10,7 @@ The element Extension.extension.value[x] has a binding, and has multiple types s
 The Implementation Guide contains no examples for this extension
 MSG_DEPRECATED
 SD_CONTEXT_SHOULD_NOT_BE_ELEMENT
+Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code|5.0.0
 
 # These won't ever be move to THO
 CODESYSTEM_THO_CHECK
