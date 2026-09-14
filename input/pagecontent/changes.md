@@ -39,6 +39,7 @@ New codes in [ig-parameters](CodeSystem-ig-parameters.html):
 * `signatures-using-r6-method` — pre-adopts the R6 method of signing Bundles
 * `infer-resource-conformance` — infers the conformance level for a resource in a CapabilityStatement from the maximum conformance expectation of the interactions and search parameters used within it
 * `tx-unload-early` — unloads the terminology context before the HTML inspection phase to reclaim memory earlier. Only for very large IGs that are memory starved; conformance statement rendering will not work when it is set
+* `[r4|r4b|r5|r6]-inclusion` - directs the publisher to include resources for specific FHIR versions when creating multi-FHIR-version IGs.
 
 **Changed content**
 
