@@ -31,7 +31,7 @@
   <concept>
     <code value="named-elements"/>
     <display value="named-elements"/>
-    <definition value="The type can be extended by having additional named elements, where the name is from the elementdefinition-xml-name or elementdefinition-json-name for xml and json respectively"/>
+    <definition value="The type can be extended by having additional named elements, where the name is from the `xml-name` or `json-name` extensions for xml and json respectively"/>
   </concept>
   <!-- to add: CDA and V2 style extensions -->
 </CodeSystem>

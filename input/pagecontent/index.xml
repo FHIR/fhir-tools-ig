@@ -162,7 +162,7 @@
         <td>If true, then the JSON format produced from this logical doesn't include a 'resourceType' property
         </td>
         <td>
-          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition</a>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html">StructureDefinition</a>
         </td>
       </tr>
 
@@ -250,6 +250,16 @@
       </tr>
       <tr>
         <td>
+          <a href="StructureDefinition-elementdefinition-string-format.html" title="The actual format of the string, to allow for additional validation. This usually arises due to layered content models. The format is the name of another primitive type">elementdefinition-string-format</a>
+        </td>
+        <td>The actual format of a string element, where the format is the name of another primitive type (arises with layered content models)
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition</a>
+        </td>
+      </tr>
+      <tr>
+        <td>
           <a href="StructureDefinition-elementdefinition-binding-style.html" title="How the data type is bound to vocabulary">elementdefinition-binding-style</a>
         </td>
         <td>How the data type is bound to vocabulary - styles such as FHIR, CDA, OpenEHR
@@ -265,7 +275,7 @@
         <td>How the type can be extended. (FHIR types inherit from <code>Element</code> and have extension-style = fhir-extensions)
         </td>
         <td>
-          <a href="http://hl7.org/fhir/R5/structuredefinition.html">StructureDefinition</a>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html">StructureDefinition</a>,          <a href="http://hl7.org/fhir/R5/elementdefinition.html#ElementDefinition">ElementDefinition</a>
         </td>
       </tr>
 
@@ -722,6 +732,28 @@
 
       <tr>
         <td>
+          <a href="StructureDefinition-resource-tla.html" title="A short mnemonic code - historically a three letter acronym (TLA) - for a resource type. It is used as a compact abbreviation for the resource, for example when constructing identifiers or short cross-references. The code is not required to be exactly three characters.">resource-tla</a>
+        </td>
+        <td>A short mnemonic code (historically a three letter acronym) for a resource type
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/structuredefinition.html">StructureDefinition</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <a href="StructureDefinition-validator-version.html" title="A human readable description of the validation tool that produced this OperationOutcome, including its version and when it was built. Validation results depend on the version of the tool that produced them, and a report can easily outlive - or be produced by - a build that is well out of date, so the tool records what it was here.">validator-version</a>
+        </td>
+        <td>Records which validation tool - and which version and build of it - produced an OperationOutcome
+        </td>
+        <td>
+          <a href="http://hl7.org/fhir/R5/operationoutcome.html">OperationOutcome</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
           <a href="StructureDefinition-searchparameter-base-type.html" title="Indicates the base type for a search parameter when the actual base type is not a valid resource (e.g. custom resource etc)">searchparameter-base-type</a>
         </td>
         <td>Indicates the base type for a search parameter when the actual base type is not a valid resource (R4 and earlier)
@@ -809,13 +841,6 @@
     <span class="fhir-conformance" id="conf-3">Tools SHALL follow this IG</span>
   </p>
 
-<p>
-  This IG is not subject to formal balloting. It is maintained 
-  by the FHIR-I Working Group on behalf of the tooling providers,
-  and updated regularly to keep in sync with the various tools. 
-  Changes are proposed and managed using the standard Jira process
-  (see right link on the footer). 
-  </p>
   <a name="topics"></a>
   <h3>Additional Documentation</h3>
   <ul>
@@ -835,16 +860,14 @@
       <a href="parameterized-valuesets.html">Parameterised ValueSets</a>
     </li>
     <li>
+      <a href="terminology-caching.html">Terminology Caching</a>
+    </li>
+    <li>
+      <a href="valueset-comparison.html">ValueSet Comparison</a>
+    </li>
+    <li>
       <a href="other.html">Supporting Documentation</a>
     </li>
   </ul>
 
-  <h3>Conformance Statement Index</h3>
-  <table class="fhir-conformance-list">
-    <tbody>
-      <tr>
-        <th></th>
-      </tr>
-    </tbody>
-  </table>
 </div>

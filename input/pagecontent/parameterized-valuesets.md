@@ -31,7 +31,7 @@ Parameterised ValueSets are defined in the same way as regular ValueSets, except
     "url": "http://hl7.org/fhir/tools/StructureDefinition/valueset-parameter",
     "extension" : [{
       "url": "name",
-      "valueCode" : "p-inactive",
+      "valueCode" : "p-inactive"
     }, {
       "url": "documentation",
       "valueMarkdown" : "whether the record is inactive or not"
@@ -69,25 +69,6 @@ Parameterised ValueSets are defined in the same way as regular ValueSets, except
 * While it is possible to define arbitrary parameter names, care should be taken to avoid naming conflicts with existing parameters to `ValueSet/$expand` and `ValueSet/$validate-code`.
 * §conf-4: parameter names SHOULD start with  `p-` to avoid naming conflicts, and for ease of processing on API Gateways and servers§
 
-§§conf-1a:Additional markdown conformance statement SHALL apply^Start of rule
-
-This is a broken additional conformance statement because only the title has conformance language:
-
-* Clause 1 
-* Clause 2 
-
-§§
-
-§§conf-1b:Additional markdown conformance statement SHALL apply^Start of rule
-
-This is an additional conformance statement:
-
-* Clause 1 SHALL apply
-* Clause 2 MAY apply
-
-§§
-
-
 ### Parameterised ValueSet expansion
 
 Having defined a parameterised ValueSet, you can expand it by providing the values for the parameters as query parameters in a GET request or in as `Parameters.parameter` elements in a POST request.
@@ -107,7 +88,7 @@ will result in the expansion of a ValueSet defined as follows:
         "property": "inactive",
         "op": "=",
         "value": "true"
-      }],
+      }]
     }]
   }
 }
@@ -126,7 +107,7 @@ will result in the expansion of a ValueSet defined as follows:
   "compose": {
     "include": [{
       "valueSet": [ "http://snomed.info/sct?fhir_vs=refset/929360041000036105" ],
-      "system": "http://snomed.info/sct",
+      "system": "http://snomed.info/sct"
     }]
   }
 }
@@ -146,7 +127,7 @@ A primary use context for parameterised ValueSets is in Questionnaires, using th
   "type": "choice",
   "_answerValueSet": {
     "extension": [{
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-parameterX",
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-parameter",
       "extension": [{
         "url":"name",
         "valueCode": "p-inactive"            
@@ -158,7 +139,7 @@ A primary use context for parameterised ValueSets is in Questionnaires, using th
         }
       }]
     },{
-      "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-parameterX",
+      "url": "http://hl7.org/fhir/tools/StructureDefinition/binding-parameter",
       "extension": [{
         "url":"name",
         "valueCode": "displayLanguage"            
@@ -173,10 +154,9 @@ A primary use context for parameterised ValueSets is in Questionnaires, using th
 ```
 
 Notes:
-* WHen an expression is provided, it is evaluated under the rules defined in the [SDC specification](https://build.fhir.org/ig/HL7/sdc/behavior.html)
+* When an expression is provided, it is evaluated under the rules defined in the [SDC specification](https://build.fhir.org/ig/HL7/sdc/behavior.html)
 
 ## Use in Profiles
 
 TBD
 
-$$$

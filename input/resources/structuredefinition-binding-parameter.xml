@@ -63,7 +63,7 @@
       <path value="Extension.extension.extension"/> 
       <max value="0"/> 
     </element> 
-    <element id="Extension.extension:mnameap.url">
+    <element id="Extension.extension:name.url">
       <path value="Extension.extension.url"/> 
       <type> 
         <code value="uri"/> 
