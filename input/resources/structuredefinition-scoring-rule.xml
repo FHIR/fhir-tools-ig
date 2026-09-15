@@ -16,7 +16,7 @@
       <value value="http://hl7.org/Special/committees/fhir-i"/>
     </telecom>
   </contact>
-  <description value="Defines a scoring rule, used by the scoring system. See [scoring documentation](scoring-documentation.html) for further information."/>
+  <description value="Defines a scoring rule, used by the scoring system. Documentation is not yet written."/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -37,7 +37,7 @@
    <element id="Extension">
       <path value="Extension"/> 
       <short value="Defines a scoring rule"/> 
-      <definition value="Defines a scoring rule, used by the scoring system. See [scoring documentation](scoring-documentation.html) for further information."/> 
+      <definition value="Defines a scoring rule, used by the scoring system. Documentation is not yet written."/> 
     </element> 
 
     <element id="Extension.extension:key">
@@ -104,7 +104,7 @@
     <element id="Extension.extension:rule">
       <path value="Extension.extension"/> 
       <sliceName value="rule"/> 
-      <short value="Zero or more named rules associated with this scoring rule. See [scoring documentation](scoring-documentation.html) for further information."/> 
+      <short value="Zero or more named rules associated with this scoring rule. Documentation is not yet written."/> 
       <min value="0"/> 
       <max value="*"/> 
       <type> 

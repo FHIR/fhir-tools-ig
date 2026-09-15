@@ -19,12 +19,8 @@ CODESYSTEM_THO_CHECK
 WARNING: StructureDefinition/CDSHooksRequest: StructureDefinition.snapshot.element[8]: Constraint failed: eld-24: 'pattern[x] should be used rather than fixed[x]' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)
 WARNING: StructureDefinition/CDSHooksRequest: StructureDefinition.differential.element[6]: Constraint failed: eld-24: 'pattern[x] should be used rather than fixed[x]' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)
 
-# Will be fixed by a future extensions pack release
-MSG_DRAFT
+# All in generated content
+CONFORMANCE_STATEMENT_WORD
 
 # Will be cleaned up when moving CDS hooks content to CDSHooks spec
 CODESYSTEM_PROPERTY_UNKNOWN_CODE
-
-# This isn't a conformance usage
-INFORMATION: StructureDefinition-requirements-statementshallnot.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause
-
