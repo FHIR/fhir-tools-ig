@@ -1451,7 +1451,7 @@
   <concept>
     <code value="r4b-exclusion"/>
     <display value="r4b-exclusion"/>
-    <definition value="For an R4 IG, ignore this profile when considering conversion to R4B, or for an R4B IG, omit this when generating the R4B specific package. Value is either '{type}/{id}' or '{url}'"/>
+    <definition value="For an R4 IG, ignore this resource when considering conversion to R4B, or for an R4B IG, omit this when generating the R4B specific package. Value is either '{type}/{id}' or '{url}'"/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="true"/>
@@ -1465,6 +1465,78 @@
       <valueString value="don't ignore any profiles"/>
     </property>
   </concept>  
+
+  <concept>
+    <code value="r4-inclusion"/>
+    <display value="r4-inclusion"/>
+    <definition value="When generating an R4-specific package, include this resource. Do not include this resource in packages for any other FHIR versions. Value is either '{type}/{id}' or '{url}'"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="special"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="no resources have been specifically included for R4"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="r4b-inclusion"/>
+    <display value="r4b-inclusion"/>
+    <definition value="When generating an R4B-specific package, include this resource. Do not include this resource in packages for any other FHIR versions. Value is either '{type}/{id}' or '{url}'"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="special"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="no resources have been specifically included for R4B"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="r5-inclusion"/>
+    <display value="r5-inclusion"/>
+    <definition value="When generating an R5-specific package, include this resource. Do not include this resource in packages for any other FHIR versions. Value is either '{type}/{id}' or '{url}'"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="special"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="no resources have been specifically included for R5"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="r6-inclusion"/>
+    <display value="r6-inclusion"/>
+    <definition value="When generating an R6-specific package, include this resource. Do not include this resource in packages for any other FHIR versions. Value is either '{type}/{id}' or '{url}'"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="true"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="special"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="no resources have been specifically included for R6"/>
+    </property>
+  </concept>
 
   <concept>
     <code value="produce-jekyll-data"/>
