@@ -1,10 +1,10 @@
 {
   "package-id" : "hl7.fhir.uv.tools",
-  "version" : "1.1.2",
-  "path" : "http://hl7.org/fhir/tools/1.1.2",
-  "mode" : "technical-correction",
+  "version" : "1.2.0",
+  "path" : "http://hl7.org/fhir/tools/1.2.0",
+  "mode" : "milestone",
   "status" : "informative",
   "sequence" : "Release",
-  "desc" : "Correction to representation of extension contexts in the hl7.fhir.uv.tools.r4 package",
+  "desc" : "New cache−controlandValueSet/compare operations, seven new terminology issue types, validator-version and resource-tla extensions, seven new IG parameters, additional binding purposes aligned with R6, and documentation corrections",
   "first" : false
 }
