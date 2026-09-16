@@ -29,8 +29,8 @@
     <definition value="A warning message"/>
   </concept>
   <concept>
-    <code value="error"/>
-    <display value="error"/>
-    <definition value="An error message"/>
+    <code value="critical"/>
+    <display value="critical"/>
+    <definition value="A critical message"/>
   </concept>
 </CodeSystem>
