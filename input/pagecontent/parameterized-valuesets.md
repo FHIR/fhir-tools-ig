@@ -1,7 +1,8 @@
 
-# Parameterised ValueSets V0.2
 
-## Background and Motivation
+This is V0.2 of Parameterised ValueSets
+
+### Background and Motivation
 
 A common activity in a data entry scenario like a Questionnaire is to have the set of available options for one question depend on an answer to another question.
 For example, after choosing a country, the set of available options for a question about a state or region would depend on the chosen country.
@@ -116,7 +117,7 @@ will result in the expansion of a ValueSet defined as follows:
 It is the terminology server's discretion to decide whether the parameterised ValueSet.compose or the computed ValueSet.compose is used in the response when for `includeDefinition=true`.
 
 
-## Use in Questionnaires
+### Use in Questionnaires
 
 A primary use context for parameterised ValueSets is in Questionnaires, using the  [Binding Parameter Declaration Extension](StructureDefinition-binding-parameter.html).
 
@@ -156,7 +157,7 @@ A primary use context for parameterised ValueSets is in Questionnaires, using th
 Notes:
 * When an expression is provided, it is evaluated under the rules defined in the [SDC specification](https://build.fhir.org/ig/HL7/sdc/behavior.html)
 
-## Use in Profiles
+### Use in Profiles
 
 TBD
 

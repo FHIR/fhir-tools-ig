@@ -23,7 +23,7 @@ with the following format:
 
 For each item in the factory list, an output file will be produced.
 
-## Documentation:
+### Documentation:
 
 * **item-factory**: The kind of item being iterated. See below for possible factory values
 * **source-file**: the name of the file (relative path in the repository) for the source to produce
@@ -34,7 +34,7 @@ For each item in the factory list, an output file will be produced.
 * **generation**: The value to put in the generation entry for the page
 * **page-title**:  the title for the page file in the ToC. The filename may include %item%, and this will be replaced with the item value
 
-## Possible Factory types:
+### Possible Factory types:
 
 * **types**: a list of all types defined in FHIR
 * **resources**: a list of all resources defined in FHIR
@@ -43,7 +43,7 @@ For each item in the factory list, an output file will be produced.
 * **versions**: A list of all the official release versions
 * **manual**: A list of strings as provided in the json property **items** (an array of strings)
 
-## Variables
+### Variables
 
 A list of variables to replace in the source file. Each variable
 has a name and a transform. The page factory performs the transform
