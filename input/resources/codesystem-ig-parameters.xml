@@ -1141,6 +1141,24 @@
   </concept>
 
   <concept>
+    <code value="old-artifacts"/>
+    <display value="shownav"/>
+    <definition value="Determines whether the artifacts page uses the old static layout (true) or new dynamic filtered view (false)"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="true|false"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="false"/>
+    </property>
+  </concept>
+
+  <concept>
     <code value="copyrightyear"/>
     <display value="copyrightyear"/>
     <definition value="The copyright year text to include in the implementation guide footer"/>
