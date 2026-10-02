@@ -2,7 +2,11 @@ This page records what changed in each release of this implementation guide. Rel
 
 Every published version remains available at `http://hl7.org/fhir/tools/[version]`, and the full publication record — including technical corrections — is in the [publication history](http://hl7.org/fhir/tools/history.html).
 
-### 1.2.0 (in preparation)
+### 1.3.0
+
+(todo)
+
+### 1.2.0 
 
 The theme of this release is terminology ecosystem support: two new operations, a substantially extended set of terminology issue types, and the documentation that goes with them. It also brings the additional binding purposes into line with the changes made for R6.
 
@@ -15,6 +19,8 @@ The theme of this release is terminology ecosystem support: two new operations, 
 
 * [validator-version](StructureDefinition-validator-version.html) — the validation tool stamps its own version and build date into the OperationOutcome it produces, so a report carries a record of what produced it. Validation results depend on the version of the tool, and a report can easily outlive the build that made it
 * [resource-tla](StructureDefinition-resource-tla.html) — a short mnemonic code, historically a three letter acronym, for a resource type. Used as a compact abbreviation, for example when constructing identifiers or short cross-references. The code is not required to be exactly three characters
+* [type-profile-constraints](StructureDefinition-type-profile-constraints.html) — on a type profile in a snapshot element, records whether the constraints on the root of the profile have been merged into the element fully, partially or not at all, so a validator knows whether it still needs to check the root of the type profile
+* [implied-type-slice](StructureDefinition-implied-type-slice.html) — marks a type slice the snapshot generator added so that a type slicing, which is always closed, still allows the types no other slice covers. The slice adds no constraints, and renderers leave it out
 
 **New terminology issue types**
 

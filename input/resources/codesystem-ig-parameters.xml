@@ -1866,7 +1866,7 @@
   <concept>
     <code value="auto-oid-root"/>
     <display value="OID root for automatically assigned OIDs"/>
-    <definition value="Defines the OID root for the IG. Must be globally unique. Contact the FHIR product director or deputy for an assignment, though you can assign your own if you wish. If this is present, any canonical resources that do not have OIDs assigned manually will have OIDs automatically assigned by the publisher. The OID assignments are stored in oids.ini next to the IG resource for the IG, and must be committed with other changes to the source."/>
+    <definition value="Defines the OID root for the IG. Must be globally unique. see OIDs are easy to assign - see https://build.fhir.org/ig/FHIR/ig-guidance/oids.html. If this is present, any canonical resources that do not have OIDs assigned manually will have OIDs automatically assigned by the publisher. The OID assignments are stored in oids.ini next to the IG resource for the IG, and must be committed with other changes to the source."/>
     <property>
       <code value="repeats"/>
       <valueBoolean value="false"/>
@@ -2059,6 +2059,24 @@
     <property>
       <code value="missing"/>
       <valueString value="heading levels are left as generated"/>
+    </property>
+  </concept>
+
+  <concept>
+    <code value="accessibility-checks"/>
+    <display value="accessibility-checks"/>
+    <definition value="Whether the HTML checks look for the accessibility problems that can be found in the generated markup (warnings with ids starting HTML_A11Y_): images without alternative text, form controls without labels, links with no text or text like 'click here', click handlers on things a keyboard cannot reach, aria attributes that refer to ids that are not on the page, frames without titles, pages without titles, and so on. These are based on the parts of the HHS Section 508 checklist (WCAG) that can be tested without a browser. They are off by default: set this to true to turn them on. When they are on, local builds also get an accessibility check panel at the bottom of each page, which runs a fuller check (including colour contrast) in the browser. It does not affect the other HTML checks, including the heading structure and page language checks"/>
+    <property>
+      <code value="repeats"/>
+      <valueBoolean value="false"/>
+    </property>
+    <property>
+      <code value="string-format"/>
+      <valueString value="boolean"/>
+    </property>
+    <property>
+      <code value="missing"/>
+      <valueString value="the accessibility checks are not run"/>
     </property>
   </concept>
 
