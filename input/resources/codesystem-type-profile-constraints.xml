@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="type-profile-constraints"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1"/>
+  </extension>
+  <url value="http://hl7.org/fhir/tools/CodeSystem/type-profile-constraints"/>
+  <name value="TypeProfileConstraintsCS"/>
+  <title value="Type Profile Constraints Codes"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <description value="How much of what a type profile says on its root element has been merged into the snapshot element that uses the profile"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <concept>
+    <code value="full"/>
+    <display value="Fully merged"/>
+    <definition value="Everything the type profile constrains on its root element (over and above the underlying type) has been merged into this element in the snapshot: cardinality, value ranges, fixed and pattern values, invariants, bindings, mappings and the must-support and must-have-value flags. A consumer can rely on the snapshot element and does not need to check the root of the type profile separately"/>
+  </concept>
+  <concept>
+    <code value="partial"/>
+    <display value="Partially merged"/>
+    <definition value="Some of the constraints on the root of the type profile have been merged into this element, but not all of them - for example, the invariants on the root of a resource profile (whose meaning changes when the resource is treated as an element), or a value range that could not be compared. A consumer must still check the root of the type profile"/>
+  </concept>
+  <concept>
+    <code value="none"/>
+    <display value="Not merged"/>
+    <definition value="None of the constraints on the root of the type profile have been merged into this element - for example, because the element has more than one type profile (any one of which may apply), or more than one type, or because the profile could not be found. A consumer must check the root of the type profile"/>
+  </concept>
+</CodeSystem>
