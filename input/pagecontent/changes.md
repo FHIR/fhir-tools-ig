@@ -4,9 +4,32 @@ Every published version remains available at `http://hl7.org/fhir/tools/[version
 
 ### 1.3.0
 
-(todo)
+The theme of this release is support for the reworked snapshot generation: two new extensions that record what the snapshot generator has done to an element, so that validators and renderers can act on it. It also adds IG parameters for multi-FHIR-version packages, the new artifacts page and accessibility checking, and corrects a code in the CDS Hooks indicator code system.
 
-### 1.2.0 
+**New extensions**
+
+* [type-profile-constraints](StructureDefinition-type-profile-constraints.html) — on a type profile in a snapshot element, records whether the constraints on the root of the profile (cardinality, value ranges, fixed and pattern values, invariants, bindings, mappings, must-support and must-have-value) have been merged into the element `full`y, `partial`ly or not at all (`none`), so a validator knows whether it still needs to check the root of the type profile. The codes are defined in the new [type-profile-constraints](CodeSystem-type-profile-constraints.html) code system
+* [implied-type-slice](StructureDefinition-implied-type-slice.html) — marks a type slice the snapshot generator added so that a type slicing, which is always closed, still allows the types no other slice covers. The slice adds no constraints; renderers leave it out, and when a profile is derived from this one the slice is regenerated rather than inherited
+
+**New IG parameters**
+
+New codes in [ig-parameters](CodeSystem-ig-parameters.html):
+
+* `[r4|r4b|r5|r6]-inclusion` — when generating the package for a specific FHIR version in a multi-FHIR-version IG, include this resource, and leave it out of the packages for all other versions. The counterpart of the existing `-exclusion` parameters
+* `old-artifacts` — whether the artifacts page uses the old static layout (`true`) or the new dynamic filtered view (`false`, the default)
+* `accessibility-checks` — turns on the HTML checks for the accessibility problems that can be found in the generated markup (warnings with ids starting `HTML_A11Y_`): images without alternative text, unlabelled form controls, links with no meaningful text, click handlers a keyboard cannot reach, dangling aria references, untitled frames and pages, and so on. These are based on the parts of the Section 508 / WCAG checklist that can be tested without a browser. Off by default; when on, local builds also get an accessibility check panel on each page that runs a fuller in-browser check, including colour contrast
+
+**Changed content**
+
+* [CDSIndicator](CodeSystem-CDSIndicator.html) — the code `error` was wrong, and is replaced by `critical`, which is the code CDS Hooks uses ([#14](https://github.com/FHIR/fhir-tools-ig/issues/14)). **Implementers using `error` need to change to `critical`**
+* [tx-issue-type](CodeSystem-tx-issue-type.html) — the definitions of `not-in-vs` and `this-code-not-in-vs` are clarified: `not-in-vs` means the entire concept passed has failed validation, whereas `this-code-not-in-vs` means one particular code is not in the value set, though others might be
+* [ig-parameters](CodeSystem-ig-parameters.html) — `r4b-exclusion` applies to any resource, not just profiles; `auto-oid-root` now refers to the [OID guidance](https://build.fhir.org/ig/FHIR/ig-guidance/oids.html) on assigning OIDs
+
+**Documentation**
+
+* The heading structure of the [page factories](page-factories.html) and [parameterized value sets](parameterized-valuesets.html) pages is corrected
+
+### 1.2.0
 
 The theme of this release is terminology ecosystem support: two new operations, a substantially extended set of terminology issue types, and the documentation that goes with them. It also brings the additional binding purposes into line with the changes made for R6.
 
@@ -19,8 +42,6 @@ The theme of this release is terminology ecosystem support: two new operations, 
 
 * [validator-version](StructureDefinition-validator-version.html) — the validation tool stamps its own version and build date into the OperationOutcome it produces, so a report carries a record of what produced it. Validation results depend on the version of the tool, and a report can easily outlive the build that made it
 * [resource-tla](StructureDefinition-resource-tla.html) — a short mnemonic code, historically a three letter acronym, for a resource type. Used as a compact abbreviation, for example when constructing identifiers or short cross-references. The code is not required to be exactly three characters
-* [type-profile-constraints](StructureDefinition-type-profile-constraints.html) — on a type profile in a snapshot element, records whether the constraints on the root of the profile have been merged into the element fully, partially or not at all, so a validator knows whether it still needs to check the root of the type profile
-* [implied-type-slice](StructureDefinition-implied-type-slice.html) — marks a type slice the snapshot generator added so that a type slicing, which is always closed, still allows the types no other slice covers. The slice adds no constraints, and renderers leave it out
 
 **New terminology issue types**
 
@@ -45,7 +66,6 @@ New codes in [ig-parameters](CodeSystem-ig-parameters.html):
 * `signatures-using-r6-method` — pre-adopts the R6 method of signing Bundles
 * `infer-resource-conformance` — infers the conformance level for a resource in a CapabilityStatement from the maximum conformance expectation of the interactions and search parameters used within it
 * `tx-unload-early` — unloads the terminology context before the HTML inspection phase to reclaim memory earlier. Only for very large IGs that are memory starved; conformance statement rendering will not work when it is set
-* `[r4|r4b|r5|r6]-inclusion` - directs the publisher to include resources for specific FHIR versions when creating multi-FHIR-version IGs.
 
 **Changed content**
 
