@@ -28,12 +28,12 @@
   <concept>
     <code value="not-in-vs"/>
     <display value="Not in ValueSet"/>
-    <definition value="An issue that represents the value set validation failure"/>
+    <definition value="An issue that represents the value set validation failure - the entire concept passed has failed validation"/>
   </concept>
   <concept>
     <code value="this-code-not-in-vs"/>
     <display value="This code not in valueset"/>
-    <definition value="An issue that indicates that a particular code as not in the value set (but others might be)"/>
+    <definition value="An issue that indicates that a particular code was not in the value set (but others might be)"/>
   </concept>
   <concept>
     <code value="invalid-data"/>
