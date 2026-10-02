@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="inner-resource-profile"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1"/>
+  </extension>
+  <url value="http://hl7.org/fhir/tools/StructureDefinition/inner-resource-profile"/>
+  <name value="InnerResourceProfile"/>
+  <title value="Inner Resource Profile"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <publisher value="HL7 International / FHIR Infrastructure"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/Special/committees/fhir-i"/>
+    </telecom>
+  </contact>
+  <description value="Asserts that an element within a resource in an implementation guide (such as a Bundle entry, or a contained resource) is valid against a particular profile, without needing a profile on the root resource that enforces the profiles of its parts, or a meta.profile in the instance. This allows tooling to test the validity of the parts of an example."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <fhirVersion value="4.0.1"/>
+  <kind value="complex-type"/>
+  <abstract value="false"/>
+  <context>
+    <extension url="http://hl7.org/fhir/StructureDefinition/version-specific-use">
+      <extension url="startFhirVersion">
+        <valueCode value="4.0"/>
+      </extension>
+    </extension>
+    <type value="element"/>
+    <expression value="ImplementationGuide.definition.resource"/>
+  </context>
+  <type value="Extension"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+  <derivation value="constraint"/>
+  <differential>
+    <element id="Extension">
+      <path value="Extension"/>
+      <short value="An element in the resource that complies with a profile"/>
+      <definition value="Asserts that an element within the resource is valid against a particular profile, so that tooling can test it without the root resource having a profile that enforces it."/>
+      <comment value="The only use cases are for tooling, which is why this extension is defined here. If more general uses come up, a general purpose extension may be defined."/>
+      <min value="0"/>
+      <max value="*"/>
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension"/>
+      <min value="2"/>
+    </element>
+    <element id="Extension.extension:path">
+      <path value="Extension.extension"/>
+      <sliceName value="path"/>
+      <short value="FHIRPath to the element"/>
+      <definition value="FHIRPath that points to the element within the instance that complies with a particular profile. FHIRPath context is root resource pointed to by ImplementationGuide.definition.resource.reference."/>
+      <min value="1"/>
+      <max value="1"/>
+    </element>
+    <element id="Extension.extension:path.extension">
+      <path value="Extension.extension.extension"/>
+      <max value="0"/>
+    </element>
+    <element id="Extension.extension:path.url">
+      <path value="Extension.extension.url"/>
+      <fixedUri value="path"/>
+    </element>
+    <element id="Extension.extension:path.value[x]">
+      <path value="Extension.extension.value[x]"/>
+      <min value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="Extension.extension:profile">
+      <path value="Extension.extension"/>
+      <sliceName value="profile"/>
+      <short value="Profile the element complies to"/>
+      <definition value="The profile the specified element complies to."/>
+      <min value="1"/>
+      <max value="1"/>
+    </element>
+    <element id="Extension.extension:profile.extension">
+      <path value="Extension.extension.extension"/>
+      <max value="0"/>
+    </element>
+    <element id="Extension.extension:profile.url">
+      <path value="Extension.extension.url"/>
+      <fixedUri value="profile"/>
+    </element>
+    <element id="Extension.extension:profile.value[x]">
+      <path value="Extension.extension.value[x]"/>
+      <min value="1"/>
+      <type>
+        <code value="canonical"/>
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/StructureDefinition"/>
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url"/>
+      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/inner-resource-profile"/>
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]"/>
+      <max value="0"/>
+    </element>
+  </differential>
+</StructureDefinition>
