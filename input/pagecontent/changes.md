@@ -10,6 +10,7 @@ The theme of this release is support for the reworked snapshot generation: two n
 
 * [type-profile-constraints](StructureDefinition-type-profile-constraints.html) — on a type profile in a snapshot element, records whether the constraints on the root of the profile (cardinality, value ranges, fixed and pattern values, invariants, bindings, mappings, must-support and must-have-value) have been merged into the element `full`y, `partial`ly or not at all (`none`), so a validator knows whether it still needs to check the root of the type profile. The codes are defined in the new [type-profile-constraints](CodeSystem-type-profile-constraints.html) code system
 * [implied-type-slice](StructureDefinition-implied-type-slice.html) — marks a type slice the snapshot generator added so that a type slicing, which is always closed, still allows the types no other slice covers. The slice adds no constraints; renderers leave it out, and when a profile is derived from this one the slice is regenerated rather than inherited
+* [inner-resource-profile](StructureDefinition-inner-resource-profile.html) — on `ImplementationGuide.definition.resource`, asserts that an element within the resource (e.g. a Bundle entry or a contained resource), identified by a FHIRPath, is valid against a given profile, so that tooling can test the parts of an example without a profile on the root resource or a `meta.profile` in the instance ([FHIR-43405](https://jira.hl7.org/browse/FHIR-43405))
 
 **New IG parameters**
 

@@ -1142,7 +1142,7 @@
 
   <concept>
     <code value="old-artifacts"/>
-    <display value="shownav"/>
+    <display value="old-artifacts"/>
     <definition value="Determines whether the artifacts page uses the old static layout (true) or new dynamic filtered view (false)"/>
     <property>
       <code value="repeats"/>

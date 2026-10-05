@@ -1,10 +1,10 @@
 {
   "package-id" : "hl7.fhir.uv.tools",
-  "version" : "1.2.0",
-  "path" : "http://hl7.org/fhir/tools/1.2.0",
+  "version" : "1.3.0",
+  "path" : "http://hl7.org/fhir/tools/1.3.0",
   "mode" : "milestone",
   "status" : "informative",
   "sequence" : "Release",
-  "desc" : "New cache−controlandValueSet/compare operations, seven new terminology issue types, validator-version and resource-tla extensions, seven new IG parameters, additional binding purposes aligned with R6, and documentation corrections",
+  "desc" : "New type-profile-constraints and implied-type-slice extensions for snapshot generation, new IG parameters (rX-inclusion, old-artifacts, accessibility-checks), CDSIndicator error code corrected to critical, and clarified tx-issue-type definitions",
   "first" : false
 }
