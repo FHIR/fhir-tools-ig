@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R4/fhir-single.xsd">
+  <id value="new-location"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1"/>
+  </extension>
+  <url value="http://hl7.org/fhir/tools/StructureDefinition/new-location"/>
+  <name value="NewLocation"/>
+  <title value="New Location"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <publisher value="HL7 International / FHIR Infrastructure"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/Special/committees/fhir-i"/>
+    </telecom>
+  </contact>
+  <description value="An artifact or page that used to be published in this implementation guide, and is now published in another one. The IG publisher generates redirects from where the content would have been to where it now is, so that links to it, and the canonical URL of an artifact, keep working for people reading it."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <fhirVersion value="4.0.1"/>
+  <kind value="complex-type"/>
+  <abstract value="false"/>
+  <context>
+    <extension url="http://hl7.org/fhir/StructureDefinition/version-specific-use">
+      <extension url="startFhirVersion">
+        <valueCode value="4.0"/>
+      </extension>
+    </extension>
+    <type value="element"/>
+    <expression value="ImplementationGuide"/>
+  </context>
+  <type value="Extension"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+  <derivation value="constraint"/>
+  <differential>
+    <element id="Extension">
+      <path value="Extension"/>
+      <short value="Content of this IG that is now published elsewhere"/>
+      <definition value="An artifact or page that used to be published in this implementation guide, and is now published in another one. The IG publisher generates redirects at the locations where the content would have been created had it still been present, to where the content now resides."/>
+      <comment value="The redirects are for people reading the content: tools resolve canonical URLs through packages, not by following redirects. The new-location applies from the given version of this IG on, so that a build of an earlier version that still has the content (e.g. a technical correction) doesn't replace it with redirects."/>
+      <min value="0"/>
+      <max value="*"/>
+      <constraint>
+        <key value="nloc-1"/>
+        <severity value="error"/>
+        <human value="Exactly one of artifact and page must be present"/>
+        <expression value="extension('artifact').exists() xor extension('page').exists()"/>
+        <source value="http://hl7.org/fhir/tools/StructureDefinition/new-location"/>
+      </constraint>
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension"/>
+      <min value="2"/>
+    </element>
+    <element id="Extension.extension:artifact">
+      <path value="Extension.extension"/>
+      <sliceName value="artifact"/>
+      <short value="Artifact that is now found elsewhere (Type/id)"/>
+      <definition value="The local url (ArtifactType/id) of a resource that used to be found in this IG that is now found elsewhere."/>
+      <min value="0"/>
+      <max value="1"/>
+    </element>
+    <element id="Extension.extension:artifact.extension">
+      <path value="Extension.extension.extension"/>
+      <max value="0"/>
+    </element>
+    <element id="Extension.extension:artifact.url">
+      <path value="Extension.extension.url"/>
+      <fixedUri value="artifact"/>
+    </element>
+    <element id="Extension.extension:artifact.value[x]">
+      <path value="Extension.extension.value[x]"/>
+      <min value="1"/>
+      <type>
+        <code value="url"/>
+      </type>
+    </element>
+    <element id="Extension.extension:page">
+      <path value="Extension.extension"/>
+      <sliceName value="page"/>
+      <short value="Page that is now found elsewhere (without .html)"/>
+      <definition value="The local page url (e.g. somefile.html - without the .html) that used to exist in this IG and is now found elsewhere."/>
+      <min value="0"/>
+      <max value="1"/>
+    </element>
+    <element id="Extension.extension:page.extension">
+      <path value="Extension.extension.extension"/>
+      <max value="0"/>
+    </element>
+    <element id="Extension.extension:page.url">
+      <path value="Extension.extension.url"/>
+      <fixedUri value="page"/>
+    </element>
+    <element id="Extension.extension:page.value[x]">
+      <path value="Extension.extension.value[x]"/>
+      <min value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="Extension.extension:newSpec">
+      <path value="Extension.extension"/>
+      <sliceName value="newSpec"/>
+      <short value="Base URL of the IG where the content now resides"/>
+      <definition value="The base url of the new IG publication where the content now resides."/>
+      <min value="1"/>
+      <max value="1"/>
+    </element>
+    <element id="Extension.extension:newSpec.extension">
+      <path value="Extension.extension.extension"/>
+      <max value="0"/>
+    </element>
+    <element id="Extension.extension:newSpec.url">
+      <path value="Extension.extension.url"/>
+      <fixedUri value="newSpec"/>
+    </element>
+    <element id="Extension.extension:newSpec.value[x]">
+      <path value="Extension.extension.value[x]"/>
+      <min value="1"/>
+      <type>
+        <code value="url"/>
+      </type>
+    </element>
+    <element id="Extension.extension:rename">
+      <path value="Extension.extension"/>
+      <sliceName value="rename"/>
+      <short value="New artifact id or page name, if it changed"/>
+      <definition value="If the artifact id or page name has changed in the new publication, what that new name is."/>
+      <min value="0"/>
+      <max value="1"/>
+    </element>
+    <element id="Extension.extension:rename.extension">
+      <path value="Extension.extension.extension"/>
+      <max value="0"/>
+    </element>
+    <element id="Extension.extension:rename.url">
+      <path value="Extension.extension.url"/>
+      <fixedUri value="rename"/>
+    </element>
+    <element id="Extension.extension:rename.value[x]">
+      <path value="Extension.extension.value[x]"/>
+      <min value="1"/>
+      <type>
+        <code value="string"/>
+      </type>
+    </element>
+    <element id="Extension.extension:version">
+      <path value="Extension.extension"/>
+      <sliceName value="version"/>
+      <short value="Version of this IG from which the content is found at its new location"/>
+      <definition value="The version of the source specification in which the redirect becomes effective. This is used to manage collisions when publishing multiple versions of an IG (including technical corrections of old versions), to make sure redirects are not inappropriately wiped."/>
+      <comment value="Versions are compared following semver, so a pre-release such as 2.0.0-ballot is earlier than 2.0.0."/>
+      <min value="1"/>
+      <max value="1"/>
+    </element>
+    <element id="Extension.extension:version.extension">
+      <path value="Extension.extension.extension"/>
+      <max value="0"/>
+    </element>
+    <element id="Extension.extension:version.url">
+      <path value="Extension.extension.url"/>
+      <fixedUri value="version"/>
+    </element>
+    <element id="Extension.extension:version.value[x]">
+      <path value="Extension.extension.value[x]"/>
+      <min value="1"/>
+      <type>
+        <code value="id"/>
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url"/>
+      <fixedUri value="http://hl7.org/fhir/tools/StructureDefinition/new-location"/>
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]"/>
+      <max value="0"/>
+    </element>
+  </differential>
+</StructureDefinition>
