@@ -93,7 +93,7 @@
   <concept>
     <code value="too-costly"/>
     <display value="Too Costly"/>
-    <definition value="An issue indicating that the server can work out the answer but the answer is too large or too expensive to produce - typically an expansion with more members than the server is prepared to return. Nothing is wrong with the value set: the client should narrow the request with a filter, or page through it with count and offset"/>
+    <definition value="An issue indicating that the server can work out the answer but the answer is too large or too expensive to produce - typically an expansion with more members than the server is prepared to return. Nothing is wrong with the value set: the client should narrow the request with a filter, or page through it with count and offset. Also used for a terminology client cache ($cache-control): a cache being started, or the resources a single request supplies to a cache, are more than the server allows one cache to hold. The operation requested has not been performed, and an existing cache is kept"/>
   </concept>
   <concept>
     <code value="version-error"/>

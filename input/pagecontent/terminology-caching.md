@@ -80,6 +80,19 @@ Later requests that carry the dropped cache-id fail in the same way, `404` with 
 
 A cache that grows too large again later can be replaced again in the same way. But a client that gets `cache-id-unknown` again straight after starting a new cache and resending the request &mdash; whether because the new cache is also too large, or for any other reason &mdash; should not keep starting new caches. It should report the problem, and either stop using a cache with that server for the rest of the session (sending the resources inline on every request) or fail the operation. A cache that cannot hold what a single request needs indicates that the server's limit is too low for that client, which is for whoever runs the server to change.
 
+### When a request is too big for any cache
+
+A request can also be too big for any cache on its own: the resources the request itself supplies (as `tx-resource`, or as the primary `valueSet`/`codeSystem`) are, by themselves, more than the server allows one cache to hold. Starting a new cache cannot fix this &mdash; the new cache would be dropped in the same way &mdash; so a `404` would only cost the client a retry that cannot succeed. A server may therefore refuse such a request as too costly instead, and keep the cache:
+
+* HTTP status **`422 Unprocessable Entity`**;
+* an `OperationOutcome` with an issue whose code is `too-costly` and whose `details.coding` is [`too-costly`](CodeSystem-tx-issue-type.html) from `http://hl7.org/fhir/tools/CodeSystem/tx-issue-type`, with text saying that the request's resources are more than one cache may hold.
+
+This means:
+
+* **The request is too big for any cache.** The problem is the size of what this request supplies, not the accumulated size of the cache.
+* **The cache is kept.** The server has neither dropped nor changed it, and the cache-id remains valid for the client's other requests. The client should not start a new cache in response.
+* **The operation that was requested has not been performed.** To get an answer, the client should send that request with its resources inline, without the cache-id, so that they are used for that request only and not cached; or reduce the resources it sends.
+
 A `start` that would itself create a cache over the limit has no cache to drop: the server refuses it as too costly (`422`, with an issue whose code is `too-costly`), and does not create the cache.
 
 ### Batch processing
