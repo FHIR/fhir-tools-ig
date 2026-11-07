@@ -61,6 +61,27 @@ The `start` call takes a `sealed` parameter (`valueBoolean`) that governs whethe
 
 A client that requests an **unsealed** cache takes on responsibility for the consequences of that shared, mutable state. In particular, it must ensure that its own requests do not race against each other in ways that produce unexpected results &mdash; for example, it should not issue overlapping requests that populate and read the same cache concurrently, because whether a given resource is present depends on whether the request that adds it has already been processed. Sealing the cache avoids this class of problem entirely, which is why it is the default.
 
+### When the server drops a cache that grew too large
+
+An unsealed cache grows with every new resource the client sends, and a server cannot hold an unbounded amount of state for each client. A server may therefore set a limit on how large one cache may grow (and on how much all its caches may hold between them). The limit, and how it is measured &mdash; for example, as the number of concepts in the cached code systems and value sets &mdash; is up to the server, and is usually configurable by whoever runs it.
+
+When a request would take a cache over the server's limit, the server **drops the cache**, and does not perform the request. It answers in the same way as for any other cache it does not have:
+
+* HTTP status **`404 Not Found`**;
+* an `OperationOutcome` with a **single issue**, whose `details.coding` is [`cache-id-unknown`](CodeSystem-tx-issue-type.html) from `http://hl7.org/fhir/tools/CodeSystem/tx-issue-type`, and whose text says that the cache grew too large and has been dropped by the server, that the client should start a new cache, and that the operation requested has not been performed. A server may also identify the reason with a message id ([operationoutcome-message-id](http://hl7.org/fhir/extensions/StructureDefinition-operationoutcome-message-id.html)), but a client should key on the coded issue, not on the message id or the text.
+
+This means:
+
+* **The cache grew too large, and the server has dropped it.** Nothing is wrong with the request itself, or with the resources in it; the problem is the accumulated size of the cache.
+* **The client should start a new cache.** It should forget what it believed the server held under the old cache-id, start a new cache with `$cache-control` `mode=start`, and send whatever the request needs again (as `tx-resource`, or front-loaded at `start`). A client that keeps its own record of what it has sent to the server must discard that record along with the old cache-id.
+* **The operation that was requested has not been performed.** The client must send it again, with the new cache &mdash; it should not treat the error as the result of the `$validate-code` or `$expand` it asked for.
+
+Later requests that carry the dropped cache-id fail in the same way, `404` with `cache-id-unknown`, and the server should say in the diagnostics that the cache was dropped because it grew too large (see [Implementation notes](#implementation-notes)).
+
+A cache that grows too large again later can be replaced again in the same way. But a client that gets `cache-id-unknown` again straight after starting a new cache and resending the request &mdash; whether because the new cache is also too large, or for any other reason &mdash; should not keep starting new caches. It should report the problem, and either stop using a cache with that server for the rest of the session (sending the resources inline on every request) or fail the operation. A cache that cannot hold what a single request needs indicates that the server's limit is too low for that client, which is for whoever runs the server to change.
+
+A `start` that would itself create a cache over the limit has no cache to drop: the server refuses it as too costly (`422`, with an issue whose code is `too-costly`), and does not create the cache.
+
 ### Batch processing
 
 Some servers accept a **batch** of operations in a single call (for example, a batch of `$validate-code` invocations). A batch is not simply a convenience for pipelining unrelated requests: with respect to the cache it behaves as one unit, and the following rules apply when a batch is sent against a session (unsealed) cache:
@@ -90,6 +111,6 @@ Caching amplifies this in two ways. First, a resolution made once against the ca
 * The cache holds resource **definitions**, not expansions. A value set sent with an inline `expansion` has that expansion cached as supplied.
 * Caches are scoped to the endpoint (and FHIR version) they were started on; a cache-id from one endpoint is not valid on another.
 * A request that carries an unknown cache-id (in the `X-Cache-Id` header) on `$validate-code`, `$expand`, or any other operation fails with HTTP `404` and the `cache-id-unknown` issue described above. By contrast, `mode=end` for a cache the server does not have is deliberately **not** an error: it returns `200`, because the client's intent &mdash; that the cache be gone &mdash; is already satisfied. Nor is `mode=check`, for the reasons given [above](#keeping-a-cache-alive).
-* A server that applies an idle timeout should record why each cache-id it has retired went away, so that when a request later arrives carrying that id, it can say which of the three things happened rather than listing the possibilities. The wrong diagnosis here is expensive: an expiry and a cache the client released look identical on the wire, but one is fixed by checking more often and the other by fixing the client's lifecycle. A bounded, insertion-ordered record of the most recently retired cache-ids is enough; an id old enough to have fallen off the end reports as never issued, which is the honest answer once the server no longer knows.
+* A server that applies an idle timeout should record why each cache-id it has retired went away, so that when a request later arrives carrying that id, it can say which of these things happened (released by the client, timed out, or [dropped because it grew too large](#when-the-server-drops-a-cache-that-grew-too-large)) rather than listing the possibilities. The wrong diagnosis here is expensive: an expiry and a cache the client released look identical on the wire, but one is fixed by checking more often and the other by fixing the client's lifecycle. A bounded, insertion-ordered record of the most recently retired cache-ids is enough; an id old enough to have fallen off the end reports as never issued, which is the honest answer once the server no longer knows.
 
 See the [$cache-control OperationDefinition](OperationDefinition-cache-control.html) for the formal operation definition, and the [Terminology Issue Type code system](CodeSystem-tx-issue-type.html) for `cache-id-unknown` and the other terminology issue codes.
